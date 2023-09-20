@@ -1,0 +1,7 @@
+# Other
+.vscode 
+node_modules
+
+# Obsidian
+ObsidianRnDVault/*
+ObsidianRnDVault/.trash
