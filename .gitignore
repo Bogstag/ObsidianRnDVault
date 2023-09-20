@@ -1,7 +1,16 @@
-# Other
-.vscode 
-node_modules
-
-# Obsidian
 ObsidianRnDVault/*
+ObsidianRnDVault/.obsidian
 ObsidianRnDVault/.trash
+!ObsidianRnDVault/Archive
+!ObsidianRnDVault/Areas
+!ObsidianRnDVault/Attachments
+ObsidianRnDVault/Development
+ObsidianRnDVault/Home
+ObsidianRnDVault/Inbox
+!ObsidianRnDVault/Journal
+!ObsidianRnDVault/Personal
+!ObsidianRnDVault/Publish
+ObsidianRnDVault/System
+!ObsidianRnDVault/Tags
+ObsidianRnDVault/Tech
+!ObsidianRnDVault/Work
