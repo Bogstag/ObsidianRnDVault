@@ -10,8 +10,21 @@ ObsidianRnDVault/Inbox
 !ObsidianRnDVault/Journal
 !ObsidianRnDVault/Personal
 !ObsidianRnDVault/Publish
-ObsidianRnDVault/System
+!ObsidianRnDVault/System
+ObsidianRnDVault/System/Concepts
+ObsidianRnDVault/System/fileclass
+ObsidianRnDVault/System/formats
+ObsidianRnDVault/System/images
+ObsidianRnDVault/System/metadata
+ObsidianRnDVault/System/scripts/*
 !ObsidianRnDVault/System/scripts/classes
+!ObsidianRnDVault/System/scripts/dv views
+ObsidianRnDVault/System/scripts/secrets
+!ObsidianRnDVault/System/scripts/UtilityClasses
+ObsidianRnDVault/System/storage
+ObsidianRnDVault/System/templates
+ObsidianRnDVault/System/typing
+ObsidianRnDVault/System/views
 !ObsidianRnDVault/Tags
 ObsidianRnDVault/Tech
 !ObsidianRnDVault/Work
