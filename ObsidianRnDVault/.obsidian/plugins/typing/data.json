@@ -1,0 +1,14 @@
+{
+  "schemaPath": "System/typing/typing.otl",
+  "jsImportsPath": "/System/scripts",
+  "otlImportsPath": "/System/typing",
+  "marginalsInPreview": true,
+  "marginalsInLivePreview": false,
+  "linksInPreview": true,
+  "linksInLivePreview": true,
+  "enableScripting": true,
+  "enabledFonts": [
+    "fontawesome",
+    "lucide"
+  ]
+}

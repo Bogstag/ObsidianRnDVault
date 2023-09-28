@@ -1,0 +1,11 @@
+{
+  "additionalFileTypes": {
+    "markdown": [
+      "",
+      "mjs",
+      "py",
+      "json"
+    ]
+  },
+  "currentValueIsInvalidJson": false
+}

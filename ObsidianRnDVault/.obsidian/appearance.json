@@ -1,0 +1,17 @@
+{
+  "accentColor": "#704285",
+  "theme": "obsidian",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "Multi columns",
+    "[ui] Custom Separators",
+    "MySnippets"
+  ],
+  "baseFontSize": 16,
+  "showViewHeader": true,
+  "baseFontSizeAction": false,
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "translucency": false
+}

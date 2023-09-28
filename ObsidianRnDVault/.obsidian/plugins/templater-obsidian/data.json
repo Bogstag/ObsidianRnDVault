@@ -1,0 +1,32 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "System/templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "\"C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe\"",
+  "user_scripts_folder": "System/scripts/functions",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "Tech/Software/Obsidian/plugins",
+      "template": "System/templates/fileclass/Add Obsidian plugin page.md"
+    },
+    {
+      "folder": "Journal/Daily",
+      "template": "System/templates/journal/Daily Journal Template.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "enabled_templates_hotkeys": [],
+  "startup_templates": [
+    ""
+  ],
+  "enable_ribbon_icon": true
+}
