@@ -14,6 +14,7 @@ dv.span("Now: " + moment()._d)
 dv.span("<br>Locale: " + moment()._locale._abbr)
 dv.span("<br>Date: " + moment().format("YYYY-MM-DD"))
 dv.span("<br>Date Time: " + moment().format("YYYY-MM-DD HH:mm:ss"))
+dv.span("<br>Date Time: " + moment().format("dddd, DD MMMM, YYYY"))
 ```
 
 ### Common format strings
