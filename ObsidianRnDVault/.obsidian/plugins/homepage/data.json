@@ -3,12 +3,12 @@
   "homepages": {
     "Main Homepage": {
       "value": "Dashboard",
-      "kind": "File",
+      "kind": "Daily Note",
       "openOnStartup": true,
       "hasRibbonIcon": true,
-      "openMode": "Replace all open notes",
+      "openMode": "Keep open notes",
       "manualOpenMode": "Keep open notes",
-      "view": "Default view",
+      "view": "Editing view (Live Preview)",
       "revertView": true,
       "openWhenEmpty": false,
       "refreshDataview": false,

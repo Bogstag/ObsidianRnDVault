@@ -8,9 +8,13 @@ ObsidianRnDVault/.trash
 !ObsidianRnDVault/Attachments
 ObsidianRnDVault/Development
 ObsidianRnDVault/Home/*
+!ObsidianRnDVault/Inbox
 ObsidianRnDVault/Inbox/*
+!ObsidianRnDVault/Inbox/Inbox.md
 !ObsidianRnDVault/Journal
 !ObsidianRnDVault/Personal
+!ObsidianRnDVault/Planning
+ObsidianRnDVault/Planning/*
 !ObsidianRnDVault/Publish
 !ObsidianRnDVault/System
 ObsidianRnDVault/System/Concepts/*

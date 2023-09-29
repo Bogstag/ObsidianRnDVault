@@ -65,7 +65,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tech/Software/Obsidian/plugins/Templater.md",
+                "file": "Inbox/Inbox.md",
                 "mode": "source",
                 "source": true
               }
@@ -144,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tech/Software/Obsidian/plugins/Templater.md"
+                "file": "Inbox/Inbox.md"
               }
             }
           },
@@ -154,7 +154,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Tech/Software/Obsidian/plugins/Templater.md"
+                "file": "Inbox/Inbox.md"
               }
             }
           },
@@ -180,7 +180,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tech/Software/Obsidian/plugins/Templater.md",
+                "file": "Inbox/Inbox.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -197,7 +197,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Tech/Software/Obsidian/plugins/Templater.md",
+                "file": "Inbox/Inbox.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -227,10 +227,10 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "4fb695c1bbf702c0",
+  "active": "b086af801e8a41b7",
   "lastOpenFiles": [
-    "System/fileclass/daily.md",
     "Tech/Software/Obsidian/plugins/Templater.md",
+    "System/fileclass/daily.md",
     "System/Concepts/icons.md",
     "System/templates/fileclass/Add Obsidian plugin page.md",
     "Tech/Software/Obsidian/Obsidian.md",
