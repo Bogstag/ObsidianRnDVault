@@ -1,7 +1,6 @@
 ObsidianRnDVault/*
 !ObsidianRnDVault/.obsidian
-ObsidianRnDVault/.obsidian/plugins/obsidian-icon-folder/icons
-ObsidianRnDVault/.obsidian/plugins/typing/font-cache
+ObsidianRnDVault/.obsidian/plugins/obsidian-icon-folder/icons/*.zip
 ObsidianRnDVault/.trash
 !ObsidianRnDVault/Archive
 !ObsidianRnDVault/Areas
