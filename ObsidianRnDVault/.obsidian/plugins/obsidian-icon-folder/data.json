@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": "#915492",
     "recentlyUsedIcons": [
+      "FasFileExport",
       "FasVault",
       "FasDev",
       "FasDesktop",
-      "FasPenNib",
-      "FasPersonWalkingWithCane"
+      "FasPenNib"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -58,5 +58,6 @@
   "Attachments/Excalidraw": "FasPenNib",
   "Tech/Software": "FasDesktop",
   "Development": "FasDev",
-  "Areas/Obsidian RnD Vault": "FasVault"
+  "Areas/Obsidian RnD Vault": "FasVault",
+  "Publish/Exports": "FasFileExport"
 }

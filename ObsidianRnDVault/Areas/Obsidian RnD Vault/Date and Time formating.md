@@ -20,6 +20,7 @@ dv.span("<br>Date Time: " + moment().format("dddd, DD MMMM, YYYY"))
 ### Common format strings
 
 Date: YYYY-MM-DD
+Long Date: ddd, DD MMMM, YYYY
 Date Time: YYYY-MM-DD HH:mm:ss
 
 ### Common format tokens
