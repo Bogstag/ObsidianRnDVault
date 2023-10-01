@@ -25,5 +25,6 @@
   "newLinkFormat": "shortest",
   "foldHeading": false,
   "newFileLocation": "folder",
-  "newFileFolderPath": "Inbox"
+  "newFileFolderPath": "Inbox",
+  "showLineNumber": false
 }

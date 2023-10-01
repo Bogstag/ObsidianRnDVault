@@ -21,12 +21,17 @@
     {
       "folder": "Journal/Daily",
       "template": "System/templates/journal/Daily Journal Template.md"
+    },
+    {
+      "folder": "Journal/Weekly",
+      "template": "System/templates/journal/Weekly Journal Template.md"
     }
   ],
   "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [],
   "startup_templates": [
-    ""
+    "System/templates/Templater Startup script.md"
   ],
   "enable_ribbon_icon": true
 }

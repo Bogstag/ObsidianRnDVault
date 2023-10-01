@@ -231,7 +231,9 @@
     "Tech/Software/Obsidian/Obsidian.md",
     "Journal/Yearly/2023",
     "Journal/Weekly/2023/2023-v39",
-    "Journal/Daily/2023/09/2023-09-28.md"
+    "Journal/Daily/2023/09/2023-09-28.md",
+    "Journal/Daily/2023/10/2023-10-01.md",
+    "Journal/Daily/2023/09/2023-09-30.md"
   ],
   "allowOntologySuggester": true,
   "ontologySuggesterParentTrigger": "::p",

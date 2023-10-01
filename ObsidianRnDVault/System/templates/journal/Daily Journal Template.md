@@ -1,31 +1,50 @@
 <%*
+	date = tp.file.title // Starting date
+	format = "YYYY-MM-DD" // Format of starting date
+	locale = "sv"
+	moment.locale(locale)
 	const filePath = tp.file.path(true);
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 _%>
 <% "---" %>
-After: [[<% tp.date.now("YYYY-MM-DD", 1, tp.file.title, "YYYY-MM-DD") %>]]
-Before: [[<% tp.date.now("YYYY-MM-DD", -1, tp.file.title, "YYYY-MM-DD") %>]]
+After: [[<% tp.date.now(format, 1, date, format) %>]]
+Before: [[<% tp.date.now(format, -1, date, format) %>]]
+date: <% tp.date.now(format, 0, date, format) %>
 date_created: <% tp.file.creation_date() %>
 date_modified: <% tp.file.creation_date() %>
-<% tp.file.include("[[DateDimension]]") %>
+dateformat: <% format %>
+dayName: <% tp.date.now("dddd", 0, date, format) %>
 fileclass: daily
+locale: <% locale %>
 Parent: 
 - [[<% "Journal/Daily" %>]]
-- [[<% `Journal/Yearly/${tp.date.now("YYYY")}` %>]]
-- [[<% `Journal/Weekly/${tp.date.now("GGGG")}/${tp.date.now("GGGG-[v]WW")}` %>]]
+- [[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>]]
+- [[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>]]
 tags:
-- journal/daily/<% tp.date.now("YYYY") %>/<% tp.date.now("MM") %>/<% tp.date.now("DD") %>
-- calendar/<% tp.date.now("YYYY") %>/<% tp.date.now("MM") %>/<% tp.date.now("DD") %>
+- Journal/Daily/<% tp.date.now("YYYY/MM/YYYY-MM-DD", 0, date, format) %>
+- calendar/<% tp.date.now("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
 template: [[<% "System/templates/journal/Daily Journal Template" %>|<% "Daily Journal Template" %>]]
 <% "---" %>
+# <% tp.date.now("dddd, DD MMMM, YYYY", 0, date, format) %>
 
-# <% tp.date.now("dddd, DD MMMM, YYYY") %>
+<i data-timeline="<% tp.date.now("DDD", 0, date, format) %>"></i>
+[[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>|<% tp.date.now("YYYY", 0, date, format) %>]] - [[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>|<% tp.date.now("[v]ww", 0, date, format) %>]]
+[[<% tp.date.now(format, -1, date, format) %>| ↶ Igår ]] | [[<% tp.date.now(format, 1, date, format) %>| Imorgon ↷ ]]
 
-<i data-timeline="<% tp.date.now("DDD", 0, tp.file.title) %>"></i>
-[[<% `Journal/Yearly/${tp.date.now("YYYY")}` %>|<% tp.date.now("YYYY") %>]] - [[<% `Journal/Weekly/${tp.date.now("GGGG")}/${tp.date.now("GGGG-[v]WW")}` %>|<% tp.date.now("[v]WW") %>]]
-[[<% tp.date.now("YYYY-MM-DD", -1, tp.file.title, "YYYY-MM-DD") %>| << ]] | [[<% tp.date.now("YYYY-MM-DD", 1, tp.file.title, "YYYY-MM-DD") %>| >> ]] 
+## ✍️
 
-## 📝Notes
 - <% tp.file.cursor(1) %>
 
-## ✅ Tasks
+## ✅
+
+```dataviewjs
+let pages = dv.pages('"Journal"');
+
+dv.taskList(
+	pages
+	.where(p => (dv.date(p.file.name) <= dv.date(dv.current().file.name) + dv.duration('3 days')) && !dv.equal(dv.date(p.file.name),dv.date(dv.current().file.name)))
+	.sort(p => p.file.name, 'asc')
+	.file
+	.tasks
+	.where(t => !t.completed))
+```

@@ -9,14 +9,16 @@
     "enabled": true
   },
   "weekly": {
-    "format": "",
-    "template": "",
-    "folder": ""
+    "format": "gggg/gggg-[v]ww",
+    "template": "System/templates/journal/Weekly Journal Template.md",
+    "folder": "Journal/Weekly",
+    "enabled": true
   },
   "monthly": {
     "format": "",
     "template": "",
-    "folder": ""
+    "folder": "Journal/",
+    "enabled": false
   },
   "quarterly": {
     "format": "",
@@ -24,8 +26,9 @@
     "folder": ""
   },
   "yearly": {
-    "format": "",
+    "format": "YYYY",
     "template": "",
-    "folder": ""
+    "folder": "Journal/Yearly",
+    "enabled": true
   }
 }
