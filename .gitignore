@@ -1,5 +1,7 @@
 ObsidianRnDVault/*
 !ObsidianRnDVault/.obsidian
+#ObsidianRnDVault/.obsidian/plugins/*
+#ObsidianRnDVault/.obsidian/plugins/**/main.js
 ObsidianRnDVault/.obsidian/plugins/obsidian-icon-folder/icons/*.zip
 ObsidianRnDVault/.trash
 !ObsidianRnDVault/Archive
@@ -13,7 +15,6 @@ ObsidianRnDVault/Inbox/*
 !ObsidianRnDVault/Journal
 !ObsidianRnDVault/Personal
 !ObsidianRnDVault/Planning
-ObsidianRnDVault/Planning/*
 !ObsidianRnDVault/Publish
 !ObsidianRnDVault/System
 ObsidianRnDVault/System/Concepts/*
@@ -32,7 +33,7 @@ ObsidianRnDVault/System/templates/*
 !ObsidianRnDVault/System/templates/components
 !ObsidianRnDVault/System/templates/fileclass
 !ObsidianRnDVault/System/templates/journal
-!ObsidianRnDVault/System/templates/metadata
+!ObsidianRnDVault/System/templates/project
 !ObsidianRnDVault/System/templates/widgets
 ObsidianRnDVault/System/typing/*
 ObsidianRnDVault/System/views/*
