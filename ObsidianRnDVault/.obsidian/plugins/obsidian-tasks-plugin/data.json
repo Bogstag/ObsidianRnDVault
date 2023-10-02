@@ -1,5 +1,5 @@
 {
-  "globalQuery": "path does not include Meta/",
+  "globalQuery": "path does not include System",
   "globalFilter": "",
   "removeGlobalFilter": false,
   "taskFormat": "tasksPluginEmoji",
@@ -9,8 +9,10 @@
   "autoSuggestMinMatch": 0,
   "autoSuggestMaxItems": 6,
   "provideAccessKeys": true,
-  "useFilenameAsScheduledDate": false,
-  "filenameAsDateFolders": [],
+  "useFilenameAsScheduledDate": true,
+  "filenameAsDateFolders": [
+    "Journal/Daily"
+  ],
   "recurrenceOnNextLine": false,
   "statusSettings": {
     "coreStatuses": [

@@ -95,7 +95,7 @@
     },
     "blockquote-style": {
       "enabled": true,
-      "style": "no space"
+      "style": "space"
     },
     "convert-bullet-list-markers": {
       "enabled": true
@@ -241,7 +241,9 @@
   "lintOnFileChange": false,
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
-  "foldersToIgnore": [],
+  "foldersToIgnore": [
+    "System/templates"
+  ],
   "linterLocale": "sv",
   "logLevel": "ERROR",
   "lintCommands": [],

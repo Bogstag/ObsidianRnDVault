@@ -5,7 +5,9 @@
   "enabledCssSnippets": [
     "Multi columns",
     "[ui] Custom Separators",
-    "MySnippets"
+    "MySnippets",
+    "supercharged-links-gen",
+    "MCL Multi Column"
   ],
   "baseFontSize": 16,
   "showViewHeader": true,

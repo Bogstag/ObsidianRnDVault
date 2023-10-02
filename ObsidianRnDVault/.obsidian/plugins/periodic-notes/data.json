@@ -27,7 +27,7 @@
   },
   "yearly": {
     "format": "YYYY",
-    "template": "",
+    "template": "System/templates/journal/Yearly Journal Template.md",
     "folder": "Journal/Yearly",
     "enabled": true
   }

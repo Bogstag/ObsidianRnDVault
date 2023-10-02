@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": "#915492",
     "recentlyUsedIcons": [
+      "FasFolder",
+      "FasListCheck",
       "FasFileExport",
       "FasVault",
-      "FasDev",
-      "FasDesktop",
-      "FasPenNib"
+      "FasDev"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -47,7 +47,6 @@
   "Personal/Lessons": "FasBookOpenReader",
   "Personal/Milestones": "FasAward",
   "Personal/Health": "FasHandHoldingHeart",
-  "Work/Projects": "FasFolderOpen",
   "Work/Meetings": "FasUsers",
   "Attachments/Images": "FasImage",
   "Attachments/PDFs": "FasFilePdf",
@@ -59,5 +58,7 @@
   "Tech/Software": "FasDesktop",
   "Development": "FasDev",
   "Areas/Obsidian RnD Vault": "FasVault",
-  "Publish/Exports": "FasFileExport"
+  "Publish/Exports": "FasFileExport",
+  "Planning/Task Dashboard.md": "FasListCheck",
+  "Planning/Projects": "FasFolder"
 }

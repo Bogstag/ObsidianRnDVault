@@ -16,7 +16,7 @@ dateformat: <% format %>
 dayName: <% tp.date.now("dddd", 0, date, format) %>
 fileclass: daily
 locale: <% locale %>
-Parent: 
+Parent:
 - [[<% "Journal/Daily" %>]]
 - [[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>]]
 - [[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>]]
@@ -29,7 +29,7 @@ template: [[<% "System/templates/journal/Daily Journal Template" %>|<% "Daily Jo
 
 <i data-timeline="<% tp.date.now("DDD", 0, date, format) %>"></i>
 [[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>|<% tp.date.now("YYYY", 0, date, format) %>]] - [[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>|<% tp.date.now("[v]ww", 0, date, format) %>]]
-[[<% tp.date.now(format, -1, date, format) %>| ↶ Igår ]] | [[<% tp.date.now(format, 1, date, format) %>| Imorgon ↷ ]]
+[[<% tp.date.now(format, -1, date, format) %>| ↶ Igår]] | [[<% tp.date.now(format, 1, date, format) %>| Imorgon ↷]]
 
 ## ✍️
 
@@ -37,14 +37,44 @@ template: [[<% "System/templates/journal/Daily Journal Template" %>|<% "Daily Jo
 
 ## ✅
 
-```dataviewjs
-let pages = dv.pages('"Journal"');
+````dataviewjs
+function callout(text, type, title = '', folded = '+') {
+    const allText = `> [!${type}]${folded} ${title}\n` + text;
+    const lines = allText.split('\n');
+    return lines.join('\n> ') + '\n'
+}
 
-dv.taskList(
-	pages
-	.where(p => (dv.date(p.file.name) <= dv.date(dv.current().file.name) + dv.duration('3 days')) && !dv.equal(dv.date(p.file.name),dv.date(dv.current().file.name)))
-	.sort(p => p.file.name, 'asc')
-	.file
-	.tasks
-	.where(t => !t.completed))
-```
+const currentFileName = dv.current().file.name;
+
+const late = `
+not done
+due before today
+group by due
+filename does not include ${currentFileName}
+`;
+dv.paragraph(callout('```tasks\n' + late + '\n```', 'missing', 'Försenat'));
+
+const todoThisWeek = `
+not done
+happens today
+group by happens
+filename does not include ${currentFileName}
+`;
+dv.paragraph(callout('```tasks\n' + todoThisWeek + '\n```', 'todo', 'Att göra idag'));
+
+const todo = `
+not done
+no happens date
+group by folder
+filename does not include ${currentFileName}
+`;
+dv.paragraph(callout('```tasks\n' + todo + '\n```', 'todo', 'Att göra', '-'));
+
+const done = `
+done today
+group by done
+filename does not include ${currentFileName}
+`;
+
+dv.paragraph(callout('```tasks\n' + done + '\n```', 'done', 'Slutförda idag', '-'));
+````

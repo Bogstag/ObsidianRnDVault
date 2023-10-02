@@ -1,11 +1,11 @@
 ---
 aliases: 
 date_created: 2023-09-15 21:53:12
-date_modified: 2023-09-20 18:47:25
-tags: 
+date_modified: 2023-10-02 10:10:50
+tags:
+  - 
 ---
-
-# File Explorer
+# File explorer
 
 ```
 📂 Obsidian_Vault
@@ -82,7 +82,7 @@ tags:
     └── Configurations, templates, scripts, and system-related files for Obsidian.
 ```
 
-## File list Icons
+## File listiicons
 
 ```
 Obsidian_Vault
