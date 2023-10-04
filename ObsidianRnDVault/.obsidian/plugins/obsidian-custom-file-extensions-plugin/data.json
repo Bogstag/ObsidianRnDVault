@@ -2,6 +2,7 @@
   "additionalFileTypes": {
     "markdown": [
       "",
+      "js",
       "mjs",
       "py",
       "json"

@@ -1,4 +1,16 @@
 {
   "uuid": "o2b9ui64cmi1ndxhwxxskn",
-  "gates": {}
+  "gates": {
+    "aHR0cHM6Ly9pY29uZXMuanMub3JnL2NvbGxlY3Rpb24vYWxscHVibGlj": {
+      "id": "aHR0cHM6Ly9pY29uZXMuanMub3JnL2NvbGxlY3Rpb24vYWxscHVibGlj",
+      "title": "Iconify",
+      "icon": "<svg viewBox=\"0 0 50 50\"><image href=\"https://icon.horse/icon/icon-sets.iconify.design\" height=\"50\" width=\"50\" /></svg>",
+      "hasRibbon": true,
+      "position": "right",
+      "profileKey": "public",
+      "url": "https://icon-sets.iconify.design/",
+      "zoomFactor": 1,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+    }
+  }
 }

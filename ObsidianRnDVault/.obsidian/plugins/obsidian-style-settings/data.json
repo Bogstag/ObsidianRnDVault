@@ -6,5 +6,6 @@
   "minimal-style@@icon-muted": 0.5,
   "minimal-style@@sidebar-lines-off": false,
   "minimal-style@@sidebar-tabs-style": "sidebar-tabs-index",
-  "minimal-style@@embed-strict": true
+  "minimal-style@@embed-strict": true,
+  "minimal-style@@active-line-on": true
 }

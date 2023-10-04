@@ -1,0 +1,10 @@
+{
+	"id": "wikidata-importer",
+	"name": "Wikidata Importer",
+	"version": "1.0.3",
+	"minAppVersion": "0.15.0",
+	"description": "Import data from Wikidata into your vault.",
+	"author": "Sam Rose",
+	"authorUrl": "https://samwho.dev",
+	"isDesktopOnly": false
+}
