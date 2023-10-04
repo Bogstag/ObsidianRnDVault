@@ -4,5 +4,11 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"todo-tree.general.tags": ["BUG::", "HACK::", "FIXME::", "TODO::"],
+		"todo-tree.filtering.excludeGlobs": [
+			"**/node_modules/*/**",
+			"**/.obsidian/plugins/*/**.js"
+		]
+	}
 }

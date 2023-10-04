@@ -9,8 +9,8 @@ class Gate {
 		const url = await tp.system.prompt("Enter URL:", clip, true);
 		const height = await tp.system.prompt("Enter height of frame:", "600", true);
 		const profile = await tp.system.suggester(
-			["Public", "Private", "Other"],
-			["public", "private", "other"],
+			["Public", "Private", "Work", "Other"],
+			["public", "private", "work", "other"],
 			true,
 			"Select profile:"
 		);

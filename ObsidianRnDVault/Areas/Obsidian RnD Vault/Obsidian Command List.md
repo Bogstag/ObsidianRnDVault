@@ -10,9 +10,9 @@ tags:
 ---
 # Obsidian command list
 
-## Assigned commands sorted by assigned hotkey
+## Assigned commands sorted by assigned keyboard shortcut
 
-Commands with - as hotkeys are default hotkeys removed by user.
+Commands with - as keyboard shortcuts, are default hotkeys removed by user.
 
 ```dataviewjs
 

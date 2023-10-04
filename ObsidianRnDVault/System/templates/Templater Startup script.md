@@ -1,16 +1,29 @@
 <%*
 	locale = "sv"
 	moment.locale(locale)
-	
-	let weeklyFormat = tp.date.now(app.plugins.plugins["periodic-notes"].settings.weekly.format);
-	let weeklyFolder = app.plugins.plugins["periodic-notes"].settings.weekly.folder;
 
-	if (await !tp.file.exists(`${weeklyFolder}/${weeklyFormat}`)) {
-	  const weeklyTemplate = tp.file.find_tfile(app.plugins.plugins["periodic-notes"].settings.weekly.template);
-	  console.log("weeklyTemplate", weeklyTemplate);
-	  
-	  await tp.file.create_new(weeklyTemplate, weeklyFormat, false, app.vault.getAbstractFileByPath(weeklyFolder));
-	};
+	function splitOnLastSlash(str) {
+    const lastIndex = str.lastIndexOf('/');
+    // If no slash is found, return the whole string as the second part
+    if (lastIndex === -1) {
+	     return [null, str];
+    }
+		const firstPart = str.substring(0, lastIndex);
+    const secondPart = str.substring(lastIndex + 1);
+    return [firstPart, secondPart];
+	}
+	
+	if (app.plugins.plugins["periodic-notes"].settings.weekly.enabled) {
+		let weeklyFolder = app.plugins.plugins["periodic-notes"].settings.weekly.folder;
+		let weeklyFormat = app.plugins.plugins["periodic-notes"].settings.weekly.format;
+		const weeklyPath = `${weeklyFolder}/${moment().format(weeklyFormat)}`;
+		
+		if (!await tp.file.exists(weeklyPath)) {
+			[weeklyFolder, weeklyFormat] = splitOnLastSlash(weeklyPath);
+			const weeklyTemplate = tp.file.find_tfile(app.plugins.plugins["periodic-notes"].settings.weekly.template);
+			await tp.file.create_new(weeklyTemplate, weeklyFormat, false, app.vault.getAbstractFileByPath(weeklyFolder));
+		};
+	}
 
 	/**
 	let mnth = tp.date.now('MM MMMM');
