@@ -18,7 +18,7 @@
 		let weeklyFormat = app.plugins.plugins["periodic-notes"].settings.weekly.format;
 		const weeklyPath = `${weeklyFolder}/${moment().format(weeklyFormat)}`;
 		
-		if (!await tp.file.exists(weeklyPath)) {
+		if (!await tp.file.exists(weeklyPath + ".md")) {
 			[weeklyFolder, weeklyFormat] = splitOnLastSlash(weeklyPath);
 			const weeklyTemplate = tp.file.find_tfile(app.plugins.plugins["periodic-notes"].settings.weekly.template);
 			await tp.file.create_new(weeklyTemplate, weeklyFormat, false, app.vault.getAbstractFileByPath(weeklyFolder));
