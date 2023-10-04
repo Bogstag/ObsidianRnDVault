@@ -2,7 +2,6 @@
   "table-editor-obsidian",
   "obsidian-excalidraw-plugin",
   "dataview",
-  "omnisearch",
   "buttons",
   "obsidian-tasks-plugin",
   "obsidian-style-settings",
@@ -16,7 +15,6 @@
   "cmdr",
   "metadata-menu",
   "open-gate",
-  "obsidian-custom-file-extensions-plugin",
   "folder-note-core",
   "alx-folder-note",
   "mysnippets-plugin",
@@ -33,5 +31,10 @@
   "obsidian-enhancing-export",
   "tag-wrangler",
   "obsidian-tagfolder",
-  "obsidian-checklist-plugin"
+  "obsidian-checklist-plugin",
+  "wikidata-importer",
+  "quickadd",
+  "metaedit",
+  "obsidian-charts",
+  "obsidian-custom-file-extensions-plugin"
 ]

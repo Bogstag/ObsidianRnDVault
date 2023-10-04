@@ -7,7 +7,9 @@
     "[ui] Custom Separators",
     "MySnippets",
     "supercharged-links-gen",
-    "MCL Multi Column"
+    "MCL Multi Column",
+    "[user] Daily Note styles",
+    "ObsidianRnDVault"
   ],
   "baseFontSize": 16,
   "showViewHeader": true,

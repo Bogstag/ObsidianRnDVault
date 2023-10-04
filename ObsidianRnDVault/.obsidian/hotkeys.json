@@ -31,7 +31,6 @@
       "key": "S"
     }
   ],
-  "obsidian-excalidraw-plugin:save": [],
   "obsidian-linter:paste-as-plain-text": [
     {
       "modifiers": [
@@ -40,7 +39,6 @@
       "key": "B"
     }
   ],
-  "editor:toggle-bold": [],
   "obsidian-minimal-settings:cycle-minimal-table-width": [
     {
       "modifiers": [
@@ -56,5 +54,6 @@
       ],
       "key": "P"
     }
-  ]
+  ],
+  "editor:toggle-bold": []
 }
