@@ -19,9 +19,8 @@ tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").tri
 ```button
 name + Add note
 type note(<% `${fileProjectRoot}` %>/Notes/untitled note) template
-action project/Project note
+action <% `${fileProjectRoot}` %>/Project note
 templater true
-class tailwind-button-white
 ```
 **Flat view**
 ```dataviewjs

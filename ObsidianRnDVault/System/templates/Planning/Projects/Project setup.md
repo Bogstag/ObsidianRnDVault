@@ -48,9 +48,8 @@ dv.taskList(dv.pages('"<% `${fileProjectRoot}` %>/Tasks"').file.tasks .where(t =
 ```button
 name + Add meeting
 type note(<% `${fileProjectRoot}` %>/Meetings/untitled meeting) template
-action project/Project meeting
+action <% `${fileProjectRoot}` %>/Project meeting
 templater true
-class tailwind-button-white
 ```
 ```dataviewjs
 for(let group of dv.pages('"<% `${fileProjectRoot}` %>/Meetings" and !#meetings').limit(10).groupBy(p => p.meeting)) {
@@ -70,9 +69,8 @@ for(let group of dv.pages('"<% `${fileProjectRoot}` %>/Meetings" and !#meetings'
 ```button
 name + Add note
 type note(<% `${fileProjectRoot}` %>/Notes/untitled note) template
-action project/Project note
+action <% `${fileProjectRoot}` %>/Project note
 templater true
-class tailwind-button-white
 ```
 ```dataviewjs
 for(let group of dv.pages('"<% `${fileProjectRoot}` %>/Notes" and !#dashboard and !#notes').limit(10).groupBy(p => p.note)) {

@@ -18,9 +18,8 @@ tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").tri
 ```button
 name + Add meeting
 type note(<% `${fileProjectRoot}` %>/Meetings/untitled meeting) template
-action project/Project meeting
+action <% `${fileProjectRoot}` %>/Project meeting
 templater true
-class tailwind-button-white
 ```
 ```dataviewjs
 for (let group of dv.pages('"<% `${fileProjectRoot}` %>/Meetings" and !#meetings').groupBy(p => p.meeting)) {
