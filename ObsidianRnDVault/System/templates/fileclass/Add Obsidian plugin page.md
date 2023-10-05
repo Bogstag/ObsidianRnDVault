@@ -1,4 +1,6 @@
 <%* 
+	// dependsOnTemplate:: [[System/templates/fileclass/Add Obsidian plugin page]]
+	// dependsOnScript:: [[System/scripts/classes/Plugins.js]]
 	const targetFolder = "Tech/Software/Obsidian/plugins";
 	const tFolder = app.vault.getAbstractFileByPath(targetFolder);
 	console.log("tp.config1", tp.config);

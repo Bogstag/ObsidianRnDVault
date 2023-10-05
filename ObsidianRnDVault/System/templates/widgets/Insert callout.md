@@ -1,3 +1,8 @@
+---
+dependsOnTemplate: 
+fileclass: template
+---
+
 <%*
 const callouts = {
 abstract: '🌐 📋 Abstract',

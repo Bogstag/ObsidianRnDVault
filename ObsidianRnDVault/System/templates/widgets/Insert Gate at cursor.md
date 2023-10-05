@@ -1,6 +1,7 @@
 ---
 fileclass: template
-dependsOnScript:
+dependsOnScript: [[System/scripts/classes/Gate.js]]
+dependsOnTemplate:
 ---
 <%* 
  const { Gate } = customJS

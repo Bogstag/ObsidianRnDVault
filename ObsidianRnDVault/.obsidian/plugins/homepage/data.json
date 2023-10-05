@@ -6,7 +6,7 @@
       "kind": "Daily Note",
       "openOnStartup": true,
       "hasRibbonIcon": true,
-      "openMode": "Replace all open notes",
+      "openMode": "Keep open notes",
       "manualOpenMode": "Keep open notes",
       "view": "Editing view (Live Preview)",
       "revertView": false,

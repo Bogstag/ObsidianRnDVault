@@ -1,31 +1,29 @@
 {
-  "readableLineLength": false,
-  "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "Attachments",
-  "promptDelete": false,
-  "livePreview": true,
-  "defaultViewMode": "source",
-  "pdfExportSettings": {
-    "includeName": true,
-    "pageSize": "Letter",
-    "landscape": false,
-    "margin": "0",
-    "downscalePercent": 100
-  },
-  "showFrontmatter": false,
-  "propertiesInDocument": "hidden",
-  "foldIndent": false,
-  "tabSize": 2,
-  "userIgnoreFilters": [
-    "System/templates/",
-    "Development/"
-  ],
-  "showUnsupportedFiles": false,
-  "showInlineTitle": false,
-  "focusNewTab": false,
-  "newLinkFormat": "shortest",
-  "foldHeading": false,
-  "newFileLocation": "folder",
-  "newFileFolderPath": "Inbox",
-  "showLineNumber": false
+	"accentColor": "#b741b9",
+	"readableLineLength": false,
+	"alwaysUpdateLinks": true,
+	"attachmentFolderPath": "Attachments",
+	"promptDelete": false,
+	"livePreview": true,
+	"defaultViewMode": "source",
+	"pdfExportSettings": {
+		"includeName": true,
+		"pageSize": "Letter",
+		"landscape": false,
+		"margin": "0",
+		"downscalePercent": 100
+	},
+	"showFrontmatter": false,
+	"propertiesInDocument": "hidden",
+	"foldIndent": false,
+	"tabSize": 2,
+	"userIgnoreFilters": ["Development/"],
+	"showUnsupportedFiles": false,
+	"showInlineTitle": false,
+	"focusNewTab": false,
+	"newLinkFormat": "shortest",
+	"foldHeading": false,
+	"newFileLocation": "folder",
+	"newFileFolderPath": "Inbox",
+	"showLineNumber": false
 }

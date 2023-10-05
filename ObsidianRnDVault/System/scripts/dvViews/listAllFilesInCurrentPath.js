@@ -1,3 +1,4 @@
+// await dv.view("System/scripts/dvViews/listAllFilesInCurrentPath")
 let currentFile = dv.current().file;
 let currentFolder = currentFile.folder;
 

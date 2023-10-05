@@ -1,0 +1,123 @@
+{
+  "folderPath": "./System/Storage/",
+  "emotionSections": [
+    {
+      "name": "",
+      "color": "#76de91",
+      "emotions": [
+        "glädjefull",
+        "nöjd",
+        "belåten",
+        "tillfredsställd",
+        "lycklig",
+        "road",
+        "förtjust",
+        "glad",
+        "gladlynt",
+        "salig",
+        "stolt",
+        "triumferande",
+        "optimistisk",
+        "ivrig",
+        "hoppfull",
+        "entusiastisk",
+        "uppspelt",
+        "euforisk",
+        "förtrollad",
+        "kärleksfull",
+        "romantisk",
+        "öm",
+        "passionerad",
+        "attraherad",
+        "sentimental",
+        "medkännande",
+        "fridfull",
+        "lättad"
+      ]
+    },
+    {
+      "name": "",
+      "color": "#f2d05e",
+      "emotions": [
+        "okej",
+        "bra",
+        "uttråkad",
+        "överraskad",
+        "chockad",
+        "bestört",
+        "förvirrad",
+        "desillusionerad",
+        "förbryllad",
+        "förvånad",
+        "förbluffad",
+        "berörd",
+        "rörd"
+      ]
+    },
+    {
+      "name": "",
+      "color": "#f04a1d",
+      "emotions": [
+        "stressad",
+        "arg",
+        "rasande",
+        "hatfull",
+        "fientlig",
+        "upprörd",
+        "frustrerad",
+        "irriterad",
+        "störd",
+        "förargad",
+        "avundsjuk",
+        "svartsjuk",
+        "äcklad",
+        "föraktfull"
+      ]
+    },
+    {
+      "name": "",
+      "color": "#837ff0",
+      "emotions": [
+        "ledsen",
+        "sårad",
+        "plågsam",
+        "deprimerad",
+        "sorgsen",
+        "besviken",
+        "bestört",
+        "missnöjd",
+        "skamlig",
+        "ångerfull",
+        "skyldig",
+        "förbisedd",
+        "isolerad",
+        "ensam",
+        "förtvivlad",
+        "sörjande",
+        "maktlös",
+        "rädd",
+        "skrämd",
+        "hjälplös",
+        "förskräckt",
+        "panikslagen",
+        "hysterisk",
+        "osäker",
+        "underlägsen",
+        "otillräcklig",
+        "nervös",
+        "ängslig",
+        "oroad",
+        "fruktansvärd",
+        "förlägen"
+      ]
+    }
+  ],
+  "moodRatingLabelDict": {
+    "1": "😨",
+    "2": "☹️",
+    "3": "😐",
+    "4": "🙂",
+    "5": "😊"
+  },
+  "template": "- {{ICON}} {{NOTE}}"
+}

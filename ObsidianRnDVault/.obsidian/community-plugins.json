@@ -36,5 +36,7 @@
   "metaedit",
   "obsidian-charts",
   "obsidian-custom-file-extensions-plugin",
-  "obsidian-plantuml"
+  "obsidian-plantuml",
+  "todoist-sync-plugin",
+  "mood-tracker"
 ]

@@ -1,4 +1,10 @@
-# templates
+# Templates
+
+```dataviewjs
+dv.view("System/scripts/dvViews/tableAllFilesInCurrentPath", { File: "file.link",	Templates: "dependsOnTemplate", Scripts: "dependsOnScript", dvViews: "dependsOnDvView" });
+```
+
+## another
 
 ```dataviewjs
 let pages = dv.pages('"System/templates"');
@@ -18,13 +24,23 @@ for (let group of pages.groupBy(b => b.file.folder.replace(/^Templates\//, "")))
     }
 }
 
+//console.log(sortedGroups);
+
 for (let group of sortedGroups) {
     // Split the group key by '/' to check the number of subfolders
     let subfolders = group.key.split('/');
     // Increase the header level for each subfolder
     headerLevel += subfolders.length - 1;
     dv.header(headerLevel, group.key);
-    dv.list(group.rows.file.link); 
+    
+    dv.table(["File", "Templates", "Scripts", "dvView"], group.rows.map(b => [
+    b.file.link,
+    b.dependsOnTemplate ? b.dependsOnTemplate.flat().map(script => script.substring(script.lastIndexOf("/") + 1)) : null,
+    b.dependsOnScript ? b.dependsOnScript.flat().map(script => script.substring(script.lastIndexOf("/") + 1)) : null,
+    b.dependsOnDvView ? b.dependsOnDvView.flat().map(script => script.substring(script.lastIndexOf("/") + 1)) : null
+]));
+    //dv.list(group.rows.file.link); 
     // Reset the header level for the next group
     headerLevel = 1;
 }
+```
