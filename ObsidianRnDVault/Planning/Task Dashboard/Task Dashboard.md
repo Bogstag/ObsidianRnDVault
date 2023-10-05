@@ -15,8 +15,6 @@ dv.el("div", `
 <progress value="${(completedTasks.length/tasks.length)*100}" max="100"></progress>
 <small>${Math.round((completedTasks.length/tasks.length)*100, 0)}% completed (${incompletedTasks.length} tasks remaining)</small>
 `)
-
-
 ```
 
 ```dataviewjs
@@ -57,4 +55,3 @@ group by folder
 
 dv.paragraph(callout('```tasks\n' + done + '\n```', 'done', 'Slutförda denna månaden', '-'));
 ```
-

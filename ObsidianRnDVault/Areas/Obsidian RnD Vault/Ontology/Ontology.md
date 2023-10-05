@@ -1,7 +1,7 @@
 ---
 aliases: []
 date_created: 2023-09-16 02:55:13
-date_modified: 2023-10-01 13:43:31
+date_modified: 2023-10-03 12:14:57
 tags:
   - 
 ---
@@ -9,10 +9,12 @@ tags:
 
 ## Property in use
 
-| Property  | Role w property | Direction | "Target"  |
-| --------- | --------------- |:---------:| ------ |
-| dependsOn | Child           |    ->     | Parent |
-| supports  | Parent          |    ->     | Child  |
+| Property          | Role w property | Direction | "Target" |
+| ----------------- | --------------- |:---------:| -------- |
+| dependsOnSoftware | Child           |    ->     | Parent   |
+| supports          | Parent          |    ->     | Child    |
+| dependsOnScript   | Child           |    ->     | Parent   |
+|                   |                 |           |          |
 
 ### The way of the arrow
 

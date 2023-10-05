@@ -15,6 +15,7 @@ class Plugins {
 	}
 
 	getPluginNames(app) {
+		// TODO:: This should be able to return all data so getPluginMetadata dont have to.
 		let plugins = app.plugins.plugins;
 		let pluginKeys = Object.keys(plugins);
 		let pluginNames = [];
@@ -26,7 +27,9 @@ class Plugins {
 	}
 
 	async getPluginMetadata(app, pluginId) {
-		const utilsClass = await self.require.import("System/scripts/UtilityClasses/ObjectUtils.mjs");
+		const utilsClass = await self.require.import(
+			"System/scripts/UtilityClasses/ObjectUtils.mjs"
+		);
 		const ObjectUtils = utilsClass.default;
 		const utilsInstance = new ObjectUtils();
 

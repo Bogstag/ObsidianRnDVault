@@ -1,10 +1,11 @@
 # plugins
 
 ```dataviewjs
-const {VaultPlugins} = customJS;
-let element = this.container.createEl('nav', {cls: ["tailwind"]});
-let data = VaultPlugins.listInstalledPlugins(app, element);
-console.log(await data);
+// TODO:: Add more to this, like links.
+const {Plugins} = customJS;
+
+let element = this.container.createEl('nav');
+Plugins.listInstalledPlugins(app, element);
 ```
 
 

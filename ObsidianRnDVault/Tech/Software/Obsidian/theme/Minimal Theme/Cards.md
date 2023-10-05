@@ -5,7 +5,7 @@ cssclasses:
 date_created: 2023-10-03 09:12:41
 date_modified: 2023-10-03 09:21:54
 tags:
-  - obsidian
+  - Obsidian
   - minimalTheme
   - cssclasses
 ---

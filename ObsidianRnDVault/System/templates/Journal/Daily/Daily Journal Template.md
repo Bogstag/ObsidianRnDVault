@@ -27,6 +27,7 @@ template: [[<% "System/templates/journal/Daily Journal Template" %>|<% "Daily Jo
 numberOfTasks: 0
 numberOfCompletedTasks: 0
 numberOfNotCompletedTasks: 0
+season: <% tp.user.getSeasonFromDate(tp.date.now("YYYY-MM-DD", 1, date, format)) %>
 <% "---" %>
 # <% tp.date.now("dddd, DD MMMM, YYYY", 0, date, format) %>
 

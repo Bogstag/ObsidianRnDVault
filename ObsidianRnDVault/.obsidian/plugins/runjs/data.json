@@ -1,50 +1,58 @@
 {
-  "autoRefresh": true,
-  "autostarts": [],
-  "commands": {},
-  "ribbonIcons": [],
-  "eventHandlers": [],
-  "scriptsFolder": "System/scripts/RunJS",
-  "logFilePath": "",
-  "logConsole": true,
-  "logNotice": true,
-  "logFile": false,
-  "listviewOpenType": "tab",
-  "listviewSortField": "name",
-  "listviewSortAsc": true,
-  "listviewFilters": {
-    "type": [
-      "script",
-      "module"
-    ],
-    "form": [
-      "codeblock",
-      "file"
-    ]
-  },
-  "listviewCollapse": {
-    "/RunJS/Examples": false,
-    "/Ego": true,
-    "/RunJS/Examples/Daily notes": true,
-    "/RunJS/Examples/Edit": true,
-    "/RunJS/Examples/Event": true,
-    "/RunJS/Examples/RunJS": true,
-    "/RunJS/Examples/Write": true,
-    "/RunJS/Examples/frontmatter": true,
-    "/RunJS/Examples/Obsidian": true,
-    "/RunJS": true,
-    "/RunJS/Examples/Event/code-menu": true,
-    "/RunJS/Examples/Event/file-menu": true,
-    "/RunJS/Examples/Event/editor-menu": true,
-    "/Ego/Test": true,
-    "/Ego/Test/Sonarr": false,
-    "/Ego/Test/Sonarr/API": false,
-    "/Ego/SVG": true,
-    "/Ego/Test/SVG": true,
-    "/Ego/Convert": true,
-    "/Ego/Daily": true,
-    "/Ego/Habit": true,
-    "/Other": true
-  },
-  "favoriteCodes": []
+	"autoRefresh": true,
+	"autostarts": [],
+	"commands": {
+		"command-0": {
+			"name": "System/scripts/RunJS/Ego/Habits/Update",
+			"codeName": "Ego/Habits/Update",
+			"enable": false,
+			"icon": "scroll"
+		}
+	},
+	"ribbonIcons": [],
+	"eventHandlers": [],
+	"scriptsFolder": "System/scripts/RunJS",
+	"logFilePath": "",
+	"logConsole": true,
+	"logNotice": true,
+	"logFile": false,
+	"listviewOpenType": "tab",
+	"listviewSortField": "name",
+	"listviewSortAsc": true,
+	"listviewFilters": {
+		"type": ["script", "module"],
+		"form": ["codeblock", "file"],
+		"favorite": []
+	},
+	"listviewCollapse": {
+		"/Ego": false,
+		"/Ego/Convert": false,
+		"/Ego/Daily": false,
+		"/Ego/Dashboard": false,
+		"/Ego/Dashboard/Sonarr": false,
+		"/Ego/Habit": false,
+		"/Ego/Habits": false,
+		"/Ego/Sonarr": false,
+		"/Ego/SVG": false,
+		"/Ego/Test": false,
+		"/Ego/Test/Sonarr": false,
+		"/Ego/Test/Sonarr/API": false,
+		"/Ego/Test/SVG": false,
+		"/Other": true,
+		"/RunJS": true,
+		"/RunJS/Examples": false,
+		"/RunJS/Examples/Daily notes": true,
+		"/RunJS/Examples/Edit": true,
+		"/RunJS/Examples/Event": true,
+		"/RunJS/Examples/Event/code-menu": true,
+		"/RunJS/Examples/Event/editor-menu": true,
+		"/RunJS/Examples/Event/file-menu": true,
+		"/RunJS/Examples/frontmatter": true,
+		"/RunJS/Examples/Obsidian": true,
+		"/RunJS/Examples/RunJS": true,
+		"/RunJS/Examples/Write": true,
+		"/Test Other": false,
+		"/Test": false
+	},
+	"favoriteCodes": []
 }

@@ -4,7 +4,7 @@ date: 2021-06-26
 date_created: 2023-09-30 17:09:12
 date_modified: 2023-10-02 12:46:47
 tags:
-  - obsidian
+  - Obsidian
   - commands
   - hotkeys
 ---

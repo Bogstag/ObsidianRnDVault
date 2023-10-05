@@ -24,4 +24,5 @@ ObsidianRnDVault/System/typing
 !ObsidianRnDVault/Tags
 !ObsidianRnDVault/Tech
 !ObsidianRnDVault/Work
-
+!**/color-*.json
+**/todoist-token

@@ -1,26 +1,32 @@
-<%*
-	// Folder template for [[plugins]]
-	let title = tp.file.title;
-	if(title.toLowerCase().includes("untitled")){
-		const {Plugins} = customJS;
-		let pluginNames = await Plugins.getPluginNames(app);
-		let selection = await tp.system.suggester(Object.values(pluginNames), Object.keys(pluginNames), true, "Select Plugin");
-		plugin = await Plugins.getPluginMetadata(app, selection)
-		console.log("plugin", plugin);
-		title = plugin.manifest.name;
-		if(title.length == 0){
-			title = `untitled plugin (${tp.date.now("YYYY-MM-DD")})`;
-		}
-	} else {
-		title = await tp.system.prompt("Plugin title", title);
-	}
+<%* 
 	const targetFolder = "Tech/Software/Obsidian/plugins";
-	if (tp.file.folder != targetFolder) { 
-		await tp.file.move('/' + targetFolder + '/' + tp.file.title)
-	}
-	await tp.file.rename(title);
-	const filePath = tp.file.path(true);
-	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
+	const tFolder = app.vault.getAbstractFileByPath(targetFolder);
+	console.log("tp.config1", tp.config);
+	// Get list of installed plugins
+	const { Plugins } = customJS;
+	let pluginNames = await Plugins.getPluginNames(app);
+	console.log("pluginNames", pluginNames);
+	// Ask user to select one
+	const selection = await tp.system.suggester(
+		Object.values(pluginNames),
+		Object.keys(pluginNames),
+		true,
+		"Select Plugin"
+	);
+	console.log("selection", selection);
+	// Get manifesto
+	plugin = await Plugins.getPluginMetadata(app, selection);
+	console.log("plugin", plugin);
+	title = plugin.manifest.name;
+	console.log("title", title);
+	const fullPath = "targetFolder" + "/" + title + ".md";
+	console.log("fullPath", fullPath);
+	await tp.user.ensureNotExisting(tp, fullPath);
+	await tp.user.ensureCorrectFolder(tp, targetFolder);
+	await tp.user.ensureTitle(tp, title);
+	
+	console.log("tp.config2", tp.config);
+
 _%>
 <% "---" %>
 aliases: 
@@ -30,19 +36,17 @@ id: <% plugin.manifest.id %>
 name: <% plugin.manifest.name %>
 fileclass: plugin
 description: <% plugin.manifest.description %>
-dependson: 
-- "[[<% "Obsidian" %>]]"
+dependsOnSoftware: 
+- [[<% "Obsidian" %>]]
 tags: 
 version: <% plugin.manifest.version %>
 isDesktopOnly: <% plugin.manifest.isDesktopOnly %>
-template: [[<% "System/templates/fileclass/Add Obsidian plugin page" %>]]
+template: [[<% tp.config.template_file.name %>]]
 <% "---" %>
 
 # <% plugin.manifest.name %>
 
 <% plugin.manifest.description %>
-
-## Docs
 
 >[!help]- Docs
 >
@@ -52,12 +56,10 @@ template: [[<% "System/templates/fileclass/Add Obsidian plugin page" %>]]
 >profile:obsidian
 >```
 
-## Repo
-
 >[!bug]- Repo
 >
 >```gate  
->https://github.com/Bogstag/ObsidianRnDVault
+><% plugin.manifest.authorUrl %>
 >height:700
 >profile:obsidian
 >```
@@ -65,5 +67,5 @@ template: [[<% "System/templates/fileclass/Add Obsidian plugin page" %>]]
 ## Settings
 
 ```json
-<% plugin.formatedSettings %>
+	<% plugin.formatedSettings %>
 ```

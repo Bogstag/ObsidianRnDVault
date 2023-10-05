@@ -3,7 +3,7 @@ cssclasses: img-grid
 date_created: 2023-10-03 09:09:50
 date_modified: 2023-10-03 09:21:40
 tags:
-  - obsidian
+  - Obsidian
   - minimalTheme
   - cssclasses
 ---

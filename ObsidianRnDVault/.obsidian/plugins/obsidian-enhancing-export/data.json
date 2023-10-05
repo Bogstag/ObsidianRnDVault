@@ -1,65 +1,72 @@
 {
-	"items": [
-		{
-			"name": "Markdown"
-		},
-		{
-			"name": "Markdown (Hugo)"
-		},
-		{
-			"name": "Html"
-		},
-		{
-			"name": "TextBundle"
-		},
-		{
-			"name": "Typst"
-		},
-		{
-			"name": "PDF"
-		},
-		{
-			"name": "Word (.docx)"
-		},
-		{
-			"name": "OpenOffice"
-		},
-		{
-			"name": "RTF"
-		},
-		{
-			"name": "Epub"
-		},
-		{
-			"name": "Latex"
-		},
-		{
-			"name": "Media Wiki"
-		},
-		{
-			"name": "reStructuredText"
-		},
-		{
-			"name": "Textile"
-		},
-		{
-			"name": "OPML"
-		},
-		{
-			"name": "Bibliography"
-		}
-	],
-	"defaultExportDirectoryMode": "Custom",
-	"openExportedFile": false,
-	"env": {},
-	"showExportProgressBar": true,
-	"openExportedFileLocation": false,
-	"lastEditName": "wikilinks word",
-	"customDefaultExportDirectory": {
-		"win32": "D:\\ObsidianRnDVault\\ObsidianRnDVault\\Publish\\Exports"
-	},
-	"lastExportDirectory": {
-		"win32": "D:\\ObsidianRnDVault\\ObsidianRnDVault\\Publish\\Exports"
-	},
-	"lastExportType": "OpenOffice"
+  "items": [
+    {
+      "name": "Markdown"
+    },
+    {
+      "name": "Markdown (Hugo)"
+    },
+    {
+      "name": "Html"
+    },
+    {
+      "name": "TextBundle"
+    },
+    {
+      "name": "Typst"
+    },
+    {
+      "name": "PDF"
+    },
+    {
+      "name": "Word (.docx)"
+    },
+    {
+      "name": "OpenOffice"
+    },
+    {
+      "name": "RTF"
+    },
+    {
+      "name": "Epub"
+    },
+    {
+      "name": "Latex"
+    },
+    {
+      "name": "Media Wiki"
+    },
+    {
+      "name": "reStructuredText"
+    },
+    {
+      "name": "Textile"
+    },
+    {
+      "name": "OPML"
+    },
+    {
+      "name": "Bibliography"
+    },
+    {
+      "name": "wikilinks word",
+      "type": "custom",
+      "command": "-f markdown+wikilinks_title_after_pipe --resource-path=\"${currentDir}\" --resource-path=\"${attachmentFolderPath}\" --lua-filter=\"${luaDir}/markdown.lua\" --metadata title=\"${currentFileName}\" -s -o \"${outputPath}\" -t docx",
+      "targetFileExtensions": ".docx",
+      "openExportedFileLocation": true
+    }
+  ],
+  "defaultExportDirectoryMode": "Custom",
+  "openExportedFile": false,
+  "env": {},
+  "showExportProgressBar": true,
+  "openExportedFileLocation": false,
+  "lastEditName": "wikilinks word",
+  "customDefaultExportDirectory": {
+    "win32": "D:\\ObsidianRnDVault\\ObsidianRnDVault\\Publish\\Exports"
+  },
+  "lastExportDirectory": {
+    "win32": "D:\\ObsidianRnDVault\\ObsidianRnDVault\\Publish\\Exports"
+  },
+  "lastExportType": "OpenOffice"
 }

@@ -9,6 +9,10 @@
 		"todo-tree.filtering.excludeGlobs": [
 			"**/node_modules/*/**",
 			"**/.obsidian/plugins/*/**.js"
-		]
+		],
+		"[markdown]": {
+			"editor.formatOnSave": false,
+			"editor.defaultFormatter": null
+		}
 	}
 }

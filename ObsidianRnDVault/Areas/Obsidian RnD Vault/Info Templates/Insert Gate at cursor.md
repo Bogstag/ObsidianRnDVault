@@ -5,7 +5,7 @@ date_modified: 2023-09-21 23:42:24
 tags: []
 ---
 
-# Add Gate at cursor
+# Insert Gate at cursor
 
 Inserts a Gate (iframe) at cursor.
 Template:: System/templates/components/Add Gate at cursor

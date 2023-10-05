@@ -21,7 +21,6 @@
   "custom-sort",
   "excalibrain",
   "cm-editor-syntax-highlight-obsidian",
-  "supercharged-links-obsidian",
   "modules",
   "obsidian-import-json",
   "obsidian42-brat",
@@ -36,5 +35,6 @@
   "quickadd",
   "metaedit",
   "obsidian-charts",
-  "obsidian-custom-file-extensions-plugin"
+  "obsidian-custom-file-extensions-plugin",
+  "obsidian-plantuml"
 ]

@@ -12,3 +12,4 @@ if (addHeader == true) {
 	dv.header(2, "Table of contents");
 }
 dv.paragraph(toc.join("\n"));
+
