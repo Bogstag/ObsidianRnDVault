@@ -66,7 +66,7 @@ _Paragraph italic text_
 
 ## Tags
 
-Tag: #dashboard #notes
+#journal #notes
 
 ---
 

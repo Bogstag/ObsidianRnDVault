@@ -1,4 +1,5 @@
 <%*
+	// fileclass: template
 	let title = tp.file.title;
 	if(title.toLowerCase().includes("untitled")){
 		title = await tp.system.prompt("Task title");
@@ -19,7 +20,7 @@ _%>
 <% "---" %>
 date_created: <% `${tp.date.now("YYYY-MM-DD")}` %>
 date_modified: <% `${tp.date.now("YYYY-MM-DD")}` %>
-fileclass: taskProject 
+fileclass: project/task
 project: <% `${fileObject.path.split("/")[2]}` %>
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %>
 <% "---" %>

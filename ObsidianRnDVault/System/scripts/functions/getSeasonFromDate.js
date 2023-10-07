@@ -1,4 +1,4 @@
-function getSeasonFromDate(dateString) {
+module.exports = function (dateString) {
 	const d = moment(dateString, "YYYY-MM-DD");
 
 	const seasonArray = [
@@ -25,6 +25,4 @@ function getSeasonFromDate(dateString) {
 		.slice(-1)[0] || { name: "Winter" };
 	//return { date: d.format("YYYY-MM-DD"), season: season.name };
 	return season.name;
-}
-
-module.exports = getSeasonFromDate;
+};

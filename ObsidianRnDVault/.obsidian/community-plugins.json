@@ -38,5 +38,7 @@
   "obsidian-custom-file-extensions-plugin",
   "obsidian-plantuml",
   "todoist-sync-plugin",
-  "mood-tracker"
+  "mood-tracker",
+  "omnisearch",
+  "global-search-and-replace"
 ]

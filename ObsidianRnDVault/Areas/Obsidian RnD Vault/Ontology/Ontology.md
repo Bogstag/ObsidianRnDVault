@@ -2,8 +2,6 @@
 aliases: []
 date_created: 2023-09-16 02:55:13
 date_modified: 2023-10-03 12:14:57
-tags:
-  - 
 ---
 # Ontology mapping
 

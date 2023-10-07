@@ -70,7 +70,12 @@
     "previous": [
       "Before",
       "Prev",
+      "prevDay",
       "Previous",
+      "prevMonth",
+      "prevQuarter",
+      "prevWeek",
+      "prevYear",
       "w",
       "West"
     ],
@@ -79,7 +84,12 @@
       "e",
       "East",
       "n",
-      "Next"
+      "Next",
+      "nextDay",
+      "nextMonth",
+      "nextQuarter",
+      "nextWeek",
+      "nextYear"
     ]
   },
   "inferAllLinksAsFriends": false,
@@ -95,7 +105,7 @@
   "showAttachments": true,
   "showURLNodes": true,
   "showVirtualNodes": true,
-  "showFolderNodes": false,
+  "showFolderNodes": true,
   "showTagNodes": false,
   "showPageNodes": true,
   "showNeighborCount": true,
@@ -226,7 +236,17 @@
     "down": {},
     "dependsOnScript": {},
     "dependsOnDvView": {},
-    "dependsOnTemplate": {}
+    "dependsOnTemplate": {},
+    "nextYear": {},
+    "nextDay": {},
+    "nextWeek": {},
+    "nextQuarter": {},
+    "nextMonth": {},
+    "prevDay": {},
+    "prevMonth": {},
+    "prevQuarter": {},
+    "prevWeek": {},
+    "prevYear": {}
   },
   "navigationHistory": [
     "System/obsidian/plugins/Metadata Menu.md",
@@ -239,7 +259,10 @@
     "Journal/Weekly/2023/2023-v39",
     "Journal/Daily/2023/09/2023-09-28.md",
     "Journal/Daily/2023/10/2023-10-01.md",
-    "Journal/Daily/2023/09/2023-09-30.md"
+    "Journal/Daily/2023/09/2023-09-30.md",
+    "Journal/Daily/2023/10/2023-10-06.md",
+    "folder:System/templates/fileclass",
+    "System/templates/fileclass/Add Obsidian plugin page.md"
   ],
   "allowOntologySuggester": true,
   "ontologySuggesterParentTrigger": "::p",

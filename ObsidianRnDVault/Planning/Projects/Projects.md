@@ -6,8 +6,7 @@ document_type: dashboard
 include_in_navbar: true
 navbar_name: Projects
 tags:
-  - dashboard
-  - projects
+  - dashboard/planning/projects
 ---
 # Projects
 

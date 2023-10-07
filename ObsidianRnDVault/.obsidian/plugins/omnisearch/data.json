@@ -1,12 +1,14 @@
 {
   "useCache": true,
-  "hideExcluded": true,
+  "hideExcluded": false,
   "ignoreDiacritics": true,
-  "indexedFileTypes": [],
+  "indexedFileTypes": [
+    "js,mjs,py,json"
+  ],
   "PDFIndexing": false,
   "imagesIndexing": false,
   "unsupportedFilesIndexing": "default",
-  "splitCamelCase": false,
+  "splitCamelCase": true,
   "openInNewPane": true,
   "vimLikeNavigationShortcut": false,
   "ribbonIcon": true,

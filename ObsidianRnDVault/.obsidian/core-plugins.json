@@ -1,6 +1,5 @@
 [
   "file-explorer",
-  "global-search",
   "switcher",
   "graph",
   "backlink",
@@ -11,7 +10,6 @@
   "page-preview",
   "note-composer",
   "command-palette",
-  "slash-command",
   "editor-status",
   "bookmarks",
   "outline",

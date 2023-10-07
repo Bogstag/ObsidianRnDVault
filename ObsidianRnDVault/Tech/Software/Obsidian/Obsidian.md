@@ -3,7 +3,7 @@ aliases: []
 date_created: 2023-09-16 00:01:40
 date_modified: 2023-09-16 20:04:30
 fileclass: software
-supports: ["[[Tech/Software/Obsidian/plugins/Metadata Menu]]", "[[Tech/Software/Obsidian/plugins/Templater]]"]
+supports: ["[[Tech/Software/Obsidian/plugins/Metadata Menu]]", "[[Tech/Software/Obsidian/plugins/Tasks]]", "[[Tech/Software/Obsidian/plugins/Templater]]"]
 tags: []
 supports_test: 
 ---

@@ -10,7 +10,7 @@
   "globalFileClass": "all",
   "firstDayOfWeek": 1,
   "enableLinks": false,
-  "enableTabHeader": true,
+  "enableTabHeader": false,
   "enableEditor": true,
   "enableBacklinks": false,
   "enableStarred": false,

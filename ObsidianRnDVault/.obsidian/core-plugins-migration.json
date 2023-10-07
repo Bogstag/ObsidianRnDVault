@@ -1,6 +1,6 @@
 {
   "file-explorer": true,
-  "global-search": true,
+  "global-search": false,
   "switcher": true,
   "graph": true,
   "backlink": true,
@@ -11,7 +11,7 @@
   "templates": false,
   "note-composer": true,
   "command-palette": true,
-  "slash-command": true,
+  "slash-command": false,
   "editor-status": true,
   "starred": true,
   "markdown-importer": false,

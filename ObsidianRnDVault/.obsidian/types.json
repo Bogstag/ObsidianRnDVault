@@ -3,7 +3,7 @@
     "aliases": "aliases",
     "cssclasses": "multitext",
     "tags": "tags",
-    "weekEndDate": "text",
-    "weekStartDate": "text"
+    "template": "text",
+    "version": "text"
   }
 }

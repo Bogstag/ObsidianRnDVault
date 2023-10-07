@@ -7,7 +7,8 @@
  */
 
 function tableAllFilesInCurrentPath(args) {
-	console.log("foo is called with args", args);
+	//console.log("tableAllFilesInCurrentPath is called with", args);
+
 	const tableTitles = Object.keys(args);
 	const propertiesToFetch = Object.values(args);
 
@@ -16,19 +17,32 @@ function tableAllFilesInCurrentPath(args) {
 
 	if (currentFolder == "") currentFolder = "/";
 
-	function processPropertyValue(value) {
-		// If the value is an array
-		if (Array.isArray(value)) {
-			return value
-				.flat()
-				.map((script) => script.substring(script.lastIndexOf("/") + 1));
+	function setDisplay(Link) {
+		Link.display = Link.path.substring(Link.path.lastIndexOf("/") + 1);
+		displayEnd = Link.display.substring(Link.display.length - 3);
+		if (displayEnd == ".md") {
+			Link.display = Link.display.substring(0, Link.display.length - 3);
 		}
-		// If the value is an object with a path property
-		else if (value && value.path) {
-			return value.path;
-		}
-		// Otherwise, return the value as-is
+	}
 
+	function processPropertyValue(Link) {
+		if (Link == undefined) {
+			return null;
+		}
+
+		// If the value is an array
+		if (Array.isArray(Link)) {
+			Link.flat().map((Link) => setDisplay(Link));
+			return Link;
+		}
+
+		// If the value is an object with a path property
+		else if (Link && Link.path) {
+			setDisplay(Link);
+			return Link;
+		}
+
+		// Otherwise, return the value as-is
 		return value;
 	}
 
@@ -41,6 +55,7 @@ function tableAllFilesInCurrentPath(args) {
 			const value = property
 				.split(".")
 				.reduce((o, key) => (o && o[key] !== "undefined" ? o[key] : null), b);
+
 			return processPropertyValue(value);
 		});
 	});

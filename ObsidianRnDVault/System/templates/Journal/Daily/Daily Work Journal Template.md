@@ -7,23 +7,23 @@
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 _%>
 <% "---" %>
-After: [[<% tp.date.now(format, 1, date, format) %>]]
-Before: [[<% tp.date.now(format, -1, date, format) %>]]
+nextDay: "<%"["%>[<% tp.date.now(format, 1, date, format) %>]]"
+prevDay: "<%"["%>[<% tp.date.now(format, -1, date, format) %>]]"
 date: <% tp.date.now(format, 0, date, format) %>
 date_created: <% tp.file.creation_date() %>
 date_modified: <% tp.file.creation_date() %>
 dateformat: <% format %>
 dayName: <% tp.date.now("dddd", 0, date, format) %>
-fileclass: daily
+fileclass: journal/daily
 locale: <% locale %>
 Parent:
-- [[<% "Journal/Daily" %>]]
-- [[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>]]
-- [[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>]]
+- "<%"["%>[<% "Journal/Daily" %>]]"
+- "<%"["%>[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>]]"
+- "<%"["%>[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>]]"
 tags:
 - Journal/Daily/<% tp.date.now("YYYY/MM/YYYY-MM-DD", 0, date, format) %>
 - calendar/<% tp.date.now("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
-template: [[<% "System/templates/journal/Daily Work Journal Template" %>|<% "Daily Work Journal Template" %>]]
+template: "<%"["%>[<% "System/templates/journal/Daily/Daily Journal Template" %>]]"
 numberOfTasks: 0
 numberOfCompletedTasks: 0
 numberOfNotCompletedTasks: 0
@@ -32,8 +32,8 @@ season: <% tp.user.getSeasonFromDate(tp.date.now("YYYY-MM-DD", 1, date, format))
 # <% tp.date.now("dddd, DD MMMM, YYYY", 0, date, format) %>
 
 <i data-timeline="<% tp.date.now("DDD", 0, date, format) %>"></i>
-[[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>|<% tp.date.now("YYYY", 0, date, format) %>]] - [[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>|<% tp.date.now("[v]ww", 0, date, format) %>]]
-[[<% tp.date.now(format, -1, date, format) %>| ↶ Igår]] | [[<% tp.date.now(format, 1, date, format) %>| Imorgon ↷]]
+<%"["%>[<% `Journal/Yearly/${tp.date.now("YYYY", 0, date, format)}` %>|<% tp.date.now("YYYY", 0, date, format) %>]] - <%"["%>[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>|<% tp.date.now("[v]ww", 0, date, format) %>]]
+<%"["%>[<% tp.date.now(format, -1, date, format) %>| ↶ Igår]] | <%"["%>[<% tp.date.now(format, 1, date, format) %>| Imorgon ↷]]
 
 ## 🎯
 

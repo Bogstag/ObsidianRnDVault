@@ -37,9 +37,12 @@ class Plugins {
 		if (!plugin) {
 			throw new Error("Plugin not found! Make sure its installed and enabled!");
 		}
-		let settings = plugin.settings;
 
-		const sortedSettings = utilsInstance.sortObjectKeys(settings);
+		let settings = plugin.settings;
+		let sortedSettings = null;
+		if (settings) {
+			sortedSettings = utilsInstance.sortObjectKeys(settings);
+		}
 
 		let metadata = {
 			manifest: plugin.manifest,

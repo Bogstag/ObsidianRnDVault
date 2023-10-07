@@ -1,17 +1,17 @@
 ---
 date_created: 2023-07-07 00:00:00
-date_modified: 2023-10-04 09:01:32
-dateformat: "yyyy-MM-dd"
+date_modified: 2023-10-07 05:05:39
+dateformat: yyyy-MM-dd
 description: Process incoming data and information.
 document_type: inbox
-locale: en
 tags:
-  - inbox
+  - dashboard/inbox
+include_in_navbar: true
 ---
 
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv);
+await Navbar.createNavbar(app, dv, "#dashboard", 2); 
 ```
 
 # Inbox
