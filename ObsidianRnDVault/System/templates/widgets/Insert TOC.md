@@ -1,7 +1,8 @@
-<%*
-	// dependsOnDvView: [[System/scripts/dvViews/toc.js]]
-	// fileclass: template
-_%>
+---
+dependsOnDvView: "[[System/scripts/dvViews/toc.js|toc.js]]"
+fileclass: template
+---
+<%* tR = "" -%>
 ```dataviewjs
-dv.view("toc", {"startingLevel": 2, "addHeader": true})
+dv.view("toc", {"level": 2, "heading": true})
 ```

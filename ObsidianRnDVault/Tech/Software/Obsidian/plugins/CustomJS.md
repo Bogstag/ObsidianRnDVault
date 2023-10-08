@@ -7,11 +7,11 @@ name: CustomJS
 fileclass: plugin
 description: This plugin allows for the loading and reuse of custom javascript files inside your vault.
 dependsOnSoftware: 
-- [[ Obsidian]]
+- "[[ Obsidian]]"
 tags: 
-version: 1.0.14
+version: "1.0.14"
 isDesktopOnly: false
-template: [[Add Obsidian plugin page.md]]
+template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
 ---
 
 # CustomJS

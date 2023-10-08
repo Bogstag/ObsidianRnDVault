@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 	const filePath = tp.file.path(true);
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 	let fileProjectRoot = fileObject.path.split("/")[0] + "/" + fileObject.path.split("/")[1] + "/" + fileObject.path.split("/")[2];

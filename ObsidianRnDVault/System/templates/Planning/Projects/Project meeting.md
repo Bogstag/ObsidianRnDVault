@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 	const filePath = tp.file.path(true);
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 	let meetingFileNamePrefix = `${tp.file.creation_date("YYYY-MM-DD")}`;

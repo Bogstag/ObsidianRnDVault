@@ -1,6 +1,9 @@
+---
+dependsOnScript: "[[System/scripts/functions/makeProgressBar.js|makeProgressBar.js]]"
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
-	// dependsOnScript: [[System/scripts/functions/makeProgressBar.js]]
-	// fileclass: template
 	let fileCreated = tp.file.creation_date("YYYY-MM-DD");
 	let dayNum = moment(fileCreated).dayOfYear();
 	let fileDateNum = moment(fileCreated).format("D");

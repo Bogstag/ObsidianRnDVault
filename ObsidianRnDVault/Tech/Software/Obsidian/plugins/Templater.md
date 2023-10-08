@@ -11,7 +11,7 @@ isDesktopOnly: false
 name: Templater
 tags:
   - 
-template: [[System/templates/fileclass/Add Obsidian plugin page]]
+template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
 version: 1.16.0
 ---
 # Templater
@@ -19,7 +19,7 @@ version: 1.16.0
 Create and use templates
 
 ```dataviewjs
-dv.view("toc", {"startingLevel": 2, "addHeader": true})
+dv.view("toc", {"level": 2, "heading": true})
 ```
 
 ## Docs

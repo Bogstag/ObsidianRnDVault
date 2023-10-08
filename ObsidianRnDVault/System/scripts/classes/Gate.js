@@ -7,7 +7,11 @@ class Gate {
 	async userGenerate(tp) {
 		const clip = await tp.system.clipboard();
 		const url = await tp.system.prompt("Enter URL:", clip, true);
-		const height = await tp.system.prompt("Enter height of frame:", "600", true);
+		const height = await tp.system.prompt(
+			"Enter height of frame:",
+			"600",
+			true
+		);
 		const profile = await tp.system.suggester(
 			["Public", "Private", "Work", "Other"],
 			["public", "private", "work", "other"],

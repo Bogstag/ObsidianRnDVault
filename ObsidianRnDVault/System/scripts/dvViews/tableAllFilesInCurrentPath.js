@@ -46,20 +46,23 @@ function tableAllFilesInCurrentPath(args) {
 		return value;
 	}
 
-	let pages = dv.pages('"' + currentFolder + '"').map((b) => {
-		return propertiesToFetch.map((property) => {
-			if (property == "file.link") {
-				return b.file.link;
-			}
-			// Using reduce to access nested properties
-			const value = property
-				.split(".")
-				.reduce((o, key) => (o && o[key] !== "undefined" ? o[key] : null), b);
+	let pages = dv
+		.pages('"' + currentFolder + '"')
+		.filter((file) => file.file.path != currentFile.path)
+		.map((b) => {
+			return propertiesToFetch.map((property) => {
+				if (property == "file.link") {
+					return b.file.link;
+				}
+				// Using reduce to access nested properties
+				const value = property
+					.split(".")
+					.reduce((o, key) => (o && o[key] !== "undefined" ? o[key] : null), b);
 
-			return processPropertyValue(value);
+				return processPropertyValue(value);
+			});
 		});
-	});
-
+	// TODO:: Would be nice if the table was split and grouped by sub folder.
 	dv.table(tableTitles, pages);
 }
 tableAllFilesInCurrentPath(input);

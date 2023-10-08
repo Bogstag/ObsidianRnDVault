@@ -46,22 +46,27 @@ class Navbar {
 			max_level += 1;
 		}
 
+		let dashboardCategory = "dashboard";
+		if (tag.startsWith("#system/")) {
+			dashboardCategory = "system";
+		}
+
 		// Assuming dv.pages(tag).values is the array you want to sort
 		let pagesArray = dv.pages(tag).values;
 		let pages = pagesArray.sort((a, b) => {
-			const tagA = a.tags.find((t) => t.startsWith("dashboard"));
-			const tagB = b.tags.find((t) => t.startsWith("dashboard"));
+			const tagA = a.tags.find((t) => t.startsWith(dashboardCategory));
+			const tagB = b.tags.find((t) => t.startsWith(dashboardCategory));
 			return tagA.localeCompare(tagB);
 		});
 
 		// Check if there is more than one main dashboard
 		const mainDashboards = pages.filter((page) =>
-			page.tags.includes("dashboard")
+			page.tags.includes(dashboardCategory)
 		);
 
 		// Removing main dashboards from the original pages array
 		const remainingPages = pages.filter(
-			(page) => !page.tags.includes("dashboard")
+			(page) => !page.tags.includes(dashboardCategory)
 		);
 
 		mainDashboards.sort((a, b) => {
@@ -81,7 +86,7 @@ class Navbar {
 		}
 
 		for (let page of remainingPages) {
-			let tags = page.tags.find((t) => t.startsWith("dashboard"));
+			let tags = page.tags.find((t) => t.startsWith(dashboardCategory));
 			let pageLevel;
 			if (tags.includes("/")) {
 				pageLevel = tags.split("/").length;

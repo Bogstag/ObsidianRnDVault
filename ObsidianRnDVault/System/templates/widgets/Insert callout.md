@@ -1,3 +1,7 @@
+---
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
 	// fileclass: template
 	const callouts = {

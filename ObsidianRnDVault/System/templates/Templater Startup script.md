@@ -1,10 +1,10 @@
 ---
+dependsOnPlugin: "[[Tech/Software/Obsidian/plugins/Periodic Notes|Periodic Notes]]"
 fileclass: template
 ---
-
+<%* tR = "" -%>
 <%*
-	locale = "sv"
-	moment.locale(locale)
+	moment.locale("sv")
 
 	// Weekly
 	if (app.plugins.plugins["periodic-notes"].settings.weekly.enabled) {

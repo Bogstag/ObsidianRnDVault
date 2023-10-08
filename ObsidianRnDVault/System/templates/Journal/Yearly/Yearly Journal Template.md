@@ -1,8 +1,8 @@
+---
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
-	// dependsOnTemplate::
-	// dependsOnScript:: 
-	// dependsOnPlugin:: [[Tech/Software/Obsidian/plugins/Year Timeline]]
-	// fileclass: template
 	date = tp.file.title // Starting date
 	format = "YYYY" // Format of starting date
 	locale = "sv"
@@ -11,8 +11,8 @@
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 _%>
 <% "---" %>
-nextYear: <%"["%>[<% tp.date.now(format, 1, date, format) %>]]
-prevYear: <%"["%>[<% tp.date.now(format, -1, date, format) %>]]
+nextYear: "<%"["%>[<% tp.date.now(format, 366, date, format) %>]]"
+prevYear: "<%"["%>[<% tp.date.now(format, -366, date, format) %>]]"
 date: <% tp.date.now(format, 0, date, format) %>
 date_created: <% tp.file.creation_date() %>
 date_modified: <% tp.file.creation_date() %>
@@ -20,21 +20,19 @@ dateformat: <% format %>
 fileclass: journal/yearly
 locale: <% locale %>
 Parent:
-- <%"["%>[<% "Journal/Yearly" %>]]
+- "<%"["%>[<% "Journal/Yearly" %>]]"
 tags:
 - Journal/Yearly/<% tp.date.now(format, 0, date, format) %>
 - calendar/<% tp.date.now(format, 0, date, format) %>
-template: <%"["%>[<% "System/templates/journal/Yeary/Yeary Journal Template" %>|<% "Yeary Journal Template" %>]]
+template: "<%"["%>[<% "System/templates/journal/Yeary/Yeary Journal Template" %>|<% "Yeary Journal Template" %>]]"
 <% "---" %>
-# <% tp.date.now(format, 0, Date, format) %>
+# <% tp.date.now(format, 0, date, format) %>
 
-<i data-timeline="<% tp.date.now("DDD", 0, date, format) %>"></i>
-<%"["%>[<% tp.date.now(format, -1, date, format) %>|↶ Förra året]] | <%"["%>[<% tp.date.now(format, 1, date, format) %>|Nästa år ↷]]
+<%"["%>[<% tp.date.now(format, -366, date, format) %>|↶ Förra året]] | <%"["%>[<% tp.date.now(format, 366, date, format) %>|Nästa år ↷]]
 
 ## 🔃 Reflection
 
 ### 💯 Rating 0 -10
-
 
 ### 📜 Events
 
@@ -45,7 +43,6 @@ template: <%"["%>[<% "System/templates/journal/Yeary/Yeary Journal Template" %>|
 ### 📅 Future plan
 
 ### ✅ Action
-
 
 ### 📚 To read
 

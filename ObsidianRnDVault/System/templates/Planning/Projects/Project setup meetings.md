@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 	await tp.file.rename("All Meetings");
 	const filePath = tp.file.path(true);
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);

@@ -11,3 +11,4 @@ tags:
 const {Navbar} = customJS;
 await Navbar.createNavbar(app, dv, "#dashboard", 2); 
 ```
+

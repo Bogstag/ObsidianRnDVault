@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 let title = await tp.system.prompt("Project name");
 let description = await tp.system.prompt("Description (press enter to skip)");
 title = title.trim();

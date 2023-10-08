@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 	let title = tp.file.title;
 	if(title.toLowerCase().includes("untitled")){
 		title = await tp.system.prompt("Feature title");

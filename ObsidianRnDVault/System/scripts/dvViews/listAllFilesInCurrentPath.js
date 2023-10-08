@@ -18,5 +18,5 @@ const lsFolder = app.vault
 	.sort((a, b) =>
 		a.display.toLowerCase().localeCompare(b.display.toLowerCase(), "sv")
 	);
-
+// TODO:: Would be nice if the list was split and grouped by sub folder.
 dv.list(lsFolder);

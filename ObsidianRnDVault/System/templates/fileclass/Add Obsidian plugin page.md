@@ -1,8 +1,11 @@
+---
+dependsOnScript: "[[System/scripts/classes/Plugins.js|Plugins.js]]"
+dependsOnPlugin:
+  - "[[Tech/Software/Obsidian/plugins/CustomJS|CustomJS]]"
+fileclass: template
+---
+<%* tR = "" -%>
 <%* 
-	// dependsOnTemplate::
-	// dependsOnScript:: [[System/scripts/classes/Plugins.js]]
-	// dependsOnPlugin:: [[Tech/Software/Obsidian/plugins/CustomJS]]
-	// fileclass:: template
 	const targetFolder = "Tech/Software/Obsidian/plugins";
 	
 	// Get list of installed plugins

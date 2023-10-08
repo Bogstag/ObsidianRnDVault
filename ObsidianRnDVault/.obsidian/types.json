@@ -4,6 +4,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "template": "text",
-    "version": "text"
+    "version": "text",
+    "dependsOnPlugin": "multitext"
   }
 }

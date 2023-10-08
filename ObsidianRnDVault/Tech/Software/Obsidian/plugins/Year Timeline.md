@@ -7,11 +7,11 @@ name: Year Timeline
 fileclass: plugin
 description: Create a year timeline in your notes.
 dependsOnSoftware: 
-- [[ Obsidian]]
+- "[[ Obsidian]]"
 tags: 
-version: 1.0.0
+version: "1.0.0"
 isDesktopOnly: false
-template: [[Add Obsidian plugin page.md]]
+template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
 ---
 
 # Year Timeline

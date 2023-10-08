@@ -1,15 +1,17 @@
+---
+dependsOnPlugin: "[[Tech/Software/Obsidian/plugins/Tasks|Tasks]]"
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
-	// dependsOnTemplate::
-	// dependsOnScript:: 
-	// dependsOnPlugin:: [[Tech/Software/Obsidian/plugins/Year Timeline|Year Timeline]], [[Tech/Software/Obsidian/plugins/Tasks|Tasks]]
 	date = tp.file.title
 	format = "gggg-[v]ww"
 	const filePath = tp.file.path(true);
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 _%>
 <% "---" %>
-nextWeek: <%"["%>[<% tp.date.now(format, 7, date, format) %>]]
-prevWeek: <%"["%>[<% tp.date.now(format, -7, tp.file.title, format) %>]]
+nextWeek: "<%"["%>[<% tp.date.now(format, 7, date, format) %>]]"
+prevWeek: "<%"["%>[<% tp.date.now(format, -7, tp.file.title, format) %>]]"
 date_created: <% tp.file.creation_date() %>
 date_modified: <% tp.file.creation_date() %>
 dateformat: <% format %>
@@ -23,8 +25,8 @@ locale: <% locale %>
 <% tp.date.weekday("dddd", 5, date, format) %>: <% tp.date.weekday("YYYY-MM-DD", 5, date, format) %>
 <% tp.date.weekday("dddd", 6, date, format) %>: <% tp.date.weekday("YYYY-MM-DD", 6, date, format) %>
 Parent:
-- <%"["%>[<% "Journal/Weekly" %>]]
-- <%"["%>[<% `Journal/Yearly/${tp.date.now("gggg", 0, date, format)}` %>]]
+- "<%"["%>[<% "Journal/Weekly" %>]]"
+- "<%"["%>[<% `Journal/Yearly/${tp.date.now("gggg", 0, date, format)}` %>]]"
 tags:
 - Journal/Weekly/<% tp.date.now("gggg/gggg-[v]ww", 0, date, format) %>
 - calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
@@ -34,7 +36,7 @@ tags:
 - calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 4, date, format) %>
 - calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 5, date, format) %>
 - calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 6, date, format) %>
-template: <%"["%>[<% "System/templates/journal/Weekly/Weekly Work Journal Template" %>|<% "Weekly Work Journal Template" %>]]
+template: "<%"["%>[<% "System/templates/journal/Weekly/Weekly Work Journal Template" %>|<% "Weekly Work Journal Template" %>]]"
 <% "---" %>
 # <% tp.date.now(format, 0, date, format) %>
 

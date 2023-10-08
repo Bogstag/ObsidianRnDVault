@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 	let title = "All Notes";
 	await tp.file.rename("All Notes");
 	const filePath = tp.file.path(true);

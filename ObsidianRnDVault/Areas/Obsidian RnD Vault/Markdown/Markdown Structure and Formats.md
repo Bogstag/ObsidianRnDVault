@@ -2,12 +2,12 @@
 date_created: 2023-07-11 00:00:00
 date_modified: 2023-10-03 11:21:43
 ---
-
+§
 >[!note] Note
 >This this page is for viewing markdown formatting and is good to have for testing things like Linters. Also its hard to remember everything and this is a good reference.
 
 ```dataviewjs
-dv.view("toc", {"startingLevel": 2, "addHeader": true})
+dv.view("toc", {"level": 2, "heading": true})
 ```
 
 # Header 1

@@ -6,12 +6,12 @@ id: obsidian-tasks-plugin
 name: Tasks
 fileclass: plugin
 description: Task management for Obsidian
-dependsOnSoftware: 
-- "[[Obsidian]]"
+dependsOnSoftware:
+  - "[[Obsidian]]"
 tags: 
-version: "4.9.0"
+version: 4.9.0
 isDesktopOnly: false
-template: "[[Add Obsidian plugin page.md]]"
+template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
 ---
 
 # Tasks

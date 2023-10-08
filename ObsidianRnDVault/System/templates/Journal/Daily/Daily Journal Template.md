@@ -1,3 +1,11 @@
+---
+dependsOnScript: "[[System/scripts/functions/getSeasonFromDate.js|getSeasonFromDate.js]]"
+dependsOnPlugin:
+  - "[[Tech/Software/Obsidian/plugins/Year Timeline|Year Timeline]]"
+  - "[[Tech/Software/Obsidian/plugins/Tasks|Tasks]]"
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
 	date = tp.file.title // Starting date
 	format = "YYYY-MM-DD" // Format of starting date

@@ -3,7 +3,7 @@ aliases:
 date_created: 2023-10-05 06:28:44
 date_modified: 2023-10-05 06:41:03
 dependsOnSoftware:
-- [[Obsidian]]
+- "[[ Obsidian]]"
 description: Formats and styles your notes. It can be used to format YAML tags, aliases, arrays, and metadata; footnotes; headings; spacing; math blocks; regular markdown contents like list, italics, and bold styles; and more with the use of custom rule options as well.
 fileclass: plugin
 id: obsidian-linter
@@ -11,8 +11,8 @@ isDesktopOnly: false
 name: Linter
 tags:
   - 
-template: [[Add Obsidian plugin page.md]]
-version: 1.20.0
+template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+version: "1.20.0"
 ---
 # Linter
 

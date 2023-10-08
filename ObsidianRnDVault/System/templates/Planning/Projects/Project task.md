@@ -1,5 +1,8 @@
+---
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
-	// fileclass: template
 	let title = tp.file.title;
 	if(title.toLowerCase().includes("untitled")){
 		title = await tp.system.prompt("Task title");

@@ -1,3 +1,7 @@
+---
+fileclass: template
+---
+<%* tR = "" -%>
 <%*
 	await tp.file.rename("Tasks");
 	const filePath = tp.file.path(true);

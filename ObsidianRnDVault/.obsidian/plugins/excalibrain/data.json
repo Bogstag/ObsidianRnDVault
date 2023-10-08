@@ -98,7 +98,9 @@
   "renderAlias": true,
   "nodeTitleScript": "",
   "backgroundColor": "#0c3e6aff",
-  "excludeFilepaths": [],
+  "excludeFilepaths": [
+    "Development/"
+  ],
   "autoOpenCentralDocument": true,
   "toggleEmbedTogglesAutoOpen": true,
   "showInferredNodes": true,

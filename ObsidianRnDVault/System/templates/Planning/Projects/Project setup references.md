@@ -1,4 +1,7 @@
-<%*
+---
+fileclass: template
+---
+<%* tR = "" -%><%*
 	let title = "References";
 	await tp.file.rename(title);
 	const filePath = tp.file.path(true);
