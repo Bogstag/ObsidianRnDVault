@@ -1,5 +1,5 @@
 ---
-dependsOnPlugin: "[[Tech/Software/Obsidian/plugins/Tasks|Tasks]]"
+dependsOnPlugin: "[[Tech/Resources/Software/Obsidian/plugins/Tasks|Tasks]]"
 fileclass: template
 ---
 <%* tR = "" -%>

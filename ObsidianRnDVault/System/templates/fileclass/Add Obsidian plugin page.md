@@ -1,7 +1,7 @@
 ---
 dependsOnScript: "[[System/scripts/classes/Plugins.js|Plugins.js]]"
 dependsOnPlugin:
-  - "[[Tech/Software/Obsidian/plugins/CustomJS|CustomJS]]"
+  - "[[Tech/Resources/Software/Obsidian/plugins/CustomJS|CustomJS]]"
 fileclass: template
 ---
 <%* tR = "" -%>

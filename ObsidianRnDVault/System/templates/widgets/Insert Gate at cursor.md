@@ -1,6 +1,6 @@
 ---
 dependsOnScript: "[[System/scripts/classes/Gate.js|Gate.js]]"
-dependsOnPlugin: "[[Tech/Software/Obsidian/plugins/CustomJS|CustomJS]]"
+dependsOnPlugin: "[[Tech/Resources/Software/Obsidian/plugins/CustomJS|CustomJS]]"
 fileclass: template
 ---
 <%* tR = "" -%>

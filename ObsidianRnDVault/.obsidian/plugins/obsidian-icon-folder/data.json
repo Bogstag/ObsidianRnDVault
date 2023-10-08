@@ -1,16 +1,16 @@
 {
   "settings": {
     "migrated": 3,
-    "iconPacksPath": ".obsidian/plugins/obsidian-icon-folder/icons",
+    "iconPacksPath": ".obsidian/icons",
     "fontSize": 20,
     "emojiStyle": "none",
     "iconColor": "#915492",
     "recentlyUsedIcons": [
-      "FasFolder",
-      "FasListCheck",
-      "FasFileExport",
-      "FasVault",
-      "FasDev"
+      "FasPeopleArrows",
+      "FasUserLarge",
+      "FasSun",
+      "FasShareNodes",
+      "FasTerminal"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -20,14 +20,17 @@
       "bottom": 0,
       "left": 0
     },
-    "iconInTabsEnabled": false
+    "iconInTabsEnabled": false,
+    "iconsBackgroundCheckEnabled": false
   },
   "Archive": "FasBoxArchive",
   "Areas": "FasLayerGroup",
   "Areas/Books": "FasBook",
   "Areas/Car": "FasCar",
+  "Areas/Cottage": "FasSun",
+  "Areas/Home": "FasHouseChimneyWindow",
   "Areas/Music": "FasMusic",
-  "Areas/Obsidian RnD Vault": "FasVault",
+  "Areas/People": "FasUserLarge",
   "Attachments": "FasPaperclip",
   "Attachments/Audio": "FasVolumeHigh",
   "Attachments/Canvas": "FasSquareFull",
@@ -48,17 +51,21 @@
   "Personal/Health": "FasHandHoldingHeart",
   "Personal/Lessons": "FasBookOpenReader",
   "Personal/Milestones": "FasAward",
+  "Personal/Relationships": "FasPeopleArrows",
   "Planning": "FasCalendarCheck",
   "Planning/Projects": "FasFolder",
+  "Planning/Task Dashboard": "FasListCheck",
   "Publish": "FasPaperPlane",
   "Publish/Exports": "FasFileExport",
   "System": "FasGear",
   "Tags": "FasTags",
   "Tech": "FasServer",
-  "Tech/Programming": "FasCode",
-  "Tech/Software": "FasDesktop",
+  "Tech/Config": "FasTerminal",
+  "Tech/Config/Shared": "FasShareNodes",
+  "Tech/Config/Shared/RnD Vault": "FasVault",
+  "Tech/Resources": "FasDatabase",
+  "Tech/Resources/Programming": "FasCode",
+  "Tech/Resources/Software": "FasDesktop",
   "Work": "FasBriefcase",
-  "Work/Meetings": "FasUsers",
-  "Planning/Task Dashboard": "FasListCheck",
-  "Areas/Home": "FasHouseChimneyWindow"
+  "Work/Meetings": "FasUsers"
 }

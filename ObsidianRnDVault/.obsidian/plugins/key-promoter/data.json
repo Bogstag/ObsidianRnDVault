@@ -1,0 +1,17 @@
+{
+  "showUnassigned": false,
+  "showAssigned": true,
+  "threshold": 2,
+  "notificationTimeout": 10,
+  "template": "{{commandId}} - {{commandName}} - {{hotkey}}",
+  "descriptionOfActions": false,
+  "mouseStatistics": {
+    "workspace:undo-close-pane": 1,
+    "workspace:close": 1,
+    "workspace:close-window": 1,
+    "workspace:close-others": 1,
+    "workspace:close-tab-group": 1,
+    "workspace:close-others-tab-group": 1
+  },
+  "keyboardStatistics": {}
+}

@@ -1,6 +1,10 @@
 body.theme-dark.css-settings-manager {
-	--icon-color: #B668B0;
-	--icon-color-hover: #E787E0;
+	--icon-color: #b668b0;
+	--icon-color-hover: #e787e0;
 	--icon-color-active: #691863;
-	--icon-color-focused: #8A3183;
+	--icon-color-focused: #8a3183;
+}
+
+.obsidian .appearance {
+	accentcolor: #b741b9;
 }

@@ -56,6 +56,14 @@
     }
   ],
   "editor:toggle-bold": [],
+  "obsidian-tasks-plugin:edit-task": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "T"
+    }
+  ],
   "editor:swap-line-down": [
     {
       "modifiers": [

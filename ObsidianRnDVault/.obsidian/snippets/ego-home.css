@@ -4,3 +4,7 @@ body.theme-dark.css-settings-manager {
 	--icon-color-active: #8e4383;
 	--icon-color-focused: #87297;
 }
+
+.obsidian .appearance {
+	accentcolor: #7ec2d3;
+}

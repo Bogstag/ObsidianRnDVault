@@ -1,11 +1,7 @@
 tags
 ObsidianRnDVault/*
 !ObsidianRnDVault/.obsidian
-ObsidianRnDVault/.obsidian/plugins/*/**
-!ObsidianRnDVault/.obsidian/plugins/*/data.json
-!ObsidianRnDVault/.obsidian/plugins/*/manifest.json
-!ObsidianRnDVault/.obsidian/plugins/obsidian-icon-folder/icons/*/
-ObsidianRnDVault/.obsidian/plugins/obsidian-icon-folder/icons/*.zip
+ObsidianRnDVault/.obsidian/todoist-token
 ObsidianRnDVault/.trash
 !ObsidianRnDVault/Archive
 !ObsidianRnDVault/Areas
@@ -25,5 +21,9 @@ ObsidianRnDVault/System/typing
 !ObsidianRnDVault/Tags
 !ObsidianRnDVault/Tech
 !ObsidianRnDVault/Work
-!**/color-*.json
-**/todoist-token
+
+# Never remove
+# Never forget
+**/*-token*
+**/*secrets*
+# I will hunt you down
