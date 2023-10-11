@@ -1,5 +1,5 @@
 ---
-include_in_navbar: true
+include_in_navbar: false
 tags:
   - dashboard/work
 ---
@@ -8,5 +8,5 @@ tags:
 
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv, "#dashboard", 2); 
+await Navbar.createNavbar(app, dv, "#dashboard", 0,1); 
 ```

@@ -8,10 +8,30 @@
   "mouseStatistics": {
     "workspace:undo-close-pane": 1,
     "workspace:close": 1,
-    "workspace:close-window": 1,
+    "workspace:close-window": 2,
     "workspace:close-others": 1,
     "workspace:close-tab-group": 1,
-    "workspace:close-others-tab-group": 1
+    "workspace:close-others-tab-group": 1,
+    "editor:toggle-source": 410,
+    "workspace:edit-file-title": 7,
+    "editor:rename-heading": 7,
+    "app:go-back": 30,
+    "app:go-forward": 5,
+    "metadata-menu:open_fileclass_view": 1,
+    "markdown:toggle-preview": 8,
+    "note-composer:split-file": 1,
+    "obsidian-excalidraw-plugin:import-svg": 3,
+    "obsidian-excalidraw-plugin:save": 2,
+    "obsidian-excalidraw-plugin:excalidraw-disable-autosave": 2,
+    "obsidian42-brat:BRAT-disablePlugin": 2,
+    "tag-pane:open": 3,
+    "omnisearch:show-modal": 1,
+    "omnisearch:show-modal-infile": 1,
+    "obsidian-tasks-plugin:edit-task": 3,
+    "obsidian-tasks-plugin:toggle-done": 3
   },
-  "keyboardStatistics": {}
+  "keyboardStatistics": {
+    "editor:toggle-source": 407,
+    "metadata-menu:open_fileclass_view": 1
+  }
 }

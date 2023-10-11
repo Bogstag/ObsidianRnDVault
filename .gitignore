@@ -10,6 +10,9 @@ ObsidianRnDVault/Development
 !ObsidianRnDVault/Home
 !ObsidianRnDVault/Inbox
 !ObsidianRnDVault/Journal
+ObsidianRnDVault/Journal/Daily/*
+ObsidianRnDVault/Journal/Weekly/*
+ObsidianRnDVault/Journal/Yearly/*
 !ObsidianRnDVault/Personal
 !ObsidianRnDVault/Planning
 !ObsidianRnDVault/Publish

@@ -57,7 +57,11 @@ function tableAllFilesInCurrentPath(args) {
 				// Using reduce to access nested properties
 				const value = property
 					.split(".")
-					.reduce((o, key) => (o && o[key] !== "undefined" ? o[key] : null), b);
+					.reduce(
+						(o, key) =>
+							o && o[key] !== "undefined" ? o[key] : null,
+						b,
+					);
 
 				return processPropertyValue(value);
 			});

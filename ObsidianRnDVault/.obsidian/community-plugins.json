@@ -4,7 +4,6 @@
   "cm-editor-syntax-highlight-obsidian",
   "cmdr",
   "custom-sort",
-  "customjs",
   "dataview",
   "excalibrain",
   "folder-note-core",
@@ -13,7 +12,6 @@
   "ics",
   "metadata-menu",
   "metaedit",
-  "modules",
   "mood-tracker",
   "mysnippets-plugin",
   "obsidian-charts",
@@ -27,8 +25,6 @@
   "obsidian-minimal-settings",
   "obsidian-plantuml",
   "obsidian-style-settings",
-  "obsidian-tagfolder",
-  "obsidian-tasks-plugin",
   "obsidian-view-mode-by-frontmatter",
   "obsidian-year-timeline",
   "obsidian42-brat",
@@ -42,5 +38,9 @@
   "templater-obsidian",
   "todoist-sync-plugin",
   "wikidata-importer",
-  "key-promoter"
+  "tags-overview",
+  "tag-page-md",
+  "waypoint",
+  "obsidian-tasks-plugin",
+  "customjs"
 ]

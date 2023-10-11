@@ -15,7 +15,7 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "Tech/Software/Obsidian/plugins",
+      "folder": "Tech/Resources/Software/Obsidian/plugins",
       "template": "System/templates/fileclass/Add Obsidian plugin page.md"
     },
     {

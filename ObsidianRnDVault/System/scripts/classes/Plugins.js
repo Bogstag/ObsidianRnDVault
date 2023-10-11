@@ -28,7 +28,7 @@ class Plugins {
 
 	async getPluginMetadata(app, pluginId) {
 		const utilsClass = await self.require.import(
-			"System/scripts/UtilityClasses/ObjectUtils.mjs"
+			"System/scripts/Utils/ObjectUtils.mjs"
 		);
 		const ObjectUtils = utilsClass.default;
 		const utilsInstance = new ObjectUtils();

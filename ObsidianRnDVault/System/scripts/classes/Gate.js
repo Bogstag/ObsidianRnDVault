@@ -10,13 +10,13 @@ class Gate {
 		const height = await tp.system.prompt(
 			"Enter height of frame:",
 			"600",
-			true
+			true,
 		);
 		const profile = await tp.system.suggester(
 			["Public", "Private", "Work", "Other"],
 			["public", "private", "work", "other"],
 			true,
-			"Select profile:"
+			"Select profile:",
 		);
 
 		let content = "```gate" + "\n";

@@ -19,7 +19,7 @@
   "userIgnoreFilters": [
     "Development/"
   ],
-  "showUnsupportedFiles": true,
+  "showUnsupportedFiles": false,
   "showInlineTitle": false,
   "focusNewTab": false,
   "newLinkFormat": "absolute",

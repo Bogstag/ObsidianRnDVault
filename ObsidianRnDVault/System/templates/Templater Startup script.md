@@ -1,9 +1,10 @@
 ---
-dependsOnPlugin: "[[Tech/Resources/Software/Obsidian/plugins/Periodic Notes|Periodic Notes]]"
+dependsOnPlugin: "[[Tech/Software/Client/Obsidian/plugins/Periodic Notes|Periodic Notes]]"
 fileclass: template
 ---
 <%* tR = "" -%>
 <%*
+	
 	moment.locale("sv")
 
 	// Weekly

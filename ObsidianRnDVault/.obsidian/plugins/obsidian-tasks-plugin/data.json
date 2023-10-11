@@ -3,7 +3,7 @@
   "globalFilter": "",
   "removeGlobalFilter": false,
   "taskFormat": "tasksPluginEmoji",
-  "setCreatedDate": false,
+  "setCreatedDate": true,
   "setDoneDate": true,
   "autoSuggestInEditor": true,
   "autoSuggestMinMatch": 0,
@@ -11,7 +11,8 @@
   "provideAccessKeys": true,
   "useFilenameAsScheduledDate": true,
   "filenameAsDateFolders": [
-    "Journal/Daily"
+    "Journal/Daily",
+    "Journal/Weekly"
   ],
   "recurrenceOnNextLine": false,
   "statusSettings": {

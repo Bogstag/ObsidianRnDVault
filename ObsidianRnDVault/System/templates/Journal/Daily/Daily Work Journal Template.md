@@ -1,11 +1,11 @@
 ---
 dependsOnScript: "[[System/scripts/functions/getSeasonFromDate.js|getSeasonFromDate.js]]"
 dependsOnPlugin:
-  - "[[Tech/Resources/Software/Obsidian/plugins/Year Timeline|Year Timeline]]"
-  - "[[Tech/Resources/Software/Obsidian/plugins/Tasks|Tasks]]"
-  - "[[Tech/Resources/Software/Obsidian/plugins/Jira Issue|Jira Issue]]"
-  - "[[Tech/Resources/Software/Obsidian/plugins/ICS|ICS]]"
-  - "[[Tech/Resources/Software/Obsidian/plugins/Open Gate|Open Gate]]"
+  - "[[Tech/Software/Client/Obsidian/plugins/Year Timeline|Year Timeline]]"
+  - "[[Tech/Software/Client/Obsidian/plugins/Tasks|Tasks]]"
+  - "[[Tech/Software/Client/Obsidian/plugins/Jira Issue|Jira Issue]]"
+  - "[[Tech/Software/Client/Obsidian/plugins/ICS|ICS]]"
+  - "[[Tech/Software/Client/Obsidian/plugins/Open Gate|Open Gate]]"
 fileclass: template
 ---
 <%* tR = "" -%>
