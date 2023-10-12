@@ -1,0 +1,13 @@
+{
+	"minimal-style@@active-line-on": true,
+	"minimal-style@@color-green@@dark": "#116A3E",
+	"minimal-style@@embed-strict": true,
+	"minimal-style@@frame-background@@dark": "#116A3E",
+	"minimal-style@@frame-icon-color@@dark": "#E0E0E0",
+	"minimal-style@@icon-color@@dark": "#116A3E",
+	"minimal-style@@minimal-tab-text-color@@dark": "#CCCBCB",
+	"minimal-style@@sidebar-tabs-style": "sidebar-tabs-index",
+	"minimal-style@@titlebar-text-color-focused@@dark": "#FFFFFF",
+	"minimal-style@@titlebar-text-color@@dark": "#9B9B9B",
+	"minimal-style@@ui1@@dark": "#116A3E54"
+}

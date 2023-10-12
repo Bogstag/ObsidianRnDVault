@@ -1,11 +1,9 @@
 {
-  "minimal-style@@icon-color@@dark": "#B668B0",
-  "minimal-style@@icon-color-hover@@dark": "#E787E0",
-  "minimal-style@@icon-color-active@@dark": "#691863",
-  "minimal-style@@icon-color-focused@@dark": "#8A3183",
-  "minimal-style@@icon-muted": 0.5,
-  "minimal-style@@sidebar-lines-off": false,
-  "minimal-style@@sidebar-tabs-style": "sidebar-tabs-index",
-  "minimal-style@@embed-strict": true,
-  "minimal-style@@active-line-on": true
+	"minimal-style@@active-line-on": true,
+	"minimal-style@@embed-strict": true,
+	"minimal-style@@icon-color-active@@dark": "#691863",
+	"minimal-style@@icon-color-focused@@dark": "#8A3183",
+	"minimal-style@@icon-color-hover@@dark": "#E787E0",
+	"minimal-style@@icon-color@@dark": "#B668B0",
+	"minimal-style@@sidebar-tabs-style": "sidebar-tabs-index"
 }
