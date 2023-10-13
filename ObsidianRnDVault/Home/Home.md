@@ -9,10 +9,11 @@ tags:
   - dashboard
 ---
 # Dashboard
-
+TODO:: Finish this
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv, "#dashboard", 2); 
+//await Navbar.createNavbar(app, dv, "#dashboard", 0, 1);
+await Navbar.getDashboard(dv, "#dashboard", 	false, 0, 1);
 ```
 
 >[!multi-column]

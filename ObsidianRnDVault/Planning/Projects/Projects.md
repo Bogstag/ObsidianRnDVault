@@ -1,18 +1,18 @@
 ---
 date_created: 2023-10-01 21:20:49
-date_modified: 2023-10-01 21:35:39
+date_modified: 2023-10-11 08:43:17
 description: Repository of projects.
 document_type: dashboard
 include_in_navbar: true
 navbar_name: Projects
 tags:
-  - dashboard/planning/projects
+  - dashboard/planning
 ---
 # Projects
 
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv); 
+await Navbar.createNavbar(app, dv, "#dashboard/planning", 1,4); 
 ```
 
 List of all current and past projects
@@ -25,7 +25,7 @@ templater true
 class tailwind-button-white
 ```
 
-## Current projects
+## Current Projects
 
 ```dataviewjs
 for (let group of dv.pages('"Planning/Projects" and #dashboard and !#projects').groupBy(p => p.projects)) {
@@ -44,7 +44,7 @@ for (let group of dv.pages('"Planning/Projects" and #dashboard and !#projects').
 }
 ```
 
-## Past projects
+## Past Projects
 
 ```dataviewjs
 for (let group of dv.pages('"Planning/Projects" and #dashboard and !#projects').groupBy(p => p.projects)) {

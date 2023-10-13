@@ -1,0 +1,49 @@
+## This is a directory/file filter template for WinMerge
+name: ObsidianSyncFilter
+desc: WinMerge sync fiter for my obsidian vaults.
+def: include
+
+## Filters for filenames begin with f:
+## Filters for directories begin with d:
+## To exclude some of the files that match the f: pattern, specify f!:
+## To exclude some of the folders that match the d: pattern, specify d!:
+## (Inline comments begin with "##" and extend to the end of the line)
+## Rules are in regular ezpression. ^=Start, $=End
+## Escape with \, that is why path has \\
+
+## Filter for files
+f: ^\d\d\d\d\.md$
+f: ^color-home.json$ #wrk
+f: ^color-rnd.json$ #wrk
+f: ^ego-home.*$ #wrk
+f: ^ego-rnd.*$ #wrk
+f: ^main.js$
+f: ^manifest.json$
+f: ^styles.css$
+
+## Filter for directory
+## d: \\Journal\\Yearly\\\d\d\d\d
+## d: ^\\Attachments\\Audio$
+## d: ^\\Attachments\\Images$
+## d: ^\\Attachments\\PDFs$
+d!: ^\\Areas\\People$
+d: ^\\Areas\\*\\$
+d: ^\\Attachments\\Excalidraw\\excalidraw$
+d: ^\\Development$
+d: ^\\Journal\\Daily\\\d\d\d\d$
+d: ^\\Journal\\Monthly\\\d\d\d\d$
+d: ^\\Journal\\Quarterly\\\d\d\d\d$
+d: ^\\Journal\\Weekly\\\d\d\d\d$
+d: ^\\Personal$
+d: ^\\Planning\\Projects\\*\\$
+d: ^\\System\\scripts\\work$
+d: ^\\System\\templates\\work$
+d: ^\\System\\work$
+d: ^\\\.git$
+d: ^\\\.obsidian\\plugins\\google-keep-import$
+d: ^\\\.obsidian\\plugins\\mood-tracker$
+d: ^\\\.obsidian\\plugins\\obsidian42-brat$
+d: ^\\\.obsidian\\plugins\\todoist-sync-plugin$
+d: ^\\\.obsidian\\plugins\\wikidata-importer$
+d: ^\\\.obsidian\\themes$
+d: ^\\\.trash$

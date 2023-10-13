@@ -27,12 +27,11 @@ class Navbar {
 	 * This method fetches all pages that match a given tag and includes them in a navigation bar.
 	 * @param {Object} app - The Obsidian app instance.
 	 * @param {Object} dv - The DataView instance.
-	 * @param
 	 * @param {string} query - The query to filter tags by.
-	 * @param
+	 * @param {boolean} isFolder - If it is a tag or folder search.
 	 * @param {number} minLevel - The minimum level of tag hierarchy to consider.
 	 * @param {number} maxLevel - The maximum level of tag hierarchy to consider.
-	 * @param
+	 * @param {Object} notes - Pagelist with filtred notes to process
 	 * @return {Promise<void>} - A promise that resolves when the navigation bar is created.
 	 */
 	createNavbarByTag(app, dv, query, isFolder, minLevel, maxLevel, notes) {

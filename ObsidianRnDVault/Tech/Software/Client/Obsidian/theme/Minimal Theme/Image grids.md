@@ -9,5 +9,9 @@ tags:
 ---
 # Image grids
 
-![[example-image-01.png]]
-![[example-image-02.png]]
+![[example-image-01.png|200]]
+![[example-image-02.png|200]]
+![[example-image-01.png|200]]
+![[example-image-02.png|200]]
+![[example-image-01.png|200]]
+![[example-image-02.png|200]]
