@@ -12,36 +12,29 @@ def: include
 ## Escape with \, that is why path has \\
 
 ## Filter for files
+f: ^.*-(?:wrk|rnd|home)\..*$
 f: ^\d\d\d\d\.md$
-f: ^color-home.json$ #wrk
-f: ^color-rnd.json$ #wrk
-f: ^ego-home.*$ #wrk
-f: ^ego-rnd.*$ #wrk
-f: ^main.js$
-f: ^manifest.json$
-f: ^styles.css$
+f: ^main\.js$
+f: ^manifest\.json$
+f: ^styles\.css$
 
 ## Filter for directory
-## d: \\Journal\\Yearly\\\d\d\d\d
-## d: ^\\Attachments\\Audio$
-## d: ^\\Attachments\\Images$
-## d: ^\\Attachments\\PDFs$
-d!: ^\\Areas\\People$
+d: .*-(?:wrk|rnd|home)$
 d: ^*\\work\\*$
-d: ^\\Areas\\*\\$
+d: ^\\\.git$
+d: ^\\\.obsidian\\themes$
+d: ^\\\.trash$
+d: ^\\Areas\\.*$
+d: ^\\Attachments\\Audio$
+d: ^\\Attachments\\Canvas$
 d: ^\\Attachments\\Excalidraw\\excalidraw$
-d: ^\\Development$
+d: ^\\Attachments\\Images$
+d: ^\\Attachments\\PDFs$
 d: ^\\Journal\\Daily\\\d\d\d\d$
 d: ^\\Journal\\Monthly\\\d\d\d\d$
 d: ^\\Journal\\Quarterly\\\d\d\d\d$
 d: ^\\Journal\\Weekly\\\d\d\d\d$
-d: ^\\Personal$
 d: ^\\Planning\\Projects\\*\\$
-d: ^\\\.git$
-d: ^\\\.obsidian\\plugins\\google-keep-import$
-d: ^\\\.obsidian\\plugins\\mood-tracker$
-d: ^\\\.obsidian\\plugins\\obsidian42-brat$
-d: ^\\\.obsidian\\plugins\\todoist-sync-plugin$
-d: ^\\\.obsidian\\plugins\\wikidata-importer$
-d: ^\\\.obsidian\\themes$
-d: ^\\\.trash$
+d: ^\\System\\scripts\\work$
+d: ^\\System\\templates\\work$
+d: ^\\System\\work$
