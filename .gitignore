@@ -15,18 +15,28 @@ ObsidianRnDVault/Journal/Weekly/*
 ObsidianRnDVault/Journal/Yearly/*
 !ObsidianRnDVault/Personal
 !ObsidianRnDVault/Planning
+ObsidianRnDVault/Planning/Todoist.md
 !ObsidianRnDVault/Publish
 !ObsidianRnDVault/System
 ObsidianRnDVault/System/fileclass
 ObsidianRnDVault/System/scripts/secrets
 ObsidianRnDVault/System/storage/excalibrain.md
+ObsidianRnDVault/System/storage/mood-tracker-data.json
 ObsidianRnDVault/System/typing
 !ObsidianRnDVault/Tags
-!ObsidianRnDVault/Tech
+!ObsidianRnDVault/Shared Tech
+ObsidianRnDVault/Tech
 !ObsidianRnDVault/Work
+
+# Test files should not be synced
+**-work**
+**-rnd**
+**-home**
 
 # Never remove
 # Never forget
 **/*-token*
 **/*secrets*
 # I will hunt you down
+
+
