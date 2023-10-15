@@ -1,4 +1,4 @@
-const SvgProgressBar = await this.require.import(
+const SvgProgressBar = await require.import(
 	"System/scripts/functions/SvgProgressBar.js",
 );
 const svgGenerator = new SvgProgressBar();

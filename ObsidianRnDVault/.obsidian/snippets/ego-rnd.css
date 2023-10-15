@@ -7,4 +7,10 @@ body.theme-dark.css-settings-manager {
 
 .obsidian .appearance {
 	accent-color: #b741b9;
+
+}
+
+.obsidian .dracula .appearance {
+	accent-color: #9D67C1;
+
 }

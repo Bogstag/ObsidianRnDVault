@@ -11,11 +11,11 @@ tags:
 ---
 # Templates
 
+
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv, "#system/dashboard", 2); 
+await Navbar.getDashboard(dv, "#system/dashboard", 	false, 0, 1);
 ```
-
 List dependencys with exeptions of the most obvious like Templater, Dataview and Obsidian.
 
 ```dataviewjs

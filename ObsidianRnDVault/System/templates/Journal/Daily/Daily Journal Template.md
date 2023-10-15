@@ -30,7 +30,7 @@ Parent:
 - "<%"["%>[<% `Journal/Weekly/${tp.date.now("gggg/gggg-[v]ww", 0, date, format)}` %>]]"
 tags:
 - Journal/Daily/<% tp.date.now("YYYY/MM/YYYY-MM-DD", 0, date, format) %>
-- calendar/<% tp.date.now("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
+- Calendar/<% tp.date.now("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
 template: "<%"["%>[<% "System/templates/journal/Daily/Daily Journal Template" %>]]"
 numberOfTasks: 0
 numberOfCompletedTasks: 0

@@ -23,7 +23,7 @@ Parent:
 - "<%"["%>[<% "Journal/Yearly" %>]]"
 tags:
 - Journal/Yearly/<% tp.date.now(format, 0, date, format) %>
-- calendar/<% tp.date.now(format, 0, date, format) %>
+- Calendar/<% tp.date.now(format, 0, date, format) %>
 template: "<%"["%>[<% "System/templates/journal/Yeary/Yeary Journal Template" %>|<% "Yeary Journal Template" %>]]"
 <% "---" %>
 # <% tp.date.now(format, 0, date, format) %>

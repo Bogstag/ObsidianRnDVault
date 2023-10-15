@@ -1,5 +1,7 @@
 # Daily
 
+
 ```dataviewjs
-dv.view('toc', { style: '-', level: 2, heading: false })
+const {Navbar} = customJS;
+await Navbar.getDashboard(dv,'"Journal"', true, 1, 4); 
 ```

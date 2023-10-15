@@ -1,0 +1,137 @@
+/* Coloured Folders
+a CSS snippet by Lithou
+
+This will allow the colouring of the top level folders into sections that "drop down" when opened. 
+This is currently set to be the same colour regardless of theme, but you can change that by copy/pasting the colors from the root section into light/dark theme then changing them according to preference.
+The colours are rainbow coloured and 16 in number by default. They are shades such that white/lightgrey text shows up the best. Some have a bit let contrast (the lighter blue and the yellow) but should still be visible. Again, change them however you would like. 
+*/
+:root{
+    /* folder colours */
+    --Fold1: #f39b9b;
+    --Fold2: #f0ae59;
+    --Fold3: #f1ca5d;
+    --Fold4: #9dcd78;
+    --Fold5: #8ab6e2;
+    --Fold6: #aaa5db;
+    --Fold7: #d399cf;
+    --Fold8: #cda485;
+    --Fold9: #b9c0c7;
+    --FoldA: #f0aaaa;
+    --FoldB: #f1b86f;
+    --FoldC: #7acc93;
+    --FoldD: #87c9d9;
+    --FoldE: #96abde;
+    --FoldF: #eb9fc9;
+    --FoldText: #000000;
+}
+
+/* Set up explorer container margins */
+.nav-files-container{margin: 0px 5px;}
+
+
+/* Top Level Folder Titles */
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title{
+    color: var(--FoldText);
+    padding-left: 20px;
+    margin-top: 5px; /* space between top level sections */
+}
+
+/* active file increase font size and removes normal highlight marker */
+.nav-file-title.is-active { 
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Folder Background Colors */
+
+.nav-folder-children .nav-folder .nav-folder-title {
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.nav-folder-children .nav-folder:nth-child(9n+2) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+2) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+2) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+2) .nav-folder-title {
+    background-color: var(--color-red, var(--Fold1));
+}
+.nav-folder-children .nav-folder:nth-child(9n+3) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+3) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+3) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+3) .nav-folder-title {
+    background-color: var(--color-orange, var(--Fold2));
+}
+.nav-folder-children .nav-folder:nth-child(9n+4) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+4) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+4) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+4) .nav-folder-title {
+    background-color: var(--color-yellow, var(--Fold3));
+}
+.nav-folder-children .nav-folder:nth-child(9n+5) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+5) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+5) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+5) .nav-folder-title {
+    background-color: var(--color-green, var(--Fold4));
+}
+.nav-folder-children .nav-folder:nth-child(9n+6) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+6) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+6) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+6) .nav-folder-title {
+    background-color: var(--color-cyan, var(--Fold5));
+}
+.nav-folder-children .nav-folder:nth-child(9n+7) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+7) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+7) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+7) .nav-folder-title {
+    background-color: var(--color-blue, var(--Fold6));
+}
+.nav-folder-children .nav-folder:nth-child(9n+8) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+8) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+8) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+8) .nav-folder-title {
+    background-color: var(--color-purple, var(--Fold7));
+}
+.nav-folder-children .nav-folder:nth-child(9n+9) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+9) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+9) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+9) .nav-folder-title {
+    background-color: var(--color-pink, var(--Fold8));
+}
+.nav-folder-children .nav-folder:nth-child(9n+10) .nav-folder-title,
+.nav-folder-children .nav-folder .nav-folder:nth-child(9n+10) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+10) .nav-folder-title,
+.nav-folder-children .nav-folder-children .nav-folder-children .nav-folder .nav-folder:nth-child(9n+10) .nav-folder-title {
+    background-color: var(--Fold9);
+}
+
+/*----file explorer smaller fonts & line height----*/
+.nav-file-title,
+.nav-folder-title {
+  cursor: pointer;
+  position: relative;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  border-radius: 0px;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}
+
+.nav-file-title {
+    border-radius: var(--radius-s);
+}
+
+.nav-folder-title {
+  color: var(--text-normal);
+}
+
+/*rename*/
+.nav-file-title-content.is-being-renamed,
+.nav-folder-title-content.is-being-renamed {
+  cursor: text;
+  border-color: transparent;
+  background-color: white;
+  color: black;
+}

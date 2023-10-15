@@ -5,6 +5,7 @@
     "tags": "tags",
     "template": "text",
     "version": "text",
-    "dependsOnPlugin": "multitext"
+    "dependsOnPlugin": "multitext",
+    "is_active": "checkbox"
   }
 }

@@ -29,13 +29,13 @@ Parent:
 - "<%"["%>[<% `Journal/Yearly/${tp.date.now("gggg", 0, date, format)}` %>]]"
 tags:
 - Journal/Weekly/<% tp.date.now("gggg/gggg-[v]ww", 0, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 1, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 2, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 3, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 4, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 5, date, format) %>
-- calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 6, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 1, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 2, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 3, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 4, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 5, date, format) %>
+- Calendar/<% tp.date.weekday("YYYY/MM-MMMM/DD-dddd", 6, date, format) %>
 template: "<%"["%>[<% "System/templates/journal/Weekly/Weekly Work Journal Template" %>|<% "Weekly Work Journal Template" %>]]"
 <% "---" %>
 # <% tp.date.now(format, 0, date, format) %>

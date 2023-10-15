@@ -1,6 +1,0 @@
----
-Aliases: [ "#Software/HomeAssistant" ]
----
-
-
-

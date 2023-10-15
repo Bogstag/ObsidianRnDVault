@@ -2,18 +2,19 @@
 cssclasses:
   - 
 date_created: 2023-09-14 01:12:57
-date_modified: 2023-10-07 06:03:30
+date_modified: 2023-10-15 13:36:10
 include_in_navbar: true
 navbar_name: Home
 tags:
   - dashboard
 ---
 # Dashboard
+
 TODO:: Finish this
+
 ```dataviewjs
 const {Navbar} = customJS;
-//await Navbar.createNavbar(app, dv, "#dashboard", 0, 1);
-await Navbar.getDashboard(dv, "#dashboard", 	false, 0, 1);
+await Navbar.getDashboard(dv, "#dashboard", false, 0, 1);
 ```
 
 >[!multi-column]
@@ -30,32 +31,45 @@ await Navbar.getDashboard(dv, "#dashboard", 	false, 0, 1);
 >>[[Spaces Dashboard|📦  Spaces →]]
 >
 >>[!blank-container]
->>## 📐 Projects (`$=dv.pages('"Projects" and #project').length`)
+>>## 📐 Projects (`$=dv.pages('"Projects" or #project').length`)
 >>
 >>```dataviewjs
 >>let projectList = [];
->>let projects = dv.pages('"Projects" and #dashboard and !#projects');
+>>let projects = dv.pages('"Projects" or #project'); 
 >>projects = projects.filter(obj =>obj.is_active === true);
 >>for(let i=0; i<projects.length; i++){
->>projectList.push(`[[${projects[i].file.path}|${projects[i].file.path.split('/')[projects[i].file.path.split('/').length-2]} →]]`)
->>}
+>>projectList.push(`[[${projects[i].file.path}|${projects[i].file.name} →]]`)
+>>} 
 >>dv.list(projectList)
 >>```
 
 ---
 
->[!multi-column]
->
->>[!blank-container]
->>### 🚀 Upcoming Launches
->
->>[!blank-container]
->>### &emsp;🛰️Space Image of the Day
+````ad-dashb
+title: Things to do
+icon: list
+color: #D5763F
+- ## Next on the list
+	```dataviewjs
+	dv.view('tasks')
+	```
+- ## Projects
+	```dataview
+	TABLE WITHOUT ID 
+	file.link AS "Project",
+	choice(length(filter(file.tasks, (x) => all(x.text, !x.completed))), "–", "Yes") AS "Needs tasks"
+	FROM #project AND !"Utility" AND !#exclude-master-tasklist
+	WHERE !completed
+	SORT file.name
+```
+````
 
 ---
 
-## ✏️ Recently changed
-
+````ad-dashb
+title: Recently Changed
+icon: pen
+color: 3, 135, 36
 ```dataviewjs
 function converteTime(time){
 	// Convert from ms to minutes
@@ -82,17 +96,17 @@ for (let group of dv.pages('!"_data_"').sort(k => k.file.mtime, 'desc').limit(10
 			`<small>[[${k.file.path}|View →]]</small>`
 			]))}
 ```
+- ### Stats
+	- Number of files: `$=dv.pages('!"_data_"').length`
+	- Number of notes: `$=dv.pages('"Notes" and !#dashboard').length`
+	- Number of concepts: `$=dv.pages('"Concept Board" and !#dashboard').length`
+````
 
-**Stats**
-Number of files: `$=dv.pages('!"_data_"').length`
-Number of notes: `$=dv.pages('"Notes" and !#dashboard').length`
-Number of concepts: `$=dv.pages('"Concept Board" and !#dashboard').length`
+## 📰 Recent News
 
 ---
 
-## 📰 Recent news
-
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv); 
+await Navbar.getDashboard(dv, "#dashboard", 	false, 0, 1);
 ```

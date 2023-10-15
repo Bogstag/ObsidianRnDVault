@@ -7,26 +7,25 @@
     https://github.com/replete/obsidian-minimal-theme-css-snippets
 */
 :root {
-    --replete-custom-separators-vertical-padding: 6px;
-    --replete-custom-separators-left-margin: -12px;
+	--replete-custom-separators-vertical-padding: 6px;
+	--replete-custom-separators-left-margin: -12px;
 }
 
 /* Separator below */
-.nav-folder-children > [class*=nav-]:has([data-path="Inbox"])::after,
-.nav-folder-children > [class*=nav-]:has([data-path="Tasks"])::after,
-.nav-folder-children > [class*=nav-]:has([data-path="Daily Stoic"])::after,
-.nav-folder-children > [class*=nav-]:has([data-path="Archive"])::after
-{
-    content:'';
-    display:block;
-    height:1px;
-    width:calc(100% + 32px);
-    background:var(--tab-outline-color);
-    margin:var(--replete-custom-separators-vertical-padding) 0 var(--replete-custom-separators-vertical-padding) var(--replete-custom-separators-left-margin);
-}
+/* .nav-folder-children>[class*=nav-]:has([data-path="Inbox"])::after,
+.nav-folder-children>[class*=nav-]:has([data-path="Personal"])::after,
+.nav-folder-children>[class*=nav-]:has([data-path="Attachments"])::after,
+.nav-folder-children>[class*=nav-]:has([data-path="Shared Tech"])::after {
+	content: '';
+	display: block;
+	height: 1px;
+	width: calc(100% + 32px);
+	background: var(--tab-outline-color);
+	margin: var(--replete-custom-separators-vertical-padding) 0 var(--replete-custom-separators-vertical-padding) var(--replete-custom-separators-left-margin);
+} */
 
 /* Separator above */
-.nav-folder-children > [class*=nav-]:has([data-path="People"])::before,
+/* .nav-folder-children > [class*=nav-]:has([data-path="People"])::before,
 .nav-folder-children > [class*=nav-]:has([data-path="Archive"])::before
 {
     content:'';
@@ -35,7 +34,7 @@
     width:calc(100% + 32px);
     background:var(--tab-outline-color);
     margin:var(--replete-custom-separators-vertical-padding) 0 var(--replete-custom-separators-vertical-padding) var(--replete-custom-separators-left-margin);
-}
+} */
 
 
 /* Separator for first item */

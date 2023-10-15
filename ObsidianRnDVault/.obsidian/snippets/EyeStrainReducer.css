@@ -1,0 +1,67 @@
+/* === README ===
+	Snippet: eysstrain reducer,  Author: discretecourage#0179
+	creditz: style settings plugin (obsidian community plugin), PipeItToDevNull [[git]]
+supports style settings plugin ( install it from community plugins - to access settings for this snippet
+*/
+
+
+/* @settings
+name: Eye strain Reducer
+id: img-dark
+settings:
+    -
+        id: img-dark-dsfsd
+        title: darken images
+        description: reduce eye strain for images
+		type: variable-number-slider
+        default: 0.8
+        min: 0.1
+        max: 1
+        step: 0.1
+    -
+        id: over-all-view-brightness
+        title: Overall Brightness
+        description: reduce eye strain for everything in workspace
+		type: variable-number-slider
+        default: 1.0
+        min: 0.1
+        max: 1
+        step: 0.1
+    -
+		id: make-everything-grey-scale
+		title: Grey scale
+		description: toggle everything to greyscale
+		type: class-toggle
+		default: false
+	-
+	
+*/
+
+
+body{
+		--img-dark-dsfsd: 0.8;
+		--over-all-view-brightness: 1.0;
+	}
+
+.theme-dark img {
+   filter: brightness(var(--img-dark-dsfsd));
+}
+
+.theme-light img {
+  filter: brightness(var(--img-dark-dsfsd));
+}
+
+.theme-dark .markdown-preview-view,
+.theme-dark .markdown-source-view.mod-cm6 .cm-scroller {
+    filter: brightness(var(--over-all-view-brightness));
+	
+}
+
+.theme-light .markdown-preview-view,
+.theme-light .markdown-source-view.mod-cm6 .cm-scroller {
+    backdrop-filter: brightness(var(--over-all-view-brightness));
+}
+.make-everything-grey-scale .markdown-preview-view,
+.make-everything-grey-scale .markdown-source-view.mod-cm6 .cm-scroller {
+	filter: grayscale(1) !important;
+}

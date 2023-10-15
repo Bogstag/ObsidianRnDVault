@@ -19,22 +19,26 @@ f: ^manifest\.json$
 f: ^styles\.css$
 
 ## Filter for directory
+d!: ^\\Tech\\API$
 d: .*-(?:wrk|rnd|home)$
 d: ^*\\work\\*$
-d: ^\\\.git$
-d: ^\\\.obsidian\\themes$
-d: ^\\\.trash$
 d: ^\\Areas\\.*$
 d: ^\\Attachments\\Audio$
 d: ^\\Attachments\\Canvas$
 d: ^\\Attachments\\Excalidraw\\excalidraw$
 d: ^\\Attachments\\Images$
 d: ^\\Attachments\\PDFs$
+d: ^\\Inbox$
 d: ^\\Journal\\Daily\\\d\d\d\d$
 d: ^\\Journal\\Monthly\\\d\d\d\d$
 d: ^\\Journal\\Quarterly\\\d\d\d\d$
 d: ^\\Journal\\Weekly\\\d\d\d\d$
+d: ^\\Personal\\.*$
 d: ^\\Planning\\Projects\\*\\$
 d: ^\\System\\scripts\\work$
 d: ^\\System\\templates\\work$
 d: ^\\System\\work$
+d: ^\\Tech\\.*$
+d: ^\\\.git$
+d: ^\\\.obsidian\\themes$
+d: ^\\\.trash$

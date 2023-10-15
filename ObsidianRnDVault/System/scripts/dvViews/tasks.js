@@ -39,6 +39,36 @@ const Groups = {
 	Someday: 3,
 };
 
+/**
+ * Take a task and the page it's from, and return a formatted element for the tasks array
+ * @param {*} task
+ * @param {*} page
+ * @returns {object}
+ */
+function generateTaskElement(task, page) {
+	let group = Groups.Normal;
+	if (task.tags.includes("#someday")) {
+		group = Groups.Someday;
+	} else if (task.tags.includes("#waiting-on")) {
+		group = Groups.Waiting;
+	} else if (
+		task.text.includes("⏫") ||
+		page.tags.includes("#⏫") ||
+		task.text.includes("🔺") ||
+		page.tags.includes("#🔺")
+	) {
+		group = Groups.Priority;
+	}
+	return {
+		task: task,
+		date:
+			(page.created
+				? page.created.ts || moment(page.created).valueOf()
+				: null) || page.ctime.ts,
+		group: group,
+	};
+}
+
 /*
  * Process projects
  */
@@ -104,7 +134,6 @@ dv.pages("#project" + globalExcludeString).file.forEach((project) => {
 /*
  * Process tasks
  */
-
 dv.pages("-#project" + globalExcludeString)
 	.where(
 		(p) =>
@@ -128,36 +157,6 @@ dv.pages("-#project" + globalExcludeString)
 
 // Sort tasks into groups, then ascending by created time
 tasks.sort((a, b) => a.group - b.group || a.date - b.date);
-
-/**
- * Take a task and the page it's from, and return a formatted element for the tasks array
- * @param {*} task
- * @param {*} page
- * @returns {object}
- */
-function generateTaskElement(task, page) {
-	let group = Groups.Normal;
-	if (task.tags.includes("#someday")) {
-		group = Groups.Someday;
-	} else if (task.tags.includes("#waiting-on")) {
-		group = Groups.Waiting;
-	} else if (
-		task.text.includes("⏫") ||
-		page.tags.includes("#⏫") ||
-		task.text.includes("🔺") ||
-		page.tags.includes("#🔺")
-	) {
-		group = Groups.Priority;
-	}
-	return {
-		task: task,
-		date:
-			(page.created
-				? page.created.ts || moment(page.created).valueOf()
-				: null) || page.ctime.ts,
-		group: group,
-	};
-}
 
 /**
  * Output a formatted task list

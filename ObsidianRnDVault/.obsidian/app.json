@@ -17,7 +17,8 @@
   "foldIndent": false,
   "tabSize": 2,
   "userIgnoreFilters": [
-    "Development/"
+    "Development/",
+    "Development-rnd/"
   ],
   "showUnsupportedFiles": false,
   "showInlineTitle": false,

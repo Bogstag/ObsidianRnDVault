@@ -10,13 +10,12 @@ tags:
 
 ```dataviewjs
 const {Navbar} = customJS;
-//await Navbar.createNavbar(app, dv, "#dashboard", 0, 1);
 await Navbar.getDashboard(dv, "#dashboard", 	false, 0, 1);
 ```
 
 ```dataviewjs
 const {Navbar} = customJS;
-await Navbar.createNavbar(app, dv, "#system/dashboard", 2); 
+await Navbar.getDashboard(dv, "#system/dashboard", 	false, 1, 2);
 ```
 
 ## Waypoint
@@ -32,7 +31,7 @@ await Navbar.createNavbar(app, dv, "#system/dashboard", 2);
 			- [[weekly]]
 			- [[yearly]]
 		- [[plugin]]
-		- **[[project]]**
+		- **[[System/fileclass/project/project]]**
 			- [[task]]
 		- [[resource]]
 		- [[responsibilities]]
@@ -60,7 +59,6 @@ await Navbar.createNavbar(app, dv, "#system/dashboard", 2);
 			- **RunJS**
 				- [[RunJS Examples]]
 		- **secrets**
-
 		- **Utils**
 
 	- **storage**
@@ -78,7 +76,7 @@ await Navbar.createNavbar(app, dv, "#system/dashboard", 2);
 			- **Yearly**
 				- [[Yearly Journal Template]]
 		- **Planning**
-			- [[Project]]
+			- [[System/fileclass/project/project]]
 			- **Projects**
 				- [[Project boilerplate page]]
 				- [[Project feature]]
@@ -94,12 +92,14 @@ await Navbar.createNavbar(app, dv, "#system/dashboard", 2);
 		- **widgets**
 			- [[Insert callout]]
 			- [[Insert Gate at cursor]]
+			- [[Insert NavBar Level 2]]
+			- [[Insert NavBar Main]]
 			- [[Insert TOC]]
 			- [[Insert Y-M progressbar]]
+			- [[Project Progress Bar]]
 	- **typing**
 
 	- **views**
-		- [[Sidebar Navigation]]
 		- [[sortspec]]
 
 %% End Waypoint %%

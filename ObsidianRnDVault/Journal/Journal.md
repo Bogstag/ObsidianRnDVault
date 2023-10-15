@@ -9,6 +9,11 @@ tags:
 
 ```dataviewjs
 const {Navbar} = customJS;
-//await Navbar.createNavbar(app, dv, "#dashboard", 0, 1);
+
 await Navbar.getDashboard(dv, "#dashboard", 	false, 0, 1);
+```
+
+```dataviewjs
+const {Navbar} = customJS;
+await Navbar.getDashboard(dv,'"Journal"', true, 1, 4); 
 ```

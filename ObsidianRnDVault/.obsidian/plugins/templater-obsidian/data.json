@@ -15,7 +15,7 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "Tech/Resources/Software/Obsidian/plugins",
+      "folder": "Shared Tech/RnD Vault/Obsidian/plugins",
       "template": "System/templates/fileclass/Add Obsidian plugin page.md"
     },
     {
@@ -29,7 +29,10 @@
   ],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
-  "enabled_templates_hotkeys": [],
+  "enabled_templates_hotkeys": [
+    "System/templates/Notes/Tasks Menu.md",
+    "System/templates/Notes/New_note.md"
+  ],
   "startup_templates": [
     "System/templates/Templater Startup script.md"
   ],

@@ -4,7 +4,6 @@ fileclass: template
 ---
 <%* tR = "" -%>
 <%*
-	
 	moment.locale("sv")
 
 	// Weekly

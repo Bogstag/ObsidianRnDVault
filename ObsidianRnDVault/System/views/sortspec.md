@@ -7,10 +7,11 @@ sorting-spec: |
     Planning
     Areas
     Personal
-    Tags
     Work
-    Publish
     Tech
+    Shared Tech
+    Tags
+    Publish
     Archive
     Attachments
     System

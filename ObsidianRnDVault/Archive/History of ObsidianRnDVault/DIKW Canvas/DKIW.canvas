@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"26192bbd090d4260","x":-560,"y":-520,"width":460,"height":1240,"type":"file","file":"Archive/History/DIKW Canvas/Data, Information, Knowledge, Wisdom (DIKW).md"},
+		{"id":"9ae4036b8875c759","x":80,"y":0,"width":624,"height":720,"type":"file","file":"Archive/History/DIKW Canvas/Information (DIKW).md"},
+		{"id":"cccd85ffa9ec4831","x":80,"y":-520,"width":624,"height":440,"type":"file","file":"Archive/History/DIKW Canvas/Data (DIKW).md"},
+		{"id":"d73c4a6ce5e71e22","x":880,"y":0,"width":560,"height":720,"type":"file","file":"Archive/History/DIKW Canvas/Knowledge (DIKW).md"},
+		{"id":"fc1a032aff915af1","x":880,"y":-520,"width":560,"height":440,"type":"file","file":"Archive/History/DIKW Canvas/Wisdom (DIKW).md"}
+	],
+	"edges":[
+		{"id":"504e45c53209f600","fromNode":"26192bbd090d4260","fromSide":"right","toNode":"cccd85ffa9ec4831","toSide":"left"},
+		{"id":"d339ad815042ea12","fromNode":"cccd85ffa9ec4831","fromSide":"bottom","toNode":"9ae4036b8875c759","toSide":"top"},
+		{"id":"3c604fbc956bda9a","fromNode":"9ae4036b8875c759","fromSide":"right","toNode":"d73c4a6ce5e71e22","toSide":"left"},
+		{"id":"6d08a1ac5b0378df","fromNode":"d73c4a6ce5e71e22","fromSide":"top","toNode":"fc1a032aff915af1","toSide":"bottom"}
+	]
+}
