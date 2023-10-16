@@ -16,6 +16,7 @@ wikidata entity id: Q840410
 ![PowerShell|50](https://upload.wikimedia.org/wikipedia/commons/a/af/PowerShell_Core_6.0_icon.png)
 cross-platform command-line interface and scripting language for system and network administration
 
+[PowerShell Documentation - PowerShell | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/)
 ```dataviewjs
 dv.view("toc", {"level": 2, "heading": true})
 ```
