@@ -19,12 +19,10 @@ template_destination_folder: Work/Meetings
 # <% tp.file.title.slice(11) %>
 
 ---
-
 Attendees::
 Links: [[<%''%>🏃 Actions]]
 Tags: <% tag %>
 Date: <% tp.file.title.slice(0, 11) %>
-
 ---
 
 ## 🏃 Actions
