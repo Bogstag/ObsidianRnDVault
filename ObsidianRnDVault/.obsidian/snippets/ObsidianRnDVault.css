@@ -1,8 +1,32 @@
 /* 
-	Obsidian RnD Vault (ORDV) some casual cssing, to get some nice buttons
+	Obsidian RnD Vault (ORDV), proudly presents...
+	          _____                    _____                    _____          
+	         /\    \                  /\    \                  /\    \         
+	        /::\    \                /::\    \                /::\    \        
+	       /::::\    \              /::::\    \              /::::\    \       
+	      /::::::\    \            /::::::\    \            /::::::\    \      
+	     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \     
+	    /:::/  \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \    
+	   /:::/    \:::\    \       \:::\   \:::\    \       \:::\   \:::\    \   
+	  /:::/    / \:::\    \    ___\:::\   \:::\    \    ___\:::\   \:::\    \  
+	 /:::/    /   \:::\    \  /\   \:::\   \:::\    \  /\   \:::\   \:::\    \ 
+	/:::/____/     \:::\____\/::\   \:::\   \:::\____\/::\   \:::\   \:::\____\
+	\:::\    \      \::/    /\:::\   \:::\   \::/    /\:::\   \:::\   \::/    /
+	 \:::\    \      \/____/  \:::\   \:::\   \/____/  \:::\   \:::\   \/____/ 
+	  \:::\    \               \:::\   \:::\    \       \:::\   \:::\    \     
+	   \:::\    \               \:::\   \:::\____\       \:::\   \:::\____\    
+	    \:::\    \               \:::\  /:::/    /        \:::\  /:::/    /    
+	     \:::\    \               \:::\/:::/    /          \:::\/:::/    /     
+	      \:::\    \               \::::::/    /            \::::::/    /      
+	       \:::\____\               \::::/    /              \::::/    /       
+	        \::/    /                \::/    /                \::/    /        
+	         \/____/                  \/____/                  \/____/         
+
+	some casual cssing.
 */
+
 /*
-  https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
+	Stolen from: https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
   box-shadow: [inset?] [top] [left] [blur] [size] [color];
 
   Tips:
@@ -139,15 +163,18 @@ h1 code {
 	font: inherit;
 }
 
-/* END: Remove existing ext  */
+/**
+	 ______   __     __         ______        __     ______     ______     __   __     ______    
+	/\  ___\ /\ \   /\ \       /\  ___\      /\ \   /\  ___\   /\  __ \   /\ "-.\ \   /\  ___\   
+	\ \  __\ \ \ \  \ \ \____  \ \  __\      \ \ \  \ \ \____  \ \ \/\ \  \ \ \-.  \  \ \___  \  
+	 \ \_\    \ \_\  \ \_____\  \ \_____\     \ \_\  \ \_____\  \ \_____\  \ \_\\"\_\  \/\_____\ 
+	  \/_/     \/_/   \/_____/   \/_____/      \/_/   \/_____/   \/_____/   \/_/ \/_/   \/_____/ 
 
-/* START: Add icons to files 
-
-Template for new icons:
-.nav-file-title[data-path$=".xxx"] .nav-file-title-content:before {
-	content: url("");
-}
-*/
+	Template for new icons:
+		.nav-file-title[data-path$=".xxx"] .nav-file-title-content:before {
+			content: url("");
+		}
+**/
 .nav-file-title[data-path$=".js"] .nav-file-title-content:before {
 	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxwYXRoIGZpbGw9IiNmNWRlMTkiIGQ9Ik0xOC43NzQgMTkuN2EzLjcyNyAzLjcyNyAwIDAgMCAzLjM3NiAyLjA3OGMxLjQxOCAwIDIuMzI0LS43MDkgMi4zMjQtMS42ODhjMC0xLjE3My0uOTMxLTEuNTg5LTIuNDkxLTIuMjcybC0uODU2LS4zNjdjLTIuNDY5LTEuMDUyLTQuMTEtMi4zNy00LjExLTUuMTU2YzAtMi41NjcgMS45NTYtNC41MiA1LjAxMi00LjUyQTUuMDU4IDUuMDU4IDAgMCAxIDI2LjkgMTAuNTJsLTIuNjY1IDEuNzExYTIuMzI3IDIuMzI3IDAgMCAwLTIuMi0xLjQ2N2ExLjQ4OSAxLjQ4OSAwIDAgMC0xLjYzOCAxLjQ2N2MwIDEuMDI3LjYzNiAxLjQ0MiAyLjEgMi4wNzhsLjg1Ni4zNjZjMi45MDggMS4yNDcgNC41NDkgMi41MTggNC41NDkgNS4zNzZjMCAzLjA4MS0yLjQyIDQuNzY5LTUuNjcxIDQuNzY5YTYuNTc1IDYuNTc1IDAgMCAxLTYuMjM2LTMuNVpNNi42ODYgMjBjLjUzOC45NTQgMS4wMjcgMS43NiAyLjIgMS43NmMxLjEyNCAwIDEuODM0LS40NCAxLjgzNC0yLjE1VjcuOTc1aDMuNDIydjExLjY4M2MwIDMuNTQzLTIuMDc4IDUuMTU2LTUuMTEgNS4xNTZBNS4zMTIgNS4zMTIgMCAwIDEgMy45IDIxLjY4OFoiLz48L3N2Zz4=");
 }
@@ -170,5 +197,72 @@ Template for new icons:
 	content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath  d="M7.782 14.576c-.186 0-.312.018-.377.036v1.193c.077.018.174.023.306.023c.485 0 .785-.246.785-.659c0-.371-.258-.593-.714-.593z"%2F%3E%3Cpath fill="%23b741b9" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM9.03 16.105c-.313.293-.774.426-1.313.426c-.12 0-.229-.007-.312-.019v1.445h-.906V13.97a7.504 7.504 0 0 1 1.235-.083c.563 0 .966.107 1.235.323c.258.204.432.54.432.936s-.131.731-.371.959zm4.302 1.853h-.96l-.863-1.56c-.24-.432-.504-.953-.701-1.427l-.019.006c.024.534.036 1.104.036 1.763v1.218h-.84v-4.042h1.067l.84 1.481c.24.426.479.93.659 1.385h.019a14.746 14.746 0 0 1-.078-1.685v-1.182h.84v4.043zm4.169-.186a4.512 4.512 0 0 1-1.349.228c-.737 0-1.271-.186-1.644-.546c-.371-.348-.575-.875-.569-1.469c.006-1.344.983-2.111 2.309-2.111c.521 0 .924.103 1.121.198l-.191.731c-.222-.096-.498-.174-.941-.174c-.762 0-1.338.432-1.338 1.308c0 .833.522 1.325 1.271 1.325c.21 0 .378-.024.45-.061v-.846h-.624v-.713h1.505v2.13zM14 9h-1V4l5 5h-4z"%2F%3E%3C%2Fsvg%3E');
 } */
 
+/**
 
-/* END: Add icons to files */
+ _______ _______ _______ _______ _______ _______ _______ _______     _______ _______ _______ 
+|\     /|\     /|\     /|\     /|\     /|\     /|\     /|\     /|   |\     /|\     /|\     /|
+| +---+ | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |   | +---+ | +---+ | +---+ |
+| |   | | |   | | |   | | |   | | |   | | |   | | |   | | |   | |   | |   | | |   | | |   | |
+| |K  | | |e  | | |y  | | |b  | | |o  | | |a  | | |r  | | |d  | |   | |s  | | |i  | | |m  | |
+| +---+ | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ | +---+ |   | +---+ | +---+ | +---+ |
+|/_____\|/_____\|/_____\|/_____\|/_____\|/_____\|/_____\|/_____\|   |/_____\|/_____\|/_____\|
+
+**/
+/* <style> */
+
+:root {
+	/* 22 */
+	--ORDV-key-text: 22px;
+	/* 80 */
+	--ORDV-key-width: 80px;
+}
+
+
+body {
+	background: -webkit-linear-gradient(top, #fff 0%, #f2f2f2 25%, rgba(#444, 0.3) 100%);
+	min-height: 100vh;
+}
+
+div.ORDV.keys {
+	width: 800px;
+	display: block;
+	margin: 1vh auto;
+}
+
+div.ORDV.key__button {
+	box-sizing: border-box;
+	line-height: var(--ORDV-key-width, --ORDVKeyWidth);
+	font-size: var(--ORDV-key-text, --ORDVKeyText);
+	height: var(--ORDV-key-width, --ORDVKeyWidth);
+	width: var(--ORDV-key-width --ORDVKeyWidth);
+
+	text-align: center;
+
+	color: #555;
+	cursor: pointer;
+	margin: 0 8px;
+
+	border-color: #f2f2f2;
+	border-style: solid;
+	text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+	border-width: 1px;
+	border-radius: 10px;
+	background: -webkit-linear-gradient(top, #f9f9f9 0%, #D2D2D2 80%, #c0c0c0 100%);
+	font-family: sans-serif;
+	display: inline-block;
+	transition: box-shadow 0.3s ease, transform 0.15s ease;
+	box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 6px 0 #C0C0C0, 0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25), -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 4px 0 #C0C0C0, 0 2px 35px rgba(#444, 0.3), 2px 2px 4px rgba(#444, 0.25), -2px 2px 4px rgba(#444, 0.25), 0 7px 4px rgba(#444, 0.1);
+		transform: translateY(2px);
+	}
+
+	&:active {
+		box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 0 0 #C0C0C0, 0 0px 30px rgba(#444, 0.15), 2px 2px 4px rgba(#444, 0.25), -2px 2px 4px rgba(#444, 0.25), 0 0px 4px rgba(#444, 0.25);
+		transform: translateY(4px);
+	}
+}
+
+/* </style> */

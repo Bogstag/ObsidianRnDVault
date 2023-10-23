@@ -4,7 +4,7 @@ date_modified: 2023-10-14 01:34:27
 summary: A regular expression (RegExp) for capturing Markdown headings and their content.
 tags:
   - Programming
-  - Programming/RegExp
+  - Programming/RegEx
   - Programming/JavaScript
   - Markdown
   - Text Parsing

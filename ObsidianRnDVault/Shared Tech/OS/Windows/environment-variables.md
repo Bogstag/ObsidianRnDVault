@@ -1,6 +1,6 @@
 ---
 date_created: 2023-10-05 09:00:00
-date_modified: 2023-10-14 16:01:59
+date_modified: 2023-10-18 20:19:32
 tags:
   - os/windows
   - fileSystem/variables
@@ -19,7 +19,7 @@ _In Powershell:_ `$env:APPDATA`
 Variable | Description
 ---|---
 `%ALLUSERSPROFILE%`|C:\ProgramData
-`%APPDATA%`|C:\Users\{username}\AppData\Roaming
+`%APPDATA%`|C:\Users\\{username}\AppData\Roaming
 `%COMMONPROGRAMFILES%`|C:\Program Files\Common Files
 `%COMMONPROGRAMFILES(x86)%`|C:\Program Files (x86)\Common Files
 `%CommonProgramW6432%`|C:\Program Files\Common Files
@@ -61,3 +61,39 @@ Variable | Description
 `%NUMBER_OF_PROCESSORS%`|Outputs the number of physical and virtual cores.
 `%RANDOM%`|Outputs random number from 0 through 32767.
 `%OS%`|Windows_NT
+
+## WSLENV
+
+Special environment variables used with WSL and Windows.
+
+There are four flags available in `WSLENV` to influence how the environment variable is translated.
+
+```PowerShell
+# On my compter
+Write-Output $env:WSLENV 
+>> WT_SESSION:WT_PROFILE_ID:
+```
+
+`WSLENV` flags:
+
+- `/p` - translates the path between WSL/Linux style paths and Win32 paths.
+- `/l` - indicates the environment variable is a list of paths.
+- `/u` - indicates that this environment variable should only be included when running WSL from Win32.
+- `/w` - indicates that this environment variable should only be included when running Win32 from WSL.
+
+Flags can be combined as needed.
+
+```bash
+WSLENV=GOPATH/l:USERPROFILE/w:SOMEVAR/wp
+
+# For example in .bashr
+export MYPATH=/mnt/c/Users/
+WSLENV=$WSLENV:MYPATH/p process.exe
+```
+
+Another example i use:
+
+```PowerShell
+mkdir $env:repos\NewProject
+cd $env:repos\NewProject
+```

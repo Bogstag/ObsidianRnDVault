@@ -4,13 +4,7 @@ template_destination_folder: Work/Meetings
 ---
 <%* tR = "" _%>
 <%* 
-	// Template for a standup. For extensive documentation refer to the "📓 Daily" template, 
-	// or the "👥 Meeting"  template, which share some components with this template.
--%>
-<%* 
-	//attendees = tp.system.prompt("Attendees:", "", throw_on_cancel=true)
 	tag = "#Work/Meeting/Standup"
-	//tp.system.prompt("Meeting tag:", "#Work/Meeting/Standup", throw_on_cancel=true)
 -%>
 <%*
 	// meeting_folder = "... /👥 Meeting/Standup/"

@@ -171,6 +171,9 @@
   },
   "tagNodeStyles": {},
   "tagStyleList": [],
+  "primaryTagField": "Note type",
+  "primaryTagFieldLowerCase": "note-type",
+  "displayAllStylePrefixes": true,
   "baseLinkStyle": {
     "strokeColor": "#696969FF",
     "strokeWidth": 1,
@@ -264,7 +267,15 @@
     "Journal/Daily/2023/09/2023-09-30.md",
     "Journal/Daily/2023/10/2023-10-06.md",
     "folder:System/templates/fileclass",
-    "System/templates/fileclass/Add Obsidian plugin page.md"
+    "System/templates/fileclass/Add Obsidian plugin page.md",
+    "Inbox/testnote.md",
+    "Inbox/Inbox.md",
+    "folder:Inbox",
+    "folder:Development-rnd",
+    "folder:System/scripts",
+    "System/scripts/secrets/secrets.mjs",
+    "folder:System",
+    "folder:System/scripts/secrets"
   ],
   "allowOntologySuggester": true,
   "ontologySuggesterParentTrigger": "::p",

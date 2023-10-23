@@ -72,16 +72,47 @@
         "for": "everything",
         "order": 8,
         "useFilePath": true
+      },
+      {
+        "rule": ".*git.*",
+        "icon": "FabGitAlt",
+        "for": "everything",
+        "order": 9
+      },
+      {
+        "rule": ".*markdown.*",
+        "icon": "FabMarkdown",
+        "for": "everything",
+        "order": 10
+      },
+      {
+        "rule": ".*npm.*",
+        "icon": "FabNpm",
+        "for": "everything",
+        "order": 11
+      },
+      {
+        "rule": ".*regex.*",
+        "icon": "MyMyRegex",
+        "for": "everything",
+        "order": 12
+      },
+      {
+        "rule": ".*vscode.*",
+        "icon": "MyMyVscode",
+        "for": "everything",
+        "order": 13
       }
     ],
     "extraMargin": {
-      "top": 2,
-      "right": 4,
-      "bottom": 2,
+      "top": 1,
+      "right": 2,
+      "bottom": 1,
       "left": 0
     },
     "iconInTabsEnabled": false,
-    "iconsBackgroundCheckEnabled": false
+    "iconsBackgroundCheckEnabled": false,
+    "iconInTitleEnabled": false
   },
   "Archive": "FasBoxArchive",
   "Areas": "FasLayerGroup",
@@ -132,5 +163,8 @@
   "Tech/Config/Shared": "FasShareNodes",
   "Tech/Config/Shared/RnD Vault": "FasVault",
   "Work": "FasBriefcase",
-  "Work/Meetings": "FasUsers"
+  "Work/Meetings": "FasUsers",
+  "Shared Tech/Programming/Python": "FabPython",
+  "Areas/TV": "FasTv",
+  "Shared Tech/Programming/Bash": "MyMyBash"
 }
