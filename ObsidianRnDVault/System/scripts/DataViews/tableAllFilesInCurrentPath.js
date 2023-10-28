@@ -12,56 +12,54 @@ function tableAllFilesInCurrentPath(args) {
 	const tableTitles = Object.keys(args);
 	const propertiesToFetch = Object.values(args);
 
-	let currentFile = dv.current().file;
+	const currentFile = dv.current().file;
 	let currentFolder = currentFile.folder;
 
-	if (currentFolder == "") currentFolder = "/";
+	if (currentFolder === "") {
+		currentFolder = "/";
+	}
 
-	function setDisplay(Link) {
-		Link.display = Link.path.substring(Link.path.lastIndexOf("/") + 1);
-		displayEnd = Link.display.substring(Link.display.length - 3);
-		if (displayEnd == ".md") {
-			Link.display = Link.display.substring(0, Link.display.length - 3);
+	function setDisplay(link) {
+		link.display = link.path.substring(link.path.lastIndexOf("/") + 1);
+		displayEnd = link.display.substring(link.display.length - 3);
+		if (displayEnd === ".md") {
+			link.display = link.display.substring(0, link.display.length - 3);
 		}
 	}
 
-	function processPropertyValue(Link) {
-		if (Link == undefined) {
+	function processPropertyValue(link) {
+		if (link === undefined) {
 			return null;
 		}
 
 		// If the value is an array
-		if (Array.isArray(Link)) {
-			Link.flat().map((Link) => setDisplay(Link));
-			return Link;
+		if (Array.isArray(link)) {
+			link.flat().map((Link) => setDisplay(Link));
+			return link;
 		}
 
 		// If the value is an object with a path property
-		else if (Link && Link.path) {
-			setDisplay(Link);
-			return Link;
+		if (link?.path) {
+			setDisplay(link);
+			return link;
 		}
 
 		// Otherwise, return the value as-is
 		return value;
 	}
 
-	let pages = dv
-		.pages('"' + currentFolder + '"')
-		.filter((file) => file.file.path != currentFile.path)
+	const pages = dv
+		.pages(`"${currentFolder}"`)
+		.filter((file) => file.file.path !== currentFile.path)
 		.map((b) => {
 			return propertiesToFetch.map((property) => {
-				if (property == "file.link") {
+				if (property === "file.link") {
 					return b.file.link;
 				}
 				// Using reduce to access nested properties
 				const value = property
 					.split(".")
-					.reduce(
-						(o, key) =>
-							o && o[key] !== "undefined" ? o[key] : null,
-						b,
-					);
+					.reduce((o, key) => (o && o[key] !== "undefined" ? o[key] : null), b);
 
 				return processPropertyValue(value);
 			});

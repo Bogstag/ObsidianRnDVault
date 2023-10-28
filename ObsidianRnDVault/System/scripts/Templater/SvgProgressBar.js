@@ -36,9 +36,9 @@ class SvgProgressBar {
 	 */
 	getSvgProgressBar(progress = 0, requestArgs) {
 		const templateFields = this.getTemplateFields(progress, requestArgs);
-		const SvgProgressBar = this.createSVG(templateFields);
+		const svgProgressBar = this.createSVG(templateFields);
 
-		return SvgProgressBar;
+		return svgProgressBar;
 	}
 
 	/**
@@ -318,11 +318,9 @@ class SvgProgressBar {
 			svgCalc.font_size
 		}"><text x="${svgCalc.x_txt}" y="${
 			svgCalc.y_txt_shadow
-		}" fill="#010101" fill-opacity=".3">${
-			svgCalc.txt_prog
-		}</text><text x="${svgCalc.x_txt}" y="${svgCalc.y_txt}">${
-			svgCalc.txt_prog
-		}</text></g></svg>`;
+		}" fill="#010101" fill-opacity=".3">${svgCalc.txt_prog}</text><text x="${
+			svgCalc.x_txt
+		}" y="${svgCalc.y_txt}">${svgCalc.txt_prog}</text></g></svg>`;
 
 		//const tagSvg = this.getReturnTemplate(tF.wrap, svgContent);
 

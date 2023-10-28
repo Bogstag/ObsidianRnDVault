@@ -17,11 +17,9 @@ function generateToc(content, startAtLevel, style, i = 0) {
 	return content
 		.match(new RegExp(`^#{${startAtLevel},} \\S.*`, "mg"))
 		.map((heading) => {
-			const [_, level, text] = heading.match(
-				/^(#+)\s+([^([]+|\[[^\]]+\])/,
-			);
+			const [_, level, text] = heading.match(/^(#+)\s+([^([]+|\[[^\]]+\])/);
 
-			const link = dv.current().file.path + "#" + text;
+			const link = `${dv.current().file.path}#${text}`;
 
 			return (
 				"\t".repeat(level.length - startAtLevel) +

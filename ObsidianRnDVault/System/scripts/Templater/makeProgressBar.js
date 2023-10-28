@@ -1,15 +1,15 @@
-module.exports = function (
+module.exports = (
 	numerator,
 	denominator,
 	size = 50,
 	filledChar = "█",
 	unFilledChar = "◽",
-	label = ""
-) {
-	let percentage = numerator / denominator;
-	let maxBlocks = size;
-	let numFilled = Math.floor(percentage * maxBlocks);
+	label = "",
+) => {
+	const percentage = numerator / denominator;
+	const maxBlocks = size;
+	const numFilled = Math.floor(percentage * maxBlocks);
 	return `${label}: [${filledChar.repeat(numFilled)}${unFilledChar.repeat(
-		maxBlocks - numFilled
+		maxBlocks - numFilled,
 	)}] ${Math.floor(percentage * 100)}% ( ${numerator}/${denominator} )`;
 };

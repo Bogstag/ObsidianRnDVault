@@ -1,31 +1,28 @@
 {
-  "readableLineLength": false,
-  "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "Attachments",
-  "promptDelete": false,
-  "livePreview": true,
-  "defaultViewMode": "source",
-  "pdfExportSettings": {
-    "includeName": true,
-    "pageSize": "Letter",
-    "landscape": false,
-    "margin": "0",
-    "downscalePercent": 100
-  },
-  "showFrontmatter": false,
-  "propertiesInDocument": "hidden",
-  "foldIndent": false,
-  "tabSize": 2,
-  "userIgnoreFilters": [
-    "Development/",
-    "Development-rnd/"
-  ],
-  "showUnsupportedFiles": false,
-  "showInlineTitle": false,
-  "focusNewTab": false,
-  "newLinkFormat": "absolute",
-  "foldHeading": false,
-  "newFileLocation": "folder",
-  "newFileFolderPath": "Inbox",
-  "showLineNumber": false
+	"readableLineLength": false,
+	"alwaysUpdateLinks": true,
+	"attachmentFolderPath": "Attachments",
+	"promptDelete": false,
+	"livePreview": true,
+	"defaultViewMode": "source",
+	"pdfExportSettings": {
+		"includeName": true,
+		"pageSize": "Letter",
+		"landscape": false,
+		"margin": "0",
+		"downscalePercent": 100
+	},
+	"showFrontmatter": false,
+	"propertiesInDocument": "hidden",
+	"foldIndent": false,
+	"tabSize": 2,
+	"userIgnoreFilters": ["Development/", "Development-rnd/"],
+	"showUnsupportedFiles": false,
+	"showInlineTitle": false,
+	"focusNewTab": false,
+	"newLinkFormat": "absolute",
+	"foldHeading": false,
+	"newFileLocation": "folder",
+	"newFileFolderPath": "Inbox",
+	"showLineNumber": false
 }

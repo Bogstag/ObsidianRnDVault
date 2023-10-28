@@ -1,12 +1,12 @@
 class Plugins {
 	listInstalledPlugins(app, navbar) {
 		// Get all plugins
-		let plugins = app.plugins.plugins;
-		let pluginKeys = Object.keys(plugins);
-		for (let pluginKey of pluginKeys) {
+		const plugins = app.plugins.plugins;
+		const pluginKeys = Object.keys(plugins);
+		for (const pluginKey of pluginKeys) {
 			navbar.appendChild(
 				createEl("div", {
-					text: plugins[pluginKey]["manifest"]["name"],
+					text: plugins[pluginKey].manifest.name,
 				}),
 			);
 		}
@@ -16,10 +16,10 @@ class Plugins {
 
 	getPluginNames(app) {
 		// TODO:: This should be able to return all data so getPluginMetadata dont have to.
-		let plugins = app.plugins.plugins;
-		let pluginKeys = Object.keys(plugins);
-		let pluginNames = [];
-		for (let pluginKey of pluginKeys) {
+		const plugins = app.plugins.plugins;
+		const pluginKeys = Object.keys(plugins);
+		const pluginNames = [];
+		for (const pluginKey of pluginKeys) {
 			pluginNames[pluginKey] = plugins[pluginKey].manifest.name;
 		}
 
@@ -27,26 +27,20 @@ class Plugins {
 	}
 
 	async getPluginMetadata(app, pluginId) {
-		const utilsClass = await self.require.import(
-			"System/scripts/Utils/ObjectUtils.mjs",
-		);
-		const ObjectUtils = utilsClass.default;
-		const utilsInstance = new ObjectUtils();
+		const { objectUtils } = customJS;
 
-		let plugin = app.plugins.plugins[pluginId];
+		const plugin = app.plugins.plugins[pluginId];
 		if (!plugin) {
-			throw new Error(
-				"Plugin not found! Make sure its installed and enabled!",
-			);
+			throw new Error("Plugin not found! Make sure its installed and enabled!");
 		}
 
-		let settings = plugin.settings;
+		const settings = plugin.settings;
 		let sortedSettings = null;
 		if (settings) {
-			sortedSettings = utilsInstance.sortObjectKeys(settings);
+			sortedSettings = await objectUtils.sortObjectKeys(settings);
 		}
 
-		let metadata = {
+		const metadata = {
 			manifest: plugin.manifest,
 			settings: plugin.settings,
 			//To many times you get an error. TODO:: function that get this data only.

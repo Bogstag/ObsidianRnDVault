@@ -1,143 +1,105 @@
 {
-  "switcher:open": [],
-  "omnisearch:show-modal": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "O"
-    }
-  ],
-  "app:open-settings": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": ","
-    },
-    {
-      "modifiers": [
-        "Alt",
-        "Mod"
-      ],
-      "key": "S"
-    }
-  ],
-  "editor:save-file": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "S"
-    }
-  ],
-  "obsidian-linter:paste-as-plain-text": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "B"
-    }
-  ],
-  "obsidian-minimal-settings:cycle-minimal-table-width": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "C"
-    }
-  ],
-  "metadata-menu:open_fileclass_view": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "P"
-    }
-  ],
-  "editor:toggle-bold": [],
-  "obsidian-tasks-plugin:edit-task": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "T"
-    }
-  ],
-  "editor:swap-line-down": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "ArrowDown"
-    }
-  ],
-  "editor:swap-line-up": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "ArrowUp"
-    }
-  ],
-  "global-search-and-replace:search-and-replace": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "H"
-    }
-  ],
-  "obsidian-regex-replace:obsidian-regex-replace": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "H"
-    }
-  ],
-  "file-explorer:reveal-active-file": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "Q"
-    }
-  ],
-  "obsidian-excalidraw-plugin:save": [],
-  "file-explorer:move-file": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "M"
-    }
-  ],
-  "templater-obsidian:System/templates/Notes/Tasks Menu.md": [
-    {
-      "modifiers": [
-        "Alt",
-        "Shift"
-      ],
-      "key": "T"
-    }
-  ],
-  "templater-obsidian:System/templates/Notes/New note.md": [
-    {
-      "modifiers": [
-        "Alt",
-        "Shift"
-      ],
-      "key": "N"
-    }
-  ],
-  "templater-obsidian:System/templates/Notes/New_note.md": [
-    {
-      "modifiers": [
-        "Alt",
-        "Shift"
-      ],
-      "key": "N"
-    }
-  ]
+	"switcher:open": [],
+	"omnisearch:show-modal": [
+		{
+			"modifiers": ["Mod"],
+			"key": "O"
+		}
+	],
+	"app:open-settings": [
+		{
+			"modifiers": ["Mod"],
+			"key": ","
+		},
+		{
+			"modifiers": ["Alt", "Mod"],
+			"key": "S"
+		}
+	],
+	"editor:save-file": [
+		{
+			"modifiers": ["Mod"],
+			"key": "S"
+		}
+	],
+	"obsidian-linter:paste-as-plain-text": [
+		{
+			"modifiers": ["Mod"],
+			"key": "B"
+		}
+	],
+	"obsidian-minimal-settings:cycle-minimal-table-width": [
+		{
+			"modifiers": ["Alt"],
+			"key": "C"
+		}
+	],
+	"metadata-menu:open_fileclass_view": [
+		{
+			"modifiers": ["Alt"],
+			"key": "P"
+		}
+	],
+	"editor:toggle-bold": [],
+	"obsidian-tasks-plugin:edit-task": [
+		{
+			"modifiers": ["Alt"],
+			"key": "T"
+		}
+	],
+	"editor:swap-line-down": [
+		{
+			"modifiers": ["Alt"],
+			"key": "ArrowDown"
+		}
+	],
+	"editor:swap-line-up": [
+		{
+			"modifiers": ["Alt"],
+			"key": "ArrowUp"
+		}
+	],
+	"global-search-and-replace:search-and-replace": [
+		{
+			"modifiers": ["Alt"],
+			"key": "H"
+		}
+	],
+	"obsidian-regex-replace:obsidian-regex-replace": [
+		{
+			"modifiers": ["Alt"],
+			"key": "H"
+		}
+	],
+	"file-explorer:reveal-active-file": [
+		{
+			"modifiers": ["Alt"],
+			"key": "Q"
+		}
+	],
+	"obsidian-excalidraw-plugin:save": [],
+	"file-explorer:move-file": [
+		{
+			"modifiers": ["Mod"],
+			"key": "M"
+		}
+	],
+	"templater-obsidian:System/templates/Notes/Tasks Menu.md": [
+		{
+			"modifiers": ["Alt", "Shift"],
+			"key": "T"
+		}
+	],
+	"templater-obsidian:System/templates/Notes/New note.md": [
+		{
+			"modifiers": ["Alt", "Shift"],
+			"key": "N"
+		}
+	],
+	"templater-obsidian:System/templates/Notes/New_note.md": [
+		{
+			"modifiers": ["Alt", "Shift"],
+			"key": "N"
+		}
+	]
 }

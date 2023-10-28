@@ -1,283 +1,264 @@
 {
-  "main": {
-    "id": "80b8f9416df1413b",
-    "type": "split",
-    "children": [
-      {
-        "id": "447b711911bb173f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "07426b4eed41bcbf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "System/Concepts/Ontology.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5ac52e501fe8d918",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tech/Software/Obsidian/Obsidian.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "bf602e3f559ee814",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "System/templates/fileclass/Add Obsidian plugin page.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "78570993f98701f2",
-            "type": "leaf",
-            "state": {
-              "type": "FileClassView__plugin",
-              "state": {}
-            }
-          },
-          {
-            "id": "6a813db7944c51d6",
-            "type": "leaf",
-            "state": {
-              "type": "FileClassView__software",
-              "state": {}
-            }
-          },
-          {
-            "id": "4fb695c1bbf702c0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inbox/Inbox.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          }
-        ],
-        "currentTab": 5
-      }
-    ],
-    "direction": "vertical"
-  },
-  "left": {
-    "id": "1e14175cd534ace2",
-    "type": "split",
-    "children": [
-      {
-        "id": "6a5a46f35bfd6e3b",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "b086af801e8a41b7",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
-            }
-          },
-          {
-            "id": "fdd19e4ea68307e0",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {}
-            }
-          },
-          {
-            "id": "7cd83ac56a691861",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "800ae58d040b9162",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency"
-              }
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 213.5
-  },
-  "right": {
-    "id": "a60f7122a537c574",
-    "type": "split",
-    "children": [
-      {
-        "id": "7e3ab805b43b8465",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a5cb51a49770beda",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Inbox/Inbox.md"
-              }
-            }
-          },
-          {
-            "id": "8fc70947dc60777d",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "Inbox/Inbox.md"
-              }
-            }
-          },
-          {
-            "id": "7829fe2efad32883",
-            "type": "leaf",
-            "state": {
-              "type": "style-settings",
-              "state": {}
-            }
-          },
-          {
-            "id": "cc93846ab300e395",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
-          },
-          {
-            "id": "5e593de1f1262103",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Inbox/Inbox.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "3b9a487910237d7b",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Inbox/Inbox.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          }
-        ],
-        "currentTab": 1
-      }
-    ],
-    "direction": "horizontal",
-    "width": 339.5
-  },
-  "left-ribbon": {
-    "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "command-palette:Open command palette": false,
-      "canvas:Create new canvas": false,
-      "graph:Open graph view": false,
-      "workspaces:Manage workspace layouts": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "omnisearch:Omnisearch": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-import-json:JSON/CSV Importer": false,
-      "obsidian42-brat:BRAT": false,
-      "custom-sort:Toggle custom sorting": false,
-      "periodic-notes:Open today": false
-    }
-  },
-  "active": "b086af801e8a41b7",
-  "lastOpenFiles": [
-    "Tech/Software/Obsidian/plugins/Templater.md",
-    "System/fileclass/daily.md",
-    "System/Concepts/icons.md",
-    "System/templates/fileclass/Add Obsidian plugin page.md",
-    "Tech/Software/Obsidian/Obsidian.md",
-    "System/templates/fileclass/pluginTemplate.md",
-    "System/templates/general/Journal entry.md",
-    "System/templates/journal/Daily Journal Template.md",
-    "Journal/Daily/2023/09/2023-09-28.md",
-    "System/templates/metadata/DateDimension.md",
-    "Inbox/Untitled.md",
-    "Tech/Software/Obsidian/plugins/Metadata Menu.md",
-    "System/storage/excalibrain.md",
-    "Journal/Daily/2023/09",
-    "Journal/Daily/2023",
-    "Areas/Obsidian RnD Vault/Date and Time formating.md",
-    "Journal/Daily/Daily.md",
-    "System/Concepts/Ontology.md",
-    "Journal/Untitled",
-    "System/fileclass/journal.md",
-    "System/templates/metadata",
-    "System/templates/New folder",
-    "System/scripts/functions/getSeasonForDate.js",
-    "System/templates/journal",
-    "System/Concepts/excalibrain.md",
-    "System/templates/callouts/Collection.md",
-    "System/templates/callouts/Warning callout.md",
-    "System/templates/callouts/Todo callout.md",
-    "System/templates/callouts/Tip callout.md",
-    "System/templates/callouts/Summary callout.md",
-    "System/templates/callouts/Success callout.md",
-    "System/templates/callouts/Quote callout.md",
-    "System/templates/callouts/Question callout.md",
-    "System/scripts/functions",
-    "System/scripts/secrets/secret.js",
-    "System/scripts/secrets",
-    "Attachments/Images/example-image-02.png",
-    "Attachments/Images/example-image-01.png",
-    "Development/tests/configNewNotes/config/notesCreationConfig.canvas",
-    "System/metadata/ontology mapping.canvas",
-    "Development/tests/canvas/testCanvas.canvas",
-    "System/storage/Untitled.canvas",
-    "tobe removed/banners/banner-personal-02.jpg",
-    "tobe removed/banners/banner-personal-01.jpg",
-    "tobe removed/banners/cosmic-dawn-initiative.png",
-    "tobe removed/banners/banner-books.jpg",
-    "tobe removed/banners/banner-spaces.jpg",
-    "tobe removed/banners/banner-resources.jpg",
-    "tobe removed/banners/banner-proprietary-02.jpg",
-    "tobe removed/banners/banner-proprietary-01.jpg"
-  ]
+	"main": {
+		"id": "80b8f9416df1413b",
+		"type": "split",
+		"children": [
+			{
+				"id": "2dc7c4d997798f0c",
+				"type": "tabs",
+				"children": [
+					{
+						"id": "01dd955b91e2fcab",
+						"type": "leaf",
+						"state": {
+							"type": "markdown",
+							"state": {
+								"file": "Journal/Daily/2023/10/2023-10-28.md",
+								"mode": "source",
+								"source": false
+							}
+						}
+					},
+					{
+						"id": "37e3e46e22f2afc3",
+						"type": "leaf",
+						"state": {
+							"type": "markdown",
+							"state": {
+								"file": "Shared Tech/RnD Vault/Markdown/Markdown Structure and Formats.md",
+								"mode": "source",
+								"source": false
+							}
+						}
+					}
+				],
+				"currentTab": 1
+			}
+		],
+		"direction": "vertical"
+	},
+	"left": {
+		"id": "1e14175cd534ace2",
+		"type": "split",
+		"children": [
+			{
+				"id": "6a5a46f35bfd6e3b",
+				"type": "tabs",
+				"children": [
+					{
+						"id": "b086af801e8a41b7",
+						"type": "leaf",
+						"state": {
+							"type": "file-explorer",
+							"state": {
+								"sortOrder": "alphabetical"
+							}
+						}
+					},
+					{
+						"id": "fdd19e4ea68307e0",
+						"type": "leaf",
+						"state": {
+							"type": "bookmarks",
+							"state": {}
+						}
+					},
+					{
+						"id": "6899140545d33598",
+						"type": "leaf",
+						"state": {
+							"type": "tag",
+							"state": {
+								"sortOrder": "alphabetical",
+								"useHierarchy": true
+							}
+						}
+					},
+					{
+						"id": "800ae58d040b9162",
+						"type": "leaf",
+						"state": {
+							"type": "all-properties",
+							"state": {
+								"sortOrder": "frequency"
+							}
+						}
+					},
+					{
+						"id": "bb5ef6513fbc97b3",
+						"type": "leaf",
+						"state": {
+							"type": "search",
+							"state": {
+								"query": "",
+								"matchingCase": false,
+								"explainSearch": false,
+								"collapseAll": false,
+								"extraContext": false,
+								"sortOrder": "alphabetical"
+							}
+						}
+					}
+				]
+			}
+		],
+		"direction": "horizontal",
+		"width": 204.5,
+		"collapsed": true
+	},
+	"right": {
+		"id": "a60f7122a537c574",
+		"type": "split",
+		"children": [
+			{
+				"id": "7e3ab805b43b8465",
+				"type": "tabs",
+				"children": [
+					{
+						"id": "8fc70947dc60777d",
+						"type": "leaf",
+						"state": {
+							"type": "file-properties",
+							"state": {
+								"file": "Shared Tech/RnD Vault/Markdown/Markdown Structure and Formats.md"
+							}
+						}
+					},
+					{
+						"id": "cc93846ab300e395",
+						"type": "leaf",
+						"state": {
+							"type": "advanced-tables-toolbar",
+							"state": {}
+						}
+					},
+					{
+						"id": "5e593de1f1262103",
+						"type": "leaf",
+						"state": {
+							"type": "backlink",
+							"state": {
+								"file": "Shared Tech/RnD Vault/Markdown/Markdown Structure and Formats.md",
+								"collapseAll": false,
+								"extraContext": false,
+								"sortOrder": "alphabetical",
+								"showSearch": false,
+								"searchQuery": "",
+								"backlinkCollapsed": false,
+								"unlinkedCollapsed": true
+							}
+						}
+					},
+					{
+						"id": "3b9a487910237d7b",
+						"type": "leaf",
+						"state": {
+							"type": "outgoing-link",
+							"state": {
+								"file": "Shared Tech/RnD Vault/Markdown/Markdown Structure and Formats.md",
+								"linksCollapsed": false,
+								"unlinkedCollapsed": true
+							}
+						}
+					},
+					{
+						"id": "31c3484c6b06d548",
+						"type": "leaf",
+						"state": {
+							"type": "todo",
+							"state": {}
+						}
+					},
+					{
+						"id": "415e3945b7def72d",
+						"type": "leaf",
+						"state": {
+							"type": "aHR0cHM6Ly9pY29uZXMuanMub3JnL2NvbGxlY3Rpb24vYWxscHVibGlj",
+							"state": {}
+						}
+					}
+				]
+			}
+		],
+		"direction": "horizontal",
+		"width": 341.5,
+		"collapsed": true
+	},
+	"left-ribbon": {
+		"hiddenItems": {
+			"canvas:Create new canvas": false,
+			"homepage:Open homepage": false,
+			"omnisearch:Omnisearch": false,
+			"templater-obsidian:Templater": false,
+			"switcher:Open quick switcher": true,
+			"command-palette:Open command palette": true,
+			"graph:Open graph view": false,
+			"table-editor-obsidian:Advanced Tables Toolbar": false,
+			"tag-page-md:Refresh tag page": false,
+			"workspaces:Manage workspace layouts": false,
+			"open-gate:Iconify": false,
+			"custom-sort:Toggle custom sorting": false,
+			"obsidian-excalidraw-plugin:Create new drawing": false,
+			"periodic-notes:Open today": false
+		}
+	},
+	"active": "37e3e46e22f2afc3",
+	"lastOpenFiles": [
+		"System/System.md",
+		"Areas/Areas.md",
+		"Development-rnd/buttons-custom-styling.md",
+		"System/templates/fileclass/Add Obsidian plugin page.md",
+		"System/scripts/CustomJS/init.mjs",
+		"Journal/Daily/2023/10/2023-10-28.md",
+		"System/scripts/CustomJS/ObjectUtils.mjs",
+		"Tech/API/Sonarr/Dev/Hämta data med JS och använd API för att uppdatera notes..md",
+		"System/templates/Journal/Daily/Daily Journal Template.md",
+		"Shared Tech/RnD Vault/Obsidian/plugins/Dataview.md",
+		"System/templates/widgets/Insert TOC.md",
+		"System/fileclass/template.md",
+		"System/scripts/scripts.md",
+		"System/templates/Notes/Person.md",
+		"System/templates/templates.md",
+		"System/templates/Tasks Menu.md",
+		"System/templates/New note picker.md",
+		"System/scripts/Templater/_init_template.js",
+		"Tech/API/Sonarr/SonarrAPI Test.md",
+		"Tech/API/Sonarr/Sonarr API.md",
+		"Planning/✅ Tasks.md",
+		"System/scripts/functions/Navbar.js",
+		"System/scripts/functions/Gate.js",
+		"System/templates/Notes/🧍‍♀️ Standup.md",
+		"Shared Tech/RnD Vault/Obsidian/plugins/Modules.md",
+		"Shared Tech/RnD Vault/Obsidian/Obsidian.md",
+		"Journal/Yearly/2023.md",
+		"Planning/Projects/test-rnd.md",
+		"Planning/Projects/Overhaul TPS reports system-rnd.md",
+		"Journal/Weekly/2023/2023-v43.md",
+		"Inbox/testnote.md",
+		"Development-rnd/wrk/JiraAPI.mjs",
+		"Development-rnd/scripts/Template.js",
+		"Development-rnd/scripts/initTemplates.js",
+		"Development-rnd/scripts/initPlugins.js",
+		"Development-rnd/scripts/functions/fetchSonarrMissing.js",
+		"Development-rnd/00 Documentation/attachments/134677c2aebe237fc0e9fde2a0968d5145b60bf6_2_586x1000.jpeg",
+		"Development-rnd/00 Documentation/attachments/Pasted image 20230821133422.png",
+		"System/storage/SvgProgressBar.svg",
+		"System/storage/SvgProgressBar.min.svg",
+		"Development-rnd/00 Documentation/attachments/Pasted image 20230821132802.png",
+		"Development-rnd/00 Documentation/attachments/ef2dfe619fd96a00f3efc4514687f1262d4ac507.gif",
+		"Development-rnd/00 Documentation/attachments/Pasted image 20230820170011.png",
+		"Archive/History of ObsidianRnDVault/DIKW Canvas/DKIW.canvas",
+		"Archive/History/DIKW Canvas/DKIW.canvas",
+		"Attachments/Images/Pasted image 20231009225009.png",
+		"Attachments/Pasted Image 20231009223426_862.png",
+		"System/storage/SvgProgressBar.wide.svg",
+		"Tech/Shared/RnD Vault/Ontology/ontology mapping.canvas",
+		"Planning/Task Dashboard/NewVault/StrukturFörslag.canvas",
+		"Planning/Task Dashboard/NewVault/Målet med obsidian.canvas",
+		"Planning/Task Dashboard/NewVault/Frontmatter.canvas",
+		"Planning/Task Dashboard/NewVault/DKIW.canvas",
+		"Planning/Task Dashboard/NewVault/Base flow.canvas",
+		"Development/tests/configNewNotes/config/notesCreationConfig.canvas",
+		"System/Ontology/ontology mapping.canvas"
+	]
 }

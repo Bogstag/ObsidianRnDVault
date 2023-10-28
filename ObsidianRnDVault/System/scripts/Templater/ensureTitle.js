@@ -1,4 +1,4 @@
-module.exports = async function (tp, newTitle = false) {
+module.exports = async (tp, newTitle = false) => {
 	let title = tp.file.title;
 
 	if (newTitle) {

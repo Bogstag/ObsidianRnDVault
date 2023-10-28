@@ -74,10 +74,7 @@ function generateTaskElement(task, page) {
  */
 dv.pages("#project" + globalExcludeString).file.forEach((project) => {
 	const sections = [];
-	if (!project.tasks.filter((t) => !t.completed && t.text).length) {
-		// There is no next action for this project
-		noNextAction.push(project);
-	} else {
+	if (project.tasks.filter((t) => !t.completed && t.text).length) {
 		project.tasks
 			.where((t) => !t.completed && t.text)
 			.forEach((task) => {
@@ -102,18 +99,12 @@ dv.pages("#project" + globalExcludeString).file.forEach((project) => {
 						// Add it as a sub-section to the project name
 						subSection = ` > ${sectionName}`;
 						// Find the line-position of the heading for this task
-						const file =
-							app.fileManager.vault.getAbstractFileByPath(
-								project.path,
-							);
-						const headings =
-							app.metadataCache.getFileCache(file).headings;
-						const match = headings.find(
-							(x) => x.heading === sectionName,
+						const file = app.fileManager.vault.getAbstractFileByPath(
+							project.path,
 						);
-						headingLine = match
-							? match.position.start.line
-							: task.line - 1;
+						const headings = app.metadataCache.getFileCache(file).headings;
+						const match = headings.find((x) => x.heading === sectionName);
+						headingLine = match ? match.position.start.line : task.line - 1;
 					}
 					// By adding this subtask, we can get a sub-line with the project and/or heading names
 					task.subtasks.push({
@@ -128,6 +119,9 @@ dv.pages("#project" + globalExcludeString).file.forEach((project) => {
 					tasks.push(generateTaskElement(task, project));
 				}
 			});
+	} else {
+		// There is no next action for this project
+		noNextAction.push(project);
 	}
 });
 
@@ -148,8 +142,7 @@ dv.pages("-#project" + globalExcludeString)
 					t.text && // where the task has text (is not blank)
 					!t.completed && // and not completed
 					!t.tags.includes("#exclude") && // and not excluded
-					(!t.header.subpath ||
-						!t.header.subpath.includes("exclude")) &&
+					(!t.header.subpath || !t.header.subpath.includes("exclude")) &&
 					!globalExclude.headings.includes(t.header.subpath), // and the heading is not excluded
 			)
 			.forEach((task) => tasks.push(generateTaskElement(task, page)));

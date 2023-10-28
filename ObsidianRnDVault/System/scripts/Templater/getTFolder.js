@@ -1,3 +1,1 @@
-module.exports = function (folder) {
-	return app.vault.getAbstractFileByPath(folder);
-};
+module.exports = (folder) => app.vault.getAbstractFileByPath(folder);

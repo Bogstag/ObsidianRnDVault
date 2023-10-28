@@ -29,9 +29,9 @@ ObsidianRnDVault/Tech
 !ObsidianRnDVault/Work
 
 # Test files should not be synced
-**-work**
-**-rnd**
-**-home**
+**/*-work*
+**/*-rnd*
+**/*-home*
 
 # Never remove
 # Never forget

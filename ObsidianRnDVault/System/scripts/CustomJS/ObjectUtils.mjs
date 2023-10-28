@@ -1,4 +1,4 @@
-export default class ObjectUtils {
+class ObjectUtils {
 	/**
 	 * @description Sort the first level of an object.
 	 * @param {Object} obj The object to sort.
@@ -21,9 +21,13 @@ export default class ObjectUtils {
 	 * @memberof Utils
 	 */
 	sortObject(obj) {
-		if (typeof obj !== "object" || obj === null) return obj;
+		if (typeof obj !== "object" || obj === null) {
+			return obj;
+		}
 
-		if (Array.isArray(obj)) return obj.map(this.sortObject);
+		if (Array.isArray(obj)) {
+			return obj.map(this.sortObject);
+		}
 
 		return Object.keys(obj)
 			.sort()

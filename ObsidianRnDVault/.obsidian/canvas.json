@@ -1,6 +1,6 @@
 {
-  "snapToObjects": true,
-  "snapToGrid": true,
-  "newFileLocation": "folder",
-  "newFileFolderPath": "Attachments/Canvas"
+	"snapToObjects": true,
+	"snapToGrid": true,
+	"newFileLocation": "folder",
+	"newFileFolderPath": "Attachments/Canvas"
 }

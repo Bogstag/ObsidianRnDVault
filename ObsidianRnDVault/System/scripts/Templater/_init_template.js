@@ -11,7 +11,7 @@ function main(target) {
 	target.file = target.page.file;
 	target.view = app.workspace.activeLeaf.view;
 
-	target.sleep = async function (ms) {
+	target.sleep = async (ms) => {
 		await new Promise((resolve) => setTimeout(resolve, ms));
 	};
 
@@ -23,12 +23,12 @@ function main(target) {
 	 * @param {boolean} openNewNote - Open the note in a new window, or return a link
 	 * @returns
 	 */
-	target.createFromTemplate = async function (
+	target.createFromTemplate = async (
 		templatePath,
 		newNoteName,
 		destinationFolder,
 		openNewNote,
-	) {
+	) => {
 		destinationFolder = destinationFolder || tp.file.folder(true);
 		await tp.file.create_new(
 			tp.file.find_tfile(templatePath),
@@ -43,7 +43,7 @@ function main(target) {
 	 * Returns true if file is in editing mode
 	 * @returns {boolean}
 	 */
-	target.isEditMode = function () {
+	target.isEditMode = () => {
 		const curr = app.workspace.activeLeaf.getViewState();
 		return curr.state.mode === "source";
 	};
@@ -52,7 +52,7 @@ function main(target) {
 	 * Set file to edit or read mode
 	 * @param {boolean} canEdit
 	 */
-	target.setEditMode = function (canEdit) {
+	target.setEditMode = (canEdit) => {
 		const curr = app.workspace.activeLeaf.getViewState();
 		curr.state.mode = canEdit ? "source" : "preview";
 		app.workspace.activeLeaf.setViewState(curr);
@@ -65,7 +65,7 @@ function main(target) {
 	 * Get the text contents of a file, specified by string path
 	 * @param {string} [path] Optional path, otherwise use current file
 	 */
-	target.getContents = async function (path) {
+	target.getContents = async (path) => {
 		const file = app.vault.getAbstractFileByPath(
 			path || target.tp.file.path(true),
 		);
@@ -78,7 +78,7 @@ function main(target) {
 	 * @param {string} [path] Optional path, otherwise use current file
 	 * @returns
 	 */
-	target.setContents = async function (contents, path) {
+	target.setContents = async (contents, path) => {
 		const file = app.vault.getAbstractFileByPath(
 			path || target.tp.file.path(true),
 		);
@@ -89,13 +89,13 @@ function main(target) {
 	 * Get the text of the current line, or false if not in editing mode
 	 * @returns {false|string}
 	 */
-	target.getCurrentLine = function () {
-		if (!target.isEditMode()) {
-			// Not in edit mode, current line is unknowable
-			return false;
-		} else {
+	target.getCurrentLine = () => {
+		if (target.isEditMode()) {
 			const lineNumber = target.view.editor.getCursor().line;
 			return target.view.editor.getLine(lineNumber);
+		} else {
+			// Not in edit mode, current line is unknowable
+			return false;
 		}
 	};
 
@@ -104,11 +104,8 @@ function main(target) {
 	 * @param {string}
 	 * @returns {boolean}
 	 */
-	target.setCurrentLine = function (newLineContent) {
-		if (!target.isEditMode()) {
-			// Not in edit mode, current line is unknowable
-			return false;
-		} else {
+	target.setCurrentLine = (newLineContent) => {
+		if (target.isEditMode()) {
 			const lineNumber = target.view.editor.getCursor().line;
 			target.view.editor.setLine(lineNumber, newLineContent);
 			// move cursor to end of line
@@ -118,10 +115,13 @@ function main(target) {
 			});
 
 			return true;
+		} else {
+			// Not in edit mode, current line is unknowable
+			return false;
 		}
 	};
 
-	target.goToFile = async function (path) {
+	target.goToFile = async (path) => {
 		const file = app.vault.getAbstractFileByPath(path);
 		if (path !== target.file.path) {
 			await app.workspace.getLeaf(false).openFile(file);

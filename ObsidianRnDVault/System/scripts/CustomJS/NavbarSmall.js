@@ -1,32 +1,28 @@
 class NavbarSmall {
-	createNavbar(app, dv) {
-		let nav = [];
+	createNavbar(dv) {
+		const nav = [];
 		let navItem;
 
-		let pages = dv
+		const pages = dv
 			.pages("#dashboard")
 			.sort((page) => page.file.folder, "asc");
-		console.log(pages);
-		for (let page of pages) {
+
+		for (const page of pages) {
 			navItem = "";
 
-			if (page.file.frontmatter["include_in_navbar"]) {
-				if (dv.current().file.path === page.file.path) {
-					if (page.file.frontmatter["navbar_name"] === undefined) {
-						navItem = `**[[${page.file.link.path}|${page.file.name}]]**`;
-					} else {
-						navItem = `**[[${page.file.link.path}|${page.file.frontmatter["navbar_name"]}]]**`;
-					}
-				} else {
-					//navItem = `[[${page.file.link.path}|${page.file.frontmatter["navbar_name"]}]]`;
-					if (page.file.frontmatter["navbar_name"] === undefined) {
-						navItem = `[[${page.file.link.path}|${page.file.name}]]`;
-					} else {
-						navItem = `[[${page.file.link.path}|${page.file.frontmatter["navbar_name"]}]]`;
-					}
-				}
-				nav.push(navItem);
+			if (!page.file.frontmatter.include_in_navbar) {
+				continue;
 			}
+
+			navItem = `[[${page.file.link.path}|${
+				page.file.frontmatter.navbar_name ?? page.file.name
+			}]]`;
+
+			if (dv.current().file.path === page.file.path) {
+				navItem = `**${navItem}**`;
+			}
+
+			nav.push(navItem);
 		}
 
 		return dv.paragraph(nav.join(" | "));

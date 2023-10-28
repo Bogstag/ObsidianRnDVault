@@ -31,7 +31,7 @@ const toggleIndicator = (note, indicator) => {
 	}
 };
 
-class main {
+class Main {
 	constructor() {
 		const tp =
 			app.plugins.plugins["templater-obsidian"].templater
@@ -161,4 +161,4 @@ class main {
 		await note.setContents(currentNoteContents.replace(taskRegex, ""));
 	}
 }
-module.exports = main;
+module.exports = Main;

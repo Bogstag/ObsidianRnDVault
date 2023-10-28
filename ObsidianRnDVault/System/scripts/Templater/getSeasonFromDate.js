@@ -1,4 +1,4 @@
-module.exports = function (dateString) {
+module.exports = (dateString) => {
 	const d = moment(dateString, "YYYY-MM-DD");
 
 	const seasonArray = [
