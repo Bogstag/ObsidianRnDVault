@@ -26,6 +26,8 @@ date_modified: <% `${tp.date.now("YYYY-MM-DD")}` %>
 fileclass: project/task
 project: <% `${fileObject.path.split("/")[2]}` %>
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %>
+obsidianUIMode: source
+obsidianEditingMode: live
 <% "---" %>
 <% `[[${fileProjectRoot}/Home|Home]]` %> | <% `[[${fileProjectRoot}/Meetings/All Meetings|Meetings]]` %> | <% `[[${fileProjectRoot}/Notes/All Notes|Notes]]` %> | <% `[[${fileProjectRoot}/References|References]]` %>
 # <% `${fileObject.basename}` %>

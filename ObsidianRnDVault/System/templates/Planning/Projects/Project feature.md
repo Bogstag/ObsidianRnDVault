@@ -24,6 +24,8 @@ date_modified: <% `${tp.date.now("YYYY-MM-DD")}` %>
 document_type: feature
 project: <% `${fileObject.path.split("/")[2]}` %>
 status: not started
+obsidianUIMode: source
+obsidianEditingMode: live
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %> feature
 <% "---" %>
 <% `[[${fileProjectRoot}/Home|Home]]` %> | <% `[[${fileProjectRoot}/Meetings/All Meetings|Meetings]]` %> | <% `[[${fileProjectRoot}/Notes/All Notes|Notes]]` %> | <% `[[${fileProjectRoot}/References|References]]` %>

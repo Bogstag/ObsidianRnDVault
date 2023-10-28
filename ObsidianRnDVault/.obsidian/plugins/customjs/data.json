@@ -1,6 +1,6 @@
 {
-  "jsFiles": "",
-  "jsFolder": "System/scripts/classes/",
-  "startupScriptNames": [],
-  "registeredInvocableScriptNames": []
+	"jsFiles": "",
+	"jsFolder": "System/scripts/CustomJS/",
+	"startupScriptNames": [],
+	"registeredInvocableScriptNames": []
 }

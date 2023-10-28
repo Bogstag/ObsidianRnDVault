@@ -21,6 +21,8 @@ _%>
 date_created: <% `${tp.date.now("YYYY-MM-DD")}` %>
 date_modified: <% `${tp.date.now("YYYY-MM-DD")}` %>
 document_type: note
+obsidianUIMode: source
+obsidianEditingMode: live
 project: <% `${fileObject.path.split("/")[2]}` %>
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %> note
 <% "---" %>

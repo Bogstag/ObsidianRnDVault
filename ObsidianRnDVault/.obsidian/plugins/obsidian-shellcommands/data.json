@@ -21,42 +21,7 @@
     }
   },
   "max_visible_lines_in_shell_command_fields": false,
-  "shell_commands": [
-    {
-      "id": "hc7bqd6uh4",
-      "platform_specific_commands": {
-        "default": "code {{folder_path:relative}} "
-      },
-      "shells": {},
-      "alias": "",
-      "icon": null,
-      "confirm_execution": false,
-      "ignore_error_codes": [],
-      "input_contents": {
-        "stdin": null
-      },
-      "output_handlers": {
-        "stdout": {
-          "handler": "ignore",
-          "convert_ansi_code": true
-        },
-        "stderr": {
-          "handler": "notification",
-          "convert_ansi_code": true
-        }
-      },
-      "output_wrappers": {
-        "stdout": null,
-        "stderr": null
-      },
-      "output_channel_order": "stdout-first",
-      "output_handling_mode": "buffered",
-      "events": {},
-      "command_palette_availability": "enabled",
-      "preactions": [],
-      "variable_default_values": {}
-    }
-  ],
+  "shell_commands": [],
   "prompts": [],
   "builtin_variables": {},
   "custom_variables": [],

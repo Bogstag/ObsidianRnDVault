@@ -82,7 +82,7 @@ To exclude all tasks in a note from your master task list, add the tag #exclude-
 
 #### Exclude Tasks under a Named Heading
 
-There is a Habits header where I'm tracking the habits I want to do each day. I don't want these to show up in my master task list, so I have excluded it as "globalExclude" in [[System/scripts/dvViews/tasks.js]]
+There is a Habits header where I'm tracking the habits I want to do each day. I don't want these to show up in my master task list, so I have excluded it as "globalExclude" in [[System/scripts/DataViews/tasks.js]]
 
 #### Exclude Tasks under a Heading via Tag #exclude
 

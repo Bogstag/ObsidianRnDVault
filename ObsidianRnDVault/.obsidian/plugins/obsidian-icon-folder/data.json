@@ -166,5 +166,6 @@
   "Work/Meetings": "FasUsers",
   "Shared Tech/Programming/Python": "FabPython",
   "Areas/TV": "FasTv",
-  "Shared Tech/Programming/Bash": "MyMyBash"
+  "Shared Tech/Programming/Bash": "MyMyBash",
+  "Shared Tech/Programming/Regex": "MyMyRegex"
 }

@@ -32,6 +32,7 @@ date_created: <% `${tp.date.now("YYYY-MM-DD")}` %>
 date_modified: <% `${tp.date.now("YYYY-MM-DD")}` %>
 document_type: project-dashboard
 is_active: true
+obsidianUIMode: preview
 project: <% `${fileObject.path.split("/")[2]}` %>
 tags: dashboard project <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %>
 <% "---" %>

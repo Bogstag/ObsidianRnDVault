@@ -18,6 +18,8 @@ date_modified: <% `${tp.date.now("YYYY-MM-DD")}` %>
 document_type: meeting
 project: <% `${fileObject.path.split("/")[2]}` %>
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %> meeting
+obsidianUIMode: source
+obsidianEditingMode: live
 <% "---" %>
 <% `[[${fileProjectRoot}/Home|Home]]` %> | <% `[[${fileProjectRoot}/Meetings/All Meetings|Meetings]]` %> | <% `[[${fileProjectRoot}/Notes/All Notes|Notes]]` %> | <% `[[${fileProjectRoot}/References|References]]` %>
 # <% `${fileObject.basename}` %>

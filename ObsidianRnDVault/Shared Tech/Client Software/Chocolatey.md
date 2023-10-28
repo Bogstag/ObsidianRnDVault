@@ -1,9 +1,13 @@
 ---
 date_created: 2023-10-15 03:15:49
-date_modified: 2023-10-22 14:13:38
-title: Chocolatey Package Manager for Windows
+date_modified: 2023-10-22 14:45:44
 description: A guide to installing and using Chocolatey, a machine-level command-line package manager for Windows software.
-tags: [Chocolatey, Windows, Software, Package Manager]
+tags:
+  - Chocolatey
+  - Windows
+  - Software
+  - Package Manager
+title: Chocolatey Package Manager for Windows
 ---
 # Chocolatey
 
@@ -21,7 +25,7 @@ To install Chocolatey on your Windows system, follow these steps:
 
 	Before installing Chocolatey, you need to check the execution policy on your system. Run `Get-ExecutionPolicy` in an elevated PowerShell window. If it returns "Restricted", then run `Set-ExecutionPolicy AllSigned` or `Set-ExecutionPolicy Bypass -Scope Process`.
 
-1. Install Chocolatey
+2. Install Chocolatey
 
 	Once you have checked the execution policy, you can install Chocolatey using the following command in an elevated PowerShell window:
 
@@ -31,7 +35,7 @@ To install Chocolatey on your Windows system, follow these steps:
 
 	This command will download and run the Chocolatey installer script, which will install Chocolatey on your system.
 
-1. Check if you installed Chocolatey
+3. Check if you installed Chocolatey
 
 	After installing Chocolatey, you can check that it was installed correctly by running the following command in an elevated PowerShell window:
 
@@ -55,7 +59,7 @@ Once Chocolatey is installed on your system, you can use it to install software 
 
 	This will enable global confirmation for all future package installations.
 
-1. Install a package
+2. Install a package
 
 	To install a package using Chocolatey, run the following command in an elevated PowerShell window:
 
@@ -70,7 +74,7 @@ Once Chocolatey is installed on your system, you can use it to install software 
 	choco install notepadplusplus-npppluginmanager
 	```
 
-1. Verify the installation
+3. Verify the installation
 
 	After installing a package using Chocolatey, you can verify that it was installed correctly by running the following command in an elevated PowerShell window:
 

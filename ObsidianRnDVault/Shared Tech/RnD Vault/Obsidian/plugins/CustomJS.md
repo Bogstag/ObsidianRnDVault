@@ -39,7 +39,7 @@ This plugin allows for the loading and reuse of custom javascript files inside y
 ```json
 	{
   "jsFiles": "",
-  "jsFolder": "System/scripts/classes",
+  "jsFolder": "System/scripts/CustomJS",
   "registeredInvocableScriptNames": [],
   "startupScriptNames": []
 }

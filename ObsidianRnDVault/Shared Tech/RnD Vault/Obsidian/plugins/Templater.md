@@ -284,7 +284,7 @@ await app.vault.modify(file, content)
   "auto_jump_to_cursor": true,
   "enable_system_commands": false,
   "shell_path": "\"C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe\"",
-  "user_scripts_folder": "System/scripts/functions",
+  "user_scripts_folder": "System/scripts/Templater",
   "enable_folder_templates": true,
   "folder_templates": [
     {

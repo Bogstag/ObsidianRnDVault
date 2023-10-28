@@ -1,0 +1,22 @@
+{
+  "ignoreOpenFiles": false,
+  "ignoreForceViewAll": true,
+  "folders": [
+    {
+      "folder": "System",
+      "viewMode": "obsidianEditingMode: source"
+    },
+    {
+      "folder": "Home",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "Archive",
+      "viewMode": "obsidianUIMode: preview"
+    },
+    {
+      "folder": "Publish",
+      "viewMode": "obsidianUIMode: preview"
+    }
+  ]
+}

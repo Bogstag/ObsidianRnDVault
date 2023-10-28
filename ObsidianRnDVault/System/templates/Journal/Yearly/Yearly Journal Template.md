@@ -1,5 +1,7 @@
 ---
 fileclass: template
+obsidianUIMode: source
+obsidianEditingMode: live
 ---
 <%* tR = "" -%>
 <%*

@@ -1,5 +1,5 @@
 ---
-dependsOnScript: "[[System/scripts/classes/Gate.js|Gate.js]]"
+dependsOnScript: "[[System/scripts/CustomJS/Gate.js|Gate.js]]"
 dependsOnPlugin: "[[Tech/Software/Client/Obsidian/plugins/CustomJS|CustomJS]]"
 fileclass: template
 ---

@@ -1,5 +1,5 @@
 ---
-dependsOnDvView: "[[System/scripts/classes/Navbar.js|Navbar.js]]"
+dependsOnDvView: "[[System/scripts/CustomJS/Navbar.js|Navbar.js]]"
 dependsOnPlugin: "[[Tech/Software/Client/Obsidian/plugins/CustomJS|CustomJS]]"
 fileclass: template
 ---

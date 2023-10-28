@@ -1,5 +1,5 @@
 ---
-dependsOnScript: "[[System/scripts/functions/makeProgressBar.js|makeProgressBar.js]]"
+dependsOnScript: "[[System/scripts/Templater/makeProgressBar.js|makeProgressBar.js]]"
 fileclass: template
 ---
 <%* tR = "" -%>

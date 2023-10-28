@@ -1,5 +1,5 @@
 ---
-dependsOnDvView: "[[System/scripts/dvViews/toc.js|toc.js]]"
+dependsOnDvView: "[[System/scripts/DataViews/toc.js|toc.js]]"
 fileclass: template
 ---
 <%* tR = "" -%>

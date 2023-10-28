@@ -3,7 +3,7 @@
   "compactingFactor": 1.5,
   "minLinkLength": 18,
   "excalibrainFilepath": "System/storage/excalibrain.md",
-  "indexUpdateInterval": 30000,
+  "indexUpdateInterval": 120000,
   "hierarchy": {
     "exclusions": [
       "excalidraw-border-color",

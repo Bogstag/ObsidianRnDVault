@@ -1,9 +1,11 @@
 ---
-dependsOnScript: "[[System/scripts/functions/getSeasonFromDate.js|getSeasonFromDate.js]]"
+dependsOnScript: "[[System/scripts/Templater/getSeasonFromDate.js|getSeasonFromDate.js]]"
 dependsOnPlugin:
   - "[[Tech/Software/Client/Obsidian/plugins/Year Timeline|Year Timeline]]"
   - "[[Tech/Software/Client/Obsidian/plugins/Tasks|Tasks]]"
 fileclass: template
+obsidianUIMode: source
+obsidianEditingMode: live
 ---
 <%* tR = "" -%>
 <%*
@@ -49,7 +51,7 @@ season: <% tp.user.getSeasonFromDate(tp.date.now("YYYY-MM-DD", 1, date, format))
 
 ## ✅
 
-````dataviewjs
+```dataviewjs
 function callout(text, type, title = '', folded = '+') {
     const allText = `> [!${type}]${folded} ${title}\n` + text;
     const lines = allText.split('\n');
@@ -58,35 +60,11 @@ function callout(text, type, title = '', folded = '+') {
 
 const currentFileName = dv.current().file.name;
 
-const late = `
-not done
-due before today
-group by due
-filename does not include ${currentFileName}
-`;
-dv.paragraph(callout('```tasks\n' + late + '\n```', 'missing', 'Försenat'));
-
-const todoThisWeek = `
-not done
-happens today
-group by happens
-filename does not include ${currentFileName}
-`;
-dv.paragraph(callout('```tasks\n' + todoThisWeek + '\n```', 'todo', 'Att göra idag'));
-
 const todo = `
 not done
 no happens date
-group by folder
+group by function task.due.category.groupText
 filename does not include ${currentFileName}
 `;
-dv.paragraph(callout('```tasks\n' + todo + '\n```', 'todo', 'Att göra', '-'));
-
-const done = `
-done today
-group by done
-filename does not include ${currentFileName}
-`;
-
-dv.paragraph(callout('```tasks\n' + done + '\n```', 'done', 'Slutförda idag', '-'));
-````
+dv.paragraph(callout('```tasks\n' + todo + '\n```', 'todo', 'Annat att göra', '-'));
+```

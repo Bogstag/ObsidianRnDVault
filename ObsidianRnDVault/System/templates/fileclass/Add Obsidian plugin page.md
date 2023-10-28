@@ -1,13 +1,15 @@
 ---
-dependsOnScript: "[[System/scripts/classes/Plugins.js|Plugins.js]]"
+dependsOnScript: "[[System/scripts/CustomJS/Plugins.js|Plugins.js]]"
 dependsOnPlugin:
   - "[[Tech/Software/Client/Obsidian/plugins/CustomJS|CustomJS]]"
 fileclass: template
+obsidianUIMode: source
+obsidianEditingMode: live
 ---
 <%* tR = "" -%>
 <%* 
-	const targetFolder = "Tech/Software/Obsidian/plugins";
-	
+	const targetFolder = "Shared Tech/RnD Vault/Obsidian/plugins";
+
 	// Get list of installed plugins
 	const { Plugins } = customJS;
 	let pluginNames = await Plugins.getPluginNames(app);
@@ -69,5 +71,5 @@ template: "<%"["%>[System/templates/fileclass/Add Obsidian plugin page|Add Obsid
 ## Settings
 
 ```json
-	<% plugin.formatedSettings %>
+	// To many errors<% plugin. formatedSettings %>
 ```

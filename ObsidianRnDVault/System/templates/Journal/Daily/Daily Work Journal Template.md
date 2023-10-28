@@ -1,5 +1,5 @@
 ---
-dependsOnScript: "[[System/scripts/functions/getSeasonFromDate.js|getSeasonFromDate.js]]"
+dependsOnScript: "[[System/scripts/Templater/getSeasonFromDate.js|getSeasonFromDate.js]]"
 dependsOnPlugin:
   - "[[Tech/Software/Client/Obsidian/plugins/Year Timeline|Year Timeline]]"
   - "[[Tech/Software/Client/Obsidian/plugins/Tasks|Tasks]]"
@@ -7,6 +7,8 @@ dependsOnPlugin:
   - "[[Tech/Software/Client/Obsidian/plugins/ICS|ICS]]"
   - "[[Tech/Software/Client/Obsidian/plugins/Open Gate|Open Gate]]"
 fileclass: template
+obsidianUIMode: source
+obsidianEditingMode: live
 ---
 <%* tR = "" -%>
 <%*
@@ -60,6 +62,10 @@ account: Default
 - <% tp.file.cursor(1) %>
 
 ## ✅
+- [ ] Stämpla in ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
+<%* if (tp.date.now("d") in [2,4]) { %>
+- [ ] Prepare standup 📅<% moment().format("YYYY-MM-DD 09:30:00") %> ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
+<%* } -%>
 <%*
   const ics = await app.plugins.getPlugin('ics');
   const events = await ics.getEvents();
@@ -76,10 +82,10 @@ account: Default
   tR += mdArray.sort().join("\n")
 -%>
 <%* if (tp.date.now("d") == 5) { %>
-- [ ] Tidsregistrera i slutet av veckan #Work/tidsregistrera/vecka 📅 <% tp.date.weekday("YYYY-MM-DD", 5) %>
+- [ ] Tidsregistrera i slutet av veckan #Work/tidsregistrera/vecka 📅 <% tp.date.weekday("YYYY-MM-DD", 5) %> ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
 <%* } -%> 
-- [ ] Stämpla in
-- [ ] Stämpla ut
+
+- [ ] Stämpla ut ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
 
 >[!Info]- TidReg
 >```gate  
@@ -104,35 +110,11 @@ function callout(text, type, title = '', folded = '+') {
 
 const currentFileName = dv.current().file.name;
 
-const late = `
-not done
-due before today
-group by due
-filename does not include ${currentFileName}
-`;
-dv.paragraph(callout('```tasks\n' + late + '\n```', 'missing', 'Försenat'));
-
-const todoThisWeek = `
-not done
-happens today
-group by happens
-filename does not include ${currentFileName}
-`;
-dv.paragraph(callout('```tasks\n' + todoThisWeek + '\n```', 'todo', 'Att göra idag'));
-
 const todo = `
 not done
 no happens date
-group by folder
+group by function task.due.category.groupText
 filename does not include ${currentFileName}
 `;
-dv.paragraph(callout('```tasks\n' + todo + '\n```', 'todo', 'Att göra', '-'));
-
-const done = `
-done today
-group by done
-filename does not include ${currentFileName}
-`;
-
-dv.paragraph(callout('```tasks\n' + done + '\n```', 'done', 'Slutförda idag', '-'));
+dv.paragraph(callout('```tasks\n' + todo + '\n```', 'todo', 'Annat att göra', '-'));
 ```

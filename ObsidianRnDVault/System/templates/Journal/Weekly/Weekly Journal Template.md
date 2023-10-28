@@ -1,6 +1,8 @@
 ---
 dependsOnPlugin: "[[Tech/Software/Client/Obsidian/plugins/Tasks|Tasks]]"
 fileclass: template
+obsidianUIMode: source
+obsidianEditingMode: live
 ---
 <%* tR = "" -%>
 <%*

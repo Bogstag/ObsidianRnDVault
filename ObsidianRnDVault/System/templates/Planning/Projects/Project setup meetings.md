@@ -14,6 +14,7 @@ document_type: meetings
 project: <% `${fileObject.path.split("/")[2]}` %>
 description: List of project meetings.
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %> meetings
+obsidianUIMode: preview
 <% "---" %>
 <% `[[${fileProjectRoot}/Home|Home]]` %> | <% `**[[${fileProjectRoot}/Meetings/All Meetings|Meetings]]**` %> | <% `[[${fileProjectRoot}/Notes/All Notes|Notes]]` %> | <% `[[${fileProjectRoot}/References|References]]` %>
 # Meetings

@@ -1,6 +1,7 @@
 {
 	"minimal-style@@active-line-on": true,
 	"minimal-style@@embed-strict": true,
+	"minimal-style@@frame-icon-color@@dark": "#E4E4E4",
 	"minimal-style@@icon-color-active@@dark": "#691863",
 	"minimal-style@@icon-color-focused@@dark": "#8A3183",
 	"minimal-style@@icon-color-hover@@dark": "#E787E0",

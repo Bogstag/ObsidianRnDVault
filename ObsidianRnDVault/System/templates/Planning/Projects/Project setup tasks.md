@@ -15,6 +15,7 @@ document_type: tasks
 project: <% `${fileObject.path.split("/")[2]}` %>
 description: List of project tasks.
 tags: <% `${fileObject.path.split("/")[2].toLowerCase().replaceAll(" ", "-").trim()}` %> tasks
+obsidianUIMode: preview
 <% "---" %>
 <% `[[${fileProjectRoot}/Home|Home]]` %> | <% `[[${fileProjectRoot}/Meetings/All Meetings|Meetings]]` %> | <% `[[${fileProjectRoot}/Notes/All Notes|Notes]]` %> | <% `[[${fileProjectRoot}/References|References]]` %>
 # Tasks
