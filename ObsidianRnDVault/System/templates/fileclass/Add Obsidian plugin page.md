@@ -63,13 +63,14 @@ template: "<%"["%>[System/templates/fileclass/Add Obsidian plugin page|Add Obsid
 >[!bug]- Repo
 >
 >```gate  
-><% plugin.manifest.authorUrl %>
+><% plugin.manifest.fundingUrl %>
 >height:700
 >profile:obsidian
 >```
 
-## Settings
+<% ## Settings
 
-```json
-	// To many errors<% plugin. formatedSettings %>
 ```
+json
+	// To many errors<% plugin. formatedSettings %>
+``` %>

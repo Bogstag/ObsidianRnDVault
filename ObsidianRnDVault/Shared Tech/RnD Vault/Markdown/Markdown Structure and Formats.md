@@ -1,6 +1,7 @@
 ---
 date_created: 2023-07-11 00:00:00
-date_modified: 2023-10-03 11:21:43
+date_modified: 2023-10-29 01:20:28
+obsidianUIMode: preview
 ---
 
 >[!note] Note
@@ -49,10 +50,10 @@ _Paragraph italic text_
 **Numbered List**
 
 1. List item a
-1. List item b
+2. List item b
 	1. List item b1
-	1. List item b2
-1. List item c
+	2. List item b2
+3. List item c
 
 **Task List**
 

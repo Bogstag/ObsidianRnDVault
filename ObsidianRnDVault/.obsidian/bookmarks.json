@@ -1,14 +1,14 @@
 {
-  "items": [
-    {
-      "type": "folder",
-      "ctime": 1697312298341,
-      "path": "Shared Tech/RnD Vault"
-    },
-    {
-      "type": "folder",
-      "ctime": 1697312323469,
-      "path": "System"
-    }
-  ]
+	"items": [
+		{
+			"type": "folder",
+			"ctime": 1697312298341,
+			"path": "Shared Tech/RnD Vault"
+		},
+		{
+			"type": "folder",
+			"ctime": 1697312323469,
+			"path": "System"
+		}
+	]
 }

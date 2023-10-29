@@ -34,9 +34,9 @@ class SvgProgressBar {
 	 * @returns {string} - The SVG content.
 	 * @memberof SvgProgressBar
 	 */
-	getSvgProgressBar(progress = 0, requestArgs) {
+	getSvgProgressBar(progress, requestArgs) {
 		const templateFields = this.getTemplateFields(progress, requestArgs);
-		const svgProgressBar = this.createSVG(templateFields);
+		const svgProgressBar = this.createSvg(templateFields);
 
 		return svgProgressBar;
 	}
@@ -55,12 +55,12 @@ class SvgProgressBar {
 		//const returnTemplate = getReturnTemplate(requestArgs.wrap);
 
 		let scale = 100;
-		if (requestArgs.scale !== undefined && !isNaN(requestArgs.scale)) {
+		if (requestArgs.scale !== undefined && !Number.isNaN(requestArgs.scale)) {
 			scale = parseInt(requestArgs.scale);
 		}
 
 		let progressWidth = title ? 60 : 90;
-		if (requestArgs.width !== undefined && !isNaN(requestArgs.width)) {
+		if (requestArgs.width !== undefined && !Number.isNaN(requestArgs.width)) {
 			progressWidth = parseInt(requestArgs.width);
 		}
 
@@ -68,12 +68,12 @@ class SvgProgressBar {
 			height: requestArgs.height || 20, // TODO:: Remove wide, not my finest moment
 			wrap: requestArgs.wrap || "svg",
 			title: title,
-			title_width: title ? 10 + 6 * title.length : 0,
-			title_color: requestArgs.color || "428bca",
+			titleWidth: title ? 10 + 6 * title.length : 0,
+			titleColor: requestArgs.color || "428bca",
 			scale: scale,
 			progress: progress,
-			progress_width: progressWidth,
-			progress_color: this.getProgressColor(progress, scale),
+			progressWidth: progressWidth,
+			progressColor: this.getProgressColor(progress, scale),
 			suffix: requestArgs.suffix || "%",
 		};
 	}
@@ -96,36 +96,37 @@ class SvgProgressBar {
 	 *
 	 *
 	 * @param {*} value
-	 * @param {*} unwraped
+	 * @param {*} unwrap
 	 * @return {*}
 	 * @memberof SvgProgressBar
 	 */
-	getReturnTemplate(value, unwraped) {
-		let wraped = unwraped;
+	// getReturnTemplate(value, unwrap) {
+	// 	let unwraped = unwrap;
+	// 	let wraped = unwraped;
 
-		switch (value) {
-			case "img":
-				unwraped = this.doublesToSingles(unwraped);
-				unwraped = this.encodeSvg(unwraped);
-				wraped = `<img src = "data:image/svg+xml,${unwraped}" /> `;
-				return wraped;
-			case "url":
-				unwraped = this.doublesToSingles(unwraped);
-				unwraped = this.encodeSvg(unwraped);
-				wraped = `url("data:image/svg+xml,${unwraped}"); `;
-				return wraped;
-			case "svg":
-				return wraped;
-			default:
-				if (value.includes(".")) {
-					unwraped = this.doublesToSingles(unwraped);
-					unwraped = this.encodeSvg(unwraped);
-					const [first, second, third] = value.split(".");
-					wraped = `${first}.${second} (${third}, "data:image/svg+xml,${unwraped}")`;
-				}
-				return wraped;
-		}
-	}
+	// 	switch (value) {
+	// 		case "img":
+	// 			unwraped = this.doublesToSingles(unwraped);
+	// 			unwraped = this.encodeSvg(unwraped);
+	// 			wraped = `<img src = "data:image/svg+xml,${unwraped}" /> `;
+	// 			return wraped;
+	// 		case "url":
+	// 			unwraped = this.doublesToSingles(unwraped);
+	// 			unwraped = this.encodeSvg(unwraped);
+	// 			wraped = `url("data:image/svg+xml,${unwraped}"); `;
+	// 			return wraped;
+	// 		case "svg":
+	// 			return wraped;
+	// 		default:
+	// 			if (value.includes(".")) {
+	// 				unwraped = this.doublesToSingles(unwraped);
+	// 				unwraped = this.encodeSvg(unwraped);
+	// 				const [first, second, third] = value.split(".");
+	// 				wraped = `${first}.${second} (${third}, "data:image/svg+xml,${unwraped}")`;
+	// 			}
+	// 			return wraped;
+	// 	}
+	// }
 
 	/**
 	 *
@@ -161,7 +162,7 @@ class SvgProgressBar {
 	 * @memberof SvgProgressBar
 	 */
 	prefixDataType(svg, type) {
-		return "data:image/svg+" + type + "," + svg;
+		return `data:image/svg+${type},${svg}`;
 	}
 
 	/**
@@ -183,9 +184,9 @@ class SvgProgressBar {
 	 * @return {*}
 	 * @memberof SvgProgressBar
 	 */
-	prefixIMG(svg, type) {
-		svg = prefixDataType(svg, type);
-		return '<img src="' + svg + '">';
+	prefixImg(svg, type) {
+		const svgDataType = prefixDataType(svg, type);
+		return `<img src="${svgDataType}">`;
 	}
 
 	/**
@@ -195,8 +196,8 @@ class SvgProgressBar {
 	 * @return {*}
 	 * @memberof SvgProgressBar
 	 */
-	prefixURLDoubleQuotes(svg) {
-		return 'url("' + svg + '")';
+	prefixUrlDoubleQuotes(svg) {
+		return `url("${svg}")`;
 	}
 
 	/**
@@ -218,8 +219,8 @@ class SvgProgressBar {
 	 * @memberof SvgProgressBar
 	 */
 	removeWhitespace(svg) {
-		svg = svg.replace(/>\s{1,}</g, `>< `); // One of more spaces between groups or tags
-		return svg.replace(/\s{2,}/g, ` `); // Double or more spaces
+		const svgSanitized = svg.replace(/>\s{1,}</g, ">< "); // One of more spaces between groups or tags
+		return svgSanitized.replace(/\s{2,}/g, " "); // Double or more spaces
 	}
 
 	/**
@@ -230,9 +231,9 @@ class SvgProgressBar {
 	 * @memberof SvgProgressBar
 	 */
 	regexEncode(svg) {
-		svg = svg.replace(/>\s{1,}</g, `>< `);
-		svg = svg.replace(/\s{2,}/g, ` `);
-		return svg.replace(/[\r\n%#()<>?[\\\]^`{|}]/g, encodeURIComponent);
+		const svgStep1 = svg.replace(/>\s{1,}</g, ">< ");
+		const svgStep2 = svgStep1.replace(/\s{2,}/g, " ");
+		return svgStep2.replace(/[\r\n%#()<>?[\\\]^`{|}]/g, encodeURIComponent);
 	}
 
 	/**
@@ -250,7 +251,7 @@ class SvgProgressBar {
 					? "<svg"
 					: '<svg xmlns="http://www.w3.org/2000/svg"',
 			)
-			.replace(/[<>#%{}"]/g, (x) => "%" + x.charCodeAt(0).toString(16))
+			.replace(/[<>#%{}"]/g, (x) => `%${x.charCodeAt(0).toString(16)}`)
 			.replace(/\s+/g, " ");
 	}
 
@@ -282,45 +283,45 @@ class SvgProgressBar {
 	 * @return {string} - The content with values of the renderd SVG.
 	 * @memberof SvgProgressBar
 	 */
-	createSVG(tF) {
+	createSvg(tF) {
 		// Do calc outside of svg, minimize prettier error formating
 		const svgCalc = {
-			y_txt: tF.height / 2 + 4,
-			y_txt_shadow: tF.height / 2 + 5,
-			x_txt: Math.floor(tF.progress_width / 2) + tF.title_width,
-			txt_prog: `${tF.progress}${tF.suffix}`,
-			tot_width: tF.title_width + tF.progress_width,
-			prog_width: Math.min(tF.progress / tF.scale, 1) * tF.progress_width,
-			font_size: Math.max(tF.height / 2 - 5, 11),
+			yTxt: tF.height / 2 + 4,
+			yTxtShadow: tF.height / 2 + 5,
+			xTxt: Math.floor(tF.progressWidth / 2) + tF.titleWidth,
+			txtProg: `${tF.progress}${tF.suffix}`,
+			totWidth: tF.titleWidth + tF.progressWidth,
+			progWidth: Math.min(tF.progress / tF.scale, 1) * tF.progressWidth,
+			fontSize: Math.max(tF.height / 2 - 5, 11),
 		};
 
-		const svgContent = `<svg width="${svgCalc.tot_width}" height="${
+		const svgContent = `<svg width="${svgCalc.totWidth}" height="${
 			tF.height
 		}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><rect rx="4" x="0" width="${
-			svgCalc.tot_width
-		}" height="${tF.height}" fill="#${tF.title_color}"/><rect rx="4" x="${
-			tF.title_width
-		}" width="${tF.progress_width}" height="${
+			svgCalc.totWidth
+		}" height="${tF.height}" fill="#${tF.titleColor}"/><rect rx="4" x="${
+			tF.titleWidth
+		}" width="${tF.progressWidth}" height="${
 			tF.height
-		}" fill="#555" /><rect rx="4" x="${tF.title_width}" width="${
-			svgCalc.prog_width
-		}" height="${tF.height}" fill="${tF.progress_color}" />${
+		}" fill="#555" /><rect rx="4" x="${tF.titleWidth}" width="${
+			svgCalc.progWidth
+		}" height="${tF.height}" fill="${tF.progressColor}" />${
 			tF.title
-				? `<path fill="${tF.progress_color}" d="M${tF.title_width} 0h4v${tF.height}h-4z" />`
+				? `<path fill="${tF.progressColor}" d="M${tF.titleWidth} 0h4v${tF.height}h-4z" />`
 				: ""
-		}<rect rx="4" width="${svgCalc.tot_width}" height="${
+		}<rect rx="4" width="${svgCalc.totWidth}" height="${
 			tF.height
 		}" fill="url(#a)" />${
 			tF.title
-				? `<g fill="#fff" text-anchor="left" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="${svgCalc.font_size}"><text x="4" y="${svgCalc.y_txt_shadow}" fill="#010101" fill-opacity=".3">${tF.title}</text><text x="4" y="${svgCalc.y_txt}">${tF.title}</text></g>`
+				? `<g fill="#fff" text-anchor="left" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="${svgCalc.fontSize}"><text x="4" y="${svgCalc.yTxtShadow}" fill="#010101" fill-opacity=".3">${tF.title}</text><text x="4" y="${svgCalc.yTxt}">${tF.title}</text></g>`
 				: ""
 		}<g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="${
-			svgCalc.font_size
-		}"><text x="${svgCalc.x_txt}" y="${
-			svgCalc.y_txt_shadow
-		}" fill="#010101" fill-opacity=".3">${svgCalc.txt_prog}</text><text x="${
-			svgCalc.x_txt
-		}" y="${svgCalc.y_txt}">${svgCalc.txt_prog}</text></g></svg>`;
+			svgCalc.fontSize
+		}"><text x="${svgCalc.xTxt}" y="${
+			svgCalc.yTxtShadow
+		}" fill="#010101" fill-opacity=".3">${svgCalc.txtProg}</text><text x="${
+			svgCalc.xTxt
+		}" y="${svgCalc.yTxt}">${svgCalc.txtProg}</text></g></svg>`;
 
 		//const tagSvg = this.getReturnTemplate(tF.wrap, svgContent);
 

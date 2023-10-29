@@ -29,12 +29,13 @@ function main(target) {
 		destinationFolder,
 		openNewNote,
 	) => {
-		destinationFolder = destinationFolder || tp.file.folder(true);
 		await tp.file.create_new(
 			tp.file.find_tfile(templatePath),
 			newNoteName,
 			openNewNote,
-			app.vault.getAbstractFileByPath(destinationFolder),
+			app.vault.getAbstractFileByPath(
+				destinationFolder || tp.file.folder(true),
+			),
 		);
 		return openNewNote ? "" : `[[${newNoteName}]]`;
 	};
@@ -93,10 +94,9 @@ function main(target) {
 		if (target.isEditMode()) {
 			const lineNumber = target.view.editor.getCursor().line;
 			return target.view.editor.getLine(lineNumber);
-		} else {
-			// Not in edit mode, current line is unknowable
-			return false;
 		}
+		// Not in edit mode, current line is unknowable
+		return false;
 	};
 
 	/**
@@ -115,10 +115,9 @@ function main(target) {
 			});
 
 			return true;
-		} else {
-			// Not in edit mode, current line is unknowable
-			return false;
 		}
+		// Not in edit mode, current line is unknowable
+		return false;
 	};
 
 	target.goToFile = async (path) => {

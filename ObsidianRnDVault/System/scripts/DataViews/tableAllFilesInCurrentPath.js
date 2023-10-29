@@ -34,7 +34,7 @@ function tableAllFilesInCurrentPath(args) {
 
 		// If the value is an array
 		if (Array.isArray(link)) {
-			link.flat().map((Link) => setDisplay(Link));
+			link.flat().map((link) => setDisplay(link));
 			return link;
 		}
 

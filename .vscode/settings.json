@@ -1,13 +1,6 @@
 {
-	"todo-tree.general.tags": [
-		"BUG::",
-		"HACK::",
-		"FIXME::",
-		"TODO::"
-	],
-	"todo-tree.filtering.excludeGlobs": [
-		"**/.obsidian/plugins/*/**.js"
-	],
+	"todo-tree.general.tags": ["BUG::", "HACK::", "FIXME::", "TODO::"],
+	"todo-tree.filtering.excludeGlobs": ["**/.obsidian/plugins/*/**.js"],
 	"[markdown]": {
 		"editor.formatOnSave": false,
 		"editor.defaultFormatter": null

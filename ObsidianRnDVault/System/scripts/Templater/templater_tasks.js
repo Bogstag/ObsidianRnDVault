@@ -5,7 +5,7 @@
 const completedTasksNote = "Planning/🗄️ Completed tasks.md";
 const taskLinePattern = /^[ \t]*- \[[ x]\]/;
 
-const isLineATask = (line) => line.match(taskLinePattern) !== null;
+const isLineTask = (line) => line.match(taskLinePattern) !== null;
 
 const toggleIndicator = (note, indicator) => {
 	if (!note.isEditMode()) {
@@ -13,7 +13,7 @@ const toggleIndicator = (note, indicator) => {
 		return "";
 	}
 	const line = note.getCurrentLine();
-	if (!isLineATask(line)) {
+	if (!isLineTask(line)) {
 		return;
 	}
 	const indicatorWithWhitespacePattern = new RegExp(` *${indicator} *`, "g");
@@ -24,11 +24,10 @@ const toggleIndicator = (note, indicator) => {
 			line.replaceAll(indicatorWithWhitespacePattern, " ").trimEnd(),
 		);
 		return;
-	} else {
-		// append indicator to end of line
-		note.setCurrentLine(`${line} ${indicator}`);
-		return;
 	}
+	// append indicator to end of line
+	note.setCurrentLine(`${line} ${indicator}`);
+	return;
 };
 
 class Main {
@@ -72,9 +71,8 @@ class Main {
 		);
 		if (chosen) {
 			return chosen.function(this, chosen.params);
-		} else {
-			return "";
 		}
+		return "";
 	}
 
 	/**
@@ -94,10 +92,10 @@ class Main {
 		if (currentLine === prefix) {
 			prefix = ""; // We're already on a new task line
 		} else if (cursor.ch > 0) {
-			prefix = "\n" + prefix;
+			prefix = `\n${prefix}`;
 		}
 
-		const taskCreated = "➕" + moment().format("YYYY-MM-DD");
+		const taskCreated = `➕${moment().format("YYYY-MM-DD")}`;
 		let task = ` ${taskCreated}`;
 
 		if (params) {
@@ -147,12 +145,12 @@ class Main {
 		let completedNoteContent = await note.getContents(completedTasksNote);
 		completedNoteContent += completedTasks
 			.map((task) => {
-				task = task.trimEnd();
+				let trimmedTask = task.trimEnd();
 				// Check to see if there is a completed date in the task, and add one if it's not there
-				if (!task.match(/✅\s?\d{4}-\d{2}-\d{2}/)) {
-					task += " ✅" + moment().format("YYYY-MM-DD");
+				if (!trimmedTask.match(/✅\s?\d{4}-\d{2}-\d{2}/)) {
+					trimmedTask += ` ✅${moment().format("YYYY-MM-DD")}`;
 				}
-				return task + "\n";
+				return `${trimmedTask}\n`;
 			})
 			.join("");
 		note.setContents(completedNoteContent, completedTasksNote).then();

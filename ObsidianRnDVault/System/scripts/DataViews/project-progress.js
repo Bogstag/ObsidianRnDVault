@@ -6,8 +6,6 @@ const svgGenerator = new SvgProgressBar();
 let progress = false;
 if (input === parseInt(input, 10)) {
 	// If this is true, then we assume that user only sent us progress.
-	progress = input;
-} else {
 	progress = input?.progress;
 }
 
@@ -21,7 +19,7 @@ const requestArgs = {
 	width: input?.width,
 	height: input?.height || 20,
 	title: input?.title || "Progress",
-	title_color: input?.color || "428bca",
+	titleColor: input?.color || "428bca",
 	scale: input?.scale || 100,
 	progress: progress || percent,
 	suffix: input?.suffix || "%",
