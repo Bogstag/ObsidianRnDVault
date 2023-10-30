@@ -9,7 +9,7 @@ fileclass: plugin
 id: periodic-notes
 isDesktopOnly: false
 name: Periodic Notes
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 0.0.17
 ---
 # Periodic Notes

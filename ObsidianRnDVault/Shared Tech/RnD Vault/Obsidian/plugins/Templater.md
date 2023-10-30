@@ -11,7 +11,7 @@ isDesktopOnly: false
 name: Templater
 tags:
   - 
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 1.16.0
 ---
 # Templater

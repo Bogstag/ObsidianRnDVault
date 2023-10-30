@@ -10,7 +10,7 @@ dependsOnSoftware:
   - "[[Tech/Software/Client/Obsidian/Obsidian]]"
 version: 1.4.0
 isDesktopOnly: false
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 ---
 
 # QuickAdd

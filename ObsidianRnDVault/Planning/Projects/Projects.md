@@ -10,7 +10,8 @@ tags:
 # Projects
 
 ```dataviewjs
-const {Navbar} = customJS;
+const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
+const Navbar = new tp.user.Navbar
 await Navbar.getDashboard(dv,'"Planning"', true, 1, 4); 
 ```
 
@@ -65,7 +66,8 @@ for (let group of dv.pages('"Planning/Projects"').groupBy(p => p.projects)) {
 ---
 
 ```dataviewjs
-const {Navbar} = customJS;
+const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
+const Navbar = new tp.user.Navbar
 await Navbar.getDashboard(dv,'"Planning"', true, 1, 4); 
 ```
 ## Backup

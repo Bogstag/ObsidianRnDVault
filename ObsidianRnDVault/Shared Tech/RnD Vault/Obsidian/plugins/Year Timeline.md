@@ -11,7 +11,7 @@ dependsOnSoftware:
 tags: 
 version: 1.0.0
 isDesktopOnly: false
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 ---
 
 # Year Timeline

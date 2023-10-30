@@ -1,5 +1,5 @@
 ---
-dependsOnDvView: "[[System/Scripts/Classes/Navbar.js|Navbar.js]]"
+dependsOnScript: "[[System/Scripts/Classes/Navbar.js|Navbar.js]]"
 fileclass: template
 ---
 <%* tR = "" -%>

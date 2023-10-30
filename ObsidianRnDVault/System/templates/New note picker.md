@@ -1,12 +1,12 @@
 ---
-dependsOnScript:
 fileclass: template
 ---
 <%*
 // New note template configuration
 
-const templatesFolders = ['System/templates/Notes/']
+const templatesFolders = ['System/TemplatesNotes/']
 const openNewNoteInSplit = false // Set this to true if you want the new note to open in a split to the right
+let addLink = false; // If note template_title is set to "DONTASKUSER", do you want to add link to new note in current note? If template_title is set to something else you get prompted and can change this later.
 
 /*
 
@@ -77,13 +77,21 @@ function makeFilesystemSafeTitle (title) {
 const chosen = await tp.system.suggester(templates.map(x => x.label), templates)
 console.log("chosen", chosen)
 if (!chosen) return ''
-let title = (await tp.system.prompt('Name for the new file. Will use the current date/time if no value given.', chosen.title || '')) || moment().format('YYYY-MM-DD HH꞉mm꞉ss')
-if (typeof title !== 'string') return '' // Prompt was cancelled
-title = makeFilesystemSafeTitle(title)
-const addLink = await tp.system.suggester(['Yes', 'No'], [true, false], false, 'Insert link in the current file? (Escape = no)')
+if (chosen.title === "DONTASKUSER") {
+	let title = chosen.title;
+	console.log("title", title);
+} else {
+	let title = (await tp.system.prompt('Name for the new file. Will use the current date/time if no value given.', chosen.title || '')) || moment().format('YYYY-MM-DD HH꞉mm꞉ss')
+	if (typeof title !== 'string') return '' // Prompt was cancelled
+	title = makeFilesystemSafeTitle(title)
+
+	addLink = await tp.system.suggester(['Yes', 'No'], [true, false], false, 'Insert link in the current file? (Escape = no)')
+}
 const destination = chosen.destinationFolder || tp.file.folder(true)
+console.log("destination", destination);
 
 const result = await createFromTemplate(chosen.templatePath, title, destination, !addLink && !openNewNoteInSplit)
+console.log("createFromTemplate result", result);
 if (openNewNoteInSplit) {
   // Open the new file in a pane to the right
   const file = app.vault.getAbstractFileByPath(`${destination}/${title}.md`)

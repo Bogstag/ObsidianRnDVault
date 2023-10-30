@@ -1,16 +1,15 @@
 ---
-title: Templates
-alias: templates
+title: TemplatesNotes
 cssclasses:
   - row-alt
-date_created: 2023-10-08 00:34:11
-date_modified: 2023-10-08 00:34:20
+date_created: 2023-10-30 00:34:11
+date_modified: 2023-10-30 00:34:20
 include_in_navbar: true
 obsidianUIMode: preview
 tags:
-  - system/dashboard/Templates
+  - system/dashboard/Templates/Notes
 ---
-# Templates
+# Notes Templates
 
 ```dataviewjs
 const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;

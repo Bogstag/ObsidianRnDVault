@@ -9,7 +9,7 @@ fileclass: plugin
 id: open-gate
 isDesktopOnly: undefined
 name: Open Gate
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 1.9.1
 ---
 # Open Gate

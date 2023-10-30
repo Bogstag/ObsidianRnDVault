@@ -11,7 +11,7 @@ isDesktopOnly: false
 name: Metadata Menu
 tags:
   - 
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 0.5.2
 ---
 # Metadata Menu

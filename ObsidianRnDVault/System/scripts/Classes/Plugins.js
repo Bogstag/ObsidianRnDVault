@@ -1,4 +1,8 @@
 class Plugins {
+	constructor(tp) {
+		this.tp = tp;
+	}
+
 	listInstalledPlugins(app, navbar) {
 		// Get all plugins
 		const plugins = app.plugins.plugins;
@@ -27,7 +31,7 @@ class Plugins {
 	}
 
 	async getPluginMetadata(app, pluginId) {
-		const { objectUtils } = customJS;
+		const objectUtils = new this.tp.user.ObjectUtils();
 
 		const plugin = app.plugins.plugins[pluginId];
 		if (!plugin) {

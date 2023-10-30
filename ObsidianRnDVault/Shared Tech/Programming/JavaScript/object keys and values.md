@@ -31,7 +31,6 @@ buttons: "Buttons"
 cm-editor-syntax-highlight-obsidian: "Editor Syntax Highlight"
 cmdr: "Commander"
 custom-sort: "Custom File Explorer sorting"
-customjs: "CustomJS"
 
 Object.keys(result) // Returns alx-folder-note
 Object.values(result) // Returns AidenLx's Folder Note

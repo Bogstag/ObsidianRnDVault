@@ -6,11 +6,11 @@ id: modules
 name: Modules
 fileclass: plugin
 description: Load JavaScript and related languages like TypeScript modules from the vault and the Internet.
-dependsOnSoftware: 
-- "[[Obsidian]]"
-version: "2.4.0"
+dependsOnSoftware:
+  - "[[Obsidian]]"
+version: 2.4.0
 isDesktopOnly: false
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 ---
 
 # Modules

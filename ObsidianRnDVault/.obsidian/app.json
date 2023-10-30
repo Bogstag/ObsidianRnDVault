@@ -20,7 +20,7 @@
     "Development/",
     "Development-rnd/"
   ],
-  "showUnsupportedFiles": false,
+  "showUnsupportedFiles": true,
   "showInlineTitle": false,
   "focusNewTab": false,
   "newLinkFormat": "absolute",

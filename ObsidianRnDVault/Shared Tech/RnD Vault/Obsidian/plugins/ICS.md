@@ -9,7 +9,7 @@ fileclass: plugin
 id: ics
 isDesktopOnly: false
 name: ICS
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 1.1.3
 ---
 # ICS

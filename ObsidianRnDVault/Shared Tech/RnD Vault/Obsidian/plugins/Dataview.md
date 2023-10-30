@@ -6,11 +6,11 @@ id: dataview
 name: Dataview
 fileclass: plugin
 description: Complex data views for the data-obsessed.
-dependsOnSoftware: 
-- "[[Obsidian]]"
-version: "0.5.61"
+dependsOnSoftware:
+  - "[[Obsidian]]"
+version: 0.5.61
 isDesktopOnly: false
-template: "[[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 ---
 
 # Dataview

@@ -1,17 +1,14 @@
 ---
-dependsOnScript: "[[System/scripts/CustomJS/Plugins.js|Plugins.js]]"
-dependsOnPlugin:
-  - "[[Tech/Software/Client/Obsidian/plugins/CustomJS|CustomJS]]"
+dependsOnScript: "[[System/Scripts/Classes/Plugins.js|Plugins.js]]"
 fileclass: template
-obsidianUIMode: source
-obsidianEditingMode: live
+template_destination_folder: Shared Tech/RnD Vault/Obsidian/plugins
+template_title: "DONTASKUSER"
 ---
-<%* tR = "" -%>
+<%* tR = "" _%>
 <%* 
-	const targetFolder = "Shared Tech/RnD Vault/Obsidian/plugins";
-
 	// Get list of installed plugins
-	const { Plugins } = customJS;
+	const Plugins = new tp.user.Plugins(tp);
+	
 	let pluginNames = await Plugins.getPluginNames(app);
 	
 	// Ask user to select one
@@ -25,13 +22,8 @@ obsidianEditingMode: live
 	// Get manifesto
 	plugin = await Plugins.getPluginMetadata(app, selection);
 	title = plugin.manifest.name;
-	console.log(plugin)
-	// Finalise the note
-	const fullPath = targetFolder + "/" + title;
-	console.log(fullPath)
-	if (!await tp.file.exists(fullPath + ".md")) {
-		await tp.file.move(fullPath);
-	}
+	if (title) { tp.file.rename(title); }
+	
 _%>
 <% "---" %>
 aliases: 
@@ -45,7 +37,7 @@ dependsOnSoftware:
 - "<%"["%>[Obsidian]]"
 version: "<% plugin.manifest.version %>"
 isDesktopOnly: <% plugin.manifest.isDesktopOnly %>
-template: "<%"["%>[System/templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
+template: "<%"["%>[System/Templates/fileclass/Add Obsidian plugin page|Add Obsidian plugin page]]"
 <% "---" %>
 
 # <% plugin.manifest.name %>
@@ -68,9 +60,3 @@ template: "<%"["%>[System/templates/fileclass/Add Obsidian plugin page|Add Obsid
 >profile:obsidian
 >```
 
-<% ## Settings
-
-```
-json
-	// To many errors<% plugin. formatedSettings %>
-``` %>
