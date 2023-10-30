@@ -1,7 +1,27 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.2.2/schema.json",
-	"organizeImports": {
-		"enabled": true
+	"files": {
+		"ignore": ["ObsidianRnDVault/.obsidian"],
+		"ignoreUnknown": true
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false
+	},
+	"javascript": {
+		"globals": ["$", "_", "app"],
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": true
+		},
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -9,36 +29,16 @@
 			"all": true,
 			"correctness": {
 				"recommended": true
-			}
+			},
+			"nursery": { "all": false }
 		}
 	},
-	"formatter": {
-		"enabled": true,
-		"formatWithErrors": false
-	},
-	"files": {
-		"ignore": ["ObsidianRnDVault/.obsidian/plugins/**/*.{js,css}"],
-		"include": ["ObsidianRnDVault/.obsidian/plugins/**/data.json"],
-		"ignoreUnknown": true
-	},
-	"javascript": {
-		"parser": {
-			"unsafeParameterDecoratorsEnabled": true
-		},
-		"globals": ["$", "_", "app"]
-	},
-	"json": {
-		"parser": {
-			"allowComments": true,
-			"allowTrailingCommas": true
-		},
-		"formatter": {
-			"enabled": true
-		}
+	"organizeImports": {
+		"enabled": true
 	},
 	"vcs": {
-		"enabled": true,
 		"clientKind": "git",
+		"enabled": false,
 		"useIgnoreFile": true
 	}
 }

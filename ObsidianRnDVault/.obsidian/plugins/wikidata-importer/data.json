@@ -1,7 +1,7 @@
 {
-  "entityIdKey": "wikidata entity id",
-  "internalLinkPrefix": "Database/",
-  "ignoreCategories": false,
-  "ignorePropertiesWithTimeRanges": true,
-  "overwriteExistingProperties": true
+	"entityIdKey": "wikidata entity id",
+	"internalLinkPrefix": "Database/",
+	"ignoreCategories": false,
+	"ignorePropertiesWithTimeRanges": true,
+	"overwriteExistingProperties": true
 }

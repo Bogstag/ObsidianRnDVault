@@ -1,4 +1,4 @@
-## This is a directory/file filter template for WinMerge
+## This is a directory/file filter Template for WinMerge
 name: ObsidianSyncFilter
 desc: WinMerge sync fiter for my obsidian vaults.
 def: include
@@ -35,8 +35,8 @@ d: ^\\Journal\\Quarterly\\\d\d\d\d$
 d: ^\\Journal\\Weekly\\\d\d\d\d$
 d: ^\\Personal\\.*$
 d: ^\\Planning\\Projects\\*\\$
-d: ^\\System\\scripts\\work$
-d: ^\\System\\templates\\work$
+d: ^\\System\\Scripts\\work$
+d: ^\\System\\Templates\\work$
 d: ^\\System\\work$
 d: ^\\Tech\\.*$
 d: ^\\\.git$

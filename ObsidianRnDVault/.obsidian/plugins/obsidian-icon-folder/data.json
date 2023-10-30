@@ -1,171 +1,169 @@
 {
-  "settings": {
-    "migrated": 3,
-    "iconPacksPath": ".obsidian/icons",
-    "fontSize": 24,
-    "emojiStyle": "none",
-    "iconColor": "#9d67c1",
-    "recentlyUsedIcons": [
-      "FasInfo"
-    ],
-    "recentlyUsedIconsSize": 5,
-    "rules": [
-      {
-        "rule": "^20\\d\\d$",
-        "icon": "FasCalendar",
-        "for": "everything",
-        "order": 0,
-        "useFilePath": true
-      },
-      {
-        "rule": "20\\d\\d\\-v\\d\\d$",
-        "icon": "FasCalendarWeek",
-        "for": "everything",
-        "order": 1,
-        "useFilePath": true
-      },
-      {
-        "rule": "20\\d\\d-\\d\\d-\\d\\d$",
-        "icon": "FasCalendarDay",
-        "for": "everything",
-        "order": 2,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*PowerShell.*",
-        "icon": "MyMyPowershell",
-        "for": "everything",
-        "order": 3,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*JavaScript.*",
-        "icon": "FabJs",
-        "for": "everything",
-        "order": 4,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*windows.*",
-        "icon": "FabWindows",
-        "for": "everything",
-        "order": 5,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*bash.*",
-        "icon": "MyMyBash",
-        "for": "everything",
-        "order": 6,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*docker.*",
-        "icon": "FabDocker",
-        "for": "everything",
-        "order": 7,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*chrome.*",
-        "icon": "FabChrome",
-        "for": "everything",
-        "order": 8,
-        "useFilePath": true
-      },
-      {
-        "rule": ".*git.*",
-        "icon": "FabGitAlt",
-        "for": "everything",
-        "order": 9
-      },
-      {
-        "rule": ".*markdown.*",
-        "icon": "FabMarkdown",
-        "for": "everything",
-        "order": 10
-      },
-      {
-        "rule": ".*npm.*",
-        "icon": "FabNpm",
-        "for": "everything",
-        "order": 11
-      },
-      {
-        "rule": ".*regex.*",
-        "icon": "MyMyRegex",
-        "for": "everything",
-        "order": 12
-      },
-      {
-        "rule": ".*vscode.*",
-        "icon": "MyMyVscode",
-        "for": "everything",
-        "order": 13
-      }
-    ],
-    "extraMargin": {
-      "top": 1,
-      "right": 2,
-      "bottom": 1,
-      "left": 0
-    },
-    "iconInTabsEnabled": false,
-    "iconsBackgroundCheckEnabled": false,
-    "iconInTitleEnabled": false
-  },
-  "Archive": "FasBoxArchive",
-  "Areas": "FasLayerGroup",
-  "Areas/Books": "FasBook",
-  "Areas/Car": "FasCar",
-  "Areas/Cottage": "FasSun",
-  "Areas/Home": "FasHouseChimneyWindow",
-  "Areas/Music": "FasMusic",
-  "Areas/People": "FasUserLarge",
-  "Attachments": "FasPaperclip",
-  "Attachments/Audio": "FasVolumeHigh",
-  "Attachments/Canvas": "FasSquareFull",
-  "Attachments/Excalidraw": "FasPenNib",
-  "Attachments/Images": "FasImage",
-  "Attachments/PDFs": "FasFilePdf",
-  "Home": "FasRectangleList",
-  "Inbox": "FasInbox",
-  "Inbox/Inbox.md": "FasInbox",
-  "Journal": "FasBook",
-  "Journal/Daily": "FasCalendarDay",
-  "Journal/Weekly": "FasCalendarWeek",
-  "Journal/Yearly": "FasCalendar",
-  "Personal": "FasUserSecret",
-  "Personal/Goals": "FasBullseye",
-  "Personal/Habits": "FasList",
-  "Personal/Health": "FasHandHoldingHeart",
-  "Personal/Lessons": "FasBookOpenReader",
-  "Personal/Milestones": "FasAward",
-  "Personal/Relationships": "FasPeopleArrows",
-  "Planning": "FasCalendarCheck",
-  "Planning/Projects": "FasDiagramProject",
-  "Publish": "FasPaperPlane",
-  "Publish/Exports": "FasFileExport",
-  "Shared Tech": "FasUserPlus",
-  "Shared Tech/Client Software": "FasComputer",
-  "Shared Tech/Client Software/Chrome.md": "FabChrome",
-  "Shared Tech/Client Software/Steam.md": "FabSteam",
-  "Shared Tech/OS/Docker": "FabDocker",
-  "Shared Tech/OS/Windows": "FabWindows",
-  "Shared Tech/Programming": "FasCode",
-  "Shared Tech/Programming/JavaScript": "FabJs",
-  "Shared Tech/RnD Vault": "FasVault",
-  "Shared Tech/Server Software": "FasServer",
-  "System": "FasGear",
-  "System/scripts": "FasFileCode",
-  "Tags": "FasTags",
-  "Tech": "FasUserLock",
-  "Tech/Config/Shared": "FasShareNodes",
-  "Tech/Config/Shared/RnD Vault": "FasVault",
-  "Work": "FasBriefcase",
-  "Work/Meetings": "FasUsers",
-  "Shared Tech/Programming/Python": "FabPython",
-  "Areas/TV": "FasTv",
-  "Shared Tech/Programming/Bash": "MyMyBash",
-  "Shared Tech/Programming/Regex": "MyMyRegex"
+	"Archive": "FasBoxArchive",
+	"Areas": "FasLayerGroup",
+	"Areas/Books": "FasBook",
+	"Areas/Car": "FasCar",
+	"Areas/Cottage": "FasSun",
+	"Areas/Home": "FasHouseChimneyWindow",
+	"Areas/Music": "FasMusic",
+	"Areas/People": "FasUserLarge",
+	"Areas/TV": "FasTv",
+	"Attachments": "FasPaperclip",
+	"Attachments/Audio": "FasVolumeHigh",
+	"Attachments/Canvas": "FasSquareFull",
+	"Attachments/Excalidraw": "FasPenNib",
+	"Attachments/Images": "FasImage",
+	"Attachments/PDFs": "FasFilePdf",
+	"Home": "FasRectangleList",
+	"Inbox": "FasInbox",
+	"Inbox/Inbox.md": "FasInbox",
+	"Journal": "FasBook",
+	"Journal/Daily": "FasCalendarDay",
+	"Journal/Weekly": "FasCalendarWeek",
+	"Journal/Yearly": "FasCalendar",
+	"Personal": "FasUserSecret",
+	"Personal/Goals": "FasBullseye",
+	"Personal/Habits": "FasList",
+	"Personal/Health": "FasHandHoldingHeart",
+	"Personal/Lessons": "FasBookOpenReader",
+	"Personal/Milestones": "FasAward",
+	"Personal/Relationships": "FasPeopleArrows",
+	"Planning": "FasCalendarCheck",
+	"Planning/Projects": "FasDiagramProject",
+	"Publish": "FasPaperPlane",
+	"Publish/Exports": "FasFileExport",
+	"settings": {
+		"emojiStyle": "none",
+		"extraMargin": {
+			"bottom": 1,
+			"left": 0,
+			"right": 2,
+			"top": 1
+		},
+		"fontSize": 24,
+		"iconColor": "#9d67c1",
+		"iconInTabsEnabled": false,
+		"iconInTitleEnabled": false,
+		"iconPacksPath": ".obsidian/icons",
+		"iconsBackgroundCheckEnabled": false,
+		"migrated": 3,
+		"recentlyUsedIcons": ["FasInfo"],
+		"recentlyUsedIconsSize": 5,
+		"rules": [
+			{
+				"for": "everything",
+				"icon": "FasCalendar",
+				"order": 0,
+				"rule": "^20\\d\\d$",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FasCalendarWeek",
+				"order": 1,
+				"rule": "20\\d\\d\\-v\\d\\d$",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FasCalendarDay",
+				"order": 2,
+				"rule": "20\\d\\d-\\d\\d-\\d\\d$",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "MyMyPowershell",
+				"order": 3,
+				"rule": ".*PowerShell.*",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FabJs",
+				"order": 4,
+				"rule": ".*JavaScript.*",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FabWindows",
+				"order": 5,
+				"rule": ".*windows.*",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "MyMyBash",
+				"order": 6,
+				"rule": ".*bash.*",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FabDocker",
+				"order": 7,
+				"rule": ".*docker.*",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FabChrome",
+				"order": 8,
+				"rule": ".*chrome.*",
+				"useFilePath": true
+			},
+			{
+				"for": "everything",
+				"icon": "FabGitAlt",
+				"order": 9,
+				"rule": ".*git.*"
+			},
+			{
+				"for": "everything",
+				"icon": "FabMarkdown",
+				"order": 10,
+				"rule": ".*markdown.*"
+			},
+			{
+				"for": "everything",
+				"icon": "FabNpm",
+				"order": 11,
+				"rule": ".*npm.*"
+			},
+			{
+				"for": "everything",
+				"icon": "MyMyRegex",
+				"order": 12,
+				"rule": ".*regex.*"
+			},
+			{
+				"for": "everything",
+				"icon": "MyMyVscode",
+				"order": 13,
+				"rule": ".*vscode.*"
+			}
+		]
+	},
+	"Shared Tech": "FasUserPlus",
+	"Shared Tech/Client Software": "FasComputer",
+	"Shared Tech/Client Software/Chrome.md": "FabChrome",
+	"Shared Tech/Client Software/Steam.md": "FabSteam",
+	"Shared Tech/OS/Docker": "FabDocker",
+	"Shared Tech/OS/Windows": "FabWindows",
+	"Shared Tech/Programming": "FasCode",
+	"Shared Tech/Programming/Bash": "MyMyBash",
+	"Shared Tech/Programming/JavaScript": "FabJs",
+	"Shared Tech/Programming/Python": "FabPython",
+	"Shared Tech/Programming/Regex": "MyMyRegex",
+	"Shared Tech/RnD Vault": "FasVault",
+	"Shared Tech/Server Software": "FasServer",
+	"System": "FasGear",
+	"System/Scripts": "FasFileCode",
+	"Tags": "FasTags",
+	"Tech": "FasUserLock",
+	"Tech/Config/Shared": "FasShareNodes",
+	"Tech/Config/Shared/RnD Vault": "FasVault",
+	"Work": "FasBriefcase",
+	"Work/Meetings": "FasUsers"
 }

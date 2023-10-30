@@ -1,8 +1,8 @@
 {
-  "minimal-style@@frame-icon-color@@dark": "#E4E4E4",
-  "minimal-style@@icon-color-active@@dark": "#3F7B8A",
-  "minimal-style@@icon-color-focused@@dark": "#1F6B7E",
-  "minimal-style@@icon-color-hover@@dark": "#7B9DA6",
-  "minimal-style@@icon-muted": 0.5,
-  "minimal-style@@icon-color@@dark": "#7EC2D3"
+	"minimal-style@@frame-icon-color@@dark": "#E4E4E4",
+	"minimal-style@@icon-color-active@@dark": "#3F7B8A",
+	"minimal-style@@icon-color-focused@@dark": "#1F6B7E",
+	"minimal-style@@icon-color-hover@@dark": "#7B9DA6",
+	"minimal-style@@icon-muted": 0.5,
+	"minimal-style@@icon-color@@dark": "#7EC2D3"
 }
