@@ -18,7 +18,6 @@ ObsidianRnDVault/Journal/Yearly/*
 ObsidianRnDVault/Planning/Todoist.md
 !ObsidianRnDVault/Publish
 !ObsidianRnDVault/System
-ObsidianRnDVault/System/fileclass
 ObsidianRnDVault/System/Scripts/secrets
 ObsidianRnDVault/System/storage/excalibrain.md
 ObsidianRnDVault/System/storage/mood-tracker-data.json
@@ -35,7 +34,7 @@ ObsidianRnDVault/Tech
 
 # Never remove
 # Never forget
-**/*-token*
+**/*token*
 **/*secrets*
 # I will hunt you down
 

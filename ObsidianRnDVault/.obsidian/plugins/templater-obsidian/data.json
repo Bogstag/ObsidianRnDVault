@@ -1,33 +1,40 @@
 {
-	"command_timeout": 5,
-	"templates_folder": "System/templates",
-	"templates_pairs": [["", ""]],
-	"trigger_on_file_creation": true,
-	"auto_jump_to_cursor": true,
-	"enable_system_commands": false,
-	"shell_path": "\"C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe\"",
-	"user_scripts_folder": "System/scripts/Templater",
-	"enable_folder_templates": true,
-	"folder_templates": [
-		{
-			"folder": "Shared Tech/RnD Vault/Obsidian/plugins",
-			"template": "System/templates/fileclass/Add Obsidian plugin page.md"
-		},
-		{
-			"folder": "Journal/Daily",
-			"template": "System/templates/Journal/Daily/Daily Journal Template.md"
-		},
-		{
-			"folder": "Journal/Weekly",
-			"template": "System/templates/Journal/Weekly/Weekly Journal Template.md"
-		}
-	],
-	"syntax_highlighting": true,
-	"syntax_highlighting_mobile": false,
-	"enabled_templates_hotkeys": [
-		"System/templates/Tasks Menu.md",
-		"System/templates/New note picker.md"
-	],
-	"startup_templates": ["System/templates/Templater Startup script.md"],
-	"enable_ribbon_icon": true
+  "command_timeout": 5,
+  "templates_folder": "System/Templates",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "\"C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe\"",
+  "user_scripts_folder": "System/Scripts",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "Shared Tech/RnD Vault/Obsidian/plugins",
+      "template": "System/Templates/fileclass/Add Obsidian plugin page.md"
+    },
+    {
+      "folder": "Journal/Daily",
+      "template": "System/Templates/Journal/Daily/Daily Journal Template.md"
+    },
+    {
+      "folder": "Journal/Weekly",
+      "template": "System/Templates/Journal/Weekly/Weekly Journal Template.md"
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    "System/Templates/Tasks Menu.md",
+    "System/Templates/New note picker.md"
+  ],
+  "startup_templates": [
+    "System/Templates/Templater Startup script.md"
+  ],
+  "enable_ribbon_icon": true
 }
