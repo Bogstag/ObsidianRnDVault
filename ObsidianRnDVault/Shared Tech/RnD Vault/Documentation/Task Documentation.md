@@ -7,7 +7,7 @@ obsidianUIMode: source
 # Documentation
 
 ```dataviewjs
-dv.view('toc')
+dv.view('toc', {"dv": dv})
 ```
 
 ## How to Set up

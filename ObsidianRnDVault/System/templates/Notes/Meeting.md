@@ -1,6 +1,7 @@
 ---
 created: 2023-10-08T03:58:57+02:00
 template_title: "MOMENT(YYYY-MM-DD)꞉ Meeting with "
+template_destination_folder: Work/Meetings
 ---
 <%* tR = "" _%>
 <% "---" %>

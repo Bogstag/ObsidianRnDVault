@@ -4,5 +4,5 @@ fileclass: template
 ---
 <%* tR = "" -%>
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true})
+dv.view("toc", {"level": 2, "heading": true, "dv": dv})
 ```

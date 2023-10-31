@@ -32,17 +32,19 @@ obsidianEditingMode: live
 > As default all task under a header is done in sequence. If you don't want that, you can include the 🟰 in the heading for that section.
 
 ```dataviewjs
-await dv.view('project-progress', {width:400, height:20})
+await dv.view('projectProgress', { width:400, height:20 })
 ```
 ## 🎯 Goals / Problem
-
-## 👷 Next step
-What is the next step to start the journey towards the Goal. You can use ALT + T to add or edit tasks, or you can use Shift + Alt + T, for a custom menu.
-
-### 📋 Tasks
+What is your goal with this project?
 
 ## ✅ Succes criteria
-When have is the project done?
+When is the project done?
+
+## 👷 Next step
+What is the next step to start the journey towards the Goal. Layout a plan whit tasks.
+
+### 📋 Tasks
+You can use ALT + T to add or edit tasks, or you can use Shift + Alt + T, for a custom menu.
 
 ## 📈 Results
 What was the result?

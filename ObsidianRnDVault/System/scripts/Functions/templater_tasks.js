@@ -24,10 +24,11 @@ const toggleIndicator = (note, indicator) => {
 			line.replaceAll(indicatorWithWhitespacePattern, " ").trimEnd(),
 		);
 		return;
+	} else {
+		// append indicator to end of line
+		note.setCurrentLine(`${line} ${indicator}`);
+		return;
 	}
-	// append indicator to end of line
-	note.setCurrentLine(`${line} ${indicator}`);
-	return;
 };
 
 class Main {

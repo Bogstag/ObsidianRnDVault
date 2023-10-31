@@ -4,7 +4,7 @@ fileclass: template
 <%*
 // New note template configuration
 
-const templatesFolders = ['System/TemplatesNotes/']
+const templatesFolders = ['System/Templates/Notes/']
 const openNewNoteInSplit = false // Set this to true if you want the new note to open in a split to the right
 let addLink = false; // If note template_title is set to "DONTASKUSER", do you want to add link to new note in current note? If template_title is set to something else you get prompted and can change this later.
 

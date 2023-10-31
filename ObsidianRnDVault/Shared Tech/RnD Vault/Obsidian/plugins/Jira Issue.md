@@ -1,7 +1,7 @@
 ---
 aliases: 
 date_created: 2023-10-13 13:13:28
-date_modified: 2023-10-13 13:21:05
+date_modified: 2023-10-31 02:07:05
 dependsOnSoftware:
   - "[[Shared Tech/RnD Vault/Obsidian/Obsidian]]"
 description: This plugin allows you to track the progress of Atlassian Jira issues from your Obsidian notes.
@@ -12,7 +12,6 @@ name: Jira Issue
 template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 1.54.0
 ---
-
 # Jira Issue
 
 This plugin allows you to track the progress of Atlassian Jira issues from your Obsidian notes.
@@ -32,9 +31,10 @@ This plugin allows you to track the progress of Atlassian Jira issues from your 
 >height:700
 >profile:obsidian
 >```
-## toc
+
+## Toc
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true})
+dv.view("toc", {"level": 2, "heading": true, "dv": dv})
 ```
 
 ## Issue

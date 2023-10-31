@@ -1,11 +1,11 @@
 ---
 dependsOnScript: "[[System/Scripts/Classes/Plugins.js|Plugins.js]]"
 fileclass: template
-template_destination_folder: Shared Tech/RnD Vault/Obsidian/plugins
-template_title: "DONTASKUSER"
 ---
 <%* tR = "" _%>
 <%* 
+	const targetFolder = "Shared Tech/RnD Vault/Obsidian/plugins";
+
 	// Get list of installed plugins
 	const Plugins = new tp.user.Plugins(tp);
 	
@@ -22,8 +22,13 @@ template_title: "DONTASKUSER"
 	// Get manifesto
 	plugin = await Plugins.getPluginMetadata(app, selection);
 	title = plugin.manifest.name;
-	if (title) { tp.file.rename(title); }
-	
+
+	// Finalise the note
+	const fullPath = targetFolder + "/" + title;
+
+	if (!await tp.file.exists(fullPath + ".md")) {
+		await tp.file.move(fullPath);
+	}
 _%>
 <% "---" %>
 aliases: 

@@ -1,36 +1,32 @@
-async function projectProgress(...args) {
-	const svgProgressBar = await require.import(
-		"System/Scripts/Templater/SvgProgressBar.js",
-	);
-	const svgGenerator = new svgProgressBar();
+/**
+ * Generates a progressbar
+ *
+ * Usage in Obsidian
+ * ```dataviewjs
+ * await dv.view('projectProgress', { width:400, height:20 })
+ * ```
+ * @param {object} args
+ * @param {number} [args.progress=0] - The current progress Calculated from finished tasks else 0.
+ */
+async function projectProgress(args) {
+	// console.log("Function args", args);
+	const tp =
+		app.plugins.plugins["templater-obsidian"].templater
+			.current_functions_object;
 
-	let progress = false;
-	if (input === parseInt(input, 10)) {
-		// If this is true, then we assume that user only sent us progress.
-		progress = input?.progress;
-	}
+	// const svgProgressBar = require(`${app.vault.adapter.basePath}/System/Scripts/Classes/SvgProgressBar.js`);
 
-	const tasks = await dv.current().file.tasks;
-	const percent = Math.round(
+	const tasks = await args.dv.current().file.tasks;
+	let percent = Math.round(
 		(tasks.filter((x) => x.completed).length / tasks.length) * 100,
 	);
+	if (Number.isNaN(percent)) {
+		percent = 0;
+	}
+	args.progress = percent;
 
-	const requestArgs = {
-		wrap: input?.wrap || "svg",
-		width: input?.width,
-		height: input?.height || 20,
-		title: input?.title || "Progress",
-		titleColor: input?.color || "428bca",
-		scale: input?.scale || 100,
-		progress: progress || percent,
-		suffix: input?.suffix || "%",
-	};
+	const svgProgressBar = await new tp.user.SvgProgressBar(args);
 
-	const svgContent = await svgGenerator.getSvgProgressBar(
-		requestArgs.progress,
-		requestArgs,
-	);
-
-	dv.span(svgContent);
+	dv.span(await svgProgressBar.getSvgProgressBar());
 }
 projectProgress(input);

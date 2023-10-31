@@ -17,7 +17,7 @@ template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 # Tasks
 
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true})
+dv.view("toc", {"level": 2, "heading": true, "dv": dv})
 ```
 
 Task management for Obsidian

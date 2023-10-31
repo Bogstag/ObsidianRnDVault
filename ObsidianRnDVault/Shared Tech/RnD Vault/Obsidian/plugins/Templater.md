@@ -1,7 +1,7 @@
 ---
 aliases: 
 date_created: 2023-09-22 13:02:43
-date_modified: 2023-10-05 03:05:39
+date_modified: 2023-10-31 01:49:45
 dependsOnSoftware:
   - "[[Shared Tech/RnD Vault/Obsidian/Obsidian]]"
 description: Create and use templates
@@ -9,8 +9,7 @@ fileclass: plugin
 id: templater-obsidian
 isDesktopOnly: false
 name: Templater
-tags:
-  - 
+tags: []
 template: "[[System/TemplatesNotes/Obsidian plugin page|Obsidian plugin page]]"
 version: 1.16.0
 ---
@@ -19,7 +18,7 @@ version: 1.16.0
 Create and use templates
 
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true})
+dv.view("toc", {"level": 2, "heading": true, "dv": dv})
 ```
 
 ## Docs
@@ -42,99 +41,68 @@ dv.view("toc", {"level": 2, "heading": true})
 >profile:obsidian
 >```
 
-## Templater notes
+## Templater Notes
 
 ### tp.config.run_mode
 
-When launching templater is has a different RunMode depending on how it launched. It can be found in [Templater.ts](https://github.com/SilentVoid13/Templater/blob/9daa97e25cc46ba94eeaf983e93e5c99887f6530/src/core/Templater.ts#L137) and [this is a small RunMode test](https://www.typescriptlang.org/play?ssl=24&ssc=43&pln=10&pc=1#code/PTAEHUFMBsGMHsC2lQBd5oBYoCoE8AHSAZVgCcBLA1UABWgEM8BzM+AVwDsATAGiwoBnUENANQAd0gAjQRVSQAUCEmYKsTKGYUAbpGF4OY0BoadYKdJMoL+gzAzIoz3UNEiPOofEVKVqAHSKymAAmkYI7NCuqGqcANag8ABmIjQUXrFOKBJMggBcISGgoAC0oACCbvCwDKgU8JkY7p7ehCTkVDQS2E6gnPCxGcwmZqDSTgzxxWWVoASMFmgYkAAeRJTInN3ymj4d-jSCeNsMq-wuoPaOltigAKoASgAywhK7SbGQZIIz5VWCFzSeCrZagNYbChbHaxUDcCjJZLfSDbExIAgUdxkUBIursJzCFJtXydajBFHsRCgR5cACy8G4KAA3ooSiUAMKTBQAOUgEgAYmxEDhIIgFnVILxWWyKgQiDwKrB6np+ZjJdKSgB5PRkCQ2SCq9xStmgbXfPXySCK5UGtXGtkAERODEQ6lobAsgkE8DI9pKxFQjlQ7AIIrFjFsigAvsEEJxve4AtB4MwABQAIgADOn+DTOPTGQFOR4eXzBUgw+KFABKADcijjCcgSZTGYAjDnqXSGc3ZfLuNbdLb3HWG40my20+mAEydvMF5tm3X6w2QUeN+CJ5NTgDMc+7haXFoUg5VavX483ze3GYALPv8z2Ak7OC63R79N6yBf41fJxmAFYHwXAIAyDENKwjNd62CYocGaDwyC8RAfWcYF2BoL43DMZh2AYZhJRMaB1ESBhgT0EQvHTABRVYXQWfR0ySbF03ABxUAAcmEXkJHTIIVE1L5dSEQiCKOQMyAUVxpDwUAnBQnRhiwfQUAQRBoWES4sIkH1ohEAwOGxcUWDYLhuCCEogA).
+When launching templater is has a different RunMode depending on how it launched. It can be found in [Templater.ts](https://github.com/SilentVoid13/Templater/blob/9daa97e25cc46ba94eeaf983e93e5c99887f6530/src/core/Templater.ts#L137)
 
-#### 0 = CreateNewFromTemplate
-
-Templater: Create new note from template command.
-
-```js
-// Template Overwrites Target
-
-tp.config.active_file
-	.basename // "ActiveNote"
-	.name // "ActiveNote.md"
-	.active_file.path // "Folder/ActiveNote.md"
-
-tp.config.target_file
-	.basename // "Untitled"
-	.name // "Untitled.md"
-	.target_file.path // "Inbox/Untitled.md"
-	
-tp.config.template_file
-	.basename // "Template"
-	.name // "Template.md"
-	.template_file.path // "System/TemplateFolder/Template.md"
-```
-
-#### 1 = AppendActiveFile
-
-When launched from sidebar or Templater: Open Insert Template modal
-
-```js
-// The active file is the target
-
-// same as tp.config.active_file
-tp.config.target_file
-	.basename // "Untitled"
-	.name // "Untitled.md"
-	.target_file.path // "Inbox/Untitled.md"
-
-tp.config.template_file
-	.basename // Template name
-	.name // Template name with ext (.md)
-	.template_file.path // Template full path incl ext (.md)
-```
-
-#### 2 = OverwriteFile
-
-There is an existing note that you should overwrite. Used when Folder template is run.
-
-```js
-// Template Overwrites Target
-
-tp.config.active_file
-	.basename // "ActiveNote"
-	.name // "ActiveNote.md"
-	.active_file.path // "Folder/ActiveNote.md"
-
-tp.config.target_file
-	.basename // "Untitled"
-	.name // "Untitled.md"
-	.target_file.path // "Inbox/Untitled.md"
-	
-tp.config.template_file
-	.basename // "Template"
-	.name // "Template.md"
-	.template_file.path // "System/TemplateFolder/Template.md"
-```
-
-#### 3 = OverwriteActiveFile
-
-Templater: Replace templates in the act command.
-
-```js
-// Its all the same
-
-// same as tp.config.template_file
-// same as tp.config.active_file
-tp.config.target_file
-	.basename // "Untitled"
-	.name // "Untitled.md"
-	.target_file.path // "Inbox/Untitled.md"
-```
-
-#### 4 = DynamicProcessor
-
-#### 5 = StartupTemplate
-
-I guess when running Startup Template.
+- 0 = CreateNewFromTemplate
+	- Create new note from template command.
+- 1 = AppendActiveFile
+	- When launched from sidebar or Templater: Open Insert Template modal
+- 2 = OverwriteFile
+	- There is an existing note that you should overwrite. Used when Folder template is run.
+- 3 = OverwriteActiveFile
+	- Replace templates in the act command.
+- 4 = DynamicProcessor
+- 5 = StartupTemplate
+	- I guess when running Startup Template.
 
 ## Snippets
+
+### Adding tp and dv in classes, functions and scripts
+
+```js
+const dv = app.plugins.plugins.dataview.api
+const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object        
+
+// Usally better to pass in dv for DataviewInlineApi, like this:
+dv.view("toc", {"level": 2, "heading": true, "dv": dv})
+```
+
+### Full Class Example
+
+```js
+// in classFile.js
+class main {
+  constructor() {
+    this.dv = app.plugins.plugins.dataview.api
+    this.tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object
+  }
+
+  someFunction() {
+    return this.tp.file.title
+  }
+
+  async anotherfunction() {
+    return 'foo'
+  }
+}
+module.exports = main
+```
+
+```js
+// In obsidian in a template	
+< %* //Manual edit to breakup tag
+// Include the class
+const yourClass = new tp.user.classFile()
+// Execute a function
+yourClass.someFunction()
+% > //Manual edit to breakup tag
+```
+
+Source: [AlanG message obsidian forum](https://forum.obsidian.md/t/templater-how-to-import-js-function-from-one-file-into-other-file/47720/5)
 
 ### Prompt
 
@@ -155,13 +123,13 @@ const choicesToChoose = await tp.system.suggester(["array", "for", "display"], [
 new Notice("Hello world!");
 ```
 
-### Create file
+### Create File
 
 ```javascript
 tp.file.create_new(content, title, false);
 ```
 
-### Update content
+### Update Content
 
 ```javascript
 // Replace content
@@ -189,7 +157,7 @@ await app.vault.modify(tFile, newContent);
 }
 ```
 
-### Move file
+### Move File
 
 ```js
 const targetFolder = "Example";
@@ -199,7 +167,7 @@ await tp.file.move('/' + targetFolder + '/' + tp.file.title)
 
 ```
 
-### Append content
+### Append Content
 
 ```js
 // append content
@@ -230,7 +198,7 @@ new Notice('📌Appended to Daily!');
 }
 ```
 
-### Append with template
+### Append with Template
 
 ```js
 // Append to file
@@ -257,7 +225,7 @@ await app.vault.modify(tp.file.find_tfile(appendFile), contentNew)
 new Notice(`📌Appended to ${displayName}`);
 ```
 
-### Add to file
+### Add to File
 
 ```javascript
 // Add to Kanban
@@ -273,7 +241,7 @@ await app.vault.modify(file, content)
 ```json
 {
   "command_timeout": 5,
-  "templates_folder": "System/templates",
+  "templates_folder": "System/Templates",
   "templates_pairs": [
     [
       "",
@@ -284,46 +252,45 @@ await app.vault.modify(file, content)
   "auto_jump_to_cursor": true,
   "enable_system_commands": false,
   "shell_path": "\"C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe\"",
-  "user_scripts_folder": "System/scripts/Templater",
+  "user_scripts_folder": "System/Scripts",
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "Tech/Software/Obsidian/plugins",
-      "template": "System/templates/fileclass/Add Obsidian plugin page.md"
+      "folder": "Shared Tech/RnD Vault/Obsidian/plugins",
+      "template": "System/Templates/fileclass/Add Obsidian plugin page.md"
     },
     {
       "folder": "Journal/Daily",
-      "template": "System/templates/Journal/Daily/Daily Journal Template.md"
+      "template": "System/Templates/Journal/Daily/Daily Journal Template.md"
     },
     {
       "folder": "Journal/Weekly",
-      "template": "System/templates/Journal/Weekly/Weekly Journal Template.md"
-    },
-    {
-      "folder": "Inbox",
-      "template": "System/templates/Test/test templater.md"
+      "template": "System/Templates/Journal/Weekly/Weekly Journal Template.md"
     }
   ],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
-  "enabled_templates_hotkeys": [],
+  "enabled_templates_hotkeys": [
+    "System/Templates/Tasks Menu.md",
+    "System/Templates/New note picker.md"
+  ],
   "startup_templates": [
-    "System/templates/Templater Startup script.md"
+    "System/Templates/Templater Startup script.md"
   ],
   "enable_ribbon_icon": true
 }
 ```
 
-## RunJS Examples
+## Examples from RunJS
 
 ### append_template_to_active_file
 
-Let's apply the Templater template (link below) I created.
+Apply / Append the Templater template.
 
 >Obsidian Templater Template - Insert Callout
 >https://gist.github.com/eoureo/e77ccd45e468e016b99fdd845fef37fd](https://gist.github.com/eoureo/e77ccd45e468e016b99fdd845fef37fd)
 
-```js RunJS="{n:'RunJS/Examples/Templater/Insert Callout',t:'s'}"
+```js
 
 this.app.workspace.setActiveLeaf(this.app.workspace.getLeaf());
 
@@ -337,7 +304,7 @@ console.log(template_file);
 await templater.append_template_to_active_file(template_file);
 ```
 
-### Get Tp (current_functions_object )
+### Get tp (current_functions_object )
 
 Use tp to open Templater's dialog box.
 
@@ -370,3 +337,4 @@ if (templater) {
 - 🔖 [DEMO: How to setup and run your first Templater JS "script" · Discussion #187 · SilentVoid13/Templater](https://github.com/SilentVoid13/Templater/discussions/187)
 - 🔖 [Meg's Default Template · Discussion #259 · SilentVoid13/Templater](https://github.com/SilentVoid13/Templater/discussions/259) (prompt for "Untitled" notes)
 - [how-to-use-templater-js-scripts - shabegom's Obsidian Tutorials](https://shbgm.ca/obsidian/docs/how-to-use-templater-js-scripts)
+- [How to use Templater with class](https://github.com/SilentVoid13/Templater/discussions/1142)

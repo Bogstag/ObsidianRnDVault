@@ -16,7 +16,7 @@
   "folder_templates": [
     {
       "folder": "Shared Tech/RnD Vault/Obsidian/plugins",
-      "template": "System/Templates/fileclass/Add Obsidian plugin page.md"
+      "template": "System/Templates/Folder/Obsidian plugin page.md"
     },
     {
       "folder": "Journal/Daily",
@@ -34,7 +34,7 @@
     "System/Templates/New note picker.md"
   ],
   "startup_templates": [
-    "System/Templates/Templater Startup script.md"
+    "System/Templates/Startup/Periodic Notes Startup Script.md"
   ],
   "enable_ribbon_icon": true
 }

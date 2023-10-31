@@ -5,7 +5,7 @@ date_modified: 2023-10-21 12:18:35
 # Axios
 
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true})
+dv.view("toc", {"level": 2, "heading": true, "dv": dv})
 ```
 
 ## General
