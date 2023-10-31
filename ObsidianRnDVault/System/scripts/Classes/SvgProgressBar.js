@@ -68,7 +68,7 @@ class SvgProgressBar {
 	/**
 	 * @method getSvgProgressBar
 	 * @description Render, finalize and return a SVG Progressbar.
-	 * @return {string} - String containing the progressbar.
+	 * @return {SVGElement} - String containing the progressbar.
 	 * @memberof SvgProgressBar
 	 */
 	getSvgProgressBar() {

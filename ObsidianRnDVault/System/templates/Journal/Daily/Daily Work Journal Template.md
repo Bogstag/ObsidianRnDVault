@@ -67,19 +67,56 @@ account: Default
 - [ ] Prepare standup 📅<% moment().format("YYYY-MM-DD 09:30:00") %> ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
 <%* } -%>
 <%*
-  const ics = await app.plugins.getPlugin('ics');
-  const events = await ics.getEvents();
-  var mdArray = [];
-  events.forEach((e) => {
-	if (e.summary == "[object Object] (recurring)") {
-		return;
-	} else if (e.location == "undefined") {
-		mdArray.push(`- [ ] ⏰${e.time}-${e.endTime} 📓${e.summary.val} #meeting`)
-	} else {
-		mdArray.push(`- [ ] ⏰${e.time}-${e.endTime} 📓${e.summary.val} 🏠${e.location} #meeting`)
+	const ics = await app.plugins.getPlugin("ics");
+	const events = await ics.getEvents();
+	const sortedEvents = events.sort(
+		(a, b) => a.time.replace(":", "") - b.time.replace(":", ""),
+	);
+	const mdArray = [];
+	
+	for (const e of events) {
+		let summary = "";
+		if (e.summary) {
+			if (e.summary.val) {
+				summaryText = `${e.summary.val}`;
+			}
+		}
+		
+		if (e.time === "00:00" || e.time === "23:00") {
+			//Assume its a all day event
+			const summaryEmoji = "➰";
+			mdArray.push(`- ${summaryEmoji}${summaryText}`);
+			continue;
+		}
+		
+		const summaryEmoji = "💬";
+		summary = `${summaryEmoji}${summaryText}`;
+		
+		let location = "";
+		if (e.location) {
+			if (e.location.toLowerCase().includes("skype")) {
+				location = "💻";
+			} else {
+				location = `🪑${e.location}`;
+			}
+		}
+		
+		let description = "";
+		if (e.description) {
+			description = e.description.replace(/[\r\n]+/gm, " ");
+			description = description.trim();
+			description = description.substring(0, 70);
+			if (description.length > 5) {
+				description = `\n      ${description}`;
+			}
+		}
+		
+		//One line, description handles the new line.
+		mdArray.push(
+			`- [ ] ⏰${e.time}-${e.endTime} ${summary} ${location} #meeting ${description}`,
+		);
 	}
-  })
-  tR += mdArray.sort().join("\n")
+	tR += mdArray.join("\n");
 -%>
 <%* if (tp.date.now("d") == 5) { %>
 - [ ] Tidsregistrera i slutet av veckan #Work/tidsregistrera/vecka 📅 <% tp.date.weekday("YYYY-MM-DD", 5) %> ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>

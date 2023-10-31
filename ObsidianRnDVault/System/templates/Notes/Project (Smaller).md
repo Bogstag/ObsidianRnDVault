@@ -31,9 +31,10 @@ obsidianEditingMode: live
 > ### Sequence
 > As default all task under a header is done in sequence. If you don't want that, you can include the 🟰 in the heading for that section.
 
-```dataviewjs
-await dv.view('projectProgress', { width:400, height:20 })
+```<%"dataviewjs"%>
+await dv.view('projectProgress', { width:400, height:20, dv:dv })
 ```
+
 ## 🎯 Goals / Problem
 What is your goal with this project?
 
