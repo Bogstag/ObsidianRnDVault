@@ -8,7 +8,7 @@ obsidianUIMode: preview
 >This this page is for viewing markdown formatting and is good to have for testing things like Linters. Also its hard to remember everything and this is a good reference.
 
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true, "dv": dv})
+dv.view("toc", {"level": 2, "heading": true})
 ```
 
 # Header 1

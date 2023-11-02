@@ -18,7 +18,7 @@ cross-platform command-line interface and scripting language for system and netw
 
 [PowerShell Documentation - PowerShell | Microsoft Learn](https://learn.microsoft.com/en-us/powershell/)
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true, "dv": dv})
+dv.view("toc", {"level": 2, "heading": true})
 ```
 
 ## Examples

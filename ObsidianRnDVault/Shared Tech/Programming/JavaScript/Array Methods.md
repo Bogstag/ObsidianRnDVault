@@ -1,8 +1,10 @@
 ---
 date_created: 2023-10-11 15:38:19
-date_modified: 2023-10-11 15:39:05
+date_modified: 2023-11-01 21:00:06
 ---
-# Array Methods
+# Array
+
+## Methods
 
 A summary of commonly used array methods in JavaScript:
 
@@ -22,3 +24,51 @@ A summary of commonly used array methods in JavaScript:
 | `pop`     | Removes the last element from an array and returns that element.                                              | Removed element                    | Yes                     | When you want to remove the last element of an array.      |
 
 Each method has its own use-cases, and which one to use often depends on what you are trying to accomplish.
+
+## Loops
+
+No worries! There are multiple ways to loop through an array in JavaScript. Here are some:
+
+1. **For loop:**
+
+	```javascript
+		for (let i = 0; i < array.length; i++) {
+				console.log(array[i]);
+		}
+	```
+
+2. **While loop:**
+
+	```javascript
+		let i = 0;
+		while (i < array.length) {
+				console.log(array[i]);
+				i++;
+		}
+	```
+
+3. **Do-While loop:**
+
+	```javascript
+		let i = 0;
+		do {
+				console.log(array[i]);
+				i++;
+		} while (i < array.length);
+	```
+
+4. **For-Of loop:**
+
+	```javascript
+		for (const element of array) {
+				console.log(element);
+		}
+	```
+
+5. **For-In loop (not recommended for arrays, more suitable for objects):**
+
+	```javascript
+		for (const index in array) {
+				console.log(array[index]);
+		}
+	```

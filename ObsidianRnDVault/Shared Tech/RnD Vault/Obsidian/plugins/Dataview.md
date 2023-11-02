@@ -33,8 +33,12 @@ Complex data views for the data-obsessed.
 >profile:obsidian
 >```
 
-## Settings
+## Snippets
 
-```json
-	// To many errorsundefined
+### List of backlinks not including outgoing links from this note
+
+```dataview 
+list 
+where contains(this.file.inlinks, file.link) 
+	and !contains(this.file.outlinks, file.link) 
 ```

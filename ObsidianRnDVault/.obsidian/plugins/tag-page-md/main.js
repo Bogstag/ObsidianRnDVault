@@ -47,13 +47,28 @@ var isTagPage = (app, tagPageFrontmatterKey, providedFile, tagOfInterest) => {
 var isIndentationGreater = (line, threshold) => {
   return line.search(/\S/) > threshold;
 };
-var containsTag = (stringToSearch, tag) => stringToSearch.includes(tag);
+var getIsWildCard = (tag) => {
+  const isWildCard = tag.endsWith("/*");
+  const cleanedTag = isWildCard ? tag.slice(0, -2) : tag;
+  return { isWildCard, cleanedTag };
+};
+var containsTag = (stringToSearch, tag) => {
+  const { isWildCard, cleanedTag } = getIsWildCard(tag);
+  if (isWildCard) {
+    return stringToSearch.includes(cleanedTag);
+  } else {
+    const regex = new RegExp(`${cleanedTag}\\s`, "g");
+    return regex.test(stringToSearch);
+  }
+};
 var findSmallestUnitsContainingTag = (content, tag, excludeBullets = false) => {
-  const escapedSubstring = tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const { isWildCard, cleanedTag } = getIsWildCard(tag);
+  const escapedSubstring = cleanedTag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const wildcardPattern = isWildCard ? "(?:\\/[^\\s.!?\\n]*)?" : "";
   const exclusionPattern = excludeBullets ? "(?!\\s*- )" : "";
   const regex = new RegExp(
     `(?<=^|[
-.!?])${exclusionPattern}[^.!?\\n]*?${escapedSubstring}[^.!?\\n]*?(?:[.!?\\n]|$)`,
+.!?])${exclusionPattern}[^.!?\\n]*?${escapedSubstring}${wildcardPattern}[^.!?\\n]*?(?:[.!?\\n]|$)`,
     "gm"
   );
   const matches = [];
@@ -148,12 +163,7 @@ var fetchTagData = async (app, settings, tagOfInterest) => {
   const allFiles = vault.getMarkdownFiles();
   return await Promise.all(
     allFiles.filter(
-      (file) => !isTagPage(
-        app,
-        settings.frontmatterQueryProperty,
-        file,
-        tagOfInterest
-      )
+      (file) => !isTagPage(app, settings.frontmatterQueryProperty, file)
     ).map((file) => processFile(vault, settings, file, tagOfInterest))
   ).then((tagInfos) => tagInfos.flat());
 };
@@ -238,7 +248,7 @@ var TagPagePlugin = class extends import_obsidian2.Plugin {
     this.ribbonIcon.style.display = "none";
     this.addCommand({
       id: "create-tag-page",
-      name: "Create Tag Page",
+      name: "Create tag page",
       callback: () => {
         new CreateTagPageModal(this.app, this).open();
       }
@@ -318,8 +328,10 @@ var TagPagePlugin = class extends import_obsidian2.Plugin {
    */
   async createTagPage(tag) {
     const tagOfInterest = tag.startsWith("#") ? tag : `#${tag}`;
+    const { isWildCard, cleanedTag } = getIsWildCard(tagOfInterest);
+    const filename = `${cleanedTag.replace("#", "")}${isWildCard ? "_nested" : ""}_Tags.md`;
     const tagPage = this.app.vault.getAbstractFileByPath(
-      `${this.settings.tagPageDir}${tagOfInterest}.md`
+      `${this.settings.tagPageDir}${filename}`
     );
     if (!tagPage) {
       const tagsInfo = await fetchTagData(
@@ -333,7 +345,6 @@ var TagPagePlugin = class extends import_obsidian2.Plugin {
         tagsInfo,
         tagOfInterest
       );
-      const filename = `${tagOfInterest.replace("#", "")}_Tags.md`;
       const exists = await this.app.vault.adapter.exists(
         (0, import_obsidian2.normalizePath)(this.settings.tagPageDir)
       );

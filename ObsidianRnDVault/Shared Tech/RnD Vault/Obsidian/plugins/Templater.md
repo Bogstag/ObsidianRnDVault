@@ -18,9 +18,8 @@ version: 1.16.0
 Create and use templates
 
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true, "dv": dv})
+dv.view("toc", {"heading": true, "dv": dv})
 ```
-
 ## Docs
 
 >[!help]- Docs
@@ -68,7 +67,7 @@ const dv = app.plugins.plugins.dataview.api
 const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object        
 
 // Usally better to pass in dv for DataviewInlineApi, like this:
-dv.view("toc", {"level": 2, "heading": true, "dv": dv})
+dv.view("toc", {"level": 2, "heading": true})
 ```
 
 ### Full Class Example

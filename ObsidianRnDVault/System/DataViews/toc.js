@@ -1,43 +1,45 @@
-/**
- * Insert a table-of-contents anywhere with:
- * ```dataviewjs
- * dv.view('toc')
- * ```
- *
- * You can specify some optional parameters:
- * ```dataviewjs
- * dv.view('toc', { style: '-', level: 2, heading: true })
- * ```
- *
- * @input {string} [style=] - '-' not set make it numberd list .
- * @input {number} [level=2] - On witch level to start from and ignore the levels preceeding that.
- * @input {bool} [heading=false] - Set to true to enable the "Table of contents" heading
- */
-function generateToc(content, startAtLevel, style, dv) {
-	return content
-		.match(new RegExp(`^#{${startAtLevel},} \\S.*`, "mg"))
-		.map((heading) => {
-			const [_, level, text] = heading.match(/^(#+)\s+([^([]+|\[[^\]]+\])/);
+/*
+Insert a table-of-contents anywhere with:
 
-			const link = `${dv.current().file.path}#${text}`;
+```dataviewjs
+dv.view('toc')
+```
 
-			return (
-				"\t".repeat(level.length - startAtLevel) +
-				`${input?.style || "1."} [[${link}|${text}]]`
-			);
-		});
+You can specify some optional parameters:
+
+```dataviewjs
+dv.view('toc', {
+    style: '-', // change to bullet style instead of number style
+    level: 2, // start at level number X (ignore the levels preceeding that)
+    heading: false // disable the "Table of contents" heading
+})
+```
+Credits to AlanG https://share.note.sx/3tddklv6
+*/
+const startAtLevel = input?.level || 2;
+const content = await dv.io.load(dv.current().file.path);
+const counter = [0, startAtLevel];
+let numbers = [1];
+const toc = content
+	.match(new RegExp(`^#{${startAtLevel},} \\S.*`, "mg"))
+	.map((heading) => {
+		const [_, level, text] = heading.match(/^(#+) (.+)$/);
+		const link = `${dv.current().file.path}#${text}`;
+		if (level.length > counter[1]) {
+			counter[0]++;
+			numbers[counter[0]] = 1;
+		} else if (level.length < counter[1]) {
+			counter[0] = Math.max(0, counter[0] - 1);
+			numbers[counter[0]]++;
+			numbers = numbers.slice(0, counter[0] + 1);
+		}
+		counter[1] = level.length;
+		return (
+			"\t".repeat(counter[0]) +
+			`${input?.style || `${numbers[numbers.length - 1]}.`} [[${link}|${text}]]`
+		);
+	});
+if (input?.heading !== false) {
+	dv.header(2, "Table of contents");
 }
-
-async function toc(args) {
-	const startAtLevel = args.level || 2;
-	const style = args.style || "1.";
-	const content = await args.dv.io.load(args.dv.current().file.path);
-	const toc = generateToc(content, startAtLevel, style, args.dv);
-
-	if (args.heading !== false) {
-		dv.header(2, "Table of contents");
-	}
-
-	dv.paragraph(toc.join("\n"));
-}
-toc(input);
+dv.paragraph(toc.join("\n"));

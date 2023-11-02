@@ -34,7 +34,7 @@ This plugin allows you to track the progress of Atlassian Jira issues from your 
 
 ## Toc
 ```dataviewjs
-dv.view("toc", {"level": 2, "heading": true, "dv": dv})
+dv.view("toc", {"level": 2, "heading": true})
 ```
 
 ## Issue

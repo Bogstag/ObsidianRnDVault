@@ -112,7 +112,8 @@
         "order": 13,
         "rule": ".*vscode.*"
       }
-    ]
+    ],
+    "iconInFrontmatterEnabled": false
   },
   "Archive": "FasBoxArchive",
   "Areas": "FasLayerGroup",
