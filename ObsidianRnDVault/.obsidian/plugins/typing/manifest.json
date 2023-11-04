@@ -1,1 +1,10 @@
-{"id":"typing","name":"Typing","version":"0.2.6","minAppVersion":"0.9.12","description":"Programmatic customizations for groups of notes","author":"Nikita Konodyuk","authorUrl":"https://github.com/konodyuk","isDesktopOnly":false}
+{
+    "id": "typing",
+    "name": "Typing",
+    "version": "0.2.8",
+    "minAppVersion": "0.9.12",
+    "description": "Programmatic customizations for groups of notes",
+    "author": "Nikita Konodyuk",
+    "authorUrl": "https://github.com/konodyuk",
+    "isDesktopOnly": false
+}

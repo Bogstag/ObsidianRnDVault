@@ -1,11 +1,12 @@
 {
-	"types": {
-		"aliases": "aliases",
-		"cssclasses": "multitext",
-		"tags": "tags",
-		"template": "text",
-		"version": "text",
-		"dependsOnPlugin": "multitext",
-		"is_active": "checkbox"
-	}
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "template": "text",
+    "version": "text",
+    "dependsOnPlugin": "multitext",
+    "is_active": "checkbox",
+    "icon": "text"
+  }
 }

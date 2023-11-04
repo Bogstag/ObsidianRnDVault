@@ -75,7 +75,13 @@
 }
 .Prompt-child {
   padding: 0 var(--size-4-3) var(--size-4-2) var(--size-4-3);
-  border-bottom: 1px solid var(--background-secondary);
+  border: solid;
+  border-width: 1px;
+  border-color: transparent;
+  border-bottom-color: var(--background-secondary);
+}
+.Prompt-child-active {
+  border-color: var(--interactive-accent-hover);
 }
 .Prompt-title {
   display: flex;
@@ -284,8 +290,19 @@ button.List-element:active,
 .List-element:hover,
 .List-element:focus,
 .List-element:active {
-  border: 1px solid var(--background-modifier-border-focus);
   box-shadow: unset;
+}
+button.List-element:hover:not(:focus):not(:active):not(button.List-element-active, .List-element-active),
+.List-element:hover:not(:focus):not(:active):not(button.List-element-active, .List-element-active) {
+  border: 1px solid var(--background-modifier-border-focus);
+}
+button.List-element:focus,
+button.List-element:active,
+button.List-element-active,
+.List-element:focus,
+.List-element:active,
+.List-element-active {
+  border: 1px solid var(--interactive-accent-hover);
 }
 
 /* esbuild-sass-plugin:css-chunk:src/styles/react-datepicker.notranspile.scss */

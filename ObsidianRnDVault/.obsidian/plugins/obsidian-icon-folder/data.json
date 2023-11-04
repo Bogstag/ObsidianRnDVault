@@ -15,105 +15,87 @@
     "iconsBackgroundCheckEnabled": false,
     "migrated": 3,
     "recentlyUsedIcons": [
+      "FasKeyboard",
+      "MyMyBash",
+      "FabFacebookF",
       "FasInfo"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [
       {
         "for": "everything",
-        "icon": "FasCalendar",
-        "order": 0,
-        "rule": "^20\\d\\d$",
-        "useFilePath": true
-      },
-      {
-        "for": "everything",
-        "icon": "FasCalendarWeek",
-        "order": 1,
-        "rule": "20\\d\\d\\-v\\d\\d$",
-        "useFilePath": true
-      },
-      {
-        "for": "everything",
-        "icon": "FasCalendarDay",
-        "order": 2,
-        "rule": "20\\d\\d-\\d\\d-\\d\\d$",
-        "useFilePath": true
-      },
-      {
-        "for": "everything",
         "icon": "MyMyPowershell",
         "order": 3,
-        "rule": ".*PowerShell.*",
+        "rule": "^.*[pP]ower[sS]hell.*$",
         "useFilePath": true
       },
       {
         "for": "everything",
         "icon": "FabJs",
         "order": 4,
-        "rule": ".*JavaScript.*",
+        "rule": "^.*[jJ]ava[sS]cript.*$",
         "useFilePath": true
       },
       {
         "for": "everything",
         "icon": "FabWindows",
         "order": 5,
-        "rule": ".*windows.*",
+        "rule": "^.*[wW]indows.*$",
         "useFilePath": true
       },
       {
         "for": "everything",
         "icon": "MyMyBash",
         "order": 6,
-        "rule": ".*bash.*",
+        "rule": "^.*[bB]ash.*$",
         "useFilePath": true
       },
       {
         "for": "everything",
         "icon": "FabDocker",
         "order": 7,
-        "rule": ".*docker.*",
+        "rule": "^.*[dD]ocker.*$",
         "useFilePath": true
       },
       {
         "for": "everything",
         "icon": "FabChrome",
         "order": 8,
-        "rule": ".*chrome.*",
+        "rule": "^.*[cC]hrome.*$",
         "useFilePath": true
       },
       {
         "for": "everything",
         "icon": "FabGitAlt",
         "order": 9,
-        "rule": ".*git.*"
+        "rule": "^.*[gG]it.*$"
       },
       {
         "for": "everything",
         "icon": "FabMarkdown",
         "order": 10,
-        "rule": ".*markdown.*"
+        "rule": "^.*([mM]ark[dD]own|MD).*$"
       },
       {
         "for": "everything",
         "icon": "FabNpm",
         "order": 11,
-        "rule": ".*npm.*"
+        "rule": "^.*(npm|NPM).*$"
       },
       {
         "for": "everything",
         "icon": "MyMyRegex",
         "order": 12,
-        "rule": ".*regex.*"
+        "rule": "^.*[rR]eg[eE]x.*$"
       },
       {
         "for": "everything",
         "icon": "MyMyVscode",
         "order": 13,
-        "rule": ".*vscode.*"
+        "rule": "^.*[vV][sS][cC]ode.*$"
       }
     ],
-    "iconInFrontmatterEnabled": false
+    "iconInFrontmatterEnabled": true
   },
   "Archive": "FasBoxArchive",
   "Areas": "FasLayerGroup",
@@ -168,5 +150,6 @@
   "Tech/Config/Shared": "FasShareNodes",
   "Tech/Config/Shared/RnD Vault": "FasVault",
   "Work": "FasBriefcase",
-  "Work/Meetings": "FasUsers"
+  "Work/Meetings": "FasUsers",
+  "Shared Tech/Hardware/Keyboards.md": "FasKeyboard"
 }

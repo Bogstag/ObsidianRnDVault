@@ -4310,11 +4310,16 @@ var Commands = class {
         if (this.plugin.app.vault.getAbstractFileByPath(newPath)) {
           return new import_obsidian23.Notice("Folder already exists");
         }
+        const automaticallyCreateFolderNote = this.plugin.settings.autoCreate;
+        this.plugin.settings.autoCreate = false;
+        this.plugin.saveSettings();
         await this.plugin.app.vault.createFolder(newPath);
         const folder = this.plugin.app.vault.getAbstractFileByPath(newPath);
         if (!(folder instanceof import_obsidian23.TFolder))
           return;
-        createFolderNote(this.plugin, folder.path, true, file.extension, false, file);
+        createFolderNote(this.plugin, folder.path, true, "." + file.extension, false, file);
+        this.plugin.settings.autoCreate = automaticallyCreateFolderNote;
+        this.plugin.saveSettings();
       }
     });
     this.plugin.addCommand({

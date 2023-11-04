@@ -1,15 +1,15 @@
 {
-	"todoPageName": "",
-	"showChecked": false,
-	"showAllTodos": false,
-	"autoRefresh": true,
-	"subGroups": false,
-	"groupBy": "page",
-	"sortDirectionItems": "new->old",
-	"sortDirectionGroups": "new->old",
-	"sortDirectionSubGroups": "new->old",
+  "todoPageName": "",
+  "showChecked": false,
+  "showAllTodos": false,
+  "autoRefresh": true,
+  "subGroups": false,
+  "groupBy": "page",
+  "sortDirectionItems": "new->old",
+  "sortDirectionGroups": "new->old",
+  "sortDirectionSubGroups": "new->old",
 	"includeFiles": "{Journal/**,**/Tasks/**,Planning/**}",
-	"lookAndFeel": "classic",
-	"_collapsedSections": [],
-	"_hiddenTags": []
+  "lookAndFeel": "classic",
+  "_collapsedSections": [],
+  "_hiddenTags": []
 }
