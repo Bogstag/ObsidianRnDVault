@@ -5,6 +5,7 @@ obsidianEditingMode: live
 ---
 <%* tR = "" -%>
 <%*
+	// TODO:: Error in meta. prevYear: "[[2021]]" should be 2022
 	date = tp.file.title // Starting date
 	format = "YYYY" // Format of starting date
 	locale = "sv"
@@ -26,7 +27,7 @@ Parent:
 tags:
 - Journal/Yearly/<% tp.date.now(format, 0, date, format) %>
 - Calendar/<% tp.date.now(format, 0, date, format) %>
-template: "<%"["%>[<% "System/templates/journal/Yeary/Yeary Journal Template" %>|<% "Yeary Journal Template" %>]]"
+template: "<%"["%>[<% "System/templates/journal/Yearly/Yearly Journal Template" %>|<% "Yearly Journal Template" %>]]"
 <% "---" %>
 # <% tp.date.now(format, 0, date, format) %>
 

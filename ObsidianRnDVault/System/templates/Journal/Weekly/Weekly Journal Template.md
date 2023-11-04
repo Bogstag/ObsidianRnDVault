@@ -8,6 +8,8 @@ obsidianEditingMode: live
 <%*
 	date = tp.file.title
 	format = "gggg-[v]ww"
+	locale = "sv"
+	moment.locale(locale)
 	const filePath = tp.file.path(true);
 	let fileObject = this.app.vault.getAbstractFileByPath(filePath);
 _%>
@@ -17,8 +19,8 @@ prevWeek: "<%"["%>[<% tp.date.now(format, -7, tp.file.title, format) %>]]"
 date_created: <% tp.file.creation_date() %>
 date_modified: <% tp.file.creation_date() %>
 dateformat: <% format %>
-fileclass: journal/weekly
 locale: <% locale %>
+fileclass: journal/weekly
 <% tp.date.weekday("dddd", 0, date, format) %>: <% tp.date.weekday("YYYY-MM-DD", 0, date, format) %>
 <% tp.date.weekday("dddd", 1, date, format) %>: <% tp.date.weekday("YYYY-MM-DD", 1, date, format) %>
 <% tp.date.weekday("dddd", 2, date, format) %>: <% tp.date.weekday("YYYY-MM-DD", 2, date, format) %>

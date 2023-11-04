@@ -17,14 +17,6 @@
     {
       "folder": "Shared Tech/RnD Vault/Obsidian/plugins",
       "template": "System/Templates/Folder/Obsidian plugin page.md"
-    },
-    {
-      "folder": "Journal/Daily",
-      "template": "System/Templates/Journal/Daily/Daily Journal Template.md"
-    },
-    {
-      "folder": "Journal/Weekly",
-      "template": "System/Templates/Journal/Weekly/Weekly Journal Template.md"
     }
   ],
   "syntax_highlighting": true,
