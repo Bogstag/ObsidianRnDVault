@@ -1,13 +1,12 @@
 /**
  * You can call this with this:
- * await dv.view("System/DataViews/tableAllFilesInCurrentPath", { File: "file.link",	Template: "dependsOnTemplate", Script: "dependsOnScript", dvView: "dependsOnDvView"});
+ * await dv.view("System/DataViews/tableAllFilesInCurrentPath", { File: "file.link", Template: "dependsOnTemplate", Script: "dependsOnScript", dvView: "dependsOnDvView"});
  * First args should be file.link
  *
  * @param {*} args
  */
 
 async function tableAllFilesInCurrentPath(args) {
-
 	const tableTitles = Object.keys(args);
 	const propertiesToFetch = Object.values(args);
 
@@ -44,7 +43,7 @@ async function tableAllFilesInCurrentPath(args) {
 		}
 
 		// Otherwise, return the value as-is
-		return value;
+		return link;
 	}
 
 	const pages = await dv

@@ -1,6 +1,8 @@
 ---
-dependsOnPlugin: "[[Tech/Software/Client/Obsidian/plugins/Periodic Notes|Periodic Notes]]"
+dependsOnPlugin:
+  - "[[Shared Tech/RnD Vault/Obsidian/plugins/Periodic Notes|Periodic Notes]]"
 fileclass: template
+dependsOnScript: "[[System/Scripts/Classes/PeriodicNotesHelper.js|PeriodicNotesHelper.js]]"
 ---
 <%* tR = "" -%>
 <%*

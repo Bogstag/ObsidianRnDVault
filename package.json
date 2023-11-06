@@ -6,7 +6,7 @@
 	"main": ".",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"generate-docs": "node_modules/.bin/jsdoc"
+		"generate-docs": "jsdoc -r -c ./conf.json"
 	},
 	"repository": {
 		"type": "git",
@@ -32,98 +32,5 @@
 		"@jsdoc/util": "^0.3.0",
 		"docdash": "^2.0.2",
 		"jsdoc": "^4.0.2"
-	},
-	"jsdoc": {
-		"docdash": {
-			"collapse": true,
-			"commonNav": true,
-			"menu": {
-				"Github repo": {
-					"class": "menu-item",
-					"href": "https://github.com/Bogstag/ObsidianRnDVault",
-					"id": "repository",
-					"target": "_blank"
-				}
-			},
-			"meta": {
-				"description": "Test and staging repo for my real vaults.",
-				"keyword": "",
-				"title": "Obsidian RnD Vault"
-			},
-			"nameInOutputPath": false,
-			"navLevel": 2,
-			"private": false,
-			"removeQuotes": "trim",
-			"scopeInOutputPath": false,
-			"scripts": "Docs/ScriptsDocs/scripts",
-			"search": true,
-			"sectionOrder": [
-				"Classes",
-				"Modules",
-				"Externals",
-				"Events",
-				"Namespaces",
-				"Mixins",
-				"Tutorials",
-				"Interfaces"
-			],
-			"ShortenTypes": false,
-			"sort": true,
-			"static": true,
-			"versionInOutputPath": false,
-			"wrap": true
-		},
-		"markdown": {
-			"hardwrap": true,
-			"idInHeadings": true,
-			"parser": "gfm"
-		},
-		"opts": {
-			"destination": "Docs/ScriptsDocs",
-			"encoding": "utf8",
-			"recurse": true,
-			"template": "node_modules/docdash",
-			"verbose": true
-		},
-		"plugins": [
-			"plugins/markdown",
-			"plugins/summarize"
-		],
-		"recurseDepth": 10,
-		"source": {
-			"exclude": [
-				"ObsidianRnDVault/System/Scripts/secrets"
-			],
-			"excludePattern": "(^|\\/|\\\\)_",
-			"include": [
-				"ObsidianRnDVault/System/Scripts/Classes/",
-				"ObsidianRnDVault/System/Scripts/Functions/",
-				"ObsidianRnDVault/System/Scripts/Utils/",
-				"./README.md"
-			],
-			"includePattern": ".+\\.(js(doc|x)?|cjs)$"
-		},
-		"sourceType": "commonjs",
-		"tags": {
-			"allowUnknownTags": true,
-			"dictionaries": [
-				"jsdoc",
-				"closure"
-			]
-		},
-		"templates": {
-			"cleverLinks": true,
-			"default": {
-				"includeDate": false,
-				"outputSourceFiles": true,
-				"staticFiles": {
-					"include": [
-						"Docs/ScriptsDocs/static"
-					]
-				},
-				"useLongnameInNav": true
-			},
-			"monospaceLinks": false
-		}
 	}
 }

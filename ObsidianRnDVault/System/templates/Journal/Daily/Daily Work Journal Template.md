@@ -36,7 +36,7 @@ Parent:
 tags:
 - Journal/Daily/<% tp.date.now("YYYY/MM/YYYY-MM-DD", 0, date, format) %>
 - Calendar/<% tp.date.now("YYYY/MM-MMMM/DD-dddd", 0, date, format) %>
-template: "<%"["%>[<% "System/templates/journal/Daily/Daily Journal Template" %>]]"
+template: "<%"["%>[<% "System/templates/journal/Daily/Daily Work Journal Template" %>]]"
 numberOfTasks: 0
 numberOfCompletedTasks: 0
 numberOfNotCompletedTasks: 0

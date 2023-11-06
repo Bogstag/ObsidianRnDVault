@@ -1,5 +1,6 @@
 ---
 fileclass: template
+dependsOnScript: "[[System/Scripts/Classes/NotePicker.js|NotePicker.js]]"
 ---
 <%*
 // New note template configuration

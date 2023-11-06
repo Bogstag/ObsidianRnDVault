@@ -8,15 +8,18 @@
  * This only prevents enabled notes to not be created.
  * If it is disabled in plugin, this will not enable it.
  *
+ * @class PeriodicNotesHelper
+ *
  * @example
  * const periodicNotesHelper = new tp.user.PeriodicNotesHelper();
  * periodicNotesHelper.init();
  *
- * @class PeriodicNotesHelper
  */
 class PeriodicNotesHelper {
 	/**
 	 * Creates an instance of PeriodicNotesHelper.
+	 *
+	 * @constructor
 	 * @param {boolean} [openNew=false] Whether to open or not the newly created file. Not recommended: https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html#tpfilecreate_newtemplate-tfile--string-filename-string-open_new-boolean--false-folder-tfolder
 	 * @memberof PeriodicNotesHelper
 	 */
@@ -29,23 +32,18 @@ class PeriodicNotesHelper {
 	}
 
 	/**
-	 * Get the defaults for PeriodicNotesHelper.
+	 * Default setting for the helper if no other is provided by the user.
 	 *
 	 * @default
-	 * @return {object} Default values that can be sent to the init. An object with settings for this run.
 	 * @memberof PeriodicNotesHelper
 	 */
-	getDefaults() {
-		const createPeriodicNotes = {
-			daily: false,
-			weekly: true,
-			monthly: true,
-			quarterly: true,
-			yearly: true,
-		};
-		return createPeriodicNotes;
-	}
-
+	defaults = {
+		daily: false,
+		weekly: true,
+		monthly: true,
+		quarterly: true,
+		yearly: true,
+	};
 	/**
 	 * Init the creation process.
 	 * You can call all the functions from the outside and archive the same result.
@@ -57,7 +55,7 @@ class PeriodicNotesHelper {
 	 */
 	async init(createPeriodicNotes) {
 		const periodsToCreate = await this.checkPeriodCreation(
-			createPeriodicNotes || this.getDefaults(),
+			createPeriodicNotes || this.defaults,
 		);
 
 		for (const period of periodsToCreate) {
@@ -182,7 +180,7 @@ class PeriodicNotesHelper {
 	/**
 	 * Checks if the path / folders for the note exists or not. If not, create the folders.
 	 * @external TFolder
-	 * @see Obsidian API (@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890)
+	 * @see external:TFolder {@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890|Obsidian API TFolder}
 	 *
 	 * @param {string} path Full path to the note.
 	 * @return {external:TFolder} Object with information about the folder.
@@ -203,7 +201,7 @@ class PeriodicNotesHelper {
 	/**
 	 * Creates a folder.
 	 * @external TFolder
-	 * @see Obsidian API (@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890)
+	 * @see external:TFolder {@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890|Obsidian API TFolder}
 	 *
 	 * @param {string} path Full path to the folder / note.
 	 * @return {external:TFolder} Object with information about the folder.
@@ -230,7 +228,7 @@ class PeriodicNotesHelper {
 	/**
 	 * Creates the note.
 	 * @external TFolder
-	 * @see Obsidian API (@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890)
+	 * @see external:TFolder {@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890|Obsidian API TFolder}
 	 *
 	 * @param {external:TFolder} tFolder Object with information about the folder.
 	 * @param {string} note Name of the note.

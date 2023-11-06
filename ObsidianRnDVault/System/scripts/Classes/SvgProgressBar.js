@@ -1,19 +1,20 @@
 /**
- * Example usage:
+ * A class for generating SVGs to represent progress bars.
+ *
+ * @class SvgProgressBar
+ *
+ * @example
  * const svgProgressBar = require(`${app.vault.adapter.basePath}/System/Scripts/Classes/SvgProgressBar.js`);
  * const progressBar = new svgProgressBar();
- *
  * const args = { title: 'My Progress', scale: 100, progress: 50 };
  * const svgContent = progressBar.getSvgProgressBar(args);
  * console.log('Generated SVG:', svgContent);
- *
- * @class SvgProgressBar
- * @classdesc A class for generating SVGs to represent progress bars.
  */
 class SvgProgressBar {
 	/**
+	 * Creates an instance of SvgProgressBar.
+	 *
 	 * @constructor
-	 * @description Generate the SVG content for the progress bar.
 	 * @param {object} args - The request arguments.
 	 * @param {number} [args.progress=0] - The current progress value. If scale is 100, then 50 is 50%.
 	 * @param {boolean} [args.height=false] - True gets you more height.
@@ -22,12 +23,9 @@ class SvgProgressBar {
 	 * @param {number} [args.scale=100] - The request arguments.
 	 * @param {number} [args.width] - Width of bar.
 	 * @param {string} [args.suffix='%'] - THe suffix of progress.
-	 *
-	 * @returns {string} - The SVG content.
 	 * @memberof SvgProgressBar
 	 */
 	constructor(args) {
-		// console.log("Class args", args);
 		this.titleColor = args.color || "428bca";
 		this.height = parseInt(args.height) || 20;
 		this.progress = args.progress || 0;

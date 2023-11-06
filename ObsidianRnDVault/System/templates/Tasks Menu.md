@@ -1,5 +1,5 @@
 ---
-dependsOnScript: "[[System/scripts/Templater/templater_tasks.js|templater_tasks.js]]"
+dependsOnScript: "[[System/Scripts/Functions/templater_tasks.js|templater_tasks.js]]"
 fileclass: template
 --- 
 <%*

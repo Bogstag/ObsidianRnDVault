@@ -4,7 +4,7 @@ template_title: 👤
 template_destination_folder: People
 obsidianUIMode: source
 obsidianEditingMode: live
-dependsOnDvView: System/DataViews/mentionsTable.js
+dependsOnDvView: "[[System/DataViews/mentionsTable.js|mentionsTable.js]]"
 ---
 <%* tR = "" _%>
 <% "---" %>
