@@ -8,7 +8,6 @@ class NotePicker {
 			app.plugins.plugins[
 				"templater-obsidian"
 			].templater.current_functions_object;
-		console.log("NotePicker constructor klar", args);
 	}
 
 	/**

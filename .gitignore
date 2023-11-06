@@ -1,4 +1,5 @@
 tags
+Docs
 ObsidianRnDVault/*
 !ObsidianRnDVault/.obsidian
 ObsidianRnDVault/.obsidian/todoist-token
@@ -28,6 +29,8 @@ ObsidianRnDVault/System/typing
 ObsidianRnDVault/Tech
 !ObsidianRnDVault/Work
 
+desktop.ini
+**/node_modules
 # Test files should not be synced
 **/*-work*
 **/*-rnd*
@@ -40,4 +43,4 @@ ObsidianRnDVault/Tech
 # I will hunt you down
 
 
-desktop.ini
+

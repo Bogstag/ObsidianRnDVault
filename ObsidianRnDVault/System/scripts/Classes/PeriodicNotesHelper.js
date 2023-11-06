@@ -11,25 +11,30 @@
  * @example
  * const periodicNotesHelper = new tp.user.PeriodicNotesHelper();
  * periodicNotesHelper.init();
- * TODO:: Add some more JSDoc
+ *
+ * @class PeriodicNotesHelper
  */
 class PeriodicNotesHelper {
+	/**
+	 * Creates an instance of PeriodicNotesHelper.
+	 * @param {boolean} [openNew=false] Whether to open or not the newly created file. Not recommended: https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html#tpfilecreate_newtemplate-tfile--string-filename-string-open_new-boolean--false-folder-tfolder
+	 * @memberof PeriodicNotesHelper
+	 */
 	constructor(openNew) {
-		this.openNew = openNew; // Whether to open or not the newly created file. Not recommended: https://silentvoid13.github.io/Templater/internal-functions/internal-modules/file-module.html#tpfilecreate_newtemplate-tfile--string-filename-string-open_new-boolean--false-folder-tfolder
+		this.openNew = openNew;
 		this.tp =
 			app.plugins.plugins[
 				"templater-obsidian"
 			].templater.current_functions_object;
-
-		const useUtils = require(`${app.vault.adapter.basePath}\\System\\Scripts\\Utils\\index.cjs`);
-		console.debug("useUtils", useUtils);
-		const util = useUtils();
-		console.debug("util", util);
-		const test = "hej/hälsad";
-		console.debug(util.uppercase(test));
-		console.debug(util.splitOnLastSlash(test));
 	}
 
+	/**
+	 * Get the defaults for PeriodicNotesHelper.
+	 *
+	 * @default
+	 * @return {object} Default values that can be sent to the init. An object with settings for this run.
+	 * @memberof PeriodicNotesHelper
+	 */
 	getDefaults() {
 		const createPeriodicNotes = {
 			daily: false,
@@ -41,6 +46,15 @@ class PeriodicNotesHelper {
 		return createPeriodicNotes;
 	}
 
+	/**
+	 * Init the creation process.
+	 * You can call all the functions from the outside and archive the same result.
+	 * The init starts with receiving object with settings to use.
+	 * It ends after everything in the settings object has been checked and possibly created.
+	 *
+	 * @param {object} createPeriodicNotes An object with settings for this run.
+	 * @memberof PeriodicNotesHelper
+	 */
 	async init(createPeriodicNotes) {
 		const periodsToCreate = await this.checkPeriodCreation(
 			createPeriodicNotes || this.getDefaults(),
@@ -58,7 +72,14 @@ class PeriodicNotesHelper {
 		}
 	}
 
-	checkPeriodCreation(createPeriodicNotes) {
+	/**
+	 * Checks the object to see witch of the periods the user want to check/create.
+	 *
+	 * @param {object} createPeriodicNotes An object with settings for this run.
+	 * @return {Array} A array with all the periods to run/check.
+	 * @memberof PeriodicNotesHelper
+	 */
+	async checkPeriodCreation(createPeriodicNotes) {
 		const periodsToCreate = [];
 
 		for (const period of Object.keys(createPeriodicNotes)) {
@@ -72,7 +93,16 @@ class PeriodicNotesHelper {
 		return periodsToCreate;
 	}
 
-	getPeriodicNoteSettings(period) {
+	/**
+	 * Checks the settings of the Periodic Notes Plugin.
+	 * If the period is disabled, then skip that period.
+	 * It also gets folder, note format and what template to use when creating note.
+	 *
+	 * @param {string} period What period to get configuration for.
+	 * @return {object} With the current configuration for that period.
+	 * @memberof PeriodicNotesHelper
+	 */
+	async getPeriodicNoteSettings(period) {
 		const isEnabled =
 			app.plugins.plugins["periodic-notes"].settings[period].enabled;
 
@@ -109,28 +139,113 @@ class PeriodicNotesHelper {
 		return undefined;
 	}
 
+	/**
+	 * A function that has the coordination to check if all is ok and then creates the note.
+	 * The parameters has the same values as you can see in the settings for the plugin.
+	 *
+	 * @param {string} noteFolder Setting in the plugin for format of the folder.
+	 * @param {string} noteFormat Setting in the plugin for format of the note.
+	 * @param {string} templatePath Path to the template to use when creating the note.
+	 * @return {undefined} None
+	 * @memberof PeriodicNotesHelper
+	 */
 	async createPeriodicNote(noteFolder, noteFormat, templatePath) {
 		const filePath = `${noteFolder}/${moment().format(noteFormat)}`;
 
-		if (await this.tp.file.exists(`${filePath}.md`)) {
-			console.info(`${filePath}.md already exists`);
-			return undefined;
-		} else {
-			await this.createNewNote(filePath, templatePath);
-			return undefined;
+		const fileExists = await this.fileExists(filePath);
+
+		if (!fileExists) {
+			const [path, note] = await this.tp.user.splitOnLastSlash(filePath);
+
+			const tFolder = await this.checkPathExists(path);
+
+			await this.createNewNote(tFolder, note, templatePath);
 		}
+		return undefined;
 	}
 
-	async createNewNote(filePath, templatePath) {
-		console.debug(filePath);
-		const [path, note] = await this.tp.user.splitOnLastSlash(filePath);
-		console.debug([path, note]);
-		const template = await this.tp.file.find_tfile(templatePath);
+	/**
+	 * Checks to see if there is a note already created, if no note is found then we can create a new one.
+	 *
+	 * @param {string} filePath Full path and the note (without ext ".md"). Combination of folder and note in plugin settings.
+	 * @return {object} If the file exists then the object has values. If not is empty. This is used as a boolean.
+	 * @memberof PeriodicNotesHelper
+	 */
+	async fileExists(filePath) {
+		const fileExists = await this.tp.file.exists(`${filePath}.md`);
+		if (fileExists) {
+			console.info(`${filePath}.md already exists`);
+		}
+		return fileExists;
+	}
+
+	/**
+	 * Checks if the path / folders for the note exists or not. If not, create the folders.
+	 * @external TFolder
+	 * @see Obsidian API (@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890)
+	 *
+	 * @param {string} path Full path to the note.
+	 * @return {external:TFolder} Object with information about the folder.
+	 * @see
+	 * @memberof PeriodicNotesHelper
+	 */
+	async checkPathExists(path) {
+		let tFolder = app.vault.getAbstractFileByPath(path);
+
+		if (!tFolder) {
+			console.info(`${path} folder missing.`);
+			tFolder = await this.createFolder(path);
+		}
+
+		return tFolder;
+	}
+
+	/**
+	 * Creates a folder.
+	 * @external TFolder
+	 * @see Obsidian API (@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890)
+	 *
+	 * @param {string} path Full path to the folder / note.
+	 * @return {external:TFolder} Object with information about the folder.
+	 * @memberof PeriodicNotesHelper
+	 */
+	async createFolder(path) {
+		const tFolder = await app.vault.createFolder(path);
+
+		if (!tFolder) {
+			console.error(
+				`Can not create ${path}. Try creating it manually. app.vault.createFolder result: `,
+				tFolder,
+			);
+			new Notice(
+				`${path} dont exist and it cannot be created. Check console and file structure.`,
+				0,
+			);
+			throw new Error(`Cant create folder with path: ${path}`);
+		}
+
+		return tFolder;
+	}
+
+	/**
+	 * Creates the note.
+	 * @external TFolder
+	 * @see Obsidian API (@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890)
+	 *
+	 * @param {external:TFolder} tFolder Object with information about the folder.
+	 * @param {string} note Name of the note.
+	 * @param {string} templatePath Full path and name of the template to use.
+	 * @return {undefined} None
+	 * @memberof PeriodicNotesHelper
+	 */
+	async createNewNote(tFolder, note, templatePath) {
+		const templateFileT = await this.tp.file.find_tfile(templatePath);
+
 		const result = await this.tp.file.create_new(
-			template,
+			templateFileT,
 			note,
 			this.openNew,
-			app.vault.getAbstractFileByPath(path),
+			tFolder,
 		);
 		console.info(`Created ${result.path}`);
 		new Notice(`${result.path} was created`);

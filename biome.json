@@ -1,7 +1,10 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.2.2/schema.json",
 	"files": {
-		"ignore": ["ObsidianRnDVault/.obsidian"],
+		"ignore": [
+			"ObsidianRnDVault/.obsidian",
+			"Docs"
+		],
 		"ignoreUnknown": true
 	},
 	"formatter": {
@@ -9,7 +12,9 @@
 		"formatWithErrors": false
 	},
 	"javascript": {
-		"globals": ["$", "_", "app"],
+		"globals": [
+			"app"
+		],
 		"parser": {
 			"unsafeParameterDecoratorsEnabled": true
 		}
@@ -30,7 +35,9 @@
 			"correctness": {
 				"recommended": true
 			},
-			"nursery": { "all": false }
+			"nursery": {
+				"all": false
+			}
 		}
 	},
 	"organizeImports": {

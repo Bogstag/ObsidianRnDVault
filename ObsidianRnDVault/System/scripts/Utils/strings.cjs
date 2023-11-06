@@ -16,13 +16,14 @@
  * @param {string} str path or something else with forwardslashes.
  * @return {Array} [firstPart, lastPart] See example.
  */
-module.exports = function splitOnLastSlash(str) {
+module.exports.splitOnLastSlash = (str) => {
 	const lastIndex = str.lastIndexOf("/");
 	// If no slash is found, return the whole string as the second part
 	if (lastIndex === -1) {
 		return [null, str];
 	}
 	const firstPart = str.substring(0, lastIndex);
-	const lastPart = str.substring(lastIndex + 1);
-	return [firstPart, lastPart];
+	const secondPart = str.substring(lastIndex + 1);
+	return [firstPart, secondPart];
 };
+module.exports.uppercase = (str) => str.toUpperCase();
