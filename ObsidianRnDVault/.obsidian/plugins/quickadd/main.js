@@ -11147,6 +11147,10 @@ function getModelMaxTokens(model) {
       return 8192;
     case "gpt-3.5-turbo-16k":
       return 16384;
+    case "gpt-3.5-turbo-1106":
+      return 16385;
+    case "gpt-4-1106-preview":
+      return 128e3;
     case "gpt-4-32k":
       return 32768;
   }
@@ -11220,7 +11224,9 @@ function makeNoticeHandler(showMessages) {
 
 // src/ai/AIAssistant.ts
 var getTokenCount = (text2, model) => {
-  const m = model === "gpt-3.5-turbo-16k" ? "gpt-3.5-turbo" : model;
+  let m = model === "gpt-3.5-turbo-16k" ? "gpt-3.5-turbo" : model;
+  m = m === "gpt-4-1106-preview" ? "gpt-4" : m;
+  m = m === "gpt-3.5-turbo-1106" ? "gpt-3.5-turbo" : m;
   return encodingForModel(m).encode(text2).length;
 };
 async function repeatUntilResolved(callback, promise, interval) {
@@ -11573,7 +11579,7 @@ async function ChunkedPrompt(settings, formatter) {
 }
 
 // src/ai/models.ts
-var models = ["gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4", "gpt-4-32k", "text-davinci-003"];
+var models = ["gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-3.5-turbo-1106", "gpt-4", "gpt-4-1106-preview", "gpt-4-32k", "text-davinci-003"];
 var models_and_ask_me = [...models, "Ask me"];
 
 // src/quickAddApi.ts

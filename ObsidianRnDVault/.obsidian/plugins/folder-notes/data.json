@@ -54,5 +54,6 @@
   "boldName": false,
   "boldNameInPath": false,
   "cursiveName": false,
-  "cursiveNameInPath": false
+  "cursiveNameInPath": false,
+  "disableOpenFolderNoteOnClick": false
 }

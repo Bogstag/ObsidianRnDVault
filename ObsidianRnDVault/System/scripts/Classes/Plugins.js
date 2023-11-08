@@ -31,7 +31,7 @@ class Plugins {
 	}
 
 	async getPluginMetadata(app, pluginId) {
-		const objectUtils = new this.tp.user.ObjectUtils();
+		const objectUtils = this.tp.user.ObjectUtils;
 
 		const plugin = app.plugins.plugins[pluginId];
 		if (!plugin) {
@@ -41,7 +41,7 @@ class Plugins {
 		const settings = plugin.settings;
 		let sortedSettings = null;
 		if (settings) {
-			sortedSettings = await objectUtils.sortObjectKeys(settings);
+			sortedSettings = objectUtils.sortObjectKeys(settings);
 		}
 
 		const metadata = {

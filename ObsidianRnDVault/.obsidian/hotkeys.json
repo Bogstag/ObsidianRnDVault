@@ -113,14 +113,6 @@
       "key": "M"
     }
   ],
-  "templater-obsidian:System/Templates/New note picker.md": [
-    {
-      "modifiers": [
-        "Alt"
-      ],
-      "key": "N"
-    }
-  ],
   "templater-obsidian:System/Templates/Tasks Menu.md": [
     {
       "modifiers": [
@@ -128,6 +120,15 @@
         "Shift"
       ],
       "key": "T"
+    }
+  ],
+  "templater-obsidian:create-new-note-from-template": [],
+  "templater-obsidian:System/Templates/New note picker.md": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "N"
     }
   ]
 }

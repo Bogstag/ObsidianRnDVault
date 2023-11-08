@@ -3589,12 +3589,17 @@ var Templater = class {
     await this.plugin.editor_handler.jump_to_next_cursor_location(active_editor.file, true);
   }
   async write_template_to_file(template_file, file) {
+    const active_editor = app.workspace.activeEditor;
     const running_config = this.create_running_config(template_file, file, 2);
     const output_content = await errorWrapper(async () => this.read_and_parse_template(running_config), "Template parsing error, aborting.");
     if (output_content == null) {
       return;
     }
     await app.vault.modify(file, output_content);
+    if (active_editor && active_editor.editor) {
+      const editor = active_editor.editor;
+      editor.setSelection({ line: 0, ch: 0 }, { line: 0, ch: 0 });
+    }
     app.workspace.trigger("templater:new-note-from-template", {
       file,
       content: output_content

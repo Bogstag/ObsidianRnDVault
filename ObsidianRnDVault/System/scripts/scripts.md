@@ -9,6 +9,6 @@ tags:
 # Scripts
 
 ```dataviewjs
-await dv.view("System/scripts/DataViews/listAllFilesInCurrentPath")
+await dv.view("System/DataViews/listAllFilesInCurrentPath")
 ```
 

@@ -3105,6 +3105,12 @@ async function renderFileExplorer(settingsTab) {
     }
     settingsTab.display();
   }));
+  const setting2 = new import_obsidian16.Setting(containerEl).setName("Don't open folder notes by clicking on the name (on mobile)").setDesc("Folder notes don't open when clicking on the name of the folder (on mobile)").addToggle((toggle) => toggle.setValue(settingsTab.plugin.settings.disableOpenFolderNoteOnClick).onChange(async (value) => {
+    settingsTab.plugin.settings.disableOpenFolderNoteOnClick = value;
+    await settingsTab.plugin.saveSettings();
+  }));
+  setting2.infoEl.appendText("Requires a restart to take effect");
+  setting2.infoEl.style.color = settingsTab.app.vault.getConfig("accentColor") || "#7d5bed";
   new import_obsidian16.Setting(containerEl).setName("Only open folder notes through the name").setDesc("Only open folder notes in the file explorer by clicking on the folder name").addToggle((toggle) => toggle.setValue(settingsTab.plugin.settings.allowWhitespaceCollapsing).onChange(async (value) => {
     if (!value) {
       document.body.classList.add("fn-whitespace-stop-collapsing");
@@ -4144,7 +4150,8 @@ var DEFAULT_SETTINGS = {
   boldName: false,
   boldNameInPath: false,
   cursiveName: false,
-  cursiveNameInPath: false
+  cursiveNameInPath: false,
+  disableOpenFolderNoteOnClick: false
 };
 var SettingsTab = class extends import_obsidian22.PluginSettingTab {
   constructor(app2, plugin) {
@@ -5040,6 +5047,8 @@ var FolderNotesPlugin = class extends import_obsidian27.Plugin {
           rec.target.querySelectorAll("div.nav-folder-title-content").forEach((element) => {
             if (element.onclick)
               return;
+            if (import_obsidian27.Platform.isMobile && this.settings.disableOpenFolderNoteOnClick)
+              return;
             element.onclick = (event) => handleFolderClick(event, this);
           });
           if (!this.settings.openFolderNoteOnClickInPath) {
@@ -5093,12 +5102,8 @@ var FolderNotesPlugin = class extends import_obsidian27.Plugin {
       if (!(file instanceof import_obsidian27.TFile)) {
         return;
       }
-      const parentPath = this.getFolderPathFromString(file.path);
-      const parentName = this.getFileNameFromPathString(parentPath);
-      if (parentName !== file.basename) {
-        return;
-      }
-      this.removeCSSClassFromEL(parentPath, "has-folder-note");
+      const parentFolder = getFolder(this, file);
+      this.removeCSSClassFromEL(parentFolder == null ? void 0 : parentFolder.path, "has-folder-note");
     }));
     this.registerEvent(this.app.vault.on("create", (file) => {
       if (file instanceof import_obsidian27.TFile) {

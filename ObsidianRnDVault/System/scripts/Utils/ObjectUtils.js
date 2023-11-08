@@ -1,11 +1,27 @@
+/**
+ * Utils for objects
+ *
+ * @class ObjectUtils
+ *
+ * @example
+ * const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
+ * const ObjectUtils = tp.user.ObjectUtils;
+ * ObjectUtils.sortObjectKeys(obj);
+ */
 class ObjectUtils {
+	constructor() {
+		throw new Error("Cannot instantiate a utility class.");
+	}
+
 	/**
-	 * @description Sort the first level of an object.
+	 * Sort the first level of an object.
+	 * 
+	 * @static
 	 * @param {Object} obj The object to sort.
 	 * @returns {Object} Sorted object.
-	 * @memberof Utils
+	 * @memberof ObjectUtils
 	 */
-	sortObjectKeys(obj) {
+	static sortObjectKeys(obj) {
 		return Object.keys(obj)
 			.sort()
 			.reduce((acc, key) => {
@@ -15,12 +31,14 @@ class ObjectUtils {
 	}
 
 	/**
-	 * @description Recursively sort all levels of an object.
+	 * Recursively sort all levels of an object.
+	 * 
+	 * @static
 	 * @param {Object} obj The object to sort.
 	 * @returns {Object} Sorted object.
-	 * @memberof Utils
+	 * @memberof ObjectUtils
 	 */
-	sortObject(obj) {
+	static sortObject(obj) {
 		if (typeof obj !== "object" || obj === null) {
 			return obj;
 		}
