@@ -9,6 +9,7 @@
  * @param {number} [args.progress=0] - The current progress Calculated from finished tasks else 0.
  */
 async function projectProgress(args) {
+
 	// console.log("Function args", args);
 	const tp =
 		app.plugins.plugins["templater-obsidian"].templater
