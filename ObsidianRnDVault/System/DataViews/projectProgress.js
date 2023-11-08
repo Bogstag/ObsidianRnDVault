@@ -9,14 +9,9 @@
  * @param {number} [args.progress=0] - The current progress Calculated from finished tasks else 0.
  */
 async function projectProgress(args) {
-
-	// console.log("Function args", args);
 	const tp =
 		app.plugins.plugins["templater-obsidian"].templater
 			.current_functions_object;
-
-	// const svgProgressBar = require(`${app.vault.adapter.basePath}/System/Scripts/Classes/SvgProgressBar.js`);
-
 	const tasks = await args.dv.current().file.tasks;
 	let percent = Math.round(
 		(tasks.filter((x) => x.completed).length / tasks.length) * 100,

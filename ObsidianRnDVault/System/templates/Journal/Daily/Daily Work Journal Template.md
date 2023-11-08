@@ -62,61 +62,113 @@ account: Default
 - <% tp.file.cursor(1) %>
 
 ## ✅
-- [ ] Stämpla in ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
-<%* if (tp.date.now("d") in [2,4]) { %>
-- [ ] Prepare standup 📅<% moment().format("YYYY-MM-DD 09:30:00") %> ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
-<%* } -%>
 <%*
 	const ics = await app.plugins.getPlugin('ics');
-  const events = await ics.getEvents();
-  const sortedEvents = events.sort((a, b) => a.time.replace(":", "") - b.time.replace(":", ""))
-  
-  let mdArray = [];
-  for (const e of events) {
-        
-        let summary = ""
-        if (e.summary) {
-            if (e.summary.val) {
-                summary = "💬" + e.summary.val;
-            }
-        }
-        
-        if (e.time === "00:00" || e.time === "23:00") {
-        //Assume its a all day event
-        mdArray.push(`- ${summary}`)
-        continue;
-        }
-        
-        let location = "";
-        if (e.location) {
-            if (e.location.toLowerCase().includes("skype")) {
-                location = "💻"
-            } else {
-                location = "🪑" + e.location
-            }
-        }
-        
-        let description = ""
-        if (e.description) {
-            description = e.description.replace(/[\r\n]+/gm, " ");
-            description = description.trim();
-            description = description.substring(0, 70)
-            if (description.length > 5) {
-                description = "\n      " + description
-            }
-        }
-
-        //One line, description handles the new line.
-        mdArray.push(`- [ ] ⏰${e.time}-${e.endTime} ${summary} ${location} #meeting ${description}`)
-  }
-  //console.log(mdArray.join("\n"));
-  tR += mdArray.join("\n")
+	let eventsToday = await ics.getEvents();
+	 
+	function injectCustomEvents(eventsToday, customEvents, first = false) {
+	    for (customEvent of customEvents) {
+	        const newEvent = {
+	            "time": customEvent.startTime || "",
+	            "endTime": customEvent.endTime || "",
+	            "icsName": customEvent.icsName || "Custom",
+	            "summary": {
+	                "params": {
+	                    "LANGUAGE": "sv"
+	                },
+	                "val": customEvent.summary || ""
+	            },
+	            "description": customEvent.description || "",
+	            "location": customEvent.location|| ""
+	        }
+	        if (first) {
+	            eventsToday.unshift(newEvent);
+	        } else {
+	            eventsToday.push(newEvent);
+	        }
+	    }
+	    return eventsToday;
+	}
+	// Inject custom template into events array, that have a start and end time
+	const customEvents = [];
+	// Template customs.push({startTime: "00:00", endTime: "00:00", summary: "", description:"", location: ""})
+	if (tp.date.now("d") === 2 || tp.date.now("d") === 4) {
+	    customEvents.push({startTime: "08:45", endTime: "09:00", summary: "Prepare standup"})
+	}
+	if (customEvents) {
+	    eventsToday = injectCustomEvents(eventsToday, customEvents)
+	}
+	// We sort array by start time
+	eventsToday = eventsToday.sort((a, b) => a.time.replace(":", "") - b.time.replace(":", ""))
+	// Inject the first task of the day. No need for time.
+	// We add from the front so the order should be correct order.
+	// existing events in arr: events[3,4]
+	// correctOrder: First,2 unshift into first[] = first[2,First]
+	// first[2,First] unshift into events[3,4] = events[First,2,3,4]
+	const firstCustoms = [];
+	firstCustoms.unshift({summary: "Check in #Work/tidsregistrera"})
+	eventsToday = injectCustomEvents(eventsToday, firstCustoms, true)
+	// Inject last tasks of the day last. No need for time.
+	// This should also be in correct order. Last task last.
+	// existing events in arr: events[1,2,3,4]
+	// correctOrder: 5,Last push into last[] = last[5,Last]
+	// last[5,Last] push into events[1,2,3,4] = events[1,2,3,4,5,Last]
+	const lastCustoms = [];
+	if (tp.date.now("d") == 5) {
+	    lastCustoms.push({summary: "Tidsregistrera i slutet av veckan", description:`#Work/tidsregistrera/vecka 📅 ${tp.date.weekday("YYYY-MM-DD", 5)} ➕ ${moment().format("YYYY-MM-DD")}`})
+	}
+	lastCustoms.push({summary: "Check out #Work/tidsregistrera"})
+	eventsToday = injectCustomEvents(eventsToday, lastCustoms)    
+	// Now we can clean, format into markdown and display the list.
+	let mdArray = [];
+	for (const e of eventsToday) {
+			let summary = ""
+			if (e.summary) {
+					if (e.summary.val) {
+							summary = "💬" + e.summary.val;
+					}
+			}
+			
+			if (e.time === "23:00" || e.time === "00:00" || e.time === "01:00") {
+					//Assume its a all day event
+					mdArray.push(`- ${summary} `)
+					continue;
+			}
+			
+			let location = "";
+			if (e.location) {
+					if (e.location.toLowerCase().includes("skype")) {
+							location = "💻"
+					} else {
+							location = "🪑" + e.location
+					}
+			}
+			
+			let description = ""
+			if (e.description) {
+					description = e.description.replace(/[\r\n]+/gm, " ");
+					description = description.trim();
+					description = description.substring(0, 70)
+					if (description.length > 5) {
+							description = "\n\t\t" + description
+					}
+			}
+			
+			let tid = ""
+			let end = ""
+			if (e.time) {
+					end = `-${e.time}`
+			}
+			if (e.time) {
+					tid = `⏰${e.time}${end}`    
+			}
+			
+			//One line, description handles the new line.
+			mdArray.push(`- [ ] ${tid} ${summary}${location}${description}`)
+	}
+	//console.log(mdArray.join("\n"));
+	tR += mdArray.join("\n")
 -%>
-<%* if (tp.date.now("d") == 5) { %>
-- [ ] Tidsregistrera i slutet av veckan #Work/tidsregistrera/vecka 📅 <% tp.date.weekday("YYYY-MM-DD", 5) %> ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
-<%* } -%> 
-
-- [ ] Stämpla ut ➕<% moment().format("YYYY-MM-DD HH:mm:ss") %>
 
 >[!Info]- TidReg
 >```gate  

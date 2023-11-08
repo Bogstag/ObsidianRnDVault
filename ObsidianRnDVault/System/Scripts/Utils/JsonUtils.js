@@ -1,7 +1,7 @@
 /**
  * Utils for Json
  *
- * @class JSONUtils
+ * @class JsonUtils
  *
  * @example
  * const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
@@ -18,7 +18,7 @@ class JsonUtils {
 	 * @returns {Object} A new JSON object with no object properties.
 	 * @example
 	 * let jsonObj = { a: 1, b: { c: 2 }, d: 3 };
-	 * let cleanedObj = JSONUtils.removeObjects(jsonObj); // { a: 1, d: 3 }
+	 * let cleanedObj = JsonUtils.removeObjects(jsonObj); // { a: 1, d: 3 }
 	 */
 	static removeObjects(jsonObj) {
 		const result = {};
@@ -37,7 +37,7 @@ class JsonUtils {
 	 * @returns {Object} The JSON object without the specified branch.
 	 * @example
 	 * let jsonObj = { a: 1, b: { c: 2 }, d: 3 };
-	 * let prunedObj = JSONUtils.pruneBranch(jsonObj, 'b'); // { a: 1, d: 3 }
+	 * let prunedObj = JsonUtils.pruneBranch(jsonObj, 'b'); // { a: 1, d: 3 }
 	 */
 	static pruneBranch(jsonObj, branchName) {
 		if (Object.prototype.hasOwnProperty.call(jsonObj, branchName)) {
@@ -55,8 +55,8 @@ class JsonUtils {
 	 * @returns {Object} The sorted JSON object.
 	 * @example
 	 * let jsonObj = { a: 3, c: 1, b: 2 };
-	 * let sortedByKey = JSONUtils.sortJSON(jsonObj, 'key'); // { a: 3, b: 2, c: 1 }
-	 * let sortedByValue = JSONUtils.sortJSON(jsonObj, 'value'); // { c: 1, b: 2, a: 3 }
+	 * let sortedByKey = JsonUtils.sortJSON(jsonObj, 'key'); // { a: 3, b: 2, c: 1 }
+	 * let sortedByValue = JsonUtils.sortJSON(jsonObj, 'value'); // { c: 1, b: 2, a: 3 }
 	 */
 	static sortJson(jsonObj, sortBy, order = "asc") {
 		const entries = Object.entries(jsonObj);
@@ -81,7 +81,7 @@ class JsonUtils {
 	 * @example
 	 * let jsonObj = { a: 1, b: 2, c: 3 };
 	 * let newOrder = ['c', 'a', 'b'];
-	 * let reorderedObj = JSONUtils.reorderKeys(jsonObj, newOrder); // { c: 3, a: 1, b: 2 }
+	 * let reorderedObj = JsonUtils.reorderKeys(jsonObj, newOrder); // { c: 3, a: 1, b: 2 }
 	 */
 	static reorderKeys(jsonObj, newOrder) {
 		const newObj = {};
@@ -100,10 +100,10 @@ class JsonUtils {
 	 * @example
 	 * let jsonObj1 = { a: 1 };
 	 * let jsonObj2 = { b: 2 };
-	 * let mergedObj = JSONUtils.mergeJSON(jsonObj1, jsonObj2); // { a: 1, b: 2 }
+	 * let mergedObj = JsonUtils.mergeJSON(jsonObj1, jsonObj2); // { a: 1, b: 2 }
 	 */
 	static mergeJson(...jsonObjs) {
 		return Object.assign({}, ...jsonObjs);
 	}
 }
-module.exports = ArrayUtils;
+module.exports = JsonUtils;
