@@ -180,7 +180,7 @@ class PeriodicNotesHelper {
 	/**
 	 * Checks if the path / folders for the note exists or not. If not, create the folders.
 	 * @external TFolder
-	 * @see external:TFolder {@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890|Obsidian API TFolder}
+	 * @see external:TFolder {@link https://docs.obsidian.md/Reference/TypeScript+API/TFolder|Obsidian API TFolder}
 	 *
 	 * @param {string} path Full path to the note.
 	 * @return {external:TFolder} Object with information about the folder.
@@ -201,7 +201,7 @@ class PeriodicNotesHelper {
 	/**
 	 * Creates a folder.
 	 * @external TFolder
-	 * @see external:TFolder {@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890|Obsidian API TFolder}
+	 * @see external:TFolder {@link https://docs.obsidian.md/Reference/TypeScript+API/TFolder|Obsidian API TFolder}
 	 *
 	 * @param {string} path Full path to the folder / note.
 	 * @return {external:TFolder} Object with information about the folder.
@@ -228,7 +228,7 @@ class PeriodicNotesHelper {
 	/**
 	 * Creates the note.
 	 * @external TFolder
-	 * @see external:TFolder {@link https://github.com/obsidianmd/obsidian-api/blob/791214a68d0dc322b88e5abce617bdf603cc2a2d/obsidian.d.ts#L3890|Obsidian API TFolder}
+	 * @see external:TFolder {@link https://docs.obsidian.md/Reference/TypeScript+API/TFolder|Obsidian API TFolder}
 	 *
 	 * @param {external:TFolder} tFolder Object with information about the folder.
 	 * @param {string} note Name of the note.

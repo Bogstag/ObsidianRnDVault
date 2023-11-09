@@ -1,5 +1,4 @@
 [
-  "buttons",
   "cm-editor-syntax-highlight-obsidian",
   "cmdr",
   "custom-sort",
@@ -7,12 +6,9 @@
   "excalibrain",
   "folder-notes",
   "global-search-and-replace",
-  "homepage",
   "metadata-menu",
   "metaedit",
   "mysnippets-plugin",
-  "obsidian-checklist-plugin",
-  "obsidian-enhancing-export",
   "obsidian-excalidraw-plugin",
   "obsidian-icon-folder",
   "obsidian-linter",
@@ -27,7 +23,7 @@
   "quickadd",
   "settings-search",
   "table-editor-obsidian",
-  "tag-page-md",
   "tag-wrangler",
-  "templater-obsidian"
+  "templater-obsidian",
+  "tracker-plus"
 ]

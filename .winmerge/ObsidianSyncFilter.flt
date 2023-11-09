@@ -1,6 +1,6 @@
 ## This is a directory/file filter Template for WinMerge
 name: ObsidianSyncFilter
-desc: WinMerge sync fiter for my obsidian vaults.
+desc: WinMerge sync filter for my obsidian vaults.
 def: include
 
 ## Filters for filenames begin with f:
@@ -8,21 +8,30 @@ def: include
 ## To exclude some of the files that match the f: pattern, specify f!:
 ## To exclude some of the folders that match the d: pattern, specify d!:
 ## (Inline comments begin with "##" and extend to the end of the line)
-## Rules are in regular ezpression. ^=Start, $=End
+## Rules are in regular expression. ^=Start, $=End
 ## Escape with \, that is why path has \\
 
 ## Filter for files
 f: ^.*-(?:wrk|rnd|home)\..*$
+f: ^.*(?:[Ww]ork).*$
+f: ^.*(?:[tT]est).*$
 f: ^\d\d\d\d\.md$
+f: ^[tT]odoist\.md$
 f: ^main\.js$
 f: ^manifest\.json$
+f: ^types\.json$
+f: ^appearance\.json$
+f: ^community-plugins\.json$
 f: ^styles\.css$
 
 ## Filter for directory
 d!: ^\\Tech\\API$
 d: .*-(?:wrk|rnd|home)$
-d: ^*\\work\\*$
+d: ^*\\[wW]ork\\*$
+d: ^\\\.obsidian\\plugins\\obsidian-excalidraw-plugin$
+d: ^\\\.obsidian\\plugins\\obsidian-style-settings$
 d: ^\\Areas\\.*$
+d: ^\\Attachments$
 d: ^\\Attachments\\Audio$
 d: ^\\Attachments\\Canvas$
 d: ^\\Attachments\\Excalidraw\\excalidraw$
@@ -34,11 +43,10 @@ d: ^\\Journal\\Monthly\\\d\d\d\d$
 d: ^\\Journal\\Quarterly\\\d\d\d\d$
 d: ^\\Journal\\Weekly\\\d\d\d\d$
 d: ^\\Personal\\.*$
-d: ^\\Planning\\Projects\\*\\$
+d: ^\\Planning\\Projects$
 d: ^\\System\\Scripts\\work$
 d: ^\\System\\Templates\\work$
 d: ^\\System\\work$
 d: ^\\Tech\\.*$
 d: ^\\\.git$
 d: ^\\\.obsidian\\themes$
-d: ^\\\.trash$

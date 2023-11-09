@@ -91,7 +91,7 @@ tF.progress = 0-100
 >><rect rx="4" x="${tF.title_width}" width="${tot.progress.width}" height="20" fill="${tF.progress_color}"/>
 >>```
 >>
->>![[Attachments/Images/Pasted image 20231009225009.png|300]]
+>>![[Attachments/Images/ThreeColorsOfAProgressbar.png|300]]
 >
 >>[!Reason]+
 >>- Den översta är den blåa färgen. (här rosa)

@@ -170,6 +170,7 @@ account: Default
 	tR += mdArray.join("\n")
 -%>
 
+## 📚
 >[!Info]- TidReg
 >```gate  
 >URL

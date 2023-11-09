@@ -127,9 +127,9 @@ class ArrayUtils {
 	 * let arr = [1, 2, 3, 4, 5];
 	 * let filteredArr = ArrayUtils.remove(arr, (x) => x % 2 === 0); // [1, 3, 5]
 	 */
-	static remove(array, predicate) {
-		return array.filter((element) => !predicate(element));
-	}
+	// static remove(array, predicate) {
+	// 	return array.filter((element) => !predicate(element));
+	// }
 
 	/**
 	 * Removes all elements from an array of objects that have a specific key-value pair.

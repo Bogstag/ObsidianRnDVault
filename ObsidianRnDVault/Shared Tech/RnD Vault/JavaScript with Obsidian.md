@@ -1,6 +1,6 @@
 ---
 date_created: 2023-11-05 14:08:20
-date_modified: 2023-11-07 21:34:07
+date_modified: 2023-11-08 21:56:33
 ---
 # JavaScript with Obsidian
 
@@ -21,3 +21,9 @@ Keeping forgetting this like this so i need to write it down.
      */
     getAbstractFileByPath(path: string): TAbstractFile | null;
 ```
+
+## Classes
+
+- List of Classes
+	- [TFile](https://docs.obsidian.md/Reference/TypeScript+API/TFile)
+	- [TFolder](https://docs.obsidian.md/Reference/TypeScript+API/TFolder)

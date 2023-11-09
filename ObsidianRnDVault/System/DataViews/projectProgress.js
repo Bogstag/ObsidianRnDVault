@@ -3,7 +3,7 @@
  *
  * Usage in Obsidian
  * ```dataviewjs
- * await dv.view('projectProgress', { width:400, height:20 })
+ * await dv.view('projectProgress', { width:400, height:20, dv: dv })
  * ```
  * @param {object} args
  * @param {number} [args.progress=0] - The current progress Calculated from finished tasks else 0.
@@ -20,7 +20,6 @@ async function projectProgress(args) {
 		percent = 0;
 	}
 	args.progress = percent;
-
 	const svgProgressBar = await new tp.user.SvgProgressBar(args);
 
 	dv.span(await svgProgressBar.getSvgProgressBar());

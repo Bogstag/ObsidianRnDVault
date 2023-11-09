@@ -241,9 +241,7 @@
   "lintOnFileChange": false,
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
-  "foldersToIgnore": [
-    "System/Templates"
-  ],
+  "foldersToIgnore": ["System/Templates"],
   "linterLocale": "sv",
   "logLevel": "ERROR",
   "lintCommands": [],

@@ -1,9 +1,9 @@
 {
-  "useCache": false,
+  "useCache": true,
   "hideExcluded": false,
   "ignoreDiacritics": true,
   "indexedFileTypes": [
-    "js,mjs,cjs,py,json"
+    "js,cjs,py,json"
   ],
   "PDFIndexing": false,
   "imagesIndexing": false,
