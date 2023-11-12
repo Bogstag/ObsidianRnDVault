@@ -7,6 +7,11 @@
  * const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
  * const JsonUtils = tp.user.JsonUtils;
  * JsonUtils.removeOneByValue(arr, value);
+ * 
+ * @example in a Class
+ * this.tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
+ * this.jsonUtils = this.tp.user.JsonUtils;
+ * this.jsonUtils.removeOneByValue(arr, value);
  */
 class JsonUtils {
 	constructor() {
@@ -104,6 +109,24 @@ class JsonUtils {
 	 */
 	static mergeJson(...jsonObjs) {
 		return Object.assign({}, ...jsonObjs);
+	}
+
+	/**
+	 * Groups an array of objects into an object keyed by a specified field.
+	 * 
+	 * @example
+	 * const groupedJson = JsonUtil.groupByKeyField(inputJson, 'id');
+	 * 
+	 * @param {Object[]} jsonArray - The array of objects to group.
+	 * @param {string} keyField - The field to use as the key for grouping.
+	 * @returns {Object} The grouped object.
+	 */
+	static groupByKeyField(jsonArray, keyField) {
+		const result = {};
+		for (const item of jsonArray) {
+			result[item[keyField]] = item;
+		}
+		return result;
 	}
 }
 module.exports = JsonUtils;

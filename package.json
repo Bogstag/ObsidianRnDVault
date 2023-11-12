@@ -6,7 +6,8 @@
 	"main": ".",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"generate-docs": "jsdoc -r -c ./conf.json"
+		"generate-docs": "jsdoc -r -c ./conf.json",
+		"generate-tags": "ctags -R --fields=+nKz --exclude=@ctag-exclude --languages=-Markdown"
 	},
 	"repository": {
 		"type": "git",
