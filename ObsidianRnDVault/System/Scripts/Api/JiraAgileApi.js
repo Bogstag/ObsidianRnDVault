@@ -1,17 +1,17 @@
 /**
  * Class responsible for comunicating with Jira Agile Server REST API
  *
- * @class JiraApi
+ * @class JiraAgileApi
  *
  * @example
  * const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
- * const jiraApi = new tp.user.JiraAPI();
- * const futureSprint = jiraApi.futureSprint;
+ * const JiraAgileApi = new tp.user.JiraAgileApi();
+ * const sprint = JiraAgileApi.sprint();
  */
-class JiraApi {
+class JiraAgileApi {
 	/**
-	 * Creates an instance of JiraApi.
-	 * @memberof JiraApi
+	 * Creates an instance of JiraAgileApi.
+	 * @memberof JiraAgileApi
 	 */
 	constructor() {
 		const tp =
@@ -26,7 +26,7 @@ class JiraApi {
 			"Content-Type": "application/json",
 			accept: "application/json",
 		};
-		this.baseUrl = this.jiraSecrets.baseUrl;
+		this.baseUrl = this.jiraSecrets.agile.baseUrl;
 	}
 
 	/**
@@ -38,7 +38,7 @@ class JiraApi {
 	 * @param {string} [options.state="active,future"] Filters results to sprints in specified states. Valid values: 'future', 'active', 'closed'. You can define multiple states separated by commas, e.g., 'state=active,closed'. If no state is set, it returns sprints in all states.
 	 *
 	 * @returns {Object} An object containing sprint details, keyed by sprint ID.
-	 * @memberof JiraApi
+	 * @memberof JiraAgileApi
 	 */
 
 	async sprint(options = {}) {
@@ -53,21 +53,33 @@ class JiraApi {
 		return this.jsonUtils.groupByKeyField(data.values, "id");
 	}
 
+	validateData(data) {
+		// Implement validation logic
+		// Return true if validation passes, false otherwise
+		return true; // Placeholder
+	}
 	/**
 	 * @description Requests information from the server
 	 * @param {string} url
 	 * @param {string} [method="GET"]
 	 * @param {boolean} [raw=false]
 	 * @returns {json}
-	 * @memberof JiraApi
+	 * @memberof JiraAgileApi
 	 */
-	async request(url, method = "GET", raw = false) {
+	async request(url, method = "GET", data = {}, raw = false) {
 		const fullUrl = new URL(url, this.baseUrl);
 		const options = {
 			url: fullUrl.href,
 			method: method,
 			headers: this.headers,
 		};
+
+		if (["POST", "PATCH"].includes(method)) {
+			if (!this.validateData(data)) {
+				throw new Error("Validation failed");
+			}
+			options.body = JSON.stringify(data);
+		}
 
 		try {
 			const response = await requestUrl(options);
@@ -79,10 +91,10 @@ class JiraApi {
 		} catch (error) {
 			console.error(
 				"There was a problem with the fetch operation:",
-				error.message,
+				error,
 			);
 			throw error;
 		}
 	}
 }
-module.exports = JiraApi;
+module.exports = JiraAgileApi;
