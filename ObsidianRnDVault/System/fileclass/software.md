@@ -11,4 +11,4 @@ version: 3
 ---
 # Software
 
-supports:: {"type":"Lookup","options":{"autoUpdate":true,"outputType":"LinksList","builtinSummarizingFunction":"Count","customListFunction":"page.file.name","customSummarizingFunction":"return pages.length","dvQueryString":"dv.pages().where(p => p.fileclass == \"plugin\")","targetFieldName":"dependsOnSoftware"}}
+supports:: {"type":"Lookup","options":{"autoUpdate":true,"outputType":"LinksList","builtinSummarizingFunction":"Count","customListFunction":"page.file.name","customSummarizingFunction":"return pages.length","dvQueryString":"dv.pages().where(p => p.fileclass == \"plugin\").sort(p => p.file.path, \"asc\")","targetFieldName":"dependsOnSoftware"}}
