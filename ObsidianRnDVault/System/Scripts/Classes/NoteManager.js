@@ -291,8 +291,6 @@ class NoteManager {
 		return { ...noteMeta, newLeaf: newLeaf, view: view };
 	}
 
-
-
 	/**
 	 * Generates a full file path by appending a Markdown extension to the note name and prefixing it with the folder path.
 	 *
@@ -327,6 +325,7 @@ class NoteManager {
 	 * @memberof NoteManager
 	 */
 	generateValidNoteName(tFolder, noteName) {
+		// TODO:: Obsidian creates its own unique name if duplicate name. Clean up some functions?
 		let validNoteName = "";
 		validNoteName = this.substituteMomentPlaceholder(noteName);
 		const rg1 = /[\:\*\?\"\<\>\|\/\\]+/g; // forbidden characters \ / : * ? " < > |

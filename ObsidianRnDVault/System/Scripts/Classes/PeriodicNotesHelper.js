@@ -47,6 +47,7 @@ class PeriodicNotesHelper {
 	 * @memberof PeriodicNotesHelper
 	 */
 	async init(options = {}) {
+		// TODO:: It creates new notes every start, but it already exists notes. For yearly and Weekly notes.
 		const defaultOptions = {
 			daily: false,
 			weekly: true,
