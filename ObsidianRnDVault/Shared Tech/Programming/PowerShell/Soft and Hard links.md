@@ -7,7 +7,7 @@ tags:
   - fileSystem/linkType/hardLinks
   - fileSystem/linkType/symbolicLinks
   - fileSystem/linkType/junctions
-  - os/windows
+  - os/Windows
 ---
 # Soft and Hard Links in PowerShell
 

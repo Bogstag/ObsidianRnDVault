@@ -2440,7 +2440,7 @@ tags: [excalidraw]
     file = await plugin.app.vault.create(path, content);
   } else {
     file = existingNote;
-    plugin.app.vault.rename(existingNote, path);
+    plugin.app.fileManager.renameFile(existingNote, path);
   }
   if (openFile) {
     await leaf.openFile(file);
@@ -2478,7 +2478,7 @@ async function turnIntoFolderNote(plugin, file, folder, folderNote, skipConfirma
       updateExcludedFolder(plugin, excludedFolder, excludedFolder);
     }
     const newPath = `${folder.path}/${folder.name} (${file.stat.ctime.toString().slice(10) + Math.floor(Math.random() * 1e3)}).${extension}`;
-    plugin.app.vault.rename(folderNote, newPath).then(() => {
+    plugin.app.fileManager.renameFile(folderNote, newPath).then(() => {
       if (!excludedFolder) {
         return;
       }
@@ -2503,7 +2503,7 @@ async function turnIntoFolderNote(plugin, file, folder, folderNote, skipConfirma
       path = `${parentFolderPath}/${fileName}.${extension}`;
     }
   }
-  await plugin.app.vault.rename(file, path);
+  await plugin.app.fileManager.renameFile(file, path);
   plugin.addCSSClassToTitleEL(path, "is-folder-note", true);
   plugin.addCSSClassToTitleEL(folder.path, "has-folder-note");
 }
@@ -2752,6 +2752,9 @@ var FrontMatterTitlePluginHandler = class {
     }
     const folderNote = getFolderNote(this.plugin, folder.path);
     if (!folderNote) {
+      return;
+    }
+    if (folderNote !== file) {
       return;
     }
     if (isEvent) {
@@ -4235,7 +4238,7 @@ var SettingsTab = class extends import_obsidian22.PluginSettingTab {
         if (this.plugin.app.vault.getAbstractFileByPath(newPath)) {
           continue;
         }
-        this.app.vault.rename(folderNote, newPath);
+        this.plugin.app.fileManager.renameFile(folderNote, newPath);
       }
     }
     this.plugin.settings.folderNoteName = newTemplate;
@@ -4255,13 +4258,13 @@ var SettingsTab = class extends import_obsidian22.PluginSettingTab {
             } else {
               newPath = `${this.plugin.getFolderPathFromString(file.path)}/${folderNote.name}`;
             }
-            this.app.vault.rename(folderNote, newPath);
+            this.plugin.app.fileManager.renameFile(folderNote, newPath);
           } else if (this.plugin.settings.storageLocation === "insideFolder") {
             if (this.plugin.getFolderPathFromString(folderNote.path) === file.path) {
               return;
             } else {
               const newPath = `${file.path}/${folderNote.name}`;
-              this.app.vault.rename(folderNote, newPath);
+              this.plugin.app.fileManager.renameFile(folderNote, newPath);
             }
           }
         }
@@ -4835,7 +4838,7 @@ function handleFileRename(file, oldPath, plugin) {
       excludedFolder.disableSync = true;
       updateExcludedFolder(plugin, excludedFolder, excludedFolder);
     }
-    return plugin.app.vault.rename(file, oldPath).then(() => {
+    return plugin.app.fileManager.renameFile(file, oldPath).then(() => {
       if (!excludedFolder) {
         return;
       }
@@ -4890,10 +4893,10 @@ async function renameFolderOnFileRename(file, oldPath, oldFolder, plugin) {
     }
   }
   if (plugin.app.vault.getAbstractFileByPath(newFolderPath) || plugin.app.vault.getAbstractFileByPath(newFolderName || "")) {
-    await plugin.app.vault.rename(file, oldPath);
+    await plugin.app.fileManager.renameFile(file, oldPath);
     return new import_obsidian25.Notice("A folder with the same name already exists");
   }
-  await plugin.app.vault.rename(oldFolder, newFolderPath);
+  plugin.app.fileManager.renameFile(oldFolder, newFolderPath);
 }
 
 // src/functions/ListComponent.ts

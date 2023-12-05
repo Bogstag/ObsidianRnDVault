@@ -2,7 +2,7 @@
 date_created: 2023-10-05 09:00:00
 date_modified: 2023-10-18 20:19:32
 tags:
-  - os/windows
+  - os/Windows
   - fileSystem/variables
 ---
 # Environment Variables in Windows

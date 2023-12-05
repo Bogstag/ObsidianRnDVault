@@ -11156,6 +11156,18 @@ function getModelMaxTokens(model) {
   }
 }
 
+// src/ai/preventCursorChange.ts
+function preventCursorChange() {
+  const cursor = app.workspace.activeEditor?.editor?.getCursor();
+  const selection = app.workspace.activeEditor?.editor?.listSelections();
+  return () => {
+    if (cursor)
+      app.workspace.activeEditor?.editor?.setCursor(cursor);
+    if (selection)
+      app.workspace.activeEditor?.editor?.setSelections(selection);
+  };
+}
+
 // src/ai/OpenAIRequest.ts
 function OpenAIRequest(apiKey, model, systemPrompt, modelParams = {}) {
   return async function makeRequest(prompt) {
@@ -11172,7 +11184,8 @@ function OpenAIRequest(apiKey, model, systemPrompt, modelParams = {}) {
       );
     }
     try {
-      const response = await (0, import_obsidian15.requestUrl)({
+      const restoreCursor = preventCursorChange();
+      const _response = (0, import_obsidian15.requestUrl)({
         url: `https://api.openai.com/v1/chat/completions`,
         method: "POST",
         headers: {
@@ -11188,6 +11201,8 @@ function OpenAIRequest(apiKey, model, systemPrompt, modelParams = {}) {
           ]
         })
       });
+      restoreCursor();
+      const response = await _response;
       return response.json;
     } catch (error) {
       console.log(error);

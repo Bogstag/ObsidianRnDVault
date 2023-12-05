@@ -14,7 +14,7 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-2. Add **Traefik IngressRoute ([[Shared Tech/Server Software/traefik]])**. 
+2. Add **Traefik IngressRoute ([[Shared Tech/Server Software/Traefik]])**. 
 
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1

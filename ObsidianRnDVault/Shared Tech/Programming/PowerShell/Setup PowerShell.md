@@ -3,8 +3,8 @@ date_created: 2023-10-05 09:00:00
 date_modified: 2023-10-14 16:16509:47
 tags:
   - programming/PowerShell
-  - os/windows
-  - Software/starship
+  - os/Windows
+  - Software/Starship
   - os/ubuntu
 ---
 # Setup PowerShell

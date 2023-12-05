@@ -1,19 +1,19 @@
 /* esbuild-sass-plugin:css-chunk:src/styles/link.scss */
-.Link {
+.typing--link {
   white-space: nowrap;
 }
-.Link > * {
+.typing--link > * {
   margin: 0 var(--size-2-1);
 }
-.Link > :first-child {
+.typing--link > :first-child {
   margin-left: 0;
 }
-.Link > :last-child {
+.typing--link > :last-child {
   margin-right: 0;
 }
 
 /* esbuild-sass-plugin:css-chunk:src/styles/prompt.scss */
-.Prompt {
+.typing--prompt {
   padding: unset;
   margin: unset;
   min-height: unset;
@@ -30,19 +30,19 @@
   width: var(--dialog-width);
   z-index: var(--layer-modal);
 }
-.Prompt-scroller {
+.typing--prompt-scroller {
   overflow: scroll;
   display: flex;
   flex-direction: column;
 }
-.Prompt-scroller > :first-child {
+.typing--prompt-scroller > :first-child {
   padding-top: var(--size-4-2);
   border-radius: var(--modal-radius) var(--modal-radius) 0 0;
 }
-.Prompt-scroller > :last-child {
+.typing--prompt-scroller > :last-child {
   border-radius: 0 0 var(--modal-radius) var(--modal-radius);
 }
-.is-phone .Prompt {
+.is-phone .typing--prompt {
   --mobile-height: 100vh;
   --margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--size-4-4));
   --margin-bottom: calc(var(--safe-area-inset-bottom) + var(--size-4-4));
@@ -60,55 +60,56 @@
   border: var(--modal-border-width) solid var(--modal-border-color);
   border-radius: var(--modal-radius);
 }
-.is-phone .Prompt-picker {
+.is-phone .typing--prompt-picker {
   --margin-top: unset;
   --margin-bottom: unset;
   z-index: calc(var(--layer-modal) + 2);
 }
-.Prompt-submit-button {
+.typing--prompt-submit-button {
   border-radius: unset;
   border: unset;
 }
-.Prompt-submit-button :focus-visible {
+.typing--prompt-submit-button :focus-visible {
   box-shadow: unset;
   background-color: var(--interactive-accent-hover);
 }
-.Prompt-child {
+.typing--prompt-child {
   padding: 0 var(--size-4-3) var(--size-4-2) var(--size-4-3);
   border: solid;
   border-width: 1px;
   border-color: transparent;
   border-bottom-color: var(--background-secondary);
 }
-.Prompt-child-active {
+.typing--prompt-child-active {
   border-color: var(--interactive-accent-hover);
 }
-.Prompt-title {
+.typing--prompt-title {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.Prompt-title-prefix {
+.typing--prompt-title-prefix {
   color: var(--text-faint);
   margin-right: var(--size-4-2);
   padding-right: var(--size-4-2);
   border-right: 1px solid var(--text-faint);
   white-space: nowrap;
 }
-.Prompt-text {
+.typing--prompt-text {
   font-family: var(--font-text);
   font-size: var(--font-ui-medium);
+  width: 100%;
 }
-.Prompt-text .cm-scroller {
+.typing--prompt-text .cm-scroller {
   min-height: 6em;
   max-height: 12em;
 }
-.Prompt-field-label {
+.typing--prompt-field-label {
   color: var(--text-muted);
   font-size: var(--font-ui-smaller);
   padding-top: var(--size-4-1);
 }
-input[type=text].Input {
+input[type=text].typing--input {
   height: calc(var(--font-ui-medium) * var(--line-height-normal));
   background-color: var(--background-primary);
   font-size: var(--font-ui-medium);
@@ -118,54 +119,55 @@ input[type=text].Input {
   padding: 0;
   width: 100%;
 }
-input[type=text].Input:focus {
+input[type=text].typing--input:focus {
   box-shadow: unset;
 }
-input[type=text].Input-transparent {
+input[type=text].typing--input-transparent {
   color: transparent;
 }
-.Input-container {
+.typing--input-container {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
+  overflow: scroll;
 }
-.Input-preview {
+.typing--input-preview {
   position: absolute;
   pointer-events: none;
   white-space: nowrap;
 }
-.Confirmation {
+.typing--confirmation {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: fit-content;
   padding: var(--size-4-4);
 }
-.is-mobile .Confirmation {
+.is-mobile .typing--confirmation {
   padding: unset;
   align-items: center;
 }
-.Confirmation .Confirmation-buttons {
+.typing--confirmation .typing--confirmation-buttons {
   margin-top: var(--size-4-4);
   display: flex;
   gap: var(--size-4-2);
   justify-content: center;
   width: 50%;
 }
-.is-mobile .Confirmation .Confirmation-buttons {
+.is-mobile .typing--confirmation .typing--confirmation-buttons {
   width: 100%;
   margin-top: var(--size-4-2);
 }
-.Confirmation .Confirmation-button {
+.typing--confirmation .typing--confirmation-button {
   flex-grow: 1;
 }
-.Picker-dropdown {
+.typing--picker-dropdown {
   width: 100%;
   position: relative;
 }
-.Picker-dropdown-panel {
+.typing--picker-dropdown-panel {
   border: var(--modal-border-width) solid var(--modal-border-color);
   border-radius: var(--radius-m);
   z-index: calc(var(--layer-modal) + 1);
@@ -175,42 +177,45 @@ input[type=text].Input-transparent {
   top: -10px;
   left: 0;
 }
-.Picker-container {
+.typing--picker-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
 }
-.Picker-mobile-panel {
+.typing--picker-mobile-panel {
   max-height: 70vh;
   min-height: 30vh;
   border-top: 1px solid var(--background-modifier-border);
 }
-.Picker-mobile-container {
+.typing--picker-mobile-container {
   padding-left: var(--size-4-3);
 }
-button.Picker-submit-button {
+button.typing--picker-submit-button {
   background-color: unset;
   width: fit-content;
 }
-.Picker-display {
-  height: calc(var(--font-ui-medium) * var(--line-height-normal));
+.typing--picker-display {
   display: flex;
   align-items: center;
+  max-width: 100%;
+  min-height: calc(var(--font-ui-medium) * var(--line-height-normal));
+  height: fit-content;
 }
-.Picker-display-hidden {
+.typing--picker-display-hidden {
+  min-height: 0;
   height: 0;
   width: 0;
   overflow: hidden;
 }
-.Picker-file-input {
+.typing--picker-file-input {
   position: absolute;
   left: -9999px;
 }
-.Picker-file-input:focus + .Picker-file-label {
+.typing--picker-file-input:focus + .typing--picker-file-label {
   border: 1px solid var(--background-modifier-border-focus);
 }
-.Picker-file-label {
+.typing--picker-file-label {
   width: 1.5em;
   height: 1.5em;
   border-radius: var(--radius-s);
@@ -221,19 +226,19 @@ button.Picker-submit-button {
   justify-content: center;
   align-items: center;
 }
-.Combobox-container {
+.typing--combobox-container {
   min-width: 100px;
 }
-.Combobox-expander {
+.typing--combobox-expander {
   cursor: pointer;
 }
-.Combobox-suggestion {
+.typing--combobox-suggestion {
   padding: var(--size-2-1) var(--size-2-2);
 }
-.Combobox-suggestion:hover {
+.typing--combobox-suggestion:hover {
   background-color: var(--background-modifier-hover);
 }
-.Combobox-chevron-container {
+.typing--combobox-chevron-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -242,29 +247,22 @@ button.Picker-submit-button {
   height: 100%;
   margin: var(--size-2-1);
 }
-.is-mobile .Combobox-chevron-container {
+.is-mobile .typing--combobox-chevron-container {
   height: var(--size-4-8);
 }
-.List {
+.typing--list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: var(--size-2-2);
 }
-.List-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--size-2-1);
-  padding-top: var(--size-4-1);
-}
-.List-icon-container {
+.typing--list-icon-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-button.List-element,
-.List-element {
+button.typing--list-element,
+.typing--list-element {
   padding: var(--size-2-1) var(--size-2-2);
   border-radius: var(--radius-s);
   border: 1px solid var(--background-modifier-border);
@@ -278,31 +276,35 @@ button.List-element,
   height: calc(var(--font-ui-medium) * var(--line-height-normal));
   width: unset;
   font-size: var(--font-text);
-  margin: 0 var(--size-2-1);
+  align-items: center;
+  max-width: 100%;
+  overflow: scroll;
 }
-button.List-element:not(:first-child),
-.List-element:not(:first-child) {
-  margin-bottom: var(--size-2-1);
-}
-button.List-element:hover,
-button.List-element:focus,
-button.List-element:active,
-.List-element:hover,
-.List-element:focus,
-.List-element:active {
+button.typing--list-element:hover,
+button.typing--list-element:focus,
+button.typing--list-element:active,
+.typing--list-element:hover,
+.typing--list-element:focus,
+.typing--list-element:active {
   box-shadow: unset;
 }
-button.List-element:hover:not(:focus):not(:active):not(button.List-element-active, .List-element-active),
-.List-element:hover:not(:focus):not(:active):not(button.List-element-active, .List-element-active) {
+button.typing--list-element:hover:not(:focus):not(:active):not(button.typing--list-element-active, .typing--list-element-active),
+.typing--list-element:hover:not(:focus):not(:active):not(button.typing--list-element-active, .typing--list-element-active) {
   border: 1px solid var(--background-modifier-border-focus);
 }
-button.List-element:focus,
-button.List-element:active,
-button.List-element-active,
-.List-element:focus,
-.List-element:active,
-.List-element-active {
+button.typing--list-element:focus,
+button.typing--list-element:active,
+button.typing--list-element-active,
+.typing--list-element:focus,
+.typing--list-element:active,
+.typing--list-element-active {
   border: 1px solid var(--interactive-accent-hover);
+}
+.typing--checkbox-container {
+  height: calc(var(--font-ui-medium) * var(--line-height-normal));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* esbuild-sass-plugin:css-chunk:src/styles/react-datepicker.notranspile.scss */

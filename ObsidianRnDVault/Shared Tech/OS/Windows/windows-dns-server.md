@@ -1,6 +1,6 @@
 ---
 tags:
-  - os/windows
+  - os/Windows
   - network/dns
 ---
 # Windows DNS Server

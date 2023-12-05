@@ -1,7 +1,7 @@
 ---
 tags:
-  - os/windows
-  - software/terminal
+  - os/Windows
+  - Software/Terminal
   - 
 ---
 ## Windows Terminal.

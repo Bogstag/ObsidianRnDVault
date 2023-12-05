@@ -54,11 +54,13 @@ var getIsWildCard = (tag) => {
 };
 var containsTag = (stringToSearch, tag) => {
   const { isWildCard, cleanedTag } = getIsWildCard(tag);
+  const lowerStringToSearch = stringToSearch.toLowerCase();
+  const lowerCleanedTag = cleanedTag.toLowerCase();
   if (isWildCard) {
-    return stringToSearch.includes(cleanedTag);
+    return lowerStringToSearch.includes(lowerCleanedTag);
   } else {
-    const regex = new RegExp(`${cleanedTag}\\s`, "g");
-    return regex.test(stringToSearch);
+    const regex = new RegExp(`${lowerCleanedTag}\\s`, "gi");
+    return regex.test(lowerStringToSearch);
   }
 };
 var findSmallestUnitsContainingTag = (content, tag, excludeBullets = false) => {
@@ -69,7 +71,7 @@ var findSmallestUnitsContainingTag = (content, tag, excludeBullets = false) => {
   const regex = new RegExp(
     `(?<=^|[
 .!?])${exclusionPattern}[^.!?\\n]*?${escapedSubstring}${wildcardPattern}[^.!?\\n]*?(?:[.!?\\n]|$)`,
-    "gm"
+    "gmi"
   );
   const matches = [];
   let match;
@@ -176,17 +178,14 @@ var generateTagPageContent = async (app, settings, tagsInfo, tagOfInterest) => {
 ${settings.frontmatterQueryProperty}: "${tagOfInterest}"
 ---`
   );
-  tagPageContent.push(`## Tag Content for ${tagOfInterest}`);
+  tagPageContent.push(`## Tag Content for ${tagOfInterest.replace("*", "")}`);
   tagsInfo.forEach((tagInfo) => {
     tagInfo.tagMatches.forEach((tagMatch) => {
       if (tagMatch.trim().startsWith("-")) {
         const [firstBullet, ...bullets] = tagMatch.split("\n");
         const firstBulletWithLink = `${firstBullet} ${tagInfo.fileLink}`;
         tagPageContent.push(
-          [firstBulletWithLink, ...bullets].join("\n").replace(
-            tagOfInterest,
-            `**${tagOfInterest.replace("#", "")}**`
-          )
+          [firstBulletWithLink, ...bullets].join("\n")
         );
       } else {
         tagPageContent.push(

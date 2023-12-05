@@ -12,13 +12,14 @@
     "iconInTabsEnabled": false,
     "iconInTitleEnabled": false,
     "iconPacksPath": ".obsidian/icons",
-    "iconsBackgroundCheckEnabled": false,
+    "iconsBackgroundCheckEnabled": true,
     "migrated": 3,
     "recentlyUsedIcons": [
-      "FasKeyboard",
-      "MyMyBash",
-      "FabFacebookF",
-      "FasInfo"
+      "MyMyHardware",
+      "MyMyDiskstation",
+      "SiHomeassistant",
+      "SiJenkins",
+      "FasDatabase"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [
@@ -95,7 +96,8 @@
         "rule": "^.*[vV][sS][cC]ode.*$"
       }
     ],
-    "iconInFrontmatterEnabled": true
+    "iconInFrontmatterEnabled": true,
+    "iconsInNotesEnabled": true
   },
   "Archive": "FasBoxArchive",
   "Areas": "FasLayerGroup",
@@ -151,5 +153,29 @@
   "Tech/Config/Shared/RnD Vault": "FasVault",
   "Work": "FasBriefcase",
   "Work/Meetings": "FasUsers",
-  "Shared Tech/Hardware/Keyboards.md": "FasKeyboard"
+  "Shared Tech/Hardware/Keyboards.md": "FasKeyboard",
+  "Shared Tech/RnD Vault/Obsidian": "MyMyObsidian",
+  "Work/Scrum/Sprint": "MyMySprint",
+  "Development-rnd": "MyMyDeveloper",
+  "Shared Tech/Server Software/Ansible.md": "SiAnsible",
+  "Shared Tech/Server Software/Argo CD.md": "SiArgo",
+  "Shared Tech/Server Software/Grafana.md": "SiGrafana",
+  "Shared Tech/Server Software/Home Assistant.md": "SiHomeassistant",
+  "Shared Tech/Server Software/Mattermost.md": "SiMattermost",
+  "Shared Tech/Server Software/Nginx.md": "SiNginx",
+  "Shared Tech/Server Software/Portainer.md": "SiPortainer",
+  "Shared Tech/Server Software/Proxmox.md": "SiProxmox",
+  "Shared Tech/Server Software/Rancher.md": "SiRancher",
+  "Shared Tech/Server Software/Traefik.md": "SiTraefikproxy",
+  "Shared Tech/Server Software/Wireguard.md": "SiWireguard",
+  "Shared Tech/Server Software/Zigbee2MQTT.md": "SiZigbee",
+  "Shared Tech/Server Software/Database/MariaDB.md": "SiMariadb",
+  "Shared Tech/Server Software/Database/MySQL.md": "SiMysql",
+  "Shared Tech/Server Software/Database/PostgreSQL.md": "SiPostgresql",
+  "Shared Tech/Server Software/Database/SQLite.md": "SiSqlite",
+  "Shared Tech/Server Software/Database": "FasDatabase",
+  "Tech/API/Jenkins API.md": "SiJenkins",
+  "Tech/API/Home Assistant REST API.md": "SiHomeassistant",
+  "Tech/API/Diskstation.md": "MyMyDiskstation",
+  "Shared Tech/Hardware": "MyMyHardware"
 }

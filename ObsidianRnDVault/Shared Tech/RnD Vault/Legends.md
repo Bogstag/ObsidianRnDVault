@@ -2,22 +2,26 @@
 cssclasses:
   - row-alt
 date_created: 2023-09-09 23:17:35
-date_modified: 2023-10-08 06:25:15
+date_modified: 2023-11-19 02:42:34
 ---
 # Legends
 
-Try to use consistent icons
+Trying to use consistent icons and other symbols.
 
-## In use
+## In Use
 
-| Primary | Icon | Secondary |
-| :------- | :--: | :----|
-| Target   | 🎯   | - |
-| Tasks    | ✅   | - |
-| Writing  | ✍   | - |
+| Primary |       Icon       | Secondary |
+|:------- |:----------------:|:--------- |
+| Target  |        🎯        | -         |
+| Tasks   |        ✅        | -         |
+| Writing |        ✍         | -         |
+| Standup |      🧍‍♀️       | -         |
+| Highest prio      | 🔺 | -         |
+| High priority        | ⏫        | -          |
 
-## Not sure
+## Not Sure
 
+⏭️ Next
 ⏰ Late
 ⏱ Due, Short term todos, Todo
 ⚙ System
@@ -75,8 +79,6 @@ Try to use consistent icons
 🚩 Milestones
 🤝 Relation
 🥳 Done
-🧍 Standup
 🧐 Preparation
 🧩 Projects
 🧾 Travel authorization
-

@@ -3,7 +3,7 @@ date_created: 2023-10-15 03:15:49
 date_modified: 2023-10-22 14:45:44
 description: A guide to installing and using Chocolatey, a machine-level command-line package manager for Windows software.
 tags:
-  - Chocolatey
+  - Software/Chocolatey
   - Windows
   - Software
   - Package Manager
