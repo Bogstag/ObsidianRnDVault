@@ -5,24 +5,17 @@ class NotePicker {
 	/**
 	 * Creates an instance of NotePicker.
 	 * @param {Array} templatesFolders Array of folders that contain your templates.
-	 * @param {boolean} [openNew=true] Open the new note after creating it.
 	 * @param {boolean} [openNewNoteInSplit=false] Set this to true if you want the new note to open in a split to the right.
 	 * @param {boolean} [addLink=false] If note template_title is set to "DONTASKUSER", do you want to add link to new note in current note? If template_title is set to something else you get prompted and can change this later.
 	 * @memberof NotePicker
 	 */
-	constructor(
-		templatesFolders,
-		openNew,
-		openNewNoteInSplit = false,
-		addLink = false,
-	) {
+	constructor(templatesFolders, openNewNoteInSplit = false, addLink = false) {
 		this.templatesFolders = templatesFolders;
 		if (!templatesFolders) {
 			throw new Error("Must set templatesFolders");
 		}
 		this.openNewNoteInSplit = openNewNoteInSplit;
 		this.addLink = addLink;
-		this.openNew = !(this.addLink || this.openNewNoteInSplit);
 		this.tp =
 			app.plugins.plugins[
 				"templater-obsidian"
@@ -98,7 +91,6 @@ class NotePicker {
 	 * @param {string} templatePath - Full vault path to the template file
 	 * @param {string} newNoteName - this.Title / filename of the new note
 	 * @param {string} destinationFolder - Full vault path to the destination folder
-	 * @param {boolean} [this.openNew] - Optional: Open the new note after creating it, not recommended. Set in args on init.
 	 */
 	async createFromTemplate() {
 		let noteMeta = {};
@@ -108,12 +100,19 @@ class NotePicker {
 				this.selectedNote.title,
 				this.selectedNote.destinationFolder,
 			);
+		}
+		if (this.addLink) {
+			noteMeta = await this.noteManager.createNewNoteInsertWikilink(
+				this.selectedNote.templatePath,
+				this.selectedNote.title,
+				this.selectedNote.destinationFolder,
+			);
 		} else {
 			noteMeta = await this.noteManager.createFromTemplate(
 				this.selectedNote.templatePath,
 				this.selectedNote.title,
 				this.selectedNote.destinationFolder,
-				!(this.addLink || this.openNewNoteInSplit),
+				true,
 			);
 		}
 
@@ -165,7 +164,7 @@ class NotePicker {
 	async getTemplateSuggestions() {
 		const templateFiles = await this.getTemplateFiles();
 		this.templateSuggestions = await this.getMetaData(templateFiles);
-		console.debug("this.templateSuggestions", this.templateSuggestions);
+		//console.debug("this.templateSuggestions", this.templateSuggestions);
 	}
 
 	async makeSuggestion() {

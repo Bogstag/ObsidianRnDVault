@@ -5,7 +5,23 @@ icon: layout-dashboard
 tagNames: 
 excludes: 
 extends: 
-version: 2
+version: "2.0"
+fields:
+  - id: mijGVa
+    name: include_in_navbar
+    options: {}
+    type: Input
+    path: ""
+  - id: 552ZtS
+    name: navbar_name
+    options: {}
+    type: Input
+    path: ""
+  - id: FTGUxU
+    name: tags
+    options: {}
+    type: Input
+    path: ""
 ---
 
 include_in_navbar:: {"type":"Input","options":{}}

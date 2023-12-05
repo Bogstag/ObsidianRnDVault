@@ -7,7 +7,20 @@ icon: laptop
 limit: 100
 mapWithTag: false
 tagNames: 
-version: 3
+version: "2.0"
+fields:
+  - id: JgcjAR
+    name: supports
+    options:
+      autoUpdate: true
+      outputType: LinksList
+      builtinSummarizingFunction: Count
+      customListFunction: page.file.name
+      customSummarizingFunction: return pages.length
+      dvQueryString: dv.pages().where(p => p.fileclass == "plugin").sort(p => p.file.path, "asc")
+      targetFieldName: dependsOnSoftware
+    type: Lookup
+    path: ""
 ---
 # Software
 

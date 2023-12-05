@@ -5,5 +5,6 @@ icon: book
 tagNames: 
 excludes: 
 extends: 
-version: 1
+version: "2.0"
+fields: []
 ---

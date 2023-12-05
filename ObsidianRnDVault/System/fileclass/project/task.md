@@ -5,5 +5,6 @@ icon: clipboard-list
 tagNames: 
 excludes: 
 extends: project/project
-version: 3
+version: "2.0"
+fields: []
 ---

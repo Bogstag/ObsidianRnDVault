@@ -5,6 +5,7 @@ icon: clipboard-list
 tagNames: 
 excludes: 
 extends: journal/journal
-version: 2
+version: "2.0"
+fields: []
 ---
 

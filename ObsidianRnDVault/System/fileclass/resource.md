@@ -5,5 +5,6 @@ icon: creative-commons
 tagNames: 
 excludes: 
 extends: 
-version: 2
+version: "2.0"
+fields: []
 ---

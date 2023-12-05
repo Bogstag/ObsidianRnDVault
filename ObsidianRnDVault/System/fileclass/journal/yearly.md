@@ -5,6 +5,7 @@ icon: calendar
 tagNames: 
 excludes: 
 extends: journal/journal
-version: 3
+version: "2.0"
+fields: []
 ---
 
