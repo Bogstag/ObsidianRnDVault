@@ -47,7 +47,6 @@ class PeriodicNotesHelper {
 	 * @memberof PeriodicNotesHelper
 	 */
 	async init(options = {}) {
-		// TODO:: It creates new notes every start, but it already exists notes. For yearly and Weekly notes.
 		const defaultOptions = {
 			daily: false,
 			weekly: true,
@@ -149,15 +148,19 @@ class PeriodicNotesHelper {
 	async createPeriodicNote(noteFolder, noteFormat, templatePath) {
 		const filePath = `${noteFolder}/${moment().format(noteFormat)}`;
 		const [path, note] = await this.tp.user.splitOnLastSlash(filePath);
+		const fullPath = await this.noteManager.generateFullPathWithExt(path, note);
 
-		const result = await this.noteManager.createFromTemplate(
-			templatePath,
-			note,
-			path,
-			this.openNew,
-		);
-		console.info(`Created ${result.tFile.path}`);
-		new Notice(`${result.tFile.path} was created`);
+		const noteExist = await this.noteManager.noteExists(fullPath);
+		if (!noteExist) {
+			const result = await this.noteManager.createFromTemplate(
+				templatePath,
+				note,
+				path,
+				this.openNew,
+			);
+			console.info(`Created ${result.tFile.path}`);
+			new Notice(`${result.tFile.path} was created`);
+		}
 	}
 }
 module.exports = PeriodicNotesHelper;

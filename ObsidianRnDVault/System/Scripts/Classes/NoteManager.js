@@ -151,28 +151,22 @@ class NoteManager {
 	) {
 		const template = await this.tp.file.find_tfile(templatePath);
 		const tFolder = await this.createFolderIfMissing(destinationFolder);
-		const validNoteName = await this.generateValidNoteName(
-			tFolder,
-			newNoteName,
-		);
-		await this.tp.file.create_new(
+		const validNoteName = await this.generateValidNoteName(newNoteName);
+
+		const tFile = await this.tp.file.create_new(
 			template,
 			validNoteName,
 			openNewNote,
 			tFolder,
 		);
 
-		const tFile = await app.vault.getAbstractFileByPath(
-			this.generateFullPathWithExt(tFolder.path, validNoteName),
-		);
 		const noteMeta = {
-			template: template,
-			tFile: tFile,
 			noteName: validNoteName,
 			openNewNote: openNewNote,
+			template: template,
+			tFile: tFile,
 			tFolder: tFolder,
 		};
-		//console.debug(noteMeta);
 
 		return noteMeta;
 	}
@@ -292,30 +286,49 @@ class NoteManager {
 	}
 
 	/**
+	 * Checks if a file with the specified extension exists.
+	 *
+	 * @param {string} path - The file path, including file extension ".md".
+	 * @return {Promise<boolean>} - True if the file exists, false otherwise.
+	 */
+	async noteExists(path) {
+		return await this.tp.file.exists(path);
+	}
+
+	/**
 	 * Generates a full file path by appending a Markdown extension to the note name and prefixing it with the folder path.
 	 *
 	 * @param {string} folder - The folder path where the file will be located.
 	 * @param {string} noteName - The name of the file (without an extension).
+	 * @param {string} [extension='.md'] - The file extension to check, defaults to '.md'.
 	 * @returns {string} The full file path with the '.md' extension.
 	 */
-	generateFullPathWithExt(folder, noteName) {
-		return `${folder}/${noteName}.md`;
+	generateFullPathWithExt(folder, noteName, extension = ".md") {
+		let filePath = `${folder}/${noteName}`;
+
+		// Append the extension if filePath is a string and doesn't end with the extension
+		if (!noteName.endsWith(extension)) {
+			filePath += extension;
+		}
+
+		return filePath;
 	}
 
-	/**
-	 * Generates a random three-digit number as a string.
-	 *
-	 * This function creates a random integer between 0 and 999, inclusive,
-	 * and formats it to ensure it is always three digits long, with leading zeros if necessary.
-	 *
-	 * @returns {string} A string representing a randomly generated three-digit number.
-	 * @memberof NoteManager
-	 */
-	generateStringWithThreeRandomDigits() {
-		const randomNumber = Math.floor(Math.random() * 1000); // Generate a number between 0 and 999
-		const formattedNumber = String(randomNumber).padStart(3, "0"); // Format to 3 digits
-		return formattedNumber;
-	}
+	// /**
+
+	//  * Generates a random three-digit number as a string.
+	//  *
+	//  * This function creates a random integer between 0 and 999, inclusive,
+	//  * and formats it to ensure it is always three digits long, with leading zeros if necessary.
+	//  *
+	//  * @returns {string} A string representing a randomly generated three-digit number.
+	//  * @memberof NoteManager
+	//  */
+	// generateStringWithThreeRandomDigits() {
+	// 	const randomNumber = Math.floor(Math.random() * 1000); // Generate a number between 0 and 999
+	// 	const formattedNumber = String(randomNumber).padStart(3, "0"); // Format to 3 digits
+	// 	return formattedNumber;
+	// }
 
 	/**
 	 * Validate the note name. Validation by force, removes any invalid characters and file names.
@@ -324,8 +337,7 @@ class NoteManager {
 	 * @return {string} A valid note name.
 	 * @memberof NoteManager
 	 */
-	generateValidNoteName(tFolder, noteName) {
-		// TODO:: Obsidian creates its own unique name if duplicate name. Clean up some functions?
+	generateValidNoteName(noteName) {
 		let validNoteName = "";
 		validNoteName = this.substituteMomentPlaceholder(noteName);
 		const rg1 = /[\:\*\?\"\<\>\|\/\\]+/g; // forbidden characters \ / : * ? " < > |
@@ -336,7 +348,7 @@ class NoteManager {
 		validNoteName = validNoteName.replace(rg2, "");
 		validNoteName = validNoteName.replace(rg3, "");
 
-		validNoteName = this.getUniqueFileName(tFolder, validNoteName);
+		// validNoteName = this.getUniqueFileName(tFolder, validNoteName);
 
 		return validNoteName;
 	}
@@ -416,24 +428,24 @@ class NoteManager {
 		return length;
 	}
 
-	/**
-	 * Checks if a file exists in the specified folder and generates a new name if it does.
-	 *
-	 * @param {string} tFolder The folder path where the file is to be checked.
-	 * @param {string} validNoteName The name of the file to check.
-	 * @returns {string} Returns the original validNoteName if the file does not exist, otherwise returns a modified name (prefixed with 'new_').
-	 * @memberof NoteManager
-	 */
-	async getUniqueFileName(tFolder, validNoteName) {
-		const filePath = this.generateFullPathWithExt(tFolder, validNoteName);
-		const fileExists = await this.tp.file.exists(filePath);
-		if (fileExists) {
-			console.info(`${filePath} already exists`);
-			const randomNumber = this.generateStringWithThreeRandomDigits();
-			return `new_${randomNumber}_${validNoteName}`;
-		}
-		return validNoteName;
-	}
+	// /**
+	//  * Checks if a file exists in the specified folder and generates a new name if it does.
+	//  *
+	//  * @param {string} tFolder The folder path where the file is to be checked.
+	//  * @param {string} validNoteName The name of the file to check.
+	//  * @returns {string} Returns the original validNoteName if the file does not exist, otherwise returns a modified name (prefixed with 'new_').
+	//  * @memberof NoteManager
+	//  */
+	// async getUniqueFileName(tFolder, validNoteName) {
+	// 	const filePath = this.generateFullPathWithExt(tFolder, validNoteName);
+	// 	const fileExists = await this.tp.file.exists(filePath);
+	// 	if (fileExists) {
+	// 		console.info(`${filePath} already exists`);
+	// 		const randomNumber = this.generateStringWithThreeRandomDigits();
+	// 		return `new_${randomNumber}_${validNoteName}`;
+	// 	}
+	// 	return validNoteName;
+	// }
 
 	/**
 	 * Opens the file at the specified path in the target's workspace.
