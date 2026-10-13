@@ -15,7 +15,7 @@ class ObjectUtils {
 
 	/**
 	 * Sort the first level of an object.
-	 * 
+	 *
 	 * @static
 	 * @param {Object} obj The object to sort.
 	 * @returns {Object} Sorted object.
@@ -32,7 +32,7 @@ class ObjectUtils {
 
 	/**
 	 * Recursively sort all levels of an object.
-	 * 
+	 *
 	 * @static
 	 * @param {Object} obj The object to sort.
 	 * @returns {Object} Sorted object.

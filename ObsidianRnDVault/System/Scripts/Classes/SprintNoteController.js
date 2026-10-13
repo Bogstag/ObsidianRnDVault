@@ -12,7 +12,7 @@ class SprintNoteController {
 		const sprints = await this.JiraAgileApi.sprint();
 
 		for (const sprint in sprints) {
-			dv.pages("#Metadata/sprint")
+			dv.pages("#Metadata/sprint");
 			// Check if note exist
 			// If exists update info
 			// If not Create note, inject template

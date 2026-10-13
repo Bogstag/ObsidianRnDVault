@@ -1,0 +1,21 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+# tombi: format.rules.table-keys-order = "ascending"
+
+[deps]
+  npm = { auto = true }
+
+[env]
+  _.path = "./node_modules/.bin"
+
+[settings]
+  idiomatic_version_file_enable_tools = ["node"]
+  experimental = true                             # mise deps
+
+# tombi: format.rules.table-keys-order = "ascending"
+[tools]
+  betterleaks = "latest"
+  biome = "latest"
+  node = "26"
+  "npm:@biomejs/biome" = "latest"
+  "npm:obsidian" = "latest"
+  tombi = "latest"

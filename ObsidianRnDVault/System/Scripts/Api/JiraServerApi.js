@@ -62,13 +62,10 @@ class JiraServerApi {
 					remainingEstimate: "5",
 				},
 				description: "description",
-				// biome-ignore lint/style/useNamingConvention: <explanation>
 				customfield_30000: ["10000", "10002"],
-				// biome-ignore lint/style/useNamingConvention: <explanation>
 				customfield_80000: {
 					value: "red",
 				},
-				// biome-ignore lint/style/useNamingConvention: <explanation>
 				customfield_50000: "this is a text area. big text.",
 			},
 		};

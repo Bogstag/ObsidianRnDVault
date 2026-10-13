@@ -34,9 +34,7 @@ class ArrayUtils {
 	}
 
 	static filterObjectsByValue() {
-		myArray = myArray.filter(function (obj) {
-			return obj.id !== id;
-		});
+		myArray = myArray.filter((obj) => obj.id !== id);
 	}
 
 	static removeAllByValue() {
@@ -177,7 +175,6 @@ class ArrayUtils {
 	 * let sortedArrDesc = ArrayUtils.sortByKey(arr, 'a', 'desc'); // [{a: 3}, {a: 2}, {a: 1}]
 	 */
 	static sortByKey(array, key, order = "asc") {
-		// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
 		return array.sort((a, b) => {
 			let valueA = a[key];
 			let valueB = b[key];

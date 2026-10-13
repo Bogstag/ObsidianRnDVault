@@ -53,10 +53,10 @@ class JiraAgileApi {
 		return this.jsonUtils.groupByKeyField(data.values, "id");
 	}
 
-	validateData(data) {
-		// Implement validation logic
+	validateData(_data) {
+		// TODO: Implement validation logic
 		// Return true if validation passes, false otherwise
-		return true; // Placeholder
+		return true;
 	}
 	/**
 	 * @description Requests information from the server
@@ -89,10 +89,7 @@ class JiraAgileApi {
 
 			return await response.json;
 		} catch (error) {
-			console.error(
-				"There was a problem with the fetch operation:",
-				error,
-			);
+			console.error("There was a problem with the fetch operation:", error);
 			throw error;
 		}
 	}

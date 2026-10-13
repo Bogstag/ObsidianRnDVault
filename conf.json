@@ -50,15 +50,10 @@
 		"template": "node_modules/docdash",
 		"verbose": true
 	},
-	"plugins": [
-		"plugins/markdown",
-		"plugins/summarize"
-	],
+	"plugins": ["plugins/markdown", "plugins/summarize"],
 	"recurseDepth": 10,
 	"source": {
-		"exclude": [
-			"ObsidianRnDVault/System/Scripts/secrets"
-		],
+		"exclude": ["ObsidianRnDVault/System/Scripts/secrets"],
 		"excludePattern": "(^|\\/|\\\\)_",
 		"include": [
 			"ObsidianRnDVault/System/Scripts/Classes/",
@@ -71,10 +66,7 @@
 	"sourceType": "commonjs",
 	"tags": {
 		"allowUnknownTags": true,
-		"dictionaries": [
-			"jsdoc",
-			"closure"
-		]
+		"dictionaries": ["jsdoc", "closure"]
 	},
 	"templates": {
 		"cleverLinks": false,
@@ -82,9 +74,7 @@
 			"includeDate": false,
 			"outputSourceFiles": true,
 			"staticFiles": {
-				"include": [
-					"Docs/ScriptsDocsStatic"
-				]
+				"include": ["Docs/ScriptsDocsStatic"]
 			},
 			"useLongnameInNav": true
 		},

@@ -1,23 +1,44 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.2.2/schema.json",
-	"files": {
-		"ignore": [
-			"ObsidianRnDVault/.obsidian",
-			"Docs"
-		],
-		"ignoreUnknown": true
-	},
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false
 	},
-	"javascript": {
-		"globals": [
-			"app"
-		],
-		"parser": {
-			"unsafeParameterDecoratorsEnabled": true
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"correctness": {
+				"noNextAsyncClientComponent": "off",
+				"noUnusedVariables": "off",
+				"noUnusedFunctionParameters": "off",
+				"useParseIntRadix": "off"
+			},
+			"suspicious": {
+				"noAsyncPromiseExecutor": "off",
+				"useAwait": "off",
+				"useIterableCallbackReturn": "off",
+				"noGlobalIsNan": "off"
+			},
+			"complexity": {
+				"noThisInStatic": "off",
+				"useOptionalChain": "off",
+				"useLiteralKeys": "off"
+			},
+			"style": {
+				"useTemplate": "off"
+			}
 		}
+	},
+	"assist": {
+		"enabled": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": [
+			"./**/*.{js,mjs,ts,mts,json,css,html,}",
+			"!!ObsidianRnDVault/.obsidian",
+			"!!Docs"
+		]
 	},
 	"json": {
 		"formatter": {
@@ -28,20 +49,11 @@
 			"allowTrailingCommas": true
 		}
 	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"all": true,
-			"correctness": {
-				"recommended": true
-			},
-			"nursery": {
-				"all": false
-			}
+	"javascript": {
+		"globals": ["app"],
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
 		}
-	},
-	"organizeImports": {
-		"enabled": true
 	},
 	"vcs": {
 		"clientKind": "git",

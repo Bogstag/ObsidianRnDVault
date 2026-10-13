@@ -57,9 +57,7 @@ module.exports = function predicate() {
 	 * @return {boolean}
 	 */
 	function or(p1, p2) {
-		return function (x) {
-			return p1(x) || p2(x);
-		};
+		return (x) => p1(x) || p2(x);
 	}
 	predicate.or = or;
 
@@ -75,9 +73,7 @@ module.exports = function predicate() {
 	 * @return {boolean}
 	 */
 	function and(p1, p2) {
-		return function (x) {
-			return p1(x) && p2(x);
-		};
+		return (x) => p1(x) && p2(x);
 	}
 	predicate.and = and;
 
@@ -92,9 +88,7 @@ module.exports = function predicate() {
 	 * @return {boolean}
 	 */
 	function not(p) {
-		return function (x) {
-			return !p(x);
-		};
+		return (x) => !p(x);
 	}
 	predicate.not = not;
 
@@ -109,9 +103,7 @@ module.exports = function predicate() {
 	 * @return {boolean}
 	 */
 	function less(x) {
-		return function (y) {
-			return y < x;
-		};
+		return (y) => y < x;
 	}
 	predicate.less = less;
 
@@ -126,9 +118,7 @@ module.exports = function predicate() {
 	 * @return {*}
 	 */
 	function greater(x) {
-		return function (y) {
-			return y > x;
-		};
+		return (y) => y > x;
 	}
 	predicate.greater = greater;
 

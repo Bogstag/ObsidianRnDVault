@@ -1,0 +1,16 @@
+{
+	"$schema": "https://unpkg.com/knip@6/schema.json",
+	"entry": [
+		"ObsidianRnDVault/System/DataViews/**/*.js",
+		"ObsidianRnDVault/System/Scripts/Classes/Gate.js",
+		"ObsidianRnDVault/System/Scripts/Classes/Navbar.js",
+		"ObsidianRnDVault/System/Scripts/Classes/NotePicker.js",
+		"ObsidianRnDVault/System/Scripts/Classes/PeriodicNotesHelper.js",
+		"ObsidianRnDVault/System/Scripts/Classes/Plugins.js",
+		"ObsidianRnDVault/System/Scripts/Classes/SvgProgressBar.js",
+		"ObsidianRnDVault/System/Scripts/Functions/getSeasonFromDate.js",
+		"ObsidianRnDVault/System/Scripts/Functions/makeProgressBar.js",
+		"ObsidianRnDVault/System/Scripts/Functions/templater_tasks.js"
+	],
+	"project": ["ObsidianRnDVault/System/**/*.js"]
+}

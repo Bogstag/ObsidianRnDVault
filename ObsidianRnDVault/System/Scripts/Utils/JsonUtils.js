@@ -7,7 +7,7 @@
  * const tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
  * const JsonUtils = tp.user.JsonUtils;
  * JsonUtils.removeOneByValue(arr, value);
- * 
+ *
  * @example in a Class
  * this.tp = app.plugins.plugins['templater-obsidian'].templater.current_functions_object;
  * this.jsonUtils = this.tp.user.JsonUtils;
@@ -45,7 +45,7 @@ class JsonUtils {
 	 * let prunedObj = JsonUtils.pruneBranch(jsonObj, 'b'); // { a: 1, d: 3 }
 	 */
 	static pruneBranch(jsonObj, branchName) {
-		if (Object.prototype.hasOwnProperty.call(jsonObj, branchName)) {
+		if (Object.hasOwn(jsonObj, branchName)) {
 			const { [branchName]: _, ...rest } = jsonObj;
 			return rest;
 		}
@@ -91,7 +91,7 @@ class JsonUtils {
 	static reorderKeys(jsonObj, newOrder) {
 		const newObj = {};
 		for (const key of newOrder) {
-			if (Object.prototype.hasOwnProperty.call(jsonObj, key)) {
+			if (Object.hasOwn(jsonObj, key)) {
 				newObj[key] = jsonObj[key];
 			}
 		}
@@ -113,10 +113,10 @@ class JsonUtils {
 
 	/**
 	 * Groups an array of objects into an object keyed by a specified field.
-	 * 
+	 *
 	 * @example
 	 * const groupedJson = JsonUtil.groupByKeyField(inputJson, 'id');
-	 * 
+	 *
 	 * @param {Object[]} jsonArray - The array of objects to group.
 	 * @param {string} keyField - The field to use as the key for grouping.
 	 * @returns {Object} The grouped object.

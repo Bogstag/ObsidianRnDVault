@@ -75,7 +75,7 @@ class SonarrApi {
 		const finalOptions = { ...defaultOptions, ...options };
 		const params = new URLSearchParams(finalOptions).toString();
 		const url = `wanted/missing?${params}`;
-		
+
 		const data = await this.request(url);
 		return data.values;
 	}

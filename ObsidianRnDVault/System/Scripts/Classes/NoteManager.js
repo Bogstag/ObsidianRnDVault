@@ -261,7 +261,11 @@ class NoteManager {
 	 * @returns {object} New note metadata
 	 * @memberof NoteManager
 	 */
-	async createNewNoteOpenInSplit(templatePath, newNoteName, destinationFolder) {
+	async createNewNoteOpenInSplit(
+		templatePath,
+		newNoteName,
+		destinationFolder,
+	) {
 		const noteMeta = await this.createFromTemplate(
 			templatePath,
 			newNoteName,
@@ -340,7 +344,8 @@ class NoteManager {
 	generateValidNoteName(noteName) {
 		let validNoteName = "";
 		validNoteName = this.substituteMomentPlaceholder(noteName);
-		const rg1 = /[\:\*\?\"\<\>\|\/\\]+/g; // forbidden characters \ / : * ? " < > |
+		// /[\:\*\?\"\<\>\|\/\\]+/g;
+		const rg1 = /[:*?"<>|/\\]+/g; // forbidden characters \ / : * ? " < > |
 		const rg2 = /^\./; // cannot start with dot (.)
 		const rg3 = /^(nul|prn|con|lpt[0-9]|com[0-9])(\.|$)/i; // forbidden file names
 
@@ -720,11 +725,21 @@ class NoteManager {
 
 					switch (where) {
 						case "insert": {
-							this.insertTextInArray(lines, startLine, text, deleteBlankLine);
+							this.insertTextInArray(
+								lines,
+								startLine,
+								text,
+								deleteBlankLine,
+							);
 							break;
 						}
 						case "replace": {
-							this.replaceSegmentInArray(lines, startLine, endLine, text);
+							this.replaceSegmentInArray(
+								lines,
+								startLine,
+								endLine,
+								text,
+							);
 							break;
 						}
 						//case "append":
