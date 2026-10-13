@@ -15,13 +15,13 @@
 	"type": "commonjs",
 	"main": ".",
 	"scripts": {
+		"check": "biome check  --config-path=biome.json .",
+		"ci": "biome ci --config-path=biome.json .",
+		"fix": "biome check --fix --config-path=biome.json .",
 		"generate-docs": "jsdoc -r -c ./conf.json",
 		"knip": "knip",
 		"sort:pkg": "npx --yes sort-package-json",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"check": "biome check  --config-path=biome.json .",
-		"fix": "biome check --fix --config-path=biome.json .",
-		"ci": "biome ci --config-path=biome.json ."
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.15",
